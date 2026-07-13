@@ -456,7 +456,7 @@
                     </div>
 
                     <div class="form-group turing-box">
-                        <label id="turingLabel" for="turingAnswer">Human Verification</label>
+                        <label id="turingLabel" for="turingAnswer">Human Verification: Loading challenge...</label>
                         <input type="number" id="turingAnswer" required placeholder="Enter the sum to submit">
                     </div>
 
@@ -508,9 +508,16 @@
         const SUPABASE_URL = "iqwgcpebepofycxwncdk"; 
         const SUPABASE_ANON_KEY = "sb_publishable_CAfB8NCzXPINBPmvmgo6zg_DRAIlAqk";
         
-        // Fixed: Renamed variable to avoid name clash with the global library object
-        const tokenMissing = SUPABASE_URL.startsWith("YOUR_");
-        const supabaseClient = tokenMissing ? null : supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        let supabaseClient = null;
+        
+        // Bulletproof Initialization: Prevents crashes if CDN is missing or blocked
+        try {
+            if (typeof supabase !== 'undefined' && !SUPABASE_URL.startsWith("YOUR_")) {
+                supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            }
+        } catch (e) {
+            console.error("Supabase initialization caught error safely:", e);
+        }
 
         // --- Turing Test Engine ---
         let currentTuringAnswer = 0;
@@ -519,11 +526,18 @@
             const num1 = Math.floor(Math.random() * 10) + 1;
             const num2 = Math.floor(Math.random() * 10) + 1;
             currentTuringAnswer = num1 + num2;
-            document.getElementById('turingLabel').innerText = `Human Verification: What is ${num1} + ${num2}?`;
-            document.getElementById('turingAnswer').value = '';
+            
+            const labelEl = document.getElementById('turingLabel');
+            if (labelEl) {
+                labelEl.innerText = `Human Verification: What is ${num1} + ${num2}?`;
+            }
+            const inputEl = document.getElementById('turingAnswer');
+            if (inputEl) {
+                inputEl.value = '';
+            }
         }
 
-        // Initialize on first page execution
+        // Run immediately on file load
         generateTuringTest();
 
         // --- View Controller ---
@@ -562,7 +576,7 @@
 
             // Check if client keys are missing
             if (!supabaseClient) {
-                errorBox.innerText = "⚠️ Configuration error: Please replace the placeholder Supabase URL and Anon Key variables in the source code scripts.";
+                errorBox.innerText = "⚠️ Configuration info: Form data isn't pushing to the cloud database because the placeholder 'YOUR_SUPABASE_URL' variables haven't been swapped out in the script yet.";
                 errorBox.style.display = 'block';
                 return;
             }
@@ -589,7 +603,7 @@
                 if (error) throw error;
 
                 // On Success
-                successBox.innerText = "✓ Success! Your request has been securely stored in the design table pipeline.";
+                successBox.innerText = "✓ Success! Your request has been securely stored in your Supabase table pipeline.";
                 successBox.style.display = 'block';
                 document.getElementById('enquiryForm').reset();
                 generateTuringTest();
