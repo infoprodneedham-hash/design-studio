@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geelong Design Studio | Custom Web & Digital Design</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        /* --- Design Tokens & Sleek Pastel Palette --- */
+        :root {
+            --bg-main: #faf9f6;          /* Soft off-white */
+            --pastel-blue: #d4e6f1;      /* Fresh pastel blue */
+            --pastel-mint: #d5f5e3;      /* Crisp mint green */
+            --pastel-lavender: #e8daef;  /* Sleek lavender */
+            --pastel-peach: #fdebd0;     /* Soft peach */
+            --pastel-error: #fadbd8;     /* Soft red for errors */
+            --text-dark: #2c3e50;        /* Deep slate for high-contrast readability */
+            --text-muted: #566573;
+            --white: #ffffff;
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-dark);
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, #a5c7f7, #b8e994);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--pastel-blue);
+        }
+
+        /* --- Main Content Layout --- */
+        main {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            flex: 1;
+        }
+
+        .view-section {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Global Typography Elements --- */
+        h1 { font-size: 2.8rem; margin-bottom: 1rem; font-weight: 700; }
+        h2 { font-size: 2rem; margin-bottom: 1.5rem; position: relative; display: inline-block; }
+        p { margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem; }
+
+        /* --- Landing Page Components --- */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-lavender));
+            border-radius: var(--radius);
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 { color: var(--text-dark); }
+        .hero p { max-width: 700px; margin: 0 auto 2rem auto; color: var(--text-dark); opacity: 0.9; }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border-top: 6px solid var(--pastel-mint);
+            transition: var(--transition);
+        }
+
+        .service-card:nth-child(2) { border-top-color: var(--pastel-lavender); }
+        .service-card:nth-child(3) { border-top-color: var(--pastel-peach); }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 { margin-bottom: 1rem; font-size: 1.4rem; }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-preview {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .p1 { background-color: var(--pastel-blue); }
+        .p2 { background-color: var(--pastel-mint); }
+        .p3 { background-color: var(--pastel-lavender); }
+        .p4 { background-color: var(--pastel-peach); }
+        .p5 { background-color: #e6b0aa; opacity: 0.8; }
+        .p6 { background-color: #a2d9ce; }
+
+        .gallery-info { padding: 1.5rem; }
+        .gallery-info h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .gallery-info p { font-size: 0.95rem; margin-bottom: 0; }
+
+        /* --- Enquiry Page Components --- */
+        .form-container {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group { margin-bottom: 1.75rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.95rem; }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 2px solid #eef2f5;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #fcfcfd;
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #a5c7f7;
+            background-color: var(--white);
+        }
+
+        .radio-group { display: flex; gap: 2rem; margin-top: 0.5rem; }
+        .radio-label { display: flex; align-items: center; gap: 0.5rem; font-weight: 500; cursor: pointer; }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #b2e2f7, #b4eccb);
+            color: var(--text-dark);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Custom Turing Test Section Highlight */
+        .turing-box {
+            background-color: var(--bg-main);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px dashed var(--text-muted);
+        }
+
+        /* Status Banners */
+        .alert-success, .alert-error {
+            display: none;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .alert-success { background-color: var(--pastel-mint); color: #196f3d; }
+        .alert-error { background-color: var(--pastel-error); color: #78281f; }
+
+        /* --- Terms Page Components --- */
+        .terms-content {
+            background-color: var(--white);
+            padding: 3.5rem;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .terms-section { margin-bottom: 2.5rem; }
+        .terms-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            border-left: 4px solid var(--pastel-blue);
+            padding-left: 1rem;
+        }
+        .terms-section ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .terms-section li { margin-bottom: 0.5rem; color: var(--text-muted); }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 1.5rem; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            h1 { font-size: 2.2rem; }
+            .form-container, .terms-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Geelong <span>Design Studio</span></div>
+            <nav>
+                <ul>
+                    <li><a onclick="switchView('home')" id="nav-home" class="active">Home</a></li>
+                    <li><a onclick="switchView('enquiry')" id="nav-enquiry">Enquiries</a></li>
+                    <li><a onclick="switchView('terms')" id="nav-terms">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="view-home" class="view-section active">
+            <div class="hero">
+                <h1>Smart Digital Solutions Tailored To You</h1>
+                <p>We blend beautiful, fresh pastel aesthetics with robust functionality to build high-converting websites and digital content for small businesses and brands.</p>
+            </div>
+
+            <h2>What We Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Dynamic Websites</h3>
+                    <p>Smart, responsive sites engineered explicitly for small businesses. Get functional user interfaces while retaining a premium aesthetic suited entirely to custom, individual requirements.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Content Creation</h3>
+                    <p>Stay top-of-mind with high-impact layouts for social media platforms alongside elegant, scannable email newsletters that organically build community engagement.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Identity & Branding</h3>
+                    <p>From crisp, modern logo designs to professional printed brochures, business cards, and product catalogues that make an unforgettable local impression.</p>
+                </div>
+            </div>
+
+            <h2>Recent Work Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-preview p1">E-Commerce UI</div>
+                    <div class="gallery-info">
+                        <h4>Sleek Retail Space</h4>
+                        <p>Dynamic product layout featuring custom client workflows.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-preview p2">Portfolio Suite</div>
+                    <div class="gallery-info">
+                        <h4>The Creative Edge</h4>
+                        <p>Minimalist imagery showcase utilizing clean pastel accents.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-preview p3">Newsletter Layout</div>
+                    <div class="gallery-info">
+                        <h4>Weekly Digest</h4>
+                        <p>High-conversion email structure for a boutique café.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-preview p4">Brand Showcase</div>
+                    <div class="gallery-info">
+                        <h4>Eco-Consulting</h4>
+                        <p>A fresh, mint-inspired corporate responsive interface.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-preview p5">Print Medias</div>
+                    <div class="gallery-info">
+                        <h4>Local Catalogue Concept</h4>
+                        <p>Typography-focused layout for physical business assets.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-preview p6">Web Application</div>
+                    <div class="gallery-info">
+                        <h4>Smart Tracker Hub</h4>
+                        <p>A complex dashboard rendering serverless interactions cleanly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-enquiry" class="view-section">
+            <div class="form-container">
+                <h2>Let's Build Something Great</h2>
+                <p>Fill out your project goals below, and we'll connect with you shortly to explore your custom arrangements.</p>
+                
+                <div id="successAlert" class="alert-success"></div>
+                <div id="errorAlert" class="alert-error"></div>
+
+                <form id="enquiryForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" id="contactName" required placeholder="Your full name">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address</label>
+                            <input type="email" id="emailAddress" required placeholder="name@domain.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber" required placeholder="0400 000 000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enquiryNature">Nature of Enquiry</label>
+                        <select id="enquiryNature" required>
+                            <option value="" disabled selected>Select a primary service...</option>
+                            <option value="website design">Website Design</option>
+                            <option value="email marketing">Email Marketing</option>
+                            <option value="social media content">Social Media Content</option>
+                            <option value="printed brochures/cards">Printed Brochures / Business Cards / Catalogues</option>
+                            <option value="logo design">Logo Design</option>
+                            <option value="photography">Photography</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Preferred Contact Method</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="contactPref" value="Call Back" checked> Request Call Back
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="contactPref" value="Email"> Email Me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="suitableTime">Suitable Time</label>
+                            <input type="text" id="suitableTime" placeholder="e.g., Weekdays after 2 PM">
+                        </div>
+                    </div>
+
+                    <div class="form-group turing-box">
+                        <label id="turingLabel" for="turingAnswer">Human Verification</label>
+                        <input type="number" id="turingAnswer" required placeholder="Enter the sum to submit">
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-submit">Submit Enquiry</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="view-terms" class="view-section">
+            <div class="terms-content">
+                <h2>Terms of Service</h2>
+                <p>Welcome to Geelong Design Studio. Please review our baseline arrangements regarding digital projects, ongoing management, and development agreements.</p>
+                <hr style="border: 0; height: 1px; background: #eee; margin-bottom: 2rem;">
+
+                <div class="terms-section">
+                    <h3>1. Quotes, Pricing & Payment Terms</h3>
+                    <p>All structured adjustments, functional add-ons, or asset productions are quoted clearly upfront before asset execution begins.</p>
+                    <ul>
+                        <li><strong>Deposit:</strong> A 50% upfront payment is mandatory to lock in production windows for custom web architectures.</li>
+                        <li><strong>Milestones:</strong> Outstanding project balances are due strictly upon localized asset sign-off or prior to live hosting migration.</li>
+                        <li><strong>Validity:</strong> Formulated custom quotes remain valid for exactly 30 calendar days from the production issue date.</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>2. Scope of Responsibility</h3>
+                    <p>We pride ourselves on offering flexible, tailored agreements matching unique customer parameters while respecting technical operational clear-lines.</p>
+                    <ul>
+                        <li><strong>Client Inputs:</strong> Clients agree to deliver accurate copy guidelines, photography content assets, and required local accessibility metrics promptly.</li>
+                        <li><strong>Revisions:</strong> Every custom web project includes up to two rounds of creative iterations within the base-quoted parameters unless explicitly noted otherwise.</li>
+                        <li><strong>Third-Party Accounts:</strong> Registering and funding domains, ongoing serverless backends, or premium newsletter platforms remains the financial responsibility of the client.</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h3>3. Client Expectations</h3>
+                    <p>Timely production depends entirely on balanced collaboration. Delays in asset sign-off or structural content handovers exceeding 14 days may result in rescheduling the project sequence or adjusting pricing frameworks accordingly.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Geelong Design Studio. Built with care for small businesses. All Rights Reserved.
+    </footer>
+
+    <script>
+        // --- Supabase Configuration ---
+        const SUPABASE_URL = "YOUR_SUPABASE_URL"; 
+        const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+        
+        // Initialize the Supabase Client
+        const supabase = TokenIsValid(SUPABASE_URL) ? null : supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        function TokenIsValid(str) { return str.startsWith("YOUR_"); }
+
+        // --- Turing Test Engine ---
+        let currentTuringAnswer = 0;
+
+        function generateTuringTest() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            currentTuringAnswer = num1 + num2;
+            document.getElementById('turingLabel').innerText = `Human Verification: What is ${num1} + ${num2}?`;
+            document.getElementById('turingAnswer').value = '';
+        }
+
+        // Run when switching onto the page or resetting
+        generateTuringTest();
+
+        // --- View Controller ---
+        function switchView(viewName) {
+            document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+
+            document.getElementById(`view-${viewName}`).classList.add('active');
+            document.getElementById(`nav-${viewName}`).classList.add('active');
+            
+            if (viewName === 'enquiry') {
+                generateTuringTest();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- Form Processing & Database Submission ---
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const successBox = document.getElementById('successAlert');
+            const errorBox = document.getElementById('errorAlert');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            successBox.style.display = 'none';
+            errorBox.style.display = 'none';
+
+            // 1. Validate Turing Test Challenge
+            const userAnswer = parseInt(document.getElementById('turingAnswer').value, 10);
+            if (userAnswer !== currentTuringAnswer) {
+                errorBox.innerText = "❌ Incorrect verification answer. Please try again.";
+                errorBox.style.display = 'block';
+                generateTuringTest();
+                return;
+            }
+
+            // Check if client keys are missing
+            if (!supabase) {
+                errorBox.innerText = "⚠️ Configuration error: Please replace the placeholder Supabase URL and Anon Key variables in the source code scripts.";
+                errorBox.style.display = 'block';
+                return;
+            }
+
+            // 2. Prep form payload match layout requirements
+            const payload = {
+                contact_name: document.getElementById('contactName').value,
+                email_address: document.getElementById('emailAddress').value,
+                phone_number: document.getElementById('phoneNumber').value,
+                enquiry_nature: document.getElementById('enquiryNature').value,
+                contact_preference: document.querySelector('input[name="contactPref"]:checked').value,
+                suitable_time: document.getElementById('suitableTime').value
+            };
+
+            try {
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Sending Securely...";
+
+                // 3. Database Insert
+                const { data, error } = await supabase
+                    .from('enquiries')
+                    .insert([payload]);
+
+                if (error) throw error;
+
+                // On Success
+                successBox.innerText = "✓ Success! Your request has been securely stored in the design table pipeline.";
+                successBox.style.display = 'block';
+                document.getElementById('enquiryForm').reset();
+                generateTuringTest();
+
+            } catch (err) {
+                console.error("Database Error Context:", err);
+                errorBox.innerText = `❌ Operational fault: ${err.message || 'Check database table structure policies.'}`;
+                errorBox.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Submit Enquiry";
+            }
+        }
+    </script>
+</body>
+</html>
