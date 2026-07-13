@@ -254,7 +254,7 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
 
-        /* Custom Turing Test Section Highlight */
+        /* Turing Test Section */
         .turing-box {
             background-color: var(--bg-main);
             padding: 1.25rem;
@@ -508,10 +508,9 @@
         const SUPABASE_URL = "iqwgcpebepofycxwncdk"; 
         const SUPABASE_ANON_KEY = "sb_publishable_CAfB8NCzXPINBPmvmgo6zg_DRAIlAqk";
         
-        // Initialize the Supabase Client
-        const supabase = TokenIsValid(SUPABASE_URL) ? null : supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-        function TokenIsValid(str) { return str.startsWith("YOUR_"); }
+        // Fixed: Renamed variable to avoid name clash with the global library object
+        const tokenMissing = SUPABASE_URL.startsWith("YOUR_");
+        const supabaseClient = tokenMissing ? null : supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         // --- Turing Test Engine ---
         let currentTuringAnswer = 0;
@@ -524,7 +523,7 @@
             document.getElementById('turingAnswer').value = '';
         }
 
-        // Run when switching onto the page or resetting
+        // Initialize on first page execution
         generateTuringTest();
 
         // --- View Controller ---
@@ -562,7 +561,7 @@
             }
 
             // Check if client keys are missing
-            if (!supabase) {
+            if (!supabaseClient) {
                 errorBox.innerText = "⚠️ Configuration error: Please replace the placeholder Supabase URL and Anon Key variables in the source code scripts.";
                 errorBox.style.display = 'block';
                 return;
@@ -583,7 +582,7 @@
                 submitBtn.innerText = "Sending Securely...";
 
                 // 3. Database Insert
-                const { data, error } = await supabase
+                const { data, error } = await supabaseClient
                     .from('enquiries')
                     .insert([payload]);
 
