@@ -1,0 +1,1567 @@
+<!-- ... existing code ... ... -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bespoke Digital Craftsmanship | Independent Web Designer & Developer</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              amber: '#d97706',
+              amberLight: '#fef3c7',
+              emerald: '#059669',
+              slate: '#1e293b'
+            }
+          },
+          animation: {
+            'marquee': 'marquee 40s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom refined scrollbar and light glassmorphism */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .glass-nav-light {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .card-light {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    }
+    .card-light:hover {
+      border-color: #f59e0b;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+    .marquee-container:hover .marquee-content {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-100 selection:text-amber-900 pb-28">
+
+  <!-- ================= HEADER / NAVIGATION (LIGHT THEME) ================= -->
+  <header class="fixed top-0 left-0 right-0 z-40 glass-nav-light border-b border-slate-200/80 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Identity -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-white shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-compass-drafting text-lg"></i>
+        </div>
+        <div>
+          <span class="font-display font-bold text-lg tracking-tight text-slate-900 flex items-center gap-2">
+            SoloCraft <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-sans font-medium">Independent</span>
+          </span>
+          <span class="text-xs text-slate-500 block -mt-1 font-sans">Direct Digital Builder &amp; Specialist</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <a href="#solutions" class="hover:text-amber-600 transition-colors">Business Tools</a>
+        <a href="#pathways" class="hover:text-amber-600 transition-colors">Three Pathways</a>
+        <a href="#menu" class="hover:text-amber-600 transition-colors">Solution Menu</a>
+        <a href="#showcase" class="hover:text-amber-600 transition-colors">Live Apps</a>
+        <a href="#sovereignty" class="hover:text-amber-600 transition-colors">Terms of Craft</a>
+      </nav>
+
+      <!-- CTA / Action -->
+      <div class="flex items-center gap-3">
+        <a href="#booking" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+          <i class="fa-solid fa-mug-saucer text-amber-400"></i>
+          <span>Let's Grab a Coffee</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="md:hidden p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">
+          <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white/95 px-6 py-6 space-y-4 shadow-lg">
+      <a href="#solutions" class="block text-slate-700 hover:text-amber-600 font-medium py-1 mobile-link">Everyday Business Tools</a>
+      <a href="#philosophy" class="block text-slate-700 hover:text-amber-600 font-medium py-1 mobile-link">The Solo Philosophy</a>
+      <a href="#pathways" class="block text-slate-700 hover:text-amber-600 font-medium py-1 mobile-link">The Three Pathways</a>
+      <a href="#menu" class="block text-slate-700 hover:text-amber-600 font-medium py-1 mobile-link">À La Carte Solution Menu</a>
+      <a href="#showcase" class="block text-slate-700 hover:text-amber-600 font-medium py-1 mobile-link">Recent Work &amp; Web Apps</a>
+      <a href="#sovereignty" class="block text-slate-700 hover:text-amber-600 font-medium py-1 mobile-link">Sovereignty &amp; Terms</a>
+      <div class="pt-4 border-t border-slate-200">
+        <a href="#booking" class="w-full flex justify-center items-center gap-2 px-4 py-3 rounded-xl bg-amber-500 text-white font-bold mobile-link shadow-md">
+          <i class="fa-solid fa-mug-hot"></i> Book a 30-Min Coffee Chat
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION (LIGHT THEME) ================= -->
+  <section class="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100/70 border-b border-slate-200/80">
+    <!-- Ambient Background Accent Glows -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-amber-100/60 blur-[130px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-emerald-100/50 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Zero Agency Bloat • Direct Local Collaboration</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+          Bespoke Digital Craft. <br class="hidden sm:inline">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-500 to-emerald-600">
+            Tailored for Local Business.
+          </span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          I am an independent web developer, visual designer, and digital craftsman. 
+          You deal directly with the person writing the code and designing the assets—no account managers, 
+          no markup middlemen, and no monthly retainer traps.
+        </p>
+
+        <!-- Value Badges -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-left">
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-sm flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-200/50">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-900">Direct Line to Builder</p>
+              <p class="text-[11px] text-slate-500">Speak directly to who builds it.</p>
+            </div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-sm flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-200/50">
+              <i class="fa-solid fa-key"></i>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-900">Digital Sovereignty</p>
+              <p class="text-[11px] text-slate-500">You hold all primary deeds &amp; keys.</p>
+            </div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-sm flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 border border-sky-200/50">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-900">À La Carte Solutions</p>
+              <p class="text-[11px] text-slate-500">No forced bundle retainers.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Actions: Exactly ONE prominent Coffee / Consultation CTA paired with secondary navigation -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <a href="#booking" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5">
+            <i class="fa-solid fa-mug-saucer"></i>
+            <span>Schedule a Free 30-Min Coffee Consultation</span>
+          </a>
+          <a href="#solutions" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold text-base transition-colors flex items-center justify-center gap-2 shadow-sm">
+            <i class="fa-solid fa-toolbox text-amber-600"></i>
+            <span>See Common Business Tools</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= UNIVERSAL EVERYDAY BUSINESS SOLUTIONS (NEW SECTION) ================= -->
+  <section id="solutions" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold mb-3">
+          <i class="fa-solid fa-wrench text-amber-600"></i>
+          <span>Practical, Problem-Solving Tools</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Everyday Features Your Business Actually Uses
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+          No matter whether you run a plumbing service, cafe, consultancy, fitness studio, or boutique shop, most businesses share the same real-world needs: saving time, capturing leads, and looking sharp. Here are the core modules we build to streamline your everyday operations.
+        </p>
+      </div>
+
+      <!-- 8 Practical Cross-Industry Business Modules -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Module 1: Static Brochure Sites -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-100/70 text-amber-700 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-store"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1.5">Brochure &amp; Showcase Sites</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Fast, high-impact digital storefronts that load instantly on mobile phones. Clear service menus, opening hours, local credibility, and tap-to-call buttons that turn searchers into clients.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-semibold text-slate-500">
+            <span class="text-amber-700">Ideal for:</span> Trades, clinics, cafes, retail
+          </div>
+        </div>
+
+        <!-- Module 2: CRM & Lead Tracking -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-sky-400 hover:shadow-md transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-100/70 text-sky-700 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-address-book"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1.5">Lead Tracker &amp; Simple CRM</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Stop losing customer inquiries in chaotic SMS threads or forgotten inboxes. A clear, centralized view of leads, customer history, follow-up reminders, and status notes without bloated subscriptions.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-semibold text-slate-500">
+            <span class="text-sky-700">Ideal for:</span> Contractors, advisors, consultants
+          </div>
+        </div>
+
+        <!-- Module 3: Booking & Scheduling -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 hover:shadow-md transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-100/70 text-emerald-700 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1.5">Online Booking &amp; Appointments</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Eliminate back-and-forth phone tag. Let customers choose convenient appointment windows, consultation times, or table reservations that sync directly with your phone calendar.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-semibold text-slate-500">
+            <span class="text-emerald-700">Ideal for:</span> Salons, allied health, coaches, venues
+          </div>
+        </div>
+
+        <!-- Module 4: Visual Gallery & Before/After -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-purple-400 hover:shadow-md transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-100/70 text-purple-700 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-images"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1.5">Work Gallery &amp; Before/After</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Nothing sells quality like visual proof. High-res photo galleries, job project logs, and interactive before/after sliders that demonstrate your craftsmanship on any screen.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-semibold text-slate-500">
+            <span class="text-purple-700">Ideal for:</span> Builders, painters, landscapers, designers
+          </div>
+        </div>
+
+        <!-- Module 5: Instant Quote & Estimator Calculators -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-100/70 text-amber-700 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1.5">Instant Quote Calculators</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Give prospective clients instant ballpark estimates based on their dimensions, project scale, or service tiers, screening out tire-kickers and delivering pre-qualified leads straight to you.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-semibold text-slate-500">
+            <span class="text-amber-700">Ideal for:</span> Electricians, fence builders, cleaners, movers
+          </div>
+        </div>
+
+        <!-- Module 6: Simple Invoice & Receipt Generators -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 hover:shadow-md transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-100/70 text-emerald-700 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-file-invoice"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1.5">Lightweight Invoicing &amp; Receipts</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Generate crisp, branded PDF invoices and itemized payment receipts on the fly from your phone or tablet without paying $50/month for complex accounting suites you only use 10% of.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-semibold text-slate-500">
+            <span class="text-emerald-700">Ideal for:</span> Sole traders, freelancers, subbies
+          </div>
+        </div>
+
+        <!-- Module 7: Project & Job Tracker -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-sky-400 hover:shadow-md transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-100/70 text-sky-700 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1.5">Project &amp; Job Status Tracker</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Keep clients informed with straightforward progress milestone pages. Cut down on repetitive "how's my job going?" phone calls by providing private status links they can check anytime.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-semibold text-slate-500">
+            <span class="text-sky-700">Ideal for:</span> Custom fabricators, service repairers, creative studios
+          </div>
+        </div>
+
+        <!-- Module 8: Staff & Subbie Portal -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-rose-400 hover:shadow-md transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-rose-100/70 text-rose-700 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1.5">Staff &amp; Subcontractor Portal</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              A private, password-protected hub where your team, casuals, or subcontractors can view shift rosters, download job safety sheets, access supplier lists, and log daily completion reports.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-semibold text-slate-500">
+            <span class="text-rose-700">Ideal for:</span> Trade crews, hospitality teams, maintenance crews
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Reassurance Banner -->
+      <div class="mt-12 p-6 rounded-2xl bg-amber-50/70 border border-amber-200/70 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-puzzle-piece text-base"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">Mix, Match, or Add Over Time</h4>
+            <p class="text-xs text-slate-600">Start with just a simple brochure site today. When you're ready, we can plug in a booking form or quote calculator without starting over.</p>
+          </div>
+        </div>
+        <a href="#booking" class="shrink-0 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-colors">
+          Discuss What You Need
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= THE SOLO CRAFTSMAN PHILOSOPHY ================= -->
+  <section id="philosophy" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-xs font-bold tracking-widest text-amber-600 uppercase">The Solo Advantage</h2>
+        <p class="mt-2 font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Agency-Grade Polish. Personal Workshop Care.
+        </p>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          I don't pretend to be a 40-person agency with a high-rise office. That is deliberate. 
+          When you cut corporate bloat, you get superior craft, direct accountability, and fair local prices.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="p-6 rounded-2xl card-light transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 border border-amber-200/60 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Agile &amp; Direct</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            No departmental ticketing or endless account managers. Iterations and updates happen quickly because the person you speak with is the builder.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-6 rounded-2xl card-light transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Digital Sovereignty</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            You own your domain, DNS, and hosting deeds. I operate with granted technician access, not captive control. No hostage codes, ever.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-6 rounded-2xl card-light transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 border border-sky-200/60 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Upfront Task Pricing</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Fixed quotes for defined milestones. You know exactly what you are getting, what it costs, and when it arrives before work commences.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="p-6 rounded-2xl card-light transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 border border-purple-200/60 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-sliders"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Elastic Follow-Up</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Need 1 hour a month for regular checkups? Done. Need 10 hours a week for a busy seasonal campaign? I step in, then dial back when done.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= THE THREE PATHWAYS FRAMEWORK ================= -->
+  <section id="pathways" class="py-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold tracking-widest text-emerald-600 uppercase">Assessment &amp; Strategy</span>
+        <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Already Have a Website? Choose Your Pathway.
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          You don't always need to tear everything down and start over. When you hand me the keys for a diagnostic look under the hood, we evaluate what's working and what's costing you money.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Pathway 1 -->
+        <div class="card-light rounded-2xl p-7 flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 border border-sky-200 px-3 py-1 rounded-full">Pathway 01</span>
+              <i class="fa-solid fa-wrench text-sky-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Keep &amp; Manage</h3>
+            <p class="text-slate-600 text-sm mb-5 leading-relaxed">
+              For businesses with a working booking system, e-commerce shop, or existing site that functions well, but their agency charges too much for simple updates or has gone missing.
+            </p>
+            <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-sky-600"></i> No disruption to existing payment or bookings
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-sky-600"></i> Elimination of high recurring agency retainers
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-sky-600"></i> Routine maintenance, copy tweaks &amp; phone updates
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-sky-600"></i> Google Business Profile &amp; Search listing alignment
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-100">
+            <p class="text-xs text-slate-500 italic">"Keep the engine running smoothly without agency markups."</p>
+          </div>
+        </div>
+
+        <!-- Pathway 2 -->
+        <div class="bg-white rounded-2xl p-7 border-2 border-amber-500 relative flex flex-col justify-between shadow-lg shadow-amber-500/5">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-amber-500 text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
+            Most Cost-Saving
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">Pathway 02</span>
+              <i class="fa-solid fa-server text-amber-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Modernize &amp; Migrate</h3>
+            <p class="text-slate-600 text-sm mb-5 leading-relaxed">
+              Keep your established brand visuals, photography, and client familiarity, but pull the slow, outdated engine out from underneath it and reroute to ultra-fast serverless hosting.
+            </p>
+            <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-amber-600"></i> Reroute domains to fast edge servers (Cloudflare Pages)
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-amber-600"></i> Drastically cuts monthly hosting and cPanel costs
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-amber-600"></i> Instant page loading speeds on mobile devices
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-amber-600"></i> Eliminates vulnerable plugins prone to hacks
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-100">
+            <p class="text-xs text-slate-500 italic">"Keep the familiar exterior, upgrade to an electric rocket under the hood."</p>
+          </div>
+        </div>
+
+        <!-- Pathway 3 -->
+        <div class="card-light rounded-2xl p-7 flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">Pathway 03</span>
+              <i class="fa-solid fa-wand-magic-sparkles text-emerald-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Fresh Build &amp; Clean Slate</h3>
+            <p class="text-slate-600 text-sm mb-5 leading-relaxed">
+              When an old site is too slow, structurally broken on smartphones, or dragging your reputation down. We start fresh with clean architecture engineered to win local inquiries.
+            </p>
+            <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-600"></i> Hand-crafted, modern responsive design
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-600"></i> Bespoke lead generation forms &amp; quote tools
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-600"></i> Built ground-up for Google Local SEO &amp; Maps
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-600"></i> Complete client ownership &amp; zero vendor lock-in
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-100">
+            <p class="text-xs text-slate-500 italic">"Often faster and cheaper than spending months patching old digital duct tape."</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FIVE-STAR SOLUTION MENU (LIGHT THEME) ================= -->
+  <section id="menu" class="py-20 border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Five-Star Dining Metaphor</span>
+        <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          The À La Carte Digital Menu
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          Just like a premier dining experience, you select only what satisfies your immediate appetite and budget. No compulsory multi-course retainers.
+        </p>
+      </div>
+
+      <!-- Course Selection Tabs -->
+      <div class="flex justify-center mb-10">
+        <div class="inline-flex p-1.5 rounded-2xl bg-slate-100 border border-slate-200" role="tablist">
+          <button onclick="switchMenuCourse('entree')" id="tab-entree" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-slate-900 shadow-sm border border-slate-200">
+            <i class="fa-solid fa-seedling mr-1.5 text-amber-600"></i> Entrée (Foundations)
+          </button>
+          <button onclick="switchMenuCourse('main')" id="tab-main" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900">
+            <i class="fa-solid fa-cubes mr-1.5 text-sky-600"></i> Main Course (Core Builds)
+          </button>
+          <button onclick="switchMenuCourse('dessert')" id="tab-dessert" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900">
+            <i class="fa-solid fa-paper-plane mr-1.5 text-emerald-600"></i> Dessert (Polish &amp; Reach)
+          </button>
+        </div>
+      </div>
+
+      <!-- Course Content: Entrée -->
+      <div id="course-entree" class="grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-300">
+        <div class="p-6 rounded-2xl card-light">
+          <div class="text-amber-600 text-xl mb-3"><i class="fa-solid fa-stethoscope"></i></div>
+          <h4 class="font-bold text-slate-900 text-base mb-1">Diagnostic Digital Health Audit</h4>
+          <p class="text-slate-600 text-xs mb-3 leading-relaxed">A full review of your current registrar, hosting bills, speed performance, and broken links with a plain-English report.</p>
+          <div class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-max">Fixed Micro-Milestone</div>
+        </div>
+        <div class="p-6 rounded-2xl card-light">
+          <div class="text-amber-600 text-xl mb-3"><i class="fa-solid fa-unlock-keyhole"></i></div>
+          <h4 class="font-bold text-slate-900 text-base mb-1">Domain Liberation &amp; DNS Care</h4>
+          <p class="text-slate-600 text-xs mb-3 leading-relaxed">Recover control of domains from past webmasters, configure secure Cloudflare DNS, and establish client ownership.</p>
+          <div class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-max">Fixed Micro-Milestone</div>
+        </div>
+        <div class="p-6 rounded-2xl card-light">
+          <div class="text-amber-600 text-xl mb-3"><i class="fa-solid fa-location-dot"></i></div>
+          <h4 class="font-bold text-slate-900 text-base mb-1">Google Maps &amp; Search Indexing</h4>
+          <p class="text-slate-600 text-xs mb-3 leading-relaxed">Claim, optimize, and verify your Google Business Profile, sitemap submissions, and local search listing cards.</p>
+          <div class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-max">Fixed Micro-Milestone</div>
+        </div>
+      </div>
+
+      <!-- Course Content: Main Course (Hidden by default) -->
+      <div id="course-main" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-300">
+        <div class="p-6 rounded-2xl card-light">
+          <div class="text-sky-600 text-xl mb-3"><i class="fa-solid fa-laptop-code"></i></div>
+          <h4 class="font-bold text-slate-900 text-base mb-1">Solo Trader Fast-Launch Site</h4>
+          <p class="text-slate-600 text-xs mb-3 leading-relaxed">Clean single-page responsive website optimized for mobile speed, clear service highlights, and instant quote calls.</p>
+          <div class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-max">Fixed Milestone Scope</div>
+        </div>
+        <div class="p-6 rounded-2xl card-light">
+          <div class="text-sky-600 text-xl mb-3"><i class="fa-solid fa-calculator"></i></div>
+          <h4 class="font-bold text-slate-900 text-base mb-1">Interactive Custom Utility / Calculator</h4>
+          <p class="text-slate-600 text-xs mb-3 leading-relaxed">Custom quote estimator, client checklist, or interactive pricing slider built in lightweight code and embedded cleanly.</p>
+          <div class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-max">Fixed Add-on Scope</div>
+        </div>
+        <div class="p-6 rounded-2xl card-light">
+          <div class="text-sky-600 text-xl mb-3"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <h4 class="font-bold text-slate-900 text-base mb-1">Serverless Site Migration</h4>
+          <p class="text-slate-600 text-xs mb-3 leading-relaxed">Rebuilding or moving an existing bloated site onto ultra-fast static hosting to slash monthly overhead and boost load speeds.</p>
+          <div class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-max">Fixed Migration Scope</div>
+        </div>
+      </div>
+
+      <!-- Course Content: Dessert (Hidden by default) -->
+      <div id="course-dessert" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-300">
+        <div class="p-6 rounded-2xl card-light">
+          <div class="text-emerald-600 text-xl mb-3"><i class="fa-solid fa-envelope-open-text"></i></div>
+          <h4 class="font-bold text-slate-900 text-base mb-1">Branded Email Newsletter Setup</h4>
+          <p class="text-slate-600 text-xs mb-3 leading-relaxed">Clean configuration of MailerLite or Brevo, website lead signup form integration, and a reusable branded template.</p>
+          <div class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-max">Fixed Campaign Scope</div>
+        </div>
+        <div class="p-6 rounded-2xl card-light">
+          <div class="text-emerald-600 text-xl mb-3"><i class="fa-solid fa-hashtag"></i></div>
+          <h4 class="font-bold text-slate-900 text-base mb-1">Social Launch Asset Kit</h4>
+          <p class="text-slate-600 text-xs mb-3 leading-relaxed">A cohesive set of header banners, profile avatars, and 6 custom-designed graphic templates ready for your seasonal offers.</p>
+          <div class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-max">Fixed Asset Scope</div>
+        </div>
+        <div class="p-6 rounded-2xl card-light">
+          <div class="text-emerald-600 text-xl mb-3"><i class="fa-solid fa-phone-volume"></i></div>
+          <h4 class="font-bold text-slate-900 text-base mb-1">On-Call Care (1 hr/mo to 10 hrs/wk)</h4>
+          <p class="text-slate-600 text-xs mb-3 leading-relaxed">Flexible support on demand. Pick up the phone for a quick copy swap, or book dedicated bandwidth during a rush.</p>
+          <div class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-max">Elastic Support</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= LIVE PORTFOLIO SHOWCASE (LIGHT THEME) ================= -->
+  <section id="showcase" class="py-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-emerald-600 uppercase">Proof in Production</span>
+          <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+            Recent Work &amp; Live Web Applications
+          </h2>
+          <p class="mt-2 text-slate-600 text-sm max-w-xl">
+            A curated portfolio of 18 functional web applications, tools, and platforms recently engineered. Filter by category to explore live solutions.
+          </p>
+        </div>
+
+        <!-- Portfolio Filter Pills -->
+        <div class="flex flex-wrap gap-2 text-xs">
+          <button onclick="filterPortfolio('all')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-900 text-white font-semibold shadow-sm" data-filter="all">All (18)</button>
+          <button onclick="filterPortfolio('productivity')" class="filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-slate-900 font-medium" data-filter="productivity">Business &amp; Ops</button>
+          <button onclick="filterPortfolio('ai')" class="filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-slate-900 font-medium" data-filter="ai">AI &amp; Prompts</button>
+          <button onclick="filterPortfolio('education')" class="filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-slate-900 font-medium" data-filter="education">Learning &amp; Games</button>
+          <button onclick="filterPortfolio('lifestyle')" class="filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-slate-900 font-medium" data-filter="lifestyle">Lifestyle &amp; Travel</button>
+        </div>
+      </div>
+
+      <!-- App Grid Container (18 Apps) -->
+      <div id="portfolioGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- App 1: conceptpromptgen.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">AI Utility</span>
+              <a href="https://conceptpromptgen.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">conceptpromptgen.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Algorithmic prompt generator converting rough creative sparks into high-fidelity AI generation instructions.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Live Web App</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 2: characterpromptgen.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">AI &amp; Character</span>
+              <a href="https://characterpromptgen.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">characterpromptgen.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Dedicated persona and character design scaffolding tool for writers, creators, and storyboard artists.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Creative AI</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 3: codeacademy.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="education">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-sky-700 bg-sky-50 border border-sky-200 px-2 py-0.5 rounded">EdTech</span>
+              <a href="https://codeacademy.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">codeacademy.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Interactive in-browser coding playground and exercise engine designed for rapid technical skills acquisition.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Interactive Web App</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 4: cmdgen.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="productivity">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded">Dev Utility</span>
+              <a href="https://cmdgen.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">cmdgen.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">CLI and bash command builder that translates plain human requests into syntax-checked terminal commands.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Developer Tool</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 5: supportcontrolhub.com -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="productivity">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">Operations SaaS</span>
+              <a href="https://supportcontrolhub.com" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">supportcontrolhub.com</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Centralized client support dashboard, status ticket coordination, and operational control matrix.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Client Platform</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 6: soletraderadmin.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="productivity">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">Solo Admin</span>
+              <a href="https://soletraderadmin.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">soletraderadmin.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Streamlined administrative dashboard tailored for sole traders: quotes, lightweight invoices, and mileage logging.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Business Suite</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 7: projectpal.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="productivity">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-sky-700 bg-sky-50 border border-sky-200 px-2 py-0.5 rounded">Workflow</span>
+              <a href="https://projectpal.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">projectpal.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Agile milestone tracker and lightweight collaborator hub built for zero-distraction project momentum.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Project Management</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 8: 30minutechef.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="lifestyle">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded">Culinary</span>
+              <a href="https://30minutechef.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">30minutechef.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Rapid recipe generator matching on-hand pantry ingredients to delicious, practical 30-minute meals.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Lifestyle Tool</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 9: webtemplategen.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="productivity">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">Scaffolding</span>
+              <a href="https://webtemplategen.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">webtemplategen.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Instant web layout generator providing clean, semantic starter code tailored to specific industry verticals.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Web Scaffolder</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 10: pythonpractice.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="education">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-sky-700 bg-sky-50 border border-sky-200 px-2 py-0.5 rounded">Coding Drills</span>
+              <a href="https://pythonpractice.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">pythonpractice.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Bite-sized Python algorithmic exercises and challenges with instant client-side code evaluation.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Educational Tool</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 11: socialcampaign.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="productivity">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">Marketing</span>
+              <a href="https://socialcampaign.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">socialcampaign.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Strategic social campaign timeline builder and structured post copy sequencing engine for small businesses.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Campaign Planner</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 12: quizfizz.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="education">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-yellow-800 bg-yellow-50 border border-yellow-200 px-2 py-0.5 rounded">Gamified Quiz</span>
+              <a href="https://quizfizz.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">quizfizz.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Dynamic, responsive multi-round quiz engine supporting custom question decks and real-time score keeping.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Interactive Game</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 13: translateforme.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="productivity">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded">Translation</span>
+              <a href="https://translateforme.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">translateforme.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Lightweight, instant multilingual translation assistant with smart phrasing contextualization.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Utility App</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 14: pursuitoftrivia.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="education">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded">Trivia Platform</span>
+              <a href="https://pursuitoftrivia.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">pursuitoftrivia.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Rich knowledge contest platform designed with fluid animations, competitive timers, and themed categories.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Trivia Experience</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 15: wanderersmate.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="lifestyle">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">Travel Planner</span>
+              <a href="https://wanderersmate.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">wanderersmate.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Outdoor exploration and road trip planner mapping itinerary milestones, camping stops, and kit checklists.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Travel Companion</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 16: sceneryprompt.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl border border-slate-200 group transition-all flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">Environment AI</span>
+              <a href="https://sceneryprompt.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">sceneryprompt.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Specialized natural environment and landscape descriptor engine for visual artists and game world designers.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Prompt Engine</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 17: architectprompt.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">Spatial Design</span>
+              <a href="https://architectprompt.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">architectprompt.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Architectural style synthesizer and structural prompt generator for interior and spatial visualization.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Spatial Tool</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+        <!-- App 18: masterpromptengine.app -->
+        <div class="portfolio-item card-light p-5 rounded-xl group transition-all flex flex-col justify-between" data-category="ai">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">Prompt Architecture</span>
+              <a href="https://masterpromptengine.app" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-amber-600 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">masterpromptengine.app</h3>
+            <p class="text-slate-600 text-xs mt-1 leading-relaxed">Unified prompt engineering platform synthesizing multi-tier instructions for advanced language models.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Master Engine</span>
+            <span class="text-emerald-600 font-medium"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Active</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= DIGITAL SOVEREIGNTY & TERMS OF CRAFT (LIGHT THEME) ================= -->
+  <section id="sovereignty" class="py-20 border-t border-slate-200 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="p-8 sm:p-10 rounded-3xl bg-slate-50 border-2 border-emerald-500/40 relative shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-200">
+          <div>
+            <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase">Clear Principles</span>
+            <h2 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-1">The Digital Sovereignty Guarantee</h2>
+            <p class="text-xs text-slate-500 mt-1">You own what you pay for. No trapped assets, no hidden locks.</p>
+          </div>
+          <button onclick="toggleModal('termsModal')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 border border-slate-300 transition-colors shadow-sm">
+            <i class="fa-solid fa-file-contract text-emerald-600"></i>
+            <span>Read Full Terms Template</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-certificate text-emerald-600 mt-1"></i>
+              <div>
+                <h4 class="font-bold text-slate-900">Direct Primary Deeds</h4>
+                <p class="text-xs text-slate-600 mt-0.5">Your domain, DNS records, and hosting accounts are registered under your business name and email. I hold technician keys only.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-ban text-rose-500 mt-1"></i>
+              <div>
+                <h4 class="font-bold text-slate-900">No Hostage Code</h4>
+                <p class="text-xs text-slate-600 mt-0.5">Projects are crafted with clean, open web standards (HTML5/Tailwind/JS). Any skilled developer can step in without friction.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-receipt text-amber-600 mt-1"></i>
+              <div>
+                <h4 class="font-bold text-slate-900">Upfront Milestone Billing</h4>
+                <p class="text-xs text-slate-600 mt-0.5">Every build has a scoped checklist, target delivery timeframe, and fixed fee. You never pay unexpected surprise overages.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-handshake-angle text-sky-600 mt-1"></i>
+              <div>
+                <h4 class="font-bold text-slate-900">Elastic On-Demand Engagement</h4>
+                <p class="text-xs text-slate-600 mt-0.5">After launch, support expands or contracts with your needs: 1 hour a month or 10 hours a week during your busy season.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONSULTATION & BOOKING SECTION (LIGHT THEME & EXPANDED OPTIONS) ================= -->
+<section id="booking" class="py-20 border-t border-slate-200 bg-slate-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Start Without Pressure</span>
+      <h2 class="mt-2 font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+        Let’s Grab a Coffee &amp; Talk Shop
+      </h2>
+      <p class="mt-3 text-slate-600 text-sm sm:text-base">
+        No generic contact form with an empty message box. Choose how and when you'd like to connect—whether it’s a free 30-minute face-to-face chat at a local cafe, a library hub, your workplace, or a quick phone call.
+      </p>
+    </div>
+
+    <!-- Booking Form Card (Light Theme) -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl">
+      <!-- REPLACE 'YOUR_FORMSPREE_ID_HERE' with your real endpoint ID (e.g., https://formspree.io/f/mvoeabcd) -->
+      <form id="consultationForm" action="https://formspree.io/f/mnpppoew" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Full Name -->
+          <div>
+            <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+              Your Full Name <span class="text-amber-600">*</span>
+            </label>
+            <input type="text" id="fullName" name="fullName" required placeholder="e.g. Alex Morgan" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-colors">
+          </div>
+
+          <!-- Email Address -->
+          <div>
+            <label for="emailAddr" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+              Email Address <span class="text-amber-600">*</span>
+            </label>
+            <!-- Formspree automatically uses 'email' or '_replyto' to set the reply-to header -->
+            <input type="email" id="emailAddr" name="email" required placeholder="alex@localbusiness.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-colors">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Phone Number (Optional) -->
+          <div>
+            <label for="phoneNumber" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+              Phone Number <span class="text-slate-400 font-normal lowercase">(optional)</span>
+            </label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="0400 000 000" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-colors">
+          </div>
+
+          <!-- Best Time of Day to Connect -->
+          <div>
+            <label for="timeOfDay" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+              Best Time to Connect
+            </label>
+            <select id="timeOfDay" name="bestTimeToConnect" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-colors">
+              <option value="Morning (8:30 AM – 11:30 AM)">Morning (8:30 AM – 11:30 AM)</option>
+              <option value="Lunchtime (11:30 AM – 1:30 PM)">Lunchtime (11:30 AM – 1:30 PM)</option>
+              <option value="Afternoon (1:30 PM – 4:30 PM)" selected>Afternoon (1:30 PM – 4:30 PM)</option>
+              <option value="Late Afternoon / Evening (4:30 PM – 6:30 PM)">Late Afternoon / Evening (4:30 PM – 6:30 PM)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Preferred Contact Method -->
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+            Preferred Contact Channel
+          </label>
+          <div class="grid grid-cols-3 gap-3">
+            <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-slate-300 text-xs">
+              <input type="radio" name="contactChannel" value="Email" checked class="text-amber-600 focus:ring-amber-500">
+              <span class="text-slate-800 font-medium">Email</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-slate-300 text-xs">
+              <input type="radio" name="contactChannel" value="Phone" class="text-amber-600 focus:ring-amber-500">
+              <span class="text-slate-800 font-medium">Phone Call</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-slate-300 text-xs">
+              <input type="radio" name="contactChannel" value="Both" class="text-amber-600 focus:ring-amber-500">
+              <span class="text-slate-800 font-medium">Either</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Meeting Format / Coffee -->
+          <div>
+            <label for="meetingType" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+              Consultation Format
+            </label>
+            <select id="meetingType" name="consultationFormat" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-colors">
+              <option value="Local Coffee / Public Hub (Free 30 Mins)">☕ Free 30-min Coffee Chat (Local Cafe, Library, or Hub)</option>
+              <option value="On-Site at Your Business">📍 At Your Place of Business</option>
+              <option value="Direct Phone Call">📞 Direct Phone Consultation</option>
+              <option value="Video Call (Google Meet)">💻 Video Call (Google Meet)</option>
+              <option value="Email Exchange Only">✉️ Purely via Email</option>
+            </select>
+          </div>
+
+          <!-- Topic of Inquiry: Comprehensive & Expansive Options -->
+          <div>
+            <label for="inquiryTopic" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
+              Primary Goal / Topic of Inquiry
+            </label>
+            <select id="inquiryTopic" name="inquiryTopic" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-colors">
+              <option value="☕ Free 30-Min Coffee Chat (Local cafe, library, or workplace)">☕ Initial Free 30-Min Coffee Chat (Local cafe, library, or your workplace)</option>
+              <option value="🔍 Free 'Under the Hood' Tech Stack & Speed Audit">🔍 Free 'Under the Hood' Tech Stack &amp; Speed Audit</option>
+              <option value="🌐 Clean-Slate Website Build (Modern, lightweight, mobile-first)">🌐 Clean-Slate Website Build (Modern, lightweight, mobile-first)</option>
+              <option value="⚡ Modernize & Migrate Existing Site (Serverless/zero-cost hosting)">⚡ Modernize &amp; Migrate Existing Site (Move to ultra-fast serverless/zero-cost hosting)</option>
+              <option value="🔑 Digital Sovereignty & Hosting Takeover (Reclaiming domain/keys)">🔑 Digital Sovereignty &amp; Hosting Takeover (Reclaiming domain/keys from past agency)</option>
+              <option value="🛠️ Keep & Maintain Current System (Ongoing care for Shopify/WordPress)">🛠️ Keep &amp; Maintain Current System (Ongoing care for Shopify, WordPress, or booking tools)</option>
+              <option value="🧮 Custom Interactive Web Utility (Quote calculator, lead tool)">🧮 Custom Interactive Web Utility (Quote calculator, lead estimator, bespoke tool)</option>
+              <option value="📍 Local Search & Google Footprint (Google Business, Maps, SEO)">📍 Local Search &amp; Google Footprint (Google Business Profile, Maps, SEO audit)</option>
+              <option value="📧 Email Newsletter & Lifecycle Marketing (MailerLite/Brevo setup)">📧 Email Newsletter &amp; Lifecycle Marketing (MailerLite/Brevo setup, template &amp; list capture)</option>
+              <option value="📱 Social Media Content & Campaign Assets (Brand templates, promo rollout)">📱 Social Media Content Creation &amp; Campaign Assets (Brand templates, promo rollout)</option>
+              <option value="🎨 Digital Brand Identity & Graphic Refresh (Logo, flyers, rate cards)">🎨 Digital Brand Identity &amp; Graphic Refresh (Logo, typography, flyers, rate cards)</option>
+              <option value="⏱️ On-Demand Elastic Support (1 hr/month to 10 hrs/week sprint)">⏱️ On-Demand Elastic Support (From 1 hr/month checkup to 10 hrs/week sprint)</option>
+              <option value="💬 Other / Let's Discuss Options">💬 Other / Let's Discuss Options</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Human Verification Challenge -->
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-800 flex items-center gap-2">
+              <i class="fa-solid fa-user-shield text-emerald-600"></i>
+              <span>Human Verification Check</span>
+            </span>
+            <span id="captchaHint" class="text-[11px] text-slate-500">Quick math check to prevent spam</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="px-4 py-2 rounded-xl bg-white text-slate-900 font-mono font-bold text-sm tracking-wider select-none border border-slate-200 shadow-sm" id="captchaQuestion">
+              7 + 5 = ?
+            </div>
+            <input type="number" id="captchaAnswer" required placeholder="Answer" class="w-28 px-3 py-2 rounded-xl bg-white border border-slate-200 text-slate-900 text-center font-mono text-sm focus:outline-none focus:border-amber-500 shadow-sm">
+            <button type="button" onclick="generateCaptcha()" class="p-2 text-slate-500 hover:text-slate-800 text-xs" title="Regenerate Challenge">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+          </div>
+          <p id="captchaError" class="text-[11px] text-rose-600 hidden">Incorrect result. Please solve the simple arithmetic above.</p>
+        </div>
+
+        <!-- Status Alerts for Form Submission -->
+        <div id="formStatusSuccess" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-circle-check text-emerald-600"></i>
+          <span>Thank you! Your request has been sent successfully. I'll get back to you within 24 hours.</span>
+        </div>
+        
+        <div id="formStatusError" class="hidden p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-circle-exclamation text-rose-600"></i>
+          <span id="formStatusErrorMessage">Something went wrong submitting your form. Please try again or reach out directly.</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submitBtn" class="w-full py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-base shadow-lg transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
+          <i id="submitBtnIcon" class="fa-solid fa-paper-plane text-amber-400 group-hover:translate-x-1 transition-transform"></i>
+          <span id="submitBtnText">Send Consultation Request</span>
+        </button>
+
+        <p class="text-center text-xs text-slate-500">
+          I respond within 24 business hours directly. No marketing funnels, no third-party sales callers.
+        </p>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ================= TERMS OF CRAFT MODAL (LIGHT THEME) ================= -->
+  <div id="termsModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="bg-white max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-slate-200 max-h-[85vh] overflow-y-auto space-y-5 text-sm shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <h3 class="text-xl font-bold font-display text-slate-900 flex items-center gap-2">
+          <i class="fa-solid fa-file-signature text-amber-600"></i> Standard Terms of Craft
+        </h3>
+        <button onclick="toggleModal('termsModal')" class="text-slate-400 hover:text-slate-600 p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs text-slate-600 leading-relaxed">
+        <div>
+          <h4 class="font-bold text-slate-900 uppercase text-[11px] tracking-wider mb-1">1. Complete Digital Sovereignty</h4>
+          <p>The client is always the sole legal owner of their domain name, DNS records, and third-party hosting credentials. All accounts are configured under the client’s designated email address. The practitioner operates solely with temporary or long-term administrative privileges.</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 uppercase text-[11px] tracking-wider mb-1">2. Transparent Milestone Billing</h4>
+          <p>Initial builds and migration projects are performed against a defined scope sheet and fixed milestone sum. Work begins upon deposit approval, with final assets released upon project sign-off. Change requests outside the agreed milestone are billed via written task quotes prior to commencement.</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 uppercase text-[11px] tracking-wider mb-1">3. Elastic Ongoing Maintenance</h4>
+          <p>Ongoing maintenance is elastic and strictly non-hostage. The client may schedule as little as 1 hour per quarter or scale up to 10 hours per week for campaign initiatives without long-term binding lock-ins.</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 uppercase text-[11px] tracking-wider mb-1">4. Open Standards &amp; Portability</h4>
+          <p>Code and design deliverables utilize standard, portable web specifications (HTML5, modern CSS, standards-compliant JS). No obscure proprietary site builders or locked frameworks are enforced.</p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100 flex justify-end">
+        <button onclick="toggleModal('termsModal')" class="px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BOOKING SUCCESS CONFIRMATION MODAL (LIGHT THEME) ================= -->
+  <div id="successModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="bg-white max-w-lg w-full rounded-3xl p-6 sm:p-8 border border-emerald-300 text-center space-y-5 shadow-2xl">
+      <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-200 mx-auto flex items-center justify-center text-3xl">
+        <i class="fa-solid fa-mug-hot"></i>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold font-display text-slate-900">Consultation Request Received!</h3>
+        <p class="text-slate-600 text-xs mt-2" id="successDetails">
+          Thank you. I have received your consultation preferences and will review them shortly.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-left text-xs space-y-2 font-mono text-slate-700" id="receiptSummary">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <button onclick="toggleModal('successModal')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-colors">
+        Got it, thank you
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING PERSISTENT LIVE TICKER (LIGHT GLASSMORPHISM) ================= -->
+  <aside class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 transition-all duration-300 shadow-lg" id="bottomTickerContainer">
+    <div class="max-w-7xl mx-auto px-4 h-12 flex items-center justify-between text-xs">
+      
+      <!-- Left Pill Indicator -->
+      <div class="flex items-center gap-2 shrink-0 pr-4 border-r border-slate-200">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+        <span class="font-bold text-slate-700 hidden sm:inline">Live Apps:</span>
+        <span class="text-[11px] text-amber-700 font-mono font-bold">18 Online</span>
+      </div>
+
+      <!-- Ticker Scrolling Marquee / Swiper Track -->
+      <div class="overflow-hidden relative w-full mx-2 marquee-container">
+        <div class="flex gap-6 whitespace-nowrap animate-marquee marquee-content py-1" id="tickerTrack">
+          <!-- Live Domains Repeated for Continuous Flow -->
+          <a href="https://conceptpromptgen.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-terminal text-amber-600 text-[10px]"></i> conceptpromptgen.app
+          </a>
+          <a href="https://characterpromptgen.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-user-astronaut text-sky-600 text-[10px]"></i> characterpromptgen.app
+          </a>
+          <a href="https://codeacademy.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-code text-emerald-600 text-[10px]"></i> codeacademy.app
+          </a>
+          <a href="https://cmdgen.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-square-binary text-purple-600 text-[10px]"></i> cmdgen.app
+          </a>
+          <a href="https://supportcontrolhub.com" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-headset text-rose-600 text-[10px]"></i> supportcontrolhub.com
+          </a>
+          <a href="https://soletraderadmin.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-briefcase text-amber-600 text-[10px]"></i> soletraderadmin.app
+          </a>
+          <a href="https://projectpal.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-diagram-project text-sky-600 text-[10px]"></i> projectpal.app
+          </a>
+          <a href="https://30minutechef.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-utensils text-orange-600 text-[10px]"></i> 30minutechef.app
+          </a>
+          <a href="https://webtemplategen.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-layer-group text-blue-600 text-[10px]"></i> webtemplategen.app
+          </a>
+          <a href="https://pythonpractice.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-brands fa-python text-amber-600 text-[10px]"></i> pythonpractice.app
+          </a>
+          <a href="https://socialcampaign.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-bullhorn text-pink-600 text-[10px]"></i> socialcampaign.app
+          </a>
+          <a href="https://quizfizz.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-puzzle-piece text-amber-600 text-[10px]"></i> quizfizz.app
+          </a>
+          <a href="https://translateforme.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-language text-indigo-600 text-[10px]"></i> translateforme.app
+          </a>
+          <a href="https://pursuitoftrivia.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-brain text-teal-600 text-[10px]"></i> pursuitoftrivia.app
+          </a>
+          <a href="https://wanderersmate.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-compass text-emerald-600 text-[10px]"></i> wanderersmate.app
+          </a>
+          <a href="https://sceneryprompt.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-mountain-sun text-emerald-600 text-[10px]"></i> sceneryprompt.app
+          </a>
+          <a href="https://architectprompt.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-landmark-dome text-amber-600 text-[10px]"></i> architectprompt.app
+          </a>
+          <a href="https://masterpromptengine.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-microchip text-purple-600 text-[10px]"></i> masterpromptengine.app
+          </a>
+
+          <!-- Duplicated for Infinite Loop Continuity -->
+          <a href="https://conceptpromptgen.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-terminal text-amber-600 text-[10px]"></i> conceptpromptgen.app
+          </a>
+          <a href="https://characterpromptgen.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-user-astronaut text-sky-600 text-[10px]"></i> characterpromptgen.app
+          </a>
+          <a href="https://codeacademy.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-code text-emerald-600 text-[10px]"></i> codeacademy.app
+          </a>
+          <a href="https://cmdgen.app" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i class="fa-solid fa-square-binary text-purple-600 text-[10px]"></i> cmdgen.app
+          </a>
+        </div>
+      </div>
+
+      <!-- Minimise / Close Ticker Control -->
+      <button onclick="toggleTicker()" id="tickerToggleBtn" class="shrink-0 pl-3 text-slate-400 hover:text-slate-700 transition-colors" title="Toggle Ticker">
+        <i class="fa-solid fa-chevron-down text-xs"></i>
+      </button>
+
+    </div>
+  </aside>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // State Variables
+    let captchaExpectedResult = 0;
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      }
+    });
+
+    // Close mobile menu upon clicking links
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      });
+    });
+
+    // À La Carte Menu Tabs Switcher (Light Theme Style Updates)
+    function switchMenuCourse(courseKey) {
+      const courses = ['entree', 'main', 'dessert'];
+      courses.forEach(c => {
+        const contentEl = document.getElementById(`course-${c}`);
+        const tabEl = document.getElementById(`tab-${c}`);
+        if (c === courseKey) {
+          contentEl.classList.remove('hidden');
+          tabEl.classList.add('bg-white', 'text-slate-900', 'shadow-sm', 'border', 'border-slate-200');
+          tabEl.classList.remove('text-slate-600');
+        } else {
+          contentEl.classList.add('hidden');
+          tabEl.classList.remove('bg-white', 'text-slate-900', 'shadow-sm', 'border', 'border-slate-200');
+          tabEl.classList.add('text-slate-600');
+        }
+      });
+    }
+
+    // Portfolio Category Filtering
+    function filterPortfolio(category) {
+      const items = document.querySelectorAll('.portfolio-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      // Update button styling
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('bg-slate-900', 'text-white', 'font-semibold', 'shadow-sm');
+          btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+        } else {
+          btn.classList.remove('bg-slate-900', 'text-white', 'font-semibold', 'shadow-sm');
+          btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+        }
+      });
+
+      // Filter portfolio items
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (category === 'all' || itemCat === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Interactive Math Captcha Generator
+    function generateCaptcha() {
+      const n1 = Math.floor(Math.random() * 8) + 2;
+      const n2 = Math.floor(Math.random() * 9) + 1;
+      captchaExpectedResult = n1 + n2;
+      document.getElementById('captchaQuestion').textContent = `${n1} + ${n2} = ?`;
+      document.getElementById('captchaAnswer').value = '';
+      document.getElementById('captchaError').classList.add('hidden');
+    }
+
+    // Generic Modal Toggle
+    function toggleModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+
+    // Bottom Ticker Minimize / Maximize Toggle
+    let isTickerMinimized = false;
+    function toggleTicker() {
+      const ticker = document.getElementById('bottomTickerContainer');
+      const btn = document.getElementById('tickerToggleBtn');
+      if (!isTickerMinimized) {
+        ticker.style.transform = 'translateY(80%)';
+        btn.innerHTML = '<i class="fa-solid fa-chevron-up text-xs"></i>';
+        isTickerMinimized = true;
+      } else {
+        ticker.style.transform = 'translateY(0%)';
+        btn.innerHTML = '<i class="fa-solid fa-chevron-down text-xs"></i>';
+        isTickerMinimized = false;
+      }
+    }
+
+    // Form Submission & Validation Handler
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const userAnswer = parseInt(document.getElementById('captchaAnswer').value, 10);
+      const errorMsg = document.getElementById('captchaError');
+
+      if (userAnswer !== captchaExpectedResult) {
+        errorMsg.classList.remove('hidden');
+        return;
+      }
+
+      errorMsg.classList.add('hidden');
+
+      // Extract Form Values
+      const name = document.getElementById('fullName').value;
+      const email = document.getElementById('emailAddr').value;
+      const phone = document.getElementById('phoneNumber').value || 'Not provided';
+      const timeOfDay = document.getElementById('timeOfDay').value;
+      const contactChannel = document.querySelector('input[name="contactChannel"]:checked').value;
+      const meetingType = document.getElementById('meetingType').value;
+      const inquiryTopic = document.getElementById('inquiryTopic').value;
+
+      // Populate Receipt Modal
+      const receiptHTML = `
+        <div><strong class="text-slate-500">Client:</strong> ${name}</div>
+        <div><strong class="text-slate-500">Email:</strong> ${email}</div>
+        <div><strong class="text-slate-500">Phone:</strong> ${phone}</div>
+        <div><strong class="text-slate-500">Channel:</strong> ${contactChannel} (${timeOfDay})</div>
+        <div><strong class="text-slate-500">Meeting:</strong> ${meetingType}</div>
+        <div><strong class="text-slate-500">Topic:</strong> ${inquiryTopic}</div>
+      `;
+      document.getElementById('receiptSummary').innerHTML = receiptHTML;
+
+      // Reset form and show success modal
+      document.getElementById('consultationForm').reset();
+      generateCaptcha();
+      toggleModal('successModal');
+    }
+
+    // Initializer on window load
+    window.onload = function() {
+      generateCaptcha();
+    };
+  </script>
+</body>
+</html>
