@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sol & Salt Coastal Day Spa & Wellness Sanctuary | Surf Coast Victoria</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sand: {
+              50: '#FBF9F5',
+              100: '#F5EFEB',
+              200: '#EBDDCF',
+              300: '#DEC7B1',
+              400: '#CFAC8F',
+              500: '#B88D6C',
+            },
+            sage: {
+              50: '#F4F7F4',
+              100: '#E5EDE5',
+              200: '#CADBCA',
+              600: '#526E55',
+              800: '#2F4232',
+              900: '#1D2A1F',
+            },
+            coastal: {
+              driftwood: '#76675B',
+              ocean: '#415A63',
+              clay: '#C87D55',
+              terracotta: '#B66038',
+              charcoal: '#222320',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FBF9F5;
+      color: #222320;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    .serif-title {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(222, 199, 177, 0.35);
+    }
+
+    .glass-nav {
+      background: rgba(251, 249, 245, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #F5EFEB;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #DEC7B1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="selection:bg-sand-300 selection:text-coastal-charcoal">
+
+  <!-- Toast Notification System -->
+  <div id="toast-container" class="fixed top-5 right-5 z-[9999] flex flex-col gap-3 pointer-events-none"></div>
+
+  <!-- Announcement Bar -->
+  <div class="bg-sage-900 text-sand-100 text-xs tracking-widest uppercase py-2.5 px-4 text-center font-medium">
+    <span class="inline-flex items-center gap-2">
+      <i class="fa-solid fa-sparkles text-sand-300 text-[10px]"></i>
+      Autumn Surf Coast Escapes: Complimentary Hydro-Bath Enhancement on Midweek Rituals
+      <a href="#booking-estimator" class="underline ml-2 hover:text-white transition-colors">Curate Experience</a>
+    </span>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header id="main-header" class="sticky top-0 z-50 glass-nav border-b border-sand-200/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex flex-col group">
+        <span class="serif-title text-2xl sm:text-3xl font-medium tracking-wider text-coastal-charcoal group-hover:text-coastal-terracotta transition-colors">
+          SOL <span class="italic font-light text-coastal-clay">&</span> SALT
+        </span>
+        <span class="text-[9px] tracking-[0.28em] uppercase text-coastal-driftwood font-semibold -mt-1">
+          Coastal Day Spa • Surf Coast
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-7 text-xs font-medium uppercase tracking-[0.18em] text-coastal-charcoal">
+        <a href="#philosophy" class="hover:text-coastal-clay transition-colors">Philosophy</a>
+        <a href="#treatments" class="hover:text-coastal-clay transition-colors">Treatments</a>
+        <a href="#packages" class="hover:text-coastal-clay transition-colors">Signature Packages</a>
+        <a href="#bathhouse" class="hover:text-coastal-clay transition-colors">Bathhouse & Thermal</a>
+        <a href="#booking-estimator" class="hover:text-coastal-clay transition-colors">Custom Rituals</a>
+        <a href="#sanctuary" class="hover:text-coastal-clay transition-colors">The Haven</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <button onclick="openBookingModal('General Experience Inquire')" class="hidden sm:inline-flex items-center gap-2 bg-sage-800 hover:bg-coastal-terracotta text-white text-xs font-medium uppercase tracking-widest px-5 py-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+          <span>Reserve Experience</span>
+          <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" aria-label="Toggle menu" class="lg:hidden p-2.5 rounded-full text-coastal-charcoal hover:bg-sand-100 transition-colors">
+          <i class="fa-solid fa-bars-staggered text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-sand-50 border-b border-sand-200 px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col space-y-4 text-sm uppercase tracking-widest font-medium">
+        <a href="#philosophy" onclick="toggleMobileMenu()" class="py-1 hover:text-coastal-clay">Philosophy</a>
+        <a href="#treatments" onclick="toggleMobileMenu()" class="py-1 hover:text-coastal-clay">Treatment Menu</a>
+        <a href="#packages" onclick="toggleMobileMenu()" class="py-1 hover:text-coastal-clay">Signature Packages</a>
+        <a href="#bathhouse" onclick="toggleMobileMenu()" class="py-1 hover:text-coastal-clay">Bathhouse & Thermal</a>
+        <a href="#booking-estimator" onclick="toggleMobileMenu()" class="py-1 hover:text-coastal-clay">Ritual Estimator</a>
+        <a href="#sanctuary" onclick="toggleMobileMenu()" class="py-1 hover:text-coastal-clay">Surf Coast Haven</a>
+        <button onclick="toggleMobileMenu(); openBookingModal('Mobile Menu Quick Book')" class="w-full mt-4 text-center bg-sage-800 text-white py-3 rounded-full uppercase text-xs tracking-widest font-medium">
+          Reserve Treatment
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-24 sm:py-32">
+    <!-- Coastal Background with Soft Overlays -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2000&q=80" 
+           alt="Surf Coast Coastal Day Spa Sanctuary" 
+           class="w-full h-full object-cover object-center filter brightness-[0.9] saturate-[0.85] scale-105 transform animate-[pulse_10s_ease-in-out_infinite]"
+           onerror="this.src='https://placehold.co/1920x1080/DEC7B1/222320?text=Surf+Coast+Spa+Retreat'">
+      <div class="absolute inset-0 bg-gradient-to-t from-sand-50 via-sand-50/70 to-sage-900/40"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center flex flex-col items-center">
+      
+      <!-- Pill Badge -->
+      <div class="inline-flex items-center gap-2 bg-sand-100/90 border border-sand-300 text-sage-900 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.22em] mb-6 shadow-sm">
+        <i class="fa-solid fa-compass text-coastal-clay"></i>
+        Bells Beach Hinterland Sanctuary • Surf Coast, VIC
+      </div>
+
+      <h1 class="serif-title text-4xl sm:text-6xl md:text-7xl font-normal leading-tight text-coastal-charcoal mb-6 max-w-4xl">
+        Restore in rhythm with the <span class="italic font-light text-coastal-terracotta">ocean's tide</span> & coastal wild.
+      </h1>
+
+      <p class="text-base sm:text-lg text-coastal-driftwood max-w-2xl font-light leading-relaxed mb-10">
+        An immersive beauty therapy and hydrothermal wellness day sanctuary perched where ancient eucalyptus meets the Southern Ocean salt breeze.
+      </p>
+
+      <!-- Primary CTAs -->
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+        <a href="#treatments" class="w-full sm:w-auto px-8 py-4 rounded-full bg-sage-800 hover:bg-sage-900 text-white font-medium text-xs uppercase tracking-[0.2em] shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 text-center">
+          Explore Treatment Menu
+        </a>
+        <a href="#booking-estimator" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/90 hover:bg-white text-coastal-charcoal border border-sand-300 font-medium text-xs uppercase tracking-[0.2em] shadow-sm hover:shadow transition-all duration-300 text-center">
+          Design Custom Ritual
+        </a>
+      </div>
+
+      <!-- Highlight Badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 w-full max-w-4xl text-left">
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-sand-100 flex items-center justify-center text-coastal-clay flex-shrink-0">
+            <i class="fa-solid fa-droplet text-sm"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-coastal-charcoal">Mineral Pools</h4>
+            <p class="text-[11px] text-coastal-driftwood">Southern Ocean Magnesium</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-sand-100 flex items-center justify-center text-sage-600 flex-shrink-0">
+            <i class="fa-solid fa-leaf text-sm"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-coastal-charcoal">Native Botanicals</h4>
+            <p class="text-[11px] text-coastal-driftwood">Wild Lemon Myrtle & Kelp</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-sand-100 flex items-center justify-center text-coastal-clay flex-shrink-0">
+            <i class="fa-solid fa-spa text-sm"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-coastal-charcoal">Holistic Salon</h4>
+            <p class="text-[11px] text-coastal-driftwood">Clean Lash, Brow & Nail</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-sand-100 flex items-center justify-center text-sage-600 flex-shrink-0">
+            <i class="fa-solid fa-temperature-arrow-up text-sm"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-coastal-charcoal">Cedar Thermal</h4>
+            <p class="text-[11px] text-coastal-driftwood">Infrared & Cold Plunge</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Spa Philosophy Section -->
+  <section id="philosophy" class="py-20 bg-sand-100/70 border-y border-sand-200">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=80" 
+                   alt="Botanical massage and relaxation" 
+                   class="w-full h-full object-cover"
+                   onerror="this.src='https://placehold.co/600x750/EBDDCF/222320?text=Coastal+Botanicals'">
+            </div>
+            <!-- Accent Badge -->
+            <div class="absolute -bottom-6 -right-4 glass-card p-5 rounded-2xl shadow-xl max-w-[220px]">
+              <span class="serif-title text-3xl font-light text-coastal-terracotta">100%</span>
+              <p class="text-xs font-medium text-coastal-charcoal mt-1">Sustainably harvested Australian coastal botanicals</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 text-coastal-clay font-semibold uppercase tracking-[0.2em] text-xs mb-3">
+            <span class="w-6 h-[1px] bg-coastal-clay"></span>
+            Our Grounding Ethos
+          </div>
+          <h2 class="serif-title text-3xl sm:text-5xl text-coastal-charcoal leading-tight mb-6">
+            Where the elements of surf, stone, and sun reset your nervous system.
+          </h2>
+          <p class="text-coastal-driftwood text-base sm:text-lg font-light leading-relaxed mb-6">
+            Sol & Salt was conceived as an intentional decompression space along Victoria’s majestic coastline. Positioned just moments from the rugged cliffs of Bells Beach, our sanctuary mirrors the restorative rhythm of maritime waters.
+          </p>
+          <p class="text-coastal-driftwood text-sm leading-relaxed mb-8">
+            Every facial, massage, and hydrotherapy soak is enriched with pure Torquay sea salt, wild organic coastal tea tree, cold-pressed macadamia oils, and rich Tasmanian kelp bio-actives. We step away from sterile clinical atmospheres to deliver an earthy, sensory sanctuary that reconnects body and soul.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-sand-200">
+            <div>
+              <h5 class="serif-title text-xl text-coastal-charcoal">Pure Ocean Minerals</h5>
+              <p class="text-xs text-coastal-driftwood mt-1">High-potency magnesium to alleviate muscle tension & fatigue.</p>
+            </div>
+            <div>
+              <h5 class="serif-title text-xl text-coastal-charcoal">Clean Active Beauty</h5>
+              <p class="text-xs text-coastal-driftwood mt-1">Non-toxic, high-performance serums tailored to coastal climates.</p>
+            </div>
+            <div>
+              <h5 class="serif-title text-xl text-coastal-charcoal">Slow Thermal Rhythm</h5>
+              <p class="text-xs text-coastal-driftwood mt-1">Alternating heat and cold cycles to supercharge lymphatic flow.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Treatment Menu (Interactive Tabbed Selector) -->
+  <section id="treatments" class="py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 text-coastal-terracotta font-semibold uppercase tracking-[0.2em] text-xs mb-3">
+          <i class="fa-solid fa-feather"></i>
+          Tailored Restorative Menu
+        </div>
+        <h2 class="serif-title text-4xl sm:text-5xl text-coastal-charcoal mb-4">
+          Treatments Designed for Pure Radiance
+        </h2>
+        <p class="text-coastal-driftwood text-sm sm:text-base font-light">
+          Choose a restorative journey tailored to skin nourishment, deep muscular release, or complete botanical indulgence.
+        </p>
+
+        <!-- Category Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8 p-1.5 bg-sand-100 rounded-full max-w-2xl mx-auto border border-sand-200">
+          <button onclick="switchCategory('facials')" id="tab-facials" class="category-tab active-tab px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 bg-white text-coastal-charcoal shadow-sm">
+            Facials & Skin
+          </button>
+          <button onclick="switchCategory('body')" id="tab-body" class="category-tab px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 text-coastal-driftwood hover:text-coastal-charcoal">
+            Massage & Body
+          </button>
+          <button onclick="switchCategory('bathhouse')" id="tab-bathhouse" class="category-tab px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 text-coastal-driftwood hover:text-coastal-charcoal">
+            Hydro & Thermal
+          </button>
+          <button onclick="switchCategory('salon')" id="tab-salon" class="category-tab px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 text-coastal-driftwood hover:text-coastal-charcoal">
+            Salon & Grooming
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div id="treatments-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <!-- Custom Consultation Note -->
+      <div class="mt-14 p-6 glass-card rounded-3xl border border-sand-300 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-800 text-xl flex-shrink-0">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <div>
+            <h4 class="serif-title text-xl text-coastal-charcoal">Looking for a Bespoke Skin Diagnosis?</h4>
+            <p class="text-xs text-coastal-driftwood">Our dermal specialists customize treatment oils and pressure profiles before every session.</p>
+          </div>
+        </div>
+        <button onclick="openBookingModal('Complimentary Skin Consultation')" class="whitespace-nowrap px-6 py-3 bg-sand-200 hover:bg-sand-300 text-coastal-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-colors">
+          Request Skin Chat
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Signature Packages & Couples Section -->
+  <section id="packages" class="py-24 bg-sand-100/60 border-t border-sand-200 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-coastal-clay font-semibold uppercase tracking-[0.2em] text-xs">Unrushed Half & Full Day Immersion</span>
+        <h2 class="serif-title text-4xl sm:text-5xl text-coastal-charcoal mt-2 mb-4">
+          Signature Surf Coast Rituals
+        </h2>
+        <p class="text-coastal-driftwood text-sm font-light">
+          Harmonized combinations of thermal soaking, skin polishing, and restorative massage.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Package 1 -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-sand-200 flex flex-col justify-between group">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <span class="text-[11px] font-bold uppercase tracking-widest text-coastal-terracotta bg-sand-100 px-3 py-1 rounded-full">
+                Most Popular
+              </span>
+              <span class="serif-title text-2xl font-semibold text-coastal-charcoal">$340 <span class="text-xs font-sans text-coastal-driftwood">AUD</span></span>
+            </div>
+            <h3 class="serif-title text-2xl text-coastal-charcoal group-hover:text-coastal-terracotta transition-colors">The Ocean Mist Awakening</h3>
+            <p class="text-xs text-coastal-driftwood font-medium tracking-wide mt-1 mb-4">Duration: 2.5 Hours</p>
+            <p class="text-xs text-coastal-driftwood leading-relaxed mb-6">
+              A sensory rejuvenation inspired by the high surf. Begins with a full body wild mint and sea salt scrub, followed by a warm botanical oil massage and custom marine collagen facial.
+            </p>
+            <ul class="text-xs text-coastal-charcoal space-y-2.5 mb-8">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sage-600 text-[10px]"></i> 30m Coastal Pink Salt Exfoliation
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sage-600 text-[10px]"></i> 60m Deep Restorative Tension Massage
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sage-600 text-[10px]"></i> 60m Marine Algae Glow Facial
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sage-600 text-[10px]"></i> Native Bush Herb Tea Ceremony
+              </li>
+            </ul>
+          </div>
+          <button onclick="openBookingModal('The Ocean Mist Awakening Package - $340')" class="w-full py-3.5 rounded-full border border-coastal-charcoal text-coastal-charcoal hover:bg-coastal-charcoal hover:text-white transition-all text-xs font-semibold uppercase tracking-wider text-center">
+            Reserve Awakening
+          </button>
+        </div>
+
+        <!-- Package 2 (Featured) -->
+        <div class="bg-sage-900 text-sand-50 rounded-3xl p-8 shadow-2xl relative flex flex-col justify-between transform lg:-translate-y-3">
+          <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-coastal-terracotta text-white text-[10px] uppercase font-bold tracking-widest px-4 py-1 rounded-full shadow">
+            Sanctuary Signature
+          </div>
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <span class="text-[11px] font-bold uppercase tracking-widest text-sand-300 bg-sage-800 px-3 py-1 rounded-full">
+                Couples / Duo Friendly
+              </span>
+              <span class="serif-title text-2xl font-semibold text-sand-100">$480 <span class="text-xs font-sans text-sand-300">AUD pp</span></span>
+            </div>
+            <h3 class="serif-title text-2xl text-sand-100">Hinterland Stone & Magnesium Melt</h3>
+            <p class="text-xs text-sand-300 font-medium tracking-wide mt-1 mb-4">Duration: 3.5 Hours</p>
+            <p class="text-xs text-sand-200/90 leading-relaxed mb-6">
+              An unhurried sensory experience. Includes 45 minutes in our private stone magnesium plunge pool, followed by basalt stone tension release and deep scalp mud wrap.
+            </p>
+            <ul class="text-xs text-sand-200 space-y-2.5 mb-8">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sand-300 text-[10px]"></i> 45m Private Heated Mineral Tub with Eucalyptus
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sand-300 text-[10px]"></i> 75m Heated Basalt Stone Full Body Massage
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sand-300 text-[10px]"></i> 45m Australian Clay & Sea-Kelp Scalp Mask
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sand-300 text-[10px]"></i> Coastal Grazing Platter & Sparkling Kombucha
+              </li>
+            </ul>
+          </div>
+          <button onclick="openBookingModal('Hinterland Stone & Magnesium Melt - $480')" class="w-full py-3.5 rounded-full bg-sand-200 hover:bg-sand-100 text-coastal-charcoal transition-all text-xs font-semibold uppercase tracking-wider text-center">
+            Reserve Signature Melt
+          </button>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-sand-200 flex flex-col justify-between group">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <span class="text-[11px] font-bold uppercase tracking-widest text-coastal-clay bg-sand-100 px-3 py-1 rounded-full">
+                Express Radiance
+              </span>
+              <span class="serif-title text-2xl font-semibold text-coastal-charcoal">$265 <span class="text-xs font-sans text-coastal-driftwood">AUD</span></span>
+            </div>
+            <h3 class="serif-title text-2xl text-coastal-charcoal group-hover:text-coastal-terracotta transition-colors">Duo Coastal Solitude</h3>
+            <p class="text-xs text-coastal-driftwood font-medium tracking-wide mt-1 mb-4">Duration: 105 Minutes</p>
+            <p class="text-xs text-coastal-driftwood leading-relaxed mb-6">
+              Ideal for mothers and daughters, partners, or best friends seeking a quick ocean getaway. Features synchronous side-by-side treatments in our Cedar suite.
+            </p>
+            <ul class="text-xs text-coastal-charcoal space-y-2.5 mb-8">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sage-600 text-[10px]"></i> Side-by-Side 60m Aromatherapy Oil Massage
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sage-600 text-[10px]"></i> 45m Refresh Botanics Hydration Facial
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sage-600 text-[10px]"></i> Glass of Local Otway Artisanal Sparkling
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-sage-600 text-[10px]"></i> Access to Coastal Relaxation Veranda
+              </li>
+            </ul>
+          </div>
+          <button onclick="openBookingModal('Duo Coastal Solitude Package - $265')" class="w-full py-3.5 rounded-full border border-coastal-charcoal text-coastal-charcoal hover:bg-coastal-charcoal hover:text-white transition-all text-xs font-semibold uppercase tracking-wider text-center">
+            Reserve Duo Escape
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bathhouse & Thermal Section -->
+  <section id="bathhouse" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+          <span class="text-coastal-terracotta font-semibold uppercase tracking-[0.2em] text-xs">Thermal Hydrotherapy Sanctuary</span>
+          <h2 class="serif-title text-4xl sm:text-5xl text-coastal-charcoal mt-2 mb-6">
+            Immerse in geothermal vitality and coastal minerals.
+          </h2>
+          <p class="text-coastal-driftwood text-sm sm:text-base leading-relaxed mb-8">
+            Our private bathhouse draws inspiration from traditional Nordic contrast therapy reimagined through a southern Australian lens. Alternating between infrared sauna heat and chilled ocean-mineral plunge pools invigorates blood flow, soothes sore joints after a surf session, and clears the senses.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-sand-50 border border-sand-200">
+              <div class="w-10 h-10 rounded-full bg-sage-100 text-sage-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-fire text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-coastal-charcoal">Cedar Wood Infrared Sauna (70°C)</h4>
+                <p class="text-xs text-coastal-driftwood mt-0.5">Penetrates deep muscle layers to release lactic acid and stimulate gentle detoxification.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-sand-50 border border-sand-200">
+              <div class="w-10 h-10 rounded-full bg-sand-200 text-coastal-clay flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-snowflake text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-coastal-charcoal">Cold Mineral Plunge (12°C)</h4>
+                <p class="text-xs text-coastal-driftwood mt-0.5">Infused with concentrated ocean salts and minerals for instant mental alertness and vascular recovery.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-sand-50 border border-sand-200">
+              <div class="w-10 h-10 rounded-full bg-sand-200 text-coastal-charcoal flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-cloud-rain text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-coastal-charcoal">Eucalyptus Botanical Steam Cave</h4>
+                <p class="text-xs text-coastal-driftwood mt-0.5">A humid sanctuary charged with wild native eucalyptus to cleanse airways and soften skin.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center gap-4">
+            <button onclick="openBookingModal('Bathhouse & Thermal Pass')" class="px-7 py-3.5 bg-coastal-charcoal text-white hover:bg-coastal-terracotta text-xs font-semibold uppercase tracking-wider rounded-full transition-all">
+              Book Bathhouse Session ($85 AUD)
+            </button>
+            <span class="text-xs text-coastal-driftwood">Complimentary fluffy robes, towels & tisane included.</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=700&q=80" 
+                 alt="Bathhouse hot pools" 
+                 class="rounded-3xl w-full h-64 object-cover shadow-md"
+                 onerror="this.src='https://placehold.co/600x800/EBDDCF/222320?text=Bathhouse+Soak'">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=700&q=80" 
+                 alt="Warm stone therapy" 
+                 class="rounded-3xl w-full h-44 object-cover shadow-md"
+                 onerror="this.src='https://placehold.co/600x400/DEC7B1/222320?text=Hot+Stones'">
+          </div>
+          <div class="space-y-4 pt-8">
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=700&q=80" 
+                 alt="Infrared cedar sauna" 
+                 class="rounded-3xl w-full h-44 object-cover shadow-md"
+                 onerror="this.src='https://placehold.co/600x400/E5EDE5/222320?text=Cedar+Sauna'">
+            <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=700&q=80" 
+                 alt="Relaxation sun deck" 
+                 class="rounded-3xl w-full h-64 object-cover shadow-md"
+                 onerror="this.src='https://placehold.co/600x800/DEC7B1/222320?text=Relaxation+Deck'">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Ritual Cost & Booking Request Estimator -->
+  <section id="booking-estimator" class="py-24 bg-sand-100 border-t border-sand-200">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-coastal-clay font-semibold uppercase tracking-[0.2em] text-xs">Curate Your Bespoke Itinerary</span>
+        <h2 class="serif-title text-4xl sm:text-5xl text-coastal-charcoal mt-2 mb-3">
+          Interactive Ritual Estimator
+        </h2>
+        <p class="text-coastal-driftwood text-sm font-light">
+          Combine signature therapies and bespoke sensory add-ons to preview duration and pricing in Australian Dollars.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Treatment & Add-on Selector -->
+        <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-sand-200">
+          <h3 class="serif-title text-2xl text-coastal-charcoal mb-4 flex items-center justify-between">
+            <span>1. Select Treatments</span>
+            <span class="text-xs font-sans text-coastal-driftwood font-normal">Choose one or more</span>
+          </h3>
+
+          <div class="space-y-3 mb-8" id="estimator-treatments-list">
+            <!-- Dynamic Estimator Checkboxes -->
+          </div>
+
+          <h3 class="serif-title text-2xl text-coastal-charcoal mb-4 flex items-center justify-between">
+            <span>2. Coastal Indulgence Add-ons</span>
+            <span class="text-xs font-sans text-coastal-driftwood font-normal">Optional luxuries</span>
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="estimator-addons-list">
+            <!-- Dynamic Addons Checkboxes -->
+          </div>
+        </div>
+
+        <!-- Live Estimate Summary Card -->
+        <div class="lg:col-span-5 sticky top-28">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-lg border border-sand-300">
+            <div class="flex items-center justify-between border-b border-sand-200 pb-4 mb-4">
+              <span class="text-xs uppercase font-bold tracking-widest text-coastal-driftwood">Your Bespoke Ritual</span>
+              <span id="summary-items-count" class="text-xs font-semibold bg-sand-200 text-coastal-charcoal px-2.5 py-1 rounded-full">0 selected</span>
+            </div>
+
+            <!-- Selected Items Display -->
+            <div id="selected-items-list" class="space-y-2.5 max-h-56 overflow-y-auto custom-scrollbar pr-2 mb-6 text-xs text-coastal-charcoal">
+              <p class="text-coastal-driftwood italic">Tick treatments from the menu on the left to calculate your personalized day sanctuary experience.</p>
+            </div>
+
+            <!-- Summary Calculations -->
+            <div class="border-t border-sand-200 pt-4 space-y-2 text-xs">
+              <div class="flex justify-between text-coastal-driftwood">
+                <span>Estimated Duration</span>
+                <span id="summary-duration" class="font-semibold text-coastal-charcoal">0 minutes</span>
+              </div>
+              <div class="flex justify-between text-coastal-driftwood">
+                <span>Surf Coast Mineral Water</span>
+                <span class="text-sage-800 font-medium">Complimentary</span>
+              </div>
+              <div class="flex justify-between text-base font-serif text-coastal-charcoal pt-3 border-t border-sand-200/80">
+                <span class="font-normal text-lg">Total Investment</span>
+                <span id="summary-total-price" class="text-2xl font-semibold text-coastal-terracotta">$0 AUD</span>
+              </div>
+              <p class="text-[10px] text-coastal-driftwood text-right">Includes all Victorian GST & luxury robe hire</p>
+            </div>
+
+            <!-- Booking Inquire Action -->
+            <div class="mt-6">
+              <button id="book-calculated-btn" onclick="openBookingModalWithCalculation()" class="w-full py-4 rounded-full bg-sage-800 hover:bg-coastal-terracotta text-white font-medium text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2">
+                <span>Inquire With This Ritual</span>
+                <i class="fa-solid fa-arrow-right-long text-xs"></i>
+              </button>
+              <button onclick="resetEstimator()" class="w-full mt-2.5 text-center text-[11px] text-coastal-driftwood hover:text-coastal-charcoal underline">
+                Clear & Reset Selection
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Surf Coast Location & Vibe Section -->
+  <section id="sanctuary" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6">
+          <span class="text-coastal-clay font-semibold uppercase tracking-[0.2em] text-xs">The Sanctuary Haven</span>
+          <h2 class="serif-title text-4xl sm:text-5xl text-coastal-charcoal mt-2 mb-6">
+            Located along the wind-sculpted sands of Torquay.
+          </h2>
+          <p class="text-coastal-driftwood text-sm sm:text-base leading-relaxed mb-6 font-light">
+            Situated within a stone’s throw from Bells Beach and the threshold of the Great Ocean Road, Sol & Salt is tucked into secluded coastal bushland. Native banksias, sea grasses, and ironbarks cradle our sanctuary from ocean gales while capturing the peaceful murmur of rolling breakers.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="border-l-2 border-coastal-terracotta pl-4">
+              <h5 class="text-sm font-semibold text-coastal-charcoal">Torquay Foreshore</h5>
+              <p class="text-xs text-coastal-driftwood">8-minute scenic drive</p>
+            </div>
+            <div class="border-l-2 border-sage-600 pl-4">
+              <h5 class="text-sm font-semibold text-coastal-charcoal">Anglesea River</h5>
+              <p class="text-xs text-coastal-driftwood">12 minutes along coastline</p>
+            </div>
+            <div class="border-l-2 border-coastal-clay pl-4">
+              <h5 class="text-sm font-semibold text-coastal-charcoal">Geelong Waterfront</h5>
+              <p class="text-xs text-coastal-driftwood">25 minutes direct</p>
+            </div>
+            <div class="border-l-2 border-coastal-charcoal pl-4">
+              <h5 class="text-sm font-semibold text-coastal-charcoal">Melbourne CBD</h5>
+              <p class="text-xs text-coastal-driftwood">75 minutes via M1</p>
+            </div>
+          </div>
+
+          <div class="glass-card p-5 rounded-2xl border border-sand-300 flex items-center gap-4">
+            <i class="fa-solid fa-car-side text-2xl text-coastal-clay"></i>
+            <div>
+              <p class="text-xs font-semibold text-coastal-charcoal">Private Guest Parking & Electric Charging</p>
+              <p class="text-[11px] text-coastal-driftwood">Dedicated off-road secluded bays for stress-free arrival.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 relative">
+          <div class="rounded-3xl overflow-hidden shadow-2xl relative">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Surf Coast Ocean Waves" 
+                 class="w-full h-[450px] object-cover"
+                 onerror="this.src='https://placehold.co/800x600/CADBCA/222320?text=Surf+Coast+Coastline'">
+            <div class="absolute inset-0 bg-gradient-to-t from-coastal-charcoal/80 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
+              <span class="text-xs uppercase tracking-widest text-sand-300">Sanctuary Address</span>
+              <h4 class="serif-title text-2xl font-light">42 Ocean Echo Track, Bells Beach Hinterland, Victoria 3228</h4>
+              <p class="text-xs text-sand-200 mt-1">Open 7 Days: 9:00 AM – 6:30 PM</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Client Love / Testimonials -->
+  <section class="py-24 bg-sand-100/60 border-t border-sand-200">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-coastal-terracotta font-semibold uppercase tracking-[0.2em] text-xs">Sanctuary Reflections</span>
+        <h2 class="serif-title text-4xl sm:text-5xl text-coastal-charcoal mt-2 mb-3">
+          Words from Our Guests
+        </h2>
+        <p class="text-coastal-driftwood text-sm font-light">
+          Moments of stillness experienced along Victoria’s southwest coast.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white p-8 rounded-3xl border border-sand-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-coastal-clay gap-1 text-xs mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="serif-title text-lg text-coastal-charcoal italic mb-6 leading-relaxed">
+              "The sound of the ocean wind paired with the magnesium plunge pool melted away weeks of corporate tension. The best facial I have experienced in Australia."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-sand-100">
+            <div class="w-10 h-10 rounded-full bg-sand-200 flex items-center justify-center font-bold text-xs text-coastal-charcoal">
+              EM
+            </div>
+            <div>
+              <h5 class="text-xs font-semibold text-coastal-charcoal">Elena Montgomery</h5>
+              <span class="text-[11px] text-coastal-driftwood">Melbourne • Visited April 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl border border-sand-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-coastal-clay gap-1 text-xs mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="serif-title text-lg text-coastal-charcoal italic mb-6 leading-relaxed">
+              "My husband and I booked the Hinterland Stone Melt package for our anniversary. The warmth of the basalt rocks and wild eucalyptus steam was otherworldly."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-sand-100">
+            <div class="w-10 h-10 rounded-full bg-sand-200 flex items-center justify-center font-bold text-xs text-coastal-charcoal">
+              SK
+            </div>
+            <div>
+              <h5 class="text-xs font-semibold text-coastal-charcoal">Sarah & Kyle Vance</h5>
+              <span class="text-[11px] text-coastal-driftwood">Torquay Locals • Visited March 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl border border-sand-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-coastal-clay gap-1 text-xs mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="serif-title text-lg text-coastal-charcoal italic mb-6 leading-relaxed">
+              "After a morning surf at Jan Juc, the hot sauna and deep tissue massage were divine. Elegant, unhurried, and genuinely boutique."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-sand-100">
+            <div class="w-10 h-10 rounded-full bg-sand-200 flex items-center justify-center font-bold text-xs text-coastal-charcoal">
+              TL
+            </div>
+            <div>
+              <h5 class="text-xs font-semibold text-coastal-charcoal">Tristan Lewis</h5>
+              <span class="text-[11px] text-coastal-driftwood">Geelong • Visited Feb 2026</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gift Voucher Banner -->
+  <section class="py-16 bg-sage-800 text-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <span class="text-sand-300 font-semibold uppercase tracking-[0.2em] text-xs">The Gift of Rest</span>
+          <h3 class="serif-title text-3xl sm:text-4xl font-normal mt-1 mb-2">
+            Give the stillness of the Surf Coast.
+          </h3>
+          <p class="text-sand-100/80 text-xs sm:text-sm max-w-xl font-light">
+            Sol & Salt digital gift vouchers are delivered instantly with custom messages, redeemable across treatments, seasonal packages, and our clean boutique store.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-4">
+          <button onclick="openVoucherModal()" class="px-8 py-3.5 bg-sand-200 hover:bg-sand-100 text-coastal-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all shadow-md">
+            Purchase Gift Certificate
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coastal Instagram Feed Mockup -->
+  <section class="py-16 bg-white border-b border-sand-200">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-coastal-clay font-semibold uppercase tracking-[0.2em] text-xs">Visual Solitude</span>
+          <h3 class="serif-title text-2xl sm:text-3xl text-coastal-charcoal mt-1">Follow our daily coastal rhythm</h3>
+        </div>
+        <a href="#sanctuary" class="text-xs uppercase tracking-widest text-coastal-charcoal font-semibold hover:text-coastal-terracotta">
+          @solandsalt_surfcoast
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
+        <div class="aspect-square rounded-2xl overflow-hidden group relative">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80" alt="Spa bath" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-coastal-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i class="fa-brands fa-instagram text-xl"></i></div>
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden group relative">
+          <img src="https://images.unsplash.com/photo-1512290900672-1f551b2e617e?auto=format&fit=crop&w=400&q=80" alt="Botanical oils" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-coastal-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i class="fa-brands fa-instagram text-xl"></i></div>
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden group relative">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Ocean rocks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-coastal-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i class="fa-brands fa-instagram text-xl"></i></div>
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden group relative">
+          <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=400&q=80" alt="Sauna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-coastal-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i class="fa-brands fa-instagram text-xl"></i></div>
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden group relative">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=400&q=80" alt="Massage therapy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-coastal-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i class="fa-brands fa-instagram text-xl"></i></div>
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden group relative">
+          <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=400&q=80" alt="Pool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-coastal-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i class="fa-brands fa-instagram text-xl"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-coastal-charcoal text-sand-100 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-14 border-b border-white/10">
+        
+        <div class="lg:col-span-4">
+          <span class="serif-title text-3xl font-normal text-white">SOL <span class="italic font-light text-sand-300">&</span> SALT</span>
+          <p class="text-xs text-sand-200 mt-2 tracking-widest uppercase">Surf Coast Day Spa & Wellness Sanctuary</p>
+          <p class="text-xs text-sand-300/80 leading-relaxed mt-4 max-w-sm">
+            Honoring the coastal traditions of hydrotherapy, dermal purity, and restorative bodywork along Wadawurrung Country.
+          </p>
+          <div class="flex items-center gap-4 mt-6">
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-sand-200 transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-sand-200 transition-colors"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+            <a href="#" aria-label="Pinterest" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-sand-200 transition-colors"><i class="fa-brands fa-pinterest-p text-sm"></i></a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <h4 class="text-xs uppercase tracking-widest font-semibold text-sand-200 mb-4">Treatments</h4>
+          <ul class="text-xs text-sand-300/70 space-y-2.5">
+            <li><a href="#treatments" class="hover:text-white transition-colors">Coastal Facials</a></li>
+            <li><a href="#treatments" class="hover:text-white transition-colors">Magnesium Massage</a></li>
+            <li><a href="#treatments" class="hover:text-white transition-colors">Bathhouse Thermal</a></li>
+            <li><a href="#treatments" class="hover:text-white transition-colors">Clean Hair & Salon</a></li>
+            <li><a href="#packages" class="hover:text-white transition-colors">Couples Retreats</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3">
+          <h4 class="text-xs uppercase tracking-widest font-semibold text-sand-200 mb-4">Location & Hours</h4>
+          <p class="text-xs text-sand-300/80 leading-relaxed">
+            42 Ocean Echo Track<br>
+            Bells Beach Hinterland, Victoria 3228<br>
+            Australia
+          </p>
+          <div class="mt-4 text-xs text-sand-300/80 space-y-1">
+            <p><span class="text-white font-medium">Monday – Friday:</span> 9:00 AM – 6:30 PM</p>
+            <p><span class="text-white font-medium">Saturday – Sunday:</span> 8:30 AM – 7:00 PM</p>
+            <p class="mt-2 text-sand-300"><i class="fa-solid fa-phone text-[10px] mr-1.5"></i> +61 (03) 5261 9840</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3">
+          <h4 class="text-xs uppercase tracking-widest font-semibold text-sand-200 mb-4">The Coastal Journal</h4>
+          <p class="text-xs text-sand-300/80 leading-relaxed mb-4">
+            Receive seasonal opening notices, guest retreats, and botanical wellbeing advice.
+          </p>
+          <form onsubmit="handleNewsletter(event)" class="space-y-2">
+            <div class="relative">
+              <input type="email" id="newsletter-email" required placeholder="Enter your email" class="w-full bg-white/5 border border-white/10 rounded-full px-4 py-2.5 text-xs text-sand-100 placeholder:text-sand-300/40 focus:outline-none focus:border-sand-300 transition-colors">
+              <button type="submit" class="absolute right-1 top-1 bottom-1 px-4 bg-sand-200 hover:bg-sand-100 text-coastal-charcoal rounded-full text-xs font-semibold uppercase tracking-wider transition-colors">
+                Join
+              </button>
+            </div>
+            <p class="text-[10px] text-sand-300/50">Zero spam. Only pure coastal stillness.</p>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-sand-300/60">
+        <p>© 2026 Sol & Salt Coastal Day Spa & Wellness Sanctuary. All rights reserved.</p>
+        <p>Acknowledge Traditional Custodians of the Surf Coast and Pay Respects to Elders Past & Present.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Booking Inquiry Modal -->
+  <div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 bg-coastal-charcoal/70 backdrop-blur-sm">
+    <div class="bg-sand-50 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-sand-300 relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+      
+      <!-- Close Button -->
+      <button onclick="closeBookingModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-sand-200/80 hover:bg-sand-300 text-coastal-charcoal flex items-center justify-center transition-colors">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+
+      <div class="mb-6">
+        <span class="text-coastal-terracotta font-semibold uppercase tracking-[0.2em] text-[10px]">Surf Coast Sanctuary</span>
+        <h3 class="serif-title text-3xl text-coastal-charcoal mt-1">Reserve Your Ritual</h3>
+        <p class="text-xs text-coastal-driftwood mt-1">Fill in your preferred sanctuary details; our spa concierge will confirm your date within 3 hours.</p>
+      </div>
+
+      <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+        
+        <!-- Experience Note Field -->
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Selected Ritual / Treatment</label>
+          <input type="text" id="modal-treatment-name" readonly class="w-full bg-sand-100/90 border border-sand-300 rounded-xl px-4 py-2.5 text-xs text-coastal-charcoal font-medium focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Your Full Name *</label>
+            <input type="text" required id="guest-name" placeholder="E.g. Miranda Hayes" class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2.5 text-xs text-coastal-charcoal focus:outline-none focus:border-coastal-terracotta transition-colors">
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Phone Number *</label>
+            <input type="tel" required id="guest-phone" placeholder="0400 000 000" class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2.5 text-xs text-coastal-charcoal focus:outline-none focus:border-coastal-terracotta transition-colors">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Email Address *</label>
+          <input type="email" required id="guest-email" placeholder="miranda@example.com.au" class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2.5 text-xs text-coastal-charcoal focus:outline-none focus:border-coastal-terracotta transition-colors">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Preferred Date *</label>
+            <input type="date" required id="guest-date" class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2.5 text-xs text-coastal-charcoal focus:outline-none focus:border-coastal-terracotta transition-colors">
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Preferred Time *</label>
+            <select id="guest-time" required class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2.5 text-xs text-coastal-charcoal focus:outline-none focus:border-coastal-terracotta transition-colors">
+              <option value="Morning (9:30 AM - 12:00 PM)">Morning (9:30 AM - 12:00 PM)</option>
+              <option value="Early Afternoon (12:30 PM - 3:00 PM)">Early Afternoon (12:30 PM - 3:00 PM)</option>
+              <option value="Late Afternoon (3:30 PM - 6:00 PM)">Late Afternoon (3:30 PM - 6:00 PM)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Guests</label>
+            <select id="guest-count" class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2.5 text-xs text-coastal-charcoal focus:outline-none focus:border-coastal-terracotta transition-colors">
+              <option value="1 Guest (Solo Solitude)">1 Guest (Solo Solitude)</option>
+              <option value="2 Guests (Couples / Duo)">2 Guests (Couples / Duo)</option>
+              <option value="3+ Guests (Small Gathering)">3+ Guests (Small Gathering)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Dietary / Notes</label>
+            <input type="text" id="guest-dietary" placeholder="E.g. Gluten-free tea" class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2.5 text-xs text-coastal-charcoal focus:outline-none focus:border-coastal-terracotta transition-colors">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Special Preferences / Health Notes</label>
+          <textarea id="guest-notes" rows="2" placeholder="Tell us about pressure preference, tension areas, or anniversary occasion..." class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2.5 text-xs text-coastal-charcoal focus:outline-none focus:border-coastal-terracotta transition-colors"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-4 rounded-full bg-sage-800 hover:bg-coastal-terracotta text-white font-medium text-xs uppercase tracking-widest transition-all shadow-md">
+            Transmit Sanctuary Request
+          </button>
+          <p class="text-[10px] text-coastal-driftwood text-center mt-2">No upfront fee charged now. We contact you to confirm room availability.</p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Gift Voucher Modal -->
+  <div id="voucher-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 bg-coastal-charcoal/70 backdrop-blur-sm">
+    <div class="bg-sand-50 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-sand-300 relative">
+      <button onclick="closeVoucherModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-sand-200/80 hover:bg-sand-300 text-coastal-charcoal flex items-center justify-center transition-colors">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+
+      <span class="text-coastal-terracotta font-semibold uppercase tracking-[0.2em] text-[10px]">Surf Coast Gift Pass</span>
+      <h3 class="serif-title text-3xl text-coastal-charcoal mt-1 mb-2">Bespoke Gift Voucher</h3>
+      <p class="text-xs text-coastal-driftwood mb-6">Create an instant digital certificate valid for 3 years across all treatments & packages.</p>
+
+      <form onsubmit="handleVoucherSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Select Value (AUD)</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" onclick="setVoucherValue(150)" class="voucher-preset active border border-sand-300 bg-sand-200 py-2 rounded-xl text-xs font-semibold">$150</button>
+            <button type="button" onclick="setVoucherValue(250)" class="voucher-preset border border-sand-300 bg-white py-2 rounded-xl text-xs font-semibold">$250</button>
+            <button type="button" onclick="setVoucherValue(400)" class="voucher-preset border border-sand-300 bg-white py-2 rounded-xl text-xs font-semibold">$400</button>
+          </div>
+          <input type="number" id="voucher-custom" placeholder="Or custom amount" class="w-full mt-2 bg-white border border-sand-300 rounded-xl px-4 py-2 text-xs">
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Recipient Name</label>
+          <input type="text" required id="voucher-recipient" placeholder="E.g. Claire Bennett" class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2 text-xs">
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Recipient Email</label>
+          <input type="email" required id="voucher-email" placeholder="claire@example.com" class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2 text-xs">
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider font-semibold text-coastal-charcoal mb-1">Personal Message</label>
+          <textarea id="voucher-msg" rows="2" placeholder="Take some time to exhale and enjoy the Surf Coast..." class="w-full bg-white border border-sand-300 rounded-xl px-4 py-2 text-xs"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-full bg-sage-800 hover:bg-coastal-terracotta text-white font-medium text-xs uppercase tracking-widest transition-all mt-4">
+          Complete Voucher Gift
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Vanilla JS Application Logic -->
+  <script>
+    // --- Treatment Database ---
+    const treatmentsData = {
+      facials: [
+        {
+          id: 'f1',
+          name: 'Surf Coast Bio-Marine Infusion',
+          duration: 75,
+          price: 210,
+          scent: 'Wild Coastal Sea Kelp, Roman Chamomile & Rose Myrtle',
+          benefits: 'Intense deep cellular hydration and natural barrier repair after ocean exposure.',
+          badge: 'Signature Facial'
+        },
+        {
+          id: 'f2',
+          name: 'Southern Sun Vitamin C Radiance',
+          duration: 60,
+          price: 185,
+          scent: 'Kakadu Plum, Sweet Orange & Lemon Myrtle',
+          benefits: 'Brightens pigmentation, restores luminosity, and balances uneven skin tone.',
+          badge: 'Illuminating'
+        },
+        {
+          id: 'f3',
+          name: 'Calming Clay & Coastal Botanics',
+          duration: 60,
+          price: 175,
+          scent: 'Native Eucalyptus, Lavender & Australian Kaolin Clay',
+          benefits: 'Designed for sensitized, wind-chapped skin. Clears congestion and calms redness.',
+          badge: 'Soothing'
+        }
+      ],
+      body: [
+        {
+          id: 'b1',
+          name: 'Bells Beach Magnesium Tension Release',
+          duration: 75,
+          price: 220,
+          scent: 'Concentrated Magnesium, Sweet Marjoram & Black Pepper',
+          benefits: 'Relieves tight surfing shoulders, calves, and lower back tension with targeted pressure.',
+          badge: 'Deep Rest'
+        },
+        {
+          id: 'b2',
+          name: 'Torquay Sea Salt Glow & Body Wrap',
+          duration: 90,
+          price: 245,
+          scent: 'Flinders Pink Salt, Rosemary & Bergamot',
+          benefits: 'Silkening body exfoliation followed by warm spirulina marine mud wrap.',
+          badge: 'Detoxifying'
+        },
+        {
+          id: 'b3',
+          name: 'Native Botanical Hot Stone Drift',
+          duration: 60,
+          price: 190,
+          scent: 'Warmed Sandalwood, Cedar & Jojoba',
+          benefits: 'Smooth volcanic river stones glide with warm oils to lull the nervous system.',
+          badge: 'Relaxation'
+        }
+      ],
+      bathhouse: [
+        {
+          id: 'h1',
+          name: 'Private Magnesium Spa & Steam Sanctum',
+          duration: 45,
+          price: 95,
+          scent: 'Fresh Mint, Crushed Eucalyptus Leaves',
+          benefits: 'Exclusive immersion in a private geothermal cedar tub followed by aromatic steam.',
+          badge: 'Private Tub'
+        },
+        {
+          id: 'h2',
+          name: 'Nordic Ocean Contrast Hydro-Circuit',
+          duration: 60,
+          price: 85,
+          scent: 'Aromatic Pine & Wild Thyme',
+          benefits: 'Assisted cycles through 70°C Cedar Sauna and 12°C ocean plunge for vascular reset.',
+          badge: 'Contrast Circuit'
+        },
+        {
+          id: 'h3',
+          name: 'Wild Herbal Soak & Scalp Nourish',
+          duration: 60,
+          price: 130,
+          scent: 'Otway Bush Herbs, Calendula & Lavender Flowers',
+          benefits: 'Warm wooden tub soak with warm macadamia oil hair elixir treatment.',
+          badge: 'Nourishment'
+        }
+      ],
+      salon: [
+        {
+          id: 's1',
+          name: 'Boutique Brow Sculpt & Tint Architecture',
+          duration: 45,
+          price: 75,
+          scent: 'Rosewater & Aloe Vera',
+          benefits: 'Precision shaping, gentle waxing/threading and custom plant-based tinting.',
+          badge: 'Precision'
+        },
+        {
+          id: 's2',
+          name: 'Organic Lash Lift & Keratin Infusion',
+          duration: 60,
+          price: 110,
+          scent: 'Chamomile Soothing Mist',
+          benefits: 'Gentle lifting curl that highlights natural eyes without synthetic extensions.',
+          badge: 'Clean Glam'
+        },
+        {
+          id: 's3',
+          name: 'Coastal Soles Pedicure & Salt Scrub',
+          duration: 60,
+          price: 105,
+          scent: 'Peppermint, Tea Tree & Sweet Almond',
+          benefits: 'Rejuvenating foot soak, hard skin smoothing, massage, and 10-free non-toxic polish.',
+          badge: 'Hand & Foot'
+        }
+      ]
+    };
+
+    // --- Estimator Add-ons Database ---
+    const estimatorAddons = [
+      { id: 'add_champagne', name: 'Artisan Otway Sparkling & Coastal Nibbles', price: 45, duration: 15 },
+      { id: 'add_scalp', name: 'Wild Sea Kelp Warm Scalp Mud Mask', price: 50, duration: 20 },
+      { id: 'add_sauna', name: 'Private Infrared Cedar Sauna Add-on', price: 40, duration: 30 },
+      { id: 'add_foot', name: 'Restorative Peppermint Foot Compress', price: 35, duration: 15 }
+    ];
+
+    // State for Estimator
+    let selectedTreatments = [];
+    let selectedAddons = [];
+    let activeVoucherVal = 150;
+
+    // --- Tab Switching ---
+    function switchCategory(category) {
+      document.querySelectorAll('.category-tab').forEach(btn => {
+        btn.classList.remove('active-tab', 'bg-white', 'text-coastal-charcoal', 'shadow-sm');
+        btn.classList.add('text-coastal-driftwood');
+      });
+
+      const activeBtn = document.getElementById(`tab-${category}`);
+      if (activeBtn) {
+        activeBtn.classList.add('active-tab', 'bg-white', 'text-coastal-charcoal', 'shadow-sm');
+        activeBtn.classList.remove('text-coastal-driftwood');
+      }
+
+      renderTreatments(category);
+    }
+
+    // --- Render Treatment Cards ---
+    function renderTreatments(category) {
+      const container = document.getElementById('treatments-container');
+      const items = treatmentsData[category] || [];
+
+      container.innerHTML = items.map(item => `
+        <div class="bg-white rounded-3xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-sand-200 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-coastal-clay bg-sand-100 px-3 py-1 rounded-full">
+                ${item.badge}
+              </span>
+              <span class="serif-title text-2xl font-semibold text-coastal-charcoal">
+                $${item.price} <span class="text-xs font-sans text-coastal-driftwood font-normal">AUD</span>
+              </span>
+            </div>
+
+            <h3 class="serif-title text-2xl text-coastal-charcoal group-hover:text-coastal-terracotta transition-colors mb-2">
+              ${item.name}
+            </h3>
+
+            <div class="flex items-center gap-3 text-xs text-coastal-driftwood mb-4">
+              <span><i class="fa-regular fa-clock mr-1 text-coastal-clay"></i> ${item.duration} Mins</span>
+              <span>•</span>
+              <span class="text-sage-800 font-medium">Bespoke Pressure</span>
+            </div>
+
+            <div class="p-3 bg-sand-50 rounded-xl mb-4 border border-sand-200/60">
+              <span class="text-[10px] uppercase tracking-wider text-coastal-driftwood font-semibold block mb-0.5">Aromatic Profile:</span>
+              <p class="text-xs text-coastal-charcoal italic">${item.scent}</p>
+            </div>
+
+            <p class="text-xs text-coastal-driftwood leading-relaxed mb-6">
+              ${item.benefits}
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2 pt-4 border-t border-sand-100">
+            <button onclick="openBookingModal('${item.name} ($${item.price} AUD)')" class="flex-1 py-3 rounded-full bg-sand-100 hover:bg-coastal-charcoal hover:text-white text-coastal-charcoal text-xs font-semibold uppercase tracking-wider transition-all text-center">
+              Reserve Ritual
+            </button>
+            <button onclick="quickAddToEstimator('${item.id}', '${item.name}', ${item.price}, ${item.duration})" title="Add to Live Estimator" class="w-11 h-11 rounded-full border border-sand-300 hover:border-coastal-terracotta hover:text-coastal-terracotta text-coastal-driftwood flex items-center justify-center transition-colors">
+              <i class="fa-solid fa-plus text-xs"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // --- Build Estimator Interface ---
+    function initEstimator() {
+      const treatmentContainer = document.getElementById('estimator-treatments-list');
+      const allTreatments = [
+        ...treatmentsData.facials,
+        ...treatmentsData.body,
+        ...treatmentsData.bathhouse,
+        ...treatmentsData.salon
+      ];
+
+      treatmentContainer.innerHTML = allTreatments.map(t => `
+        <label class="flex items-center justify-between p-3.5 rounded-2xl border border-sand-200 hover:border-sand-300 bg-sand-50/50 hover:bg-white cursor-pointer transition-colors">
+          <div class="flex items-center gap-3">
+            <input type="checkbox" data-id="${t.id}" data-name="${t.name}" data-price="${t.price}" data-duration="${t.duration}" onchange="toggleEstimatorTreatment(this)" class="w-4 h-4 rounded text-sage-800 focus:ring-sage-800 border-sand-300">
+            <div>
+              <span class="text-xs font-semibold text-coastal-charcoal block">${t.name}</span>
+              <span class="text-[11px] text-coastal-driftwood">${t.duration} mins • AUD</span>
+            </div>
+          </div>
+          <span class="serif-title text-base font-semibold text-coastal-charcoal">$${t.price}</span>
+        </label>
+      `).join('');
+
+      const addonContainer = document.getElementById('estimator-addons-list');
+      addonContainer.innerHTML = estimatorAddons.map(a => `
+        <label class="flex items-center justify-between p-3 rounded-2xl border border-sand-200 hover:border-sand-300 bg-sand-50/50 hover:bg-white cursor-pointer transition-colors">
+          <div class="flex items-center gap-2.5">
+            <input type="checkbox" data-id="${a.id}" data-name="${a.name}" data-price="${a.price}" data-duration="${a.duration}" onchange="toggleEstimatorAddon(this)" class="w-4 h-4 rounded text-coastal-terracotta focus:ring-coastal-terracotta border-sand-300">
+            <div>
+              <span class="text-xs font-medium text-coastal-charcoal block">${a.name}</span>
+              <span class="text-[10px] text-coastal-driftwood">+${a.duration} mins</span>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-coastal-clay">+$${a.price}</span>
+        </label>
+      `).join('');
+    }
+
+    // Toggle treatments in estimator
+    function toggleEstimatorTreatment(checkbox) {
+      const { id, name, price, duration } = checkbox.dataset;
+      if (checkbox.checked) {
+        selectedTreatments.push({ id, name, price: parseFloat(price), duration: parseInt(duration) });
+      } else {
+        selectedTreatments = selectedTreatments.filter(t => t.id !== id);
+      }
+      updateEstimatorSummary();
+    }
+
+    // Toggle add-ons
+    function toggleEstimatorAddon(checkbox) {
+      const { id, name, price, duration } = checkbox.dataset;
+      if (checkbox.checked) {
+        selectedAddons.push({ id, name, price: parseFloat(price), duration: parseInt(duration) });
+      } else {
+        selectedAddons = selectedAddons.filter(a => a.id !== id);
+      }
+      updateEstimatorSummary();
+    }
+
+    // Quick add from treatment card
+    function quickAddToEstimator(id, name, price, duration) {
+      const checkbox = document.querySelector(`input[data-id="${id}"]`);
+      if (checkbox) {
+        checkbox.checked = true;
+        toggleEstimatorTreatment(checkbox);
+      } else {
+        // Fallback direct push
+        if (!selectedTreatments.some(t => t.id === id)) {
+          selectedTreatments.push({ id, name, price, duration });
+          updateEstimatorSummary();
+        }
+      }
+      showToast('Added to Custom Ritual Estimator', `${name} is in your itinerary.`);
+      
+      // Smooth scroll to estimator
+      const estElem = document.getElementById('booking-estimator');
+      if (estElem) {
+        estElem.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Update Summary Card
+    function updateEstimatorSummary() {
+      const listContainer = document.getElementById('selected-items-list');
+      const countLabel = document.getElementById('summary-items-count');
+      const durationLabel = document.getElementById('summary-duration');
+      const totalLabel = document.getElementById('summary-total-price');
+
+      const allItems = [...selectedTreatments, ...selectedAddons];
+      countLabel.textContent = `${allItems.length} selected`;
+
+      if (allItems.length === 0) {
+        listContainer.innerHTML = '<p class="text-coastal-driftwood italic">Tick treatments from the menu on the left to calculate your personalized day sanctuary experience.</p>';
+        durationLabel.textContent = '0 minutes';
+        totalLabel.textContent = '$0 AUD';
+        return;
+      }
+
+      let totalMinutes = 0;
+      let totalPrice = 0;
+
+      listContainer.innerHTML = allItems.map(item => {
+        totalMinutes += item.duration;
+        totalPrice += item.price;
+        return `
+          <div class="flex items-center justify-between pb-1.5 border-b border-sand-100">
+            <span class="truncate pr-2 font-medium">${item.name}</span>
+            <span class="font-semibold text-coastal-charcoal">$${item.price}</span>
+          </div>
+        `;
+      }).join('');
+
+      // Format time
+      const hours = Math.floor(totalMinutes / 60);
+      const mins = totalMinutes % 60;
+      const durationStr = hours > 0 ? `${hours}h ${mins > 0 ? mins + 'm' : ''}` : `${mins} mins`;
+
+      durationLabel.textContent = durationStr;
+      totalLabel.textContent = `$${totalPrice} AUD`;
+    }
+
+    function resetEstimator() {
+      selectedTreatments = [];
+      selectedAddons = [];
+      document.querySelectorAll('#booking-estimator input[type="checkbox"]').forEach(c => c.checked = false);
+      updateEstimatorSummary();
+      showToast('Estimator Cleared', 'You can start a fresh ritual itinerary.');
+    }
+
+    function openBookingModalWithCalculation() {
+      const allItems = [...selectedTreatments, ...selectedAddons];
+      if (allItems.length === 0) {
+        openBookingModal('Bespoke Coastal Day Spa Experience');
+        return;
+      }
+      const totalPrice = allItems.reduce((acc, curr) => acc + curr.price, 0);
+      const names = allItems.map(i => i.name).join(' + ');
+      openBookingModal(`Custom Ritual: ${names} (Total: $${totalPrice} AUD)`);
+    }
+
+    // --- Modal Controls ---
+    function openBookingModal(treatmentName) {
+      const modal = document.getElementById('booking-modal');
+      const input = document.getElementById('modal-treatment-name');
+      input.value = treatmentName || 'Bespoke Coastal Day Spa Experience';
+      
+      // Default to tomorrow's date
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      document.getElementById('guest-date').value = tomorrow.toISOString().split('T')[0];
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function openVoucherModal() {
+      const modal = document.getElementById('voucher-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeVoucherModal() {
+      const modal = document.getElementById('voucher-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function setVoucherValue(val) {
+      activeVoucherVal = val;
+      document.querySelectorAll('.voucher-preset').forEach(btn => {
+        btn.classList.remove('bg-sand-200', 'font-bold');
+        btn.classList.add('bg-white');
+      });
+      event.target.classList.add('bg-sand-200', 'font-bold');
+      event.target.classList.remove('bg-white');
+      document.getElementById('voucher-custom').value = '';
+    }
+
+    // --- Handlers & Storage ---
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const bookingData = {
+        treatment: document.getElementById('modal-treatment-name').value,
+        name: document.getElementById('guest-name').value,
+        phone: document.getElementById('guest-phone').value,
+        email: document.getElementById('guest-email').value,
+        date: document.getElementById('guest-date').value,
+        time: document.getElementById('guest-time').value,
+        guests: document.getElementById('guest-count').value,
+        dietary: document.getElementById('guest-dietary').value,
+        notes: document.getElementById('guest-notes').value,
+        timestamp: new Date().toISOString()
+      };
+
+      // Store in localStorage
+      try {
+        const existing = JSON.parse(localStorage.getItem('sol_salt_bookings') || '[]');
+        existing.push(bookingData);
+        localStorage.setItem('sol_salt_bookings', JSON.stringify(existing));
+      } catch (err) {
+        console.error('Local storage unavailable', err);
+      }
+
+      closeBookingModal();
+      showToast(
+        'Sanctuary Request Transmitted', 
+        `Thank you, ${bookingData.name}. Our Surf Coast concierge will reach out via ${bookingData.email} to finalize your time.`
+      );
+    }
+
+    function handleVoucherSubmit(e) {
+      e.preventDefault();
+      const customVal = document.getElementById('voucher-custom').value;
+      const finalAmount = customVal ? customVal : activeVoucherVal;
+      const recipient = document.getElementById('voucher-recipient').value;
+
+      closeVoucherModal();
+      showToast(
+        'Gift Certificate Generated', 
+        `A voucher for $${finalAmount} AUD has been prepared for ${recipient}.`
+      );
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      document.getElementById('newsletter-email').value = '';
+      showToast('Subscribed to Ocean Journal', `We look forward to sharing seasonal rituals with ${email}.`);
+    }
+
+    // --- Custom Toast System ---
+    function showToast(title, message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'pointer-events-auto bg-coastal-charcoal text-sand-50 p-4 rounded-2xl shadow-2xl border border-sand-300/30 flex items-start gap-3 max-w-sm transform translate-y-2 opacity-0 transition-all duration-300';
+      toast.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-sand-200 text-coastal-charcoal flex items-center justify-center flex-shrink-0 mt-0.5">
+          <i class="fa-solid fa-water text-xs"></i>
+        </div>
+        <div class="flex-1">
+          <h5 class="text-xs font-semibold tracking-wider uppercase text-sand-200">${title}</h5>
+          <p class="text-xs text-sand-100/80 mt-0.5 leading-relaxed">${message}</p>
+        </div>
+      `;
+
+      container.appendChild(toast);
+
+      // Animate In
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 20);
+
+      // Dismiss after 5.5s
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 5500);
+    }
+
+    // --- Mobile Menu Toggle ---
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+    // Initial page load bindings
+    window.addEventListener('DOMContentLoaded', () => {
+      renderTreatments('facials');
+      initEstimator();
+    });
+  </script>
+</body>
+</html>

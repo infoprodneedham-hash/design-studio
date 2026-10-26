@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Crust & Co. | Artisan Sandwich, Deli & Specialty Coffee</title>
+  
+  <!-- Google Fonts: Playfair Display (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN for clean iconography -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              DEFAULT: '#1c3325',
+              light: '#284734',
+              dark: '#122218',
+              muted: '#365340'
+            },
+            terracotta: {
+              DEFAULT: '#c85a32',
+              hover: '#b24c26',
+              light: '#e97e59',
+              subtle: '#fdf3ed'
+            },
+            amberwood: '#d48a38',
+            cream: {
+              DEFAULT: '#FAF7F0',
+              soft: '#F4EFE6',
+              card: '#FCFAF6',
+              border: '#E8E0D2'
+            },
+            parchment: '#EDE5D8',
+            charcoal: '#222320'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'warm': '0 10px 30px -10px rgba(140, 80, 45, 0.12)',
+            'warm-lg': '0 20px 40px -15px rgba(28, 51, 37, 0.15)',
+            'floating': '0 14px 34px -4px rgba(28, 51, 37, 0.12)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom subtle texture & scroll styling */
+    body {
+      background-color: #FAF7F0;
+      color: #222320;
+    }
+    .hero-badge {
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.95; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+    /* Tab Transitions */
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.35s ease-in-out;
+    }
+    .tab-content.active {
+      display: grid;
+      opacity: 1;
+    }
+    /* Pattern overlay */
+    .bg-grain {
+      background-image: radial-gradient(#d6cabe 0.75px, transparent 0.75px);
+      background-size: 16px 16px;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-charcoal bg-cream bg-grain selection:bg-terracotta selection:text-white">
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="bg-forest-dark text-cream text-xs sm:text-sm font-medium py-2 px-4 text-center border-b border-forest/30 flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+    <span>Fresh loaves out of the oven daily at <strong>7:00 AM</strong> &bull; Free drip coffee with any morning sandwich before 9:00 AM!</span>
+  </div>
+
+  <!-- ================= STICKY HEADER / NAVIGATION ================= -->
+  <header id="mainHeader" class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md transition-all duration-300 border-b border-cream-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo Branding -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-full bg-forest text-amberwood flex items-center justify-center shadow-md border border-amberwood/30 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-wheat-awn text-xl"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif font-bold text-xl sm:text-2xl tracking-tight text-forest leading-none">The Daily Crust <span class="text-terracotta">&amp; Co.</span></span>
+          <span class="text-[10px] sm:text-xs tracking-widest uppercase font-semibold text-charcoal/60 mt-0.5">Artisan Deli &bull; Micro-Roastery</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
+        <a href="#story" class="text-charcoal hover:text-terracotta transition-colors">Our Story</a>
+        <a href="#menu" class="text-charcoal hover:text-terracotta transition-colors">Curated Menu</a>
+        <a href="#deli-counter" class="text-charcoal hover:text-terracotta transition-colors">The Deli Counter</a>
+        <a href="#features" class="text-charcoal hover:text-terracotta transition-colors">Craft &amp; Ethos</a>
+        <a href="#location" class="text-charcoal hover:text-terracotta transition-colors">Hours &amp; Visit</a>
+      </nav>
+
+      <!-- Desktop CTA Actions -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#menu" class="text-xs uppercase tracking-wider font-semibold text-forest hover:text-terracotta px-4 py-2.5 transition">
+          <i class="fa-solid fa-mug-hot mr-1.5 text-terracotta"></i> Today's Brew
+        </a>
+        <button onclick="openModal('orderModal')" class="bg-terracotta hover:bg-terracotta-hover text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-warm transition transform hover:-translate-y-0.5 active:translate-y-0">
+          Order Ahead &amp; Pickup
+        </button>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="lg:hidden p-2 rounded-lg text-forest hover:bg-cream-soft transition">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileDrawer" class="hidden lg:hidden bg-cream-card border-b border-cream-border px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col space-y-4 text-base font-medium">
+        <a href="#story" onclick="closeMobileMenu()" class="py-1 border-b border-cream-border/50 text-forest hover:text-terracotta">Our Story</a>
+        <a href="#menu" onclick="closeMobileMenu()" class="py-1 border-b border-cream-border/50 text-forest hover:text-terracotta">Curated Menu</a>
+        <a href="#deli-counter" onclick="closeMobileMenu()" class="py-1 border-b border-cream-border/50 text-forest hover:text-terracotta">The Deli Counter</a>
+        <a href="#features" onclick="closeMobileMenu()" class="py-1 border-b border-cream-border/50 text-forest hover:text-terracotta">Craft &amp; Ethos</a>
+        <a href="#location" onclick="closeMobileMenu()" class="py-1 border-b border-cream-border/50 text-forest hover:text-terracotta">Hours &amp; Location</a>
+        
+        <div class="pt-2 flex flex-col gap-2">
+          <button onclick="closeMobileMenu(); openModal('orderModal')" class="w-full text-center bg-terracotta hover:bg-terracotta-hover text-white py-3 rounded-full font-semibold shadow">
+            Order Ahead &amp; Pickup
+          </button>
+          <button onclick="closeMobileMenu(); openModal('reserveModal')" class="w-full text-center border border-forest text-forest py-2.5 rounded-full font-semibold hover:bg-forest hover:text-white transition">
+            Reserve Patio Table
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative overflow-hidden pt-12 pb-20 md:py-24 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Copy & Actions -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest/10 border border-forest/20 text-forest text-xs sm:text-sm font-semibold">
+            <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+            72-Hour Fermented Sourdough &bull; Hand-Sliced Salumi &bull; Single-Origin Beans
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight text-forest leading-[1.12]">
+            Artisan Breads, <br class="hidden sm:inline"/>
+            <span class="italic font-normal text-terracotta">Slow-Cured Meats</span> &amp; Specialty Brews.
+          </h1>
+
+          <p class="text-base sm:text-lg text-charcoal/80 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Welcome to your neighborhood sanctuary of honest food. We celebrate heritage baking, 
+            house-cured pastrami, small-batch Italian mortadella, and impeccably pulled third-wave espresso. 
+            Crafted unhurriedly every single morning.
+          </p>
+
+          <!-- Badges & Highlights -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs sm:text-sm font-medium text-charcoal/70">
+            <div class="flex items-center gap-2 bg-cream-soft px-3 py-1.5 rounded-full border border-cream-border">
+              <i class="fa-solid fa-bread-slice text-terracotta"></i> House Sourdough &amp; Focaccia
+            </div>
+            <div class="flex items-center gap-2 bg-cream-soft px-3 py-1.5 rounded-full border border-cream-border">
+              <i class="fa-solid fa-fire text-amberwood"></i> Woodsmoke Pastrami
+            </div>
+            <div class="flex items-center gap-2 bg-cream-soft px-3 py-1.5 rounded-full border border-cream-border">
+              <i class="fa-solid fa-mug-saucer text-forest"></i> Precision Roasts
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#menu" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-forest hover:bg-forest-light text-white font-semibold px-8 py-3.5 rounded-full shadow-warm transition transform hover:-translate-y-0.5">
+              <span>Explore The Menu</span>
+              <i class="fa-solid fa-arrow-down text-xs"></i>
+            </a>
+            <a href="#location" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-forest/30 hover:border-forest text-forest hover:bg-forest/5 font-semibold px-7 py-3.5 rounded-full transition">
+              <i class="fa-solid fa-location-dot text-terracotta"></i>
+              <span>Find Us &amp; Hours</span>
+            </a>
+          </div>
+
+          <!-- Social proof micro bar -->
+          <div class="pt-6 border-t border-cream-border/80 flex items-center justify-center lg:justify-start gap-4">
+            <div class="flex -space-x-2 overflow-hidden">
+              <span class="inline-block h-8 w-8 rounded-full ring-2 ring-cream bg-amberwood text-white text-xs flex items-center justify-center font-bold">4.9</span>
+              <div class="w-8 h-8 rounded-full bg-forest text-cream flex items-center justify-center text-xs ring-2 ring-cream">
+                <i class="fa-solid fa-heart text-[10px]"></i>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-terracotta text-cream flex items-center justify-center text-xs ring-2 ring-cream">
+                <i class="fa-solid fa-award text-[10px]"></i>
+              </div>
+            </div>
+            <div class="text-xs sm:text-sm text-charcoal/70">
+              <strong class="text-forest font-semibold">1,200+ local foodies</strong> rated us Best Deli Sandwich &amp; Brew 2024
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Visual Collage with SVG & Styling -->
+        <div class="lg:col-span-5 relative">
+          <!-- Decorative backing element -->
+          <div class="absolute -inset-4 bg-terracotta/10 rounded-3xl transform rotate-2 -z-10 filter blur-sm"></div>
+          
+          <div class="bg-forest-dark text-cream p-6 sm:p-8 rounded-3xl shadow-warm-lg border border-forest/40 relative overflow-hidden">
+            <!-- Ambient glow -->
+            <div class="absolute -right-16 -top-16 w-48 h-48 bg-terracotta/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="flex items-center justify-between pb-6 border-b border-forest-light">
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-terracotta animate-pulse"></span>
+                <span class="text-xs tracking-widest uppercase font-semibold text-parchment">Chef's Blackboard Today</span>
+              </div>
+              <span class="text-xs px-2.5 py-1 bg-forest rounded-full border border-forest-muted text-amberwood font-mono">Batch #428</span>
+            </div>
+
+            <!-- Featured Showcase Sandwich Card -->
+            <div class="mt-6 space-y-4">
+              <div class="relative rounded-2xl overflow-hidden bg-forest border border-forest-muted p-4">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <span class="text-xs text-terracotta-light uppercase tracking-wider font-bold">Featured Signature</span>
+                    <h3 class="font-serif text-xl sm:text-2xl text-cream font-bold mt-0.5">Truffle Mortadella Focaccia</h3>
+                  </div>
+                  <span class="font-serif text-xl font-bold text-amberwood">$16.50</span>
+                </div>
+                <p class="text-xs sm:text-sm text-parchment/80 mt-2 font-light">
+                  Thinly shaved IGP Bologna Mortadella, whipped stracciatella, Sicilian pistachio pesto, and white truffle glaze on 48h salted rosemary focaccia.
+                </p>
+                <div class="mt-3 flex items-center gap-2 text-[11px] text-parchment/60">
+                  <span class="px-2 py-0.5 rounded bg-forest-dark text-amberwood font-medium">Bestseller</span>
+                  <span>&bull;</span>
+                  <span>Served warm &amp; crispy</span>
+                </div>
+              </div>
+
+              <!-- Quick stat counter cards -->
+              <div class="grid grid-cols-2 gap-3 pt-2">
+                <div class="p-3.5 rounded-xl bg-forest/80 border border-forest-muted text-center">
+                  <div class="text-2xl font-serif font-bold text-amberwood">72h</div>
+                  <div class="text-[11px] text-parchment/80 uppercase tracking-wider mt-0.5">Cold Sourdough Rise</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-forest/80 border border-forest-muted text-center">
+                  <div class="text-2xl font-serif font-bold text-terracotta-light">14 Days</div>
+                  <div class="text-[11px] text-parchment/80 uppercase tracking-wider mt-0.5">Brisket Pastrami Brine</div>
+                </div>
+              </div>
+
+              <!-- Coffee spotlight card -->
+              <div class="p-3.5 rounded-xl bg-forest/80 border border-forest-muted flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-full bg-forest-dark flex items-center justify-center text-amberwood shrink-0">
+                  <i class="fa-solid fa-seedling text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-cream">Single Origin On Tap</h4>
+                  <p class="text-xs text-parchment/70">Ethiopia Yirgacheffe &bull; Jasmine, Meyer Lemon, Bergamot</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom reassurance -->
+            <div class="mt-6 pt-4 border-t border-forest-light flex items-center justify-between text-xs text-parchment/70">
+              <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Scratch Dressings</span>
+              <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Nitrate-Free Meats</span>
+              <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> GF Options</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT / OUR STORY SECTION ================= -->
+  <section id="story" class="py-20 bg-cream-soft border-y border-cream-border relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest font-bold text-terracotta">Our Craft &amp; Origins</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-forest mt-2">
+          Rooted in Heritage. Crafted for the Modern Palate.
+        </h2>
+        <div class="w-16 h-1 bg-amberwood mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Story Pillar 1 -->
+        <div class="bg-cream-card p-8 rounded-2xl border border-cream-border shadow-sm hover:shadow-warm transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-terracotta/10 text-terracotta flex items-center justify-center text-2xl mb-6">
+              <i class="fa-solid fa-jar"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-forest mb-3">The 9-Year Mother Starter</h3>
+            <p class="text-charcoal/80 text-sm leading-relaxed">
+              Every loaf of sourdough, ciabatta, and seeded rye begins with 'Matilda,' our wild yeast culture nurtured since 2015. 
+              We utilize unbleached heritage grains stone-ground in small batches to preserve nutrition, deep aroma, and an open, airy crumb with unmistakable blistered crust.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cream-border/60 text-xs font-semibold uppercase tracking-wider text-terracotta">
+            No Commercial Yeast &bull; Easy Digestion
+          </div>
+        </div>
+
+        <!-- Story Pillar 2 -->
+        <div class="bg-cream-card p-8 rounded-2xl border border-cream-border shadow-sm hover:shadow-warm transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-forest/10 text-forest flex items-center justify-center text-2xl mb-6">
+              <i class="fa-solid fa-drumstick-bite"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-forest mb-3">Old-World Charcuterie</h3>
+            <p class="text-charcoal/80 text-sm leading-relaxed">
+              We brine our pastrami with coriander, black peppercorn, and juniper berries for two full weeks before low-and-slow smoking over hickory hardwood. 
+              From dry-cured Coppa to crispy rolled Porchetta stuffed with garden herbs, we cut thin slices to melt seamlessly on warm bread.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cream-border/60 text-xs font-semibold uppercase tracking-wider text-forest">
+            Pasture-Raised &bull; Ethically Sourced
+          </div>
+        </div>
+
+        <!-- Story Pillar 3 -->
+        <div class="bg-cream-card p-8 rounded-2xl border border-cream-border shadow-sm hover:shadow-warm transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-amberwood/15 text-amberwood flex items-center justify-center text-2xl mb-6">
+              <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-forest mb-3">Third-Wave Coffee Program</h3>
+            <p class="text-charcoal/80 text-sm leading-relaxed">
+              Coffee isn't an afterthought; it's our co-star. We roast transparently traded micro-lots in small batches each week. 
+              Pulled through a customized Synesso espresso machine with dialed-in mineralized water, producing velvety flat whites and sparkling single-origin pour overs.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cream-border/60 text-xs font-semibold uppercase tracking-wider text-amberwood">
+            Direct Trade &bull; Weekly Fresh Roasts
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quote banner -->
+      <div class="mt-16 bg-forest text-cream rounded-2xl p-8 sm:p-10 border border-forest-muted text-center max-w-4xl mx-auto shadow-warm">
+        <p class="font-serif italic text-lg sm:text-2xl font-light text-parchment leading-relaxed">
+          &ldquo;A great sandwich is a piece of architecture. The bread must yield at the exact same rate as the fillings, and every layer must balance fat, acid, crunch, and aroma.&rdquo;
+        </p>
+        <div class="mt-4 text-xs sm:text-sm font-semibold tracking-wider text-amberwood uppercase">
+          &mdash; Julian &amp; Maya Vance, Founders &amp; Bakers
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CURATED MENU SHOWCASE ================= -->
+  <section id="menu" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-widest font-bold text-terracotta">Daily Provisions</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-forest mt-2">
+          Curated Menu Showcase
+        </h2>
+        <p class="text-charcoal/70 text-sm sm:text-base mt-2 max-w-xl">
+          All sandwiches served on fresh sourdough, pillowy focaccia, or rye. Gluten-free seed loaf available (+ $2.00).
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="mt-6 md:mt-0 flex flex-wrap gap-2 p-1.5 bg-cream-soft rounded-full border border-cream-border">
+        <button onclick="switchTab('sandwiches')" id="tab-btn-sandwiches" class="tab-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition bg-forest text-cream shadow-sm">
+          Signature Sandwiches
+        </button>
+        <button onclick="switchTab('deli')" id="tab-btn-deli" class="tab-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition text-charcoal hover:text-terracotta">
+          Deli &amp; Boards
+        </button>
+        <button onclick="switchTab('drinks')" id="tab-btn-drinks" class="tab-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition text-charcoal hover:text-terracotta">
+          Coffee &amp; Brews
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= TAB 1: SANDWICHES ================= -->
+    <div id="tab-sandwiches" class="tab-content active grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Item 1 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border hover:border-amberwood/50 transition-all shadow-sm hover:shadow-warm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="bg-terracotta text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">Chef's Pick</span>
+                <span class="bg-forest/10 text-forest text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Warm Pressed</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-forest">The 14-Day Brisket Pastrami</h3>
+            </div>
+            <span class="font-serif text-xl font-bold text-terracotta shrink-0">$17.50</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-3 leading-relaxed">
+            Hickory smoked pastrami piled high, Swiss Gruyère, house fermented tangy sauerkraut, and whole grain Russian dressing on thick caraway rye.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-cream-border flex items-center justify-between text-xs text-charcoal/60">
+          <span>Pairs with: Nitro Cold Brew or Crisp Cider</span>
+          <span class="font-medium text-forest"><i class="fa-solid fa-wheat-awn mr-1"></i> Caraway Rye</span>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border hover:border-amberwood/50 transition-all shadow-sm hover:shadow-warm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="bg-amberwood text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">Signature</span>
+                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">GF Option</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-forest">Truffle Mortadella &amp; Pistachio</h3>
+            </div>
+            <span class="font-serif text-xl font-bold text-terracotta shrink-0">$16.50</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-3 leading-relaxed">
+            Shaved Italian Mortadella, whipped stracciatella cheese, crushed Bronte pistachios, organic arugula, and white truffle emulsion inside sea salt focaccia.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-cream-border flex items-center justify-between text-xs text-charcoal/60">
+          <span>Pairs with: Iced Sparkling Americano</span>
+          <span class="font-medium text-forest"><i class="fa-solid fa-bread-slice mr-1"></i> Herb Focaccia</span>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border hover:border-amberwood/50 transition-all shadow-sm hover:shadow-warm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="bg-forest/10 text-forest text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Slow Roast</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-forest">Crispy Porchetta Panini</h3>
+            </div>
+            <span class="font-serif text-xl font-bold text-terracotta shrink-0">$16.75</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-3 leading-relaxed">
+            Crisp crackling rolled pork belly seasoned with fennel and rosemary, salsa verde, charred sweet onions, and sharp provolone on pressed sourdough baguette.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-cream-border flex items-center justify-between text-xs text-charcoal/60">
+          <span>Pairs with: House Kombucha or Flat White</span>
+          <span class="font-medium text-forest"><i class="fa-solid fa-bread-slice mr-1"></i> Sourdough Baguette</span>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border hover:border-amberwood/50 transition-all shadow-sm hover:shadow-warm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">Vegetarian</span>
+                <span class="bg-forest/10 text-forest text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">GF Option</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-forest">Roasted Heirloom Veg &amp; Ricotta</h3>
+            </div>
+            <span class="font-serif text-xl font-bold text-terracotta shrink-0">$15.00</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-3 leading-relaxed">
+            Smoky roasted zucchini, heirloom eggplant, slow-cooked red peppers, whipped lemon-herb ricotta, toasted pine nuts, and 12-year balsamic glaze on seeded levain.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-cream-border flex items-center justify-between text-xs text-charcoal/60">
+          <span>Pairs with: Pour-Over Ethiopian Roast</span>
+          <span class="font-medium text-forest"><i class="fa-solid fa-wheat-awn mr-1"></i> Seeded Levain</span>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border hover:border-amberwood/50 transition-all shadow-sm hover:shadow-warm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="bg-forest/10 text-forest text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">New England Touch</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-forest">Smoked Turkey &amp; Brie Melt</h3>
+            </div>
+            <span class="font-serif text-xl font-bold text-terracotta shrink-0">$15.50</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-3 leading-relaxed">
+            Applewood smoked turkey breast, double cream French brie, tart house cranberry-orange chutney, and crisp Granny Smith apple slices on butter-grilled country loaf.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-cream-border flex items-center justify-between text-xs text-charcoal/60">
+          <span>Pairs with: Spiced Chai Latte</span>
+          <span class="font-medium text-forest"><i class="fa-solid fa-bread-slice mr-1"></i> Country Sourdough</span>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border hover:border-amberwood/50 transition-all shadow-sm hover:shadow-warm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="bg-amberwood text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">Classic Favorite</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-forest">The Grand Italian Grinder</h3>
+            </div>
+            <span class="font-serif text-xl font-bold text-terracotta shrink-0">$16.25</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-3 leading-relaxed">
+            Prosciutto di Parma, spicy capocollo, Genoa salami, aged provolone, shredded iceberg, thinly sliced red onion, oregano vinaigrette, and pickled hot peppers.
+          </p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-cream-border flex items-center justify-between text-xs text-charcoal/60">
+          <span>Pairs with: Craft Blood Orange Soda</span>
+          <span class="font-medium text-forest"><i class="fa-solid fa-bread-slice mr-1"></i> Crusty Sub Roll</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= TAB 2: DELI & BOARDS ================= -->
+    <div id="tab-deli" class="tab-content grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Board 1 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start">
+            <h3 class="font-serif text-xl font-bold text-forest">The Daily Butcher's Board</h3>
+            <span class="font-serif text-xl font-bold text-terracotta">$28.00</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-2">
+            Curated trio of house pastrami, 24-month prosciutto, and fennel salumi. Accompanied by Castelvetrano olives, house spicy cornichons, wholegrain mustard, and warm toasted bread slices. (Serves 2-3)
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-cream-border text-xs text-charcoal/60">Perfect with our afternoon beer and natural wine menu</div>
+      </div>
+
+      <!-- Board 2 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start">
+            <h3 class="font-serif text-xl font-bold text-forest">Artisan Farmhouse Cheese Board</h3>
+            <span class="font-serif text-xl font-bold text-terracotta">$24.00</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-2">
+            Cave-aged Clothbound Cheddar, triple cream brie, and Danish blue. Served with honeycomb from local apiaries, spiced pecans, seasonal fig jam, and crusty sourdough crisps.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-cream-border text-xs text-charcoal/60">Vegetarian Friendly &bull; Local Dairy Partners</div>
+      </div>
+
+      <!-- Board 3 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start">
+            <h3 class="font-serif text-xl font-bold text-forest">Pantry Pickle &amp; Ferment Jar Trio</h3>
+            <span class="font-serif text-xl font-bold text-terracotta">$9.50</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-2">
+            Taster flight of house lacto-fermented dill cucumber spears, pickled turmeric cauliflower, and candied jalapeños with artisanal saltines.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-cream-border text-xs text-charcoal/60">Made from scratch weekly &bull; Probiotic rich</div>
+      </div>
+
+      <!-- Board 4 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start">
+            <h3 class="font-serif text-xl font-bold text-forest">Bakers Bread Basket &amp; Cultured Butters</h3>
+            <span class="font-serif text-xl font-bold text-terracotta">$8.00</span>
+          </div>
+          <p class="text-sm text-charcoal/80 mt-2">
+            Warm thick cuts of today's sourdough, focaccia, and seeded loaf served with whipped honey sea salt butter and smoked paprika dipping oil.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-cream-border text-xs text-charcoal/60">Baked in morning and afternoon waves</div>
+      </div>
+
+    </div>
+
+    <!-- ================= TAB 3: COFFEE & BREWS ================= -->
+    <div id="tab-drinks" class="tab-content grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Drink 1 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex justify-between items-start">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="font-serif text-lg font-bold text-forest">Velvet Flat White</h3>
+            <span class="text-[10px] bg-amberwood/15 text-amberwood font-semibold px-2 py-0.5 rounded">6 oz</span>
+          </div>
+          <p class="text-xs text-charcoal/70 mt-1">Double ristretto with micro-textured whole milk or oat milk (+ $0.75).</p>
+        </div>
+        <span class="font-serif text-lg font-bold text-terracotta">$4.75</span>
+      </div>
+
+      <!-- Drink 2 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex justify-between items-start">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="font-serif text-lg font-bold text-forest">Single-Origin V60 Pour Over</h3>
+            <span class="text-[10px] bg-forest/10 text-forest font-semibold px-2 py-0.5 rounded">Seasonal Lot</span>
+          </div>
+          <p class="text-xs text-charcoal/70 mt-1">Rotating micro-lot beans. Current: Colombia Huila (Peach, Brown Sugar).</p>
+        </div>
+        <span class="font-serif text-lg font-bold text-terracotta">$5.50</span>
+      </div>
+
+      <!-- Drink 3 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex justify-between items-start">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="font-serif text-lg font-bold text-forest">Brown Sugar &amp; Cardamom Cold Brew</h3>
+            <span class="text-[10px] bg-terracotta/15 text-terracotta font-semibold px-2 py-0.5 rounded">House Special</span>
+          </div>
+          <p class="text-xs text-charcoal/70 mt-1">18-hour cold steeped concentrate, cracked cardamom syrup, splash of cream.</p>
+        </div>
+        <span class="font-serif text-lg font-bold text-terracotta">$5.75</span>
+      </div>
+
+      <!-- Drink 4 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex justify-between items-start">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="font-serif text-lg font-bold text-forest">Ceremonial Uji Matcha Latte</h3>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Stone Ground</span>
+          </div>
+          <p class="text-xs text-charcoal/70 mt-1">Whisked first-harvest Japanese matcha with Madagascar vanilla &amp; oat milk.</p>
+        </div>
+        <span class="font-serif text-lg font-bold text-terracotta">$6.25</span>
+      </div>
+
+      <!-- Drink 5 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex justify-between items-start">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="font-serif text-lg font-bold text-forest">Sicilian Blood Orange Craft Soda</h3>
+            <span class="text-[10px] bg-amberwood/15 text-amberwood font-semibold px-2 py-0.5 rounded">House Made</span>
+          </div>
+          <p class="text-xs text-charcoal/70 mt-1">Cold-pressed citrus, fresh rosemary sprig, sparkling mountain water.</p>
+        </div>
+        <span class="font-serif text-lg font-bold text-terracotta">$4.50</span>
+      </div>
+
+      <!-- Drink 6 -->
+      <div class="bg-cream-card rounded-2xl p-6 border border-cream-border shadow-sm flex justify-between items-start">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="font-serif text-lg font-bold text-forest">Golden Turmeric &amp; Ginger Tonic</h3>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Caffeine Free</span>
+          </div>
+          <p class="text-xs text-charcoal/70 mt-1">Steamed almond milk with fresh ginger root, turmeric, and wildflower honey.</p>
+        </div>
+        <span class="font-serif text-lg font-bold text-terracotta">$5.50</span>
+      </div>
+
+    </div>
+
+    <!-- Dietary info footer -->
+    <div class="mt-10 p-4 rounded-xl bg-parchment/60 border border-cream-border flex flex-wrap items-center justify-between text-xs text-charcoal/70 gap-4">
+      <div class="flex items-center gap-4">
+        <span><strong class="text-forest">Dietary badges:</strong> (GF) Gluten-Free, (V) Vegetarian, (DF) Dairy-Free.</span>
+        <span>Please notify staff of any severe nut or sesame allergies.</span>
+      </div>
+      <a href="#location" class="font-semibold text-terracotta hover:underline">Download Printable PDF Menu &rarr;</a>
+    </div>
+
+  </section>
+
+  <!-- ================= DELI COUNTER & PANTRY HIGHLIGHT ================= -->
+  <section id="deli-counter" class="py-20 bg-forest text-cream relative overflow-hidden">
+    <!-- Subtle graphic background element -->
+    <div class="absolute -left-20 bottom-0 text-forest-light/30 text-9xl pointer-events-none select-none">
+      <i class="fa-solid fa-cheese"></i>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs uppercase tracking-widest font-bold text-amberwood">Take The Deli Home</span>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-cream leading-tight">
+            The Daily Pantry &amp; Cut-to-Order Counter
+          </h2>
+          <p class="text-parchment/80 text-sm sm:text-base leading-relaxed">
+            Love the ingredients in your sandwich? Visit our full-service deli counter. 
+            We slice meats and portion artisan cheeses by weight, pack house fermented pickles in take-home jars, 
+            and offer freshly roasted whole-bean coffee bags with grind settings calibrated for your brewer.
+          </p>
+
+          <ul class="space-y-3 pt-2 text-sm text-parchment">
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-amberwood mt-1"></i>
+              <span><strong>Custom Charcuterie Boxes:</strong> Built for your weekend picnics, celebrations, and gatherings.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-amberwood mt-1"></i>
+              <span><strong>Warm Loaf Reservation:</strong> Pre-order country sourdough and baguettes for afternoon pickup.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-amberwood mt-1"></i>
+              <span><strong>Deli Pantry Staples:</strong> Olive oils, aged balsamics, chili crunches, and house pickles.</span>
+            </li>
+          </ul>
+
+          <div class="pt-4">
+            <button onclick="openModal('orderModal')" class="inline-flex items-center gap-2 bg-amberwood hover:bg-amberwood/90 text-forest-dark font-bold px-7 py-3 rounded-full transition shadow">
+              <span>Order Deli Provisions</span>
+              <i class="fa-solid fa-bag-shopping text-sm"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Counter Grid Display -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <div class="bg-forest-light/60 border border-forest-muted p-6 rounded-2xl hover:bg-forest-light transition">
+            <div class="text-amberwood text-2xl mb-3"><i class="fa-solid fa-bacon"></i></div>
+            <h3 class="font-serif text-xl font-bold text-cream">Sliced Charcuterie</h3>
+            <p class="text-xs text-parchment/70 mt-2">Pastrami, Truffle Mortadella, Prosciutto di Parma 24mo, Spianata Piccante, Bresaola.</p>
+            <div class="mt-4 text-xs font-semibold text-amberwood">From $4.50 / 100g</div>
+          </div>
+
+          <div class="bg-forest-light/60 border border-forest-muted p-6 rounded-2xl hover:bg-forest-light transition">
+            <div class="text-amberwood text-2xl mb-3"><i class="fa-solid fa-cheese"></i></div>
+            <h3 class="font-serif text-xl font-bold text-cream">Cave-Aged Cheeses</h3>
+            <p class="text-xs text-parchment/70 mt-2">Clothbound Vermont Cheddar, Parmigiano-Reggiano Vacche Rosse, Taleggio, Fresh Stracciatella.</p>
+            <div class="mt-4 text-xs font-semibold text-amberwood">From $5.00 / 100g</div>
+          </div>
+
+          <div class="bg-forest-light/60 border border-forest-muted p-6 rounded-2xl hover:bg-forest-light transition">
+            <div class="text-amberwood text-2xl mb-3"><i class="fa-solid fa-jar-wheat"></i></div>
+            <h3 class="font-serif text-xl font-bold text-cream">Pickles &amp; Condiments</h3>
+            <p class="text-xs text-parchment/70 mt-2">Smoky Russian sauce, garlic dill spears, pickled red onions, honey mustard crunch.</p>
+            <div class="mt-4 text-xs font-semibold text-amberwood">Glass jars from $7.00</div>
+          </div>
+
+          <div class="bg-forest-light/60 border border-forest-muted p-6 rounded-2xl hover:bg-forest-light transition">
+            <div class="text-amberwood text-2xl mb-3"><i class="fa-solid fa-mug-saucer"></i></div>
+            <h3 class="font-serif text-xl font-bold text-cream">Fresh Roasted Beans</h3>
+            <p class="text-xs text-parchment/70 mt-2">House blend 'Daily Hearth' &amp; single origins. Complimentarily ground to your preferred brew method.</p>
+            <div class="mt-4 text-xs font-semibold text-amberwood">250g bags from $16.00</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CRAFT & SPECIAL FEATURES ================= -->
+  <section id="features" class="py-20 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest font-bold text-terracotta">Why It Tastes Different</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest mt-2">
+          The Pillars of Daily Crust
+        </h2>
+        <p class="text-charcoal/70 text-sm mt-3">
+          We take zero shortcuts. From wild fermentation to fair-wage partnerships with regional farms.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-cream-soft border border-cream-border text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-terracotta/10 text-terracotta flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-forest mb-2">Regional Family Farms</h3>
+          <p class="text-xs text-charcoal/70 leading-relaxed">
+            All seasonal vegetables, eggs, and dairy are sourced directly from sustainable producers within a 100-mile radius.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-cream-soft border border-cream-border text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-forest/10 text-forest flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-blender"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-forest mb-2">Scratch Dressings</h3>
+          <p class="text-xs text-charcoal/70 leading-relaxed">
+            No premade jar sauces. We emulsify garlic aioli, whip ricotta, and simmer relishes fresh every morning.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-cream-soft border border-cream-border text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-amberwood/15 text-amberwood flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-forest mb-2">Baked Twice Daily</h3>
+          <p class="text-xs text-charcoal/70 leading-relaxed">
+            Our hearth ovens fire at dawn and again at 1:00 PM so afternoon guests get that fresh-baked crispness.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-cream-soft border border-cream-border text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-terracotta/10 text-terracotta flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-paw"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-forest mb-2">Dog-Friendly Patio</h3>
+          <p class="text-xs text-charcoal/70 leading-relaxed">
+            Covered, heated outdoor sidewalk garden with water bowls and house-baked sourdough oat treats for pups.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS & PRESS ================= -->
+  <section class="py-20 bg-cream-soft border-t border-cream-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <span class="text-xs uppercase tracking-widest font-bold text-terracotta">Community Love</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest mt-1">
+          Praise from Press &amp; Locals
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="bg-cream-card p-6 sm:p-8 rounded-2xl border border-cream-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amberwood mb-4 text-xs gap-1">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="italic text-charcoal/80 text-sm leading-relaxed mb-6 font-serif">
+              &ldquo;The Truffle Mortadella Focaccia is hands down the best sandwich in the city right now. The focaccia is pillowy with salty crisp edges, and their pour-over coffee rivals any serious boutique roaster.&rdquo;
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-cream-border/60">
+            <div class="w-10 h-10 rounded-full bg-terracotta text-white font-bold flex items-center justify-center text-sm font-serif">
+              MC
+            </div>
+            <div>
+              <div class="font-semibold text-sm text-forest">Metro Culinary Gazette</div>
+              <div class="text-xs text-charcoal/50">Food Critic Column</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-cream-card p-6 sm:p-8 rounded-2xl border border-cream-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amberwood mb-4 text-xs gap-1">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="italic text-charcoal/80 text-sm leading-relaxed mb-6 font-serif">
+              &ldquo;My Saturday ritual: sitting under the olive trees on their patio with a double flat white and the pastrami on caraway rye. You can taste the 14 days of brining in every single tender bite.&rdquo;
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-cream-border/60">
+            <div class="w-10 h-10 rounded-full bg-forest text-amberwood font-bold flex items-center justify-center text-sm font-serif">
+              DK
+            </div>
+            <div>
+              <div class="font-semibold text-sm text-forest">Daniel K.</div>
+              <div class="text-xs text-charcoal/50">Verified Local Regular</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-cream-card p-6 sm:p-8 rounded-2xl border border-cream-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amberwood mb-4 text-xs gap-1">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="italic text-charcoal/80 text-sm leading-relaxed mb-6 font-serif">
+              &ldquo;Ordered 15 sandwiches and charcuterie boards for an architectural studio client lunch. Impeccably packaged, labeled with dietary notes, and our guests haven't stopped raving about the bread.&rdquo;
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-cream-border/60">
+            <div class="w-10 h-10 rounded-full bg-amberwood text-white font-bold flex items-center justify-center text-sm font-serif">
+              SL
+            </div>
+            <div>
+              <div class="font-semibold text-sm text-forest">Sarah Lin</div>
+              <div class="text-xs text-charcoal/50">Studio Design Lead</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= HOURS & LOCATION SECTION ================= -->
+  <section id="location" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs uppercase tracking-widest font-bold text-terracotta">Visit Us</span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-forest mt-2">
+        Hours &amp; Location
+      </h2>
+      <p class="text-charcoal/70 text-sm mt-3">
+        Located on the tree-lined corner of 4th &amp; Elmwood. Easy bike parking, nearby subway station, and patio seating.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      
+      <!-- Hours & Details Card -->
+      <div class="lg:col-span-5 bg-cream-card rounded-3xl p-6 sm:p-8 border border-cream-border shadow-sm flex flex-col justify-between">
+        
+        <div>
+          <!-- Open Status Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Open Today until 4:00 PM &bull; Kitchen closes 3:30 PM
+          </div>
+
+          <h3 class="font-serif text-2xl font-bold text-forest mb-4">Operating Hours</h3>
+          
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between py-2 border-b border-cream-border">
+              <span class="font-medium text-charcoal">Monday &ndash; Thursday</span>
+              <span class="text-forest font-semibold">7:00 AM &ndash; 4:00 PM</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-cream-border">
+              <span class="font-medium text-charcoal">Friday (Aperitivo Hour)</span>
+              <span class="text-forest font-semibold">7:00 AM &ndash; 7:00 PM</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-cream-border">
+              <span class="font-medium text-charcoal">Saturday</span>
+              <span class="text-forest font-semibold">8:00 AM &ndash; 5:00 PM</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-cream-border">
+              <span class="font-medium text-charcoal">Sunday</span>
+              <span class="text-forest font-semibold">8:00 AM &ndash; 3:30 PM</span>
+            </div>
+          </div>
+
+          <!-- Contact details -->
+          <div class="mt-8 space-y-3 text-sm">
+            <div class="flex items-start gap-3 text-charcoal/80">
+              <i class="fa-solid fa-map-pin text-terracotta mt-1"></i>
+              <div>
+                <strong>The Daily Crust &amp; Co.</strong><br/>
+                412 Elmwood Avenue, Corner of 4th Street<br/>
+                Brooklyn, NY 11211
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 text-charcoal/80 pt-2">
+              <i class="fa-solid fa-phone text-terracotta"></i>
+              <span>(555) 782-9104</span>
+            </div>
+
+            <div class="flex items-center gap-3 text-charcoal/80">
+              <i class="fa-solid fa-envelope text-terracotta"></i>
+              <span>hello@dailycrustdeli.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="mt-8 pt-6 border-t border-cream-border flex flex-col sm:flex-row gap-3">
+          <button onclick="openModal('reserveModal')" class="flex-1 text-center bg-forest hover:bg-forest-light text-white font-semibold py-3 px-4 rounded-xl transition text-xs uppercase tracking-wider">
+            Reserve Patio Table
+          </button>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="flex-1 text-center border border-forest/30 hover:border-forest text-forest font-semibold py-3 px-4 rounded-xl transition text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+            <i class="fa-solid fa-diamond-turn-right text-terracotta"></i> Directions
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Simulated Interactive Map Card -->
+      <div class="lg:col-span-7 bg-cream-card rounded-3xl border border-cream-border overflow-hidden shadow-sm flex flex-col">
+        
+        <!-- Map Header Bar -->
+        <div class="p-4 bg-parchment/60 border-b border-cream-border flex items-center justify-between text-xs font-medium text-charcoal/70">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-compass text-terracotta"></i>
+            <span>Neighborhood Navigator: Elmwood Historic District</span>
+          </div>
+          <span class="text-[11px] bg-forest/10 px-2 py-0.5 rounded text-forest font-mono">2 min from L Line</span>
+        </div>
+
+        <!-- Simulated Map View with SVG Graphics -->
+        <div class="relative flex-1 min-h-[340px] bg-[#E5E0D4] overflow-hidden flex items-center justify-center p-6">
+          
+          <!-- Background Grid / Streets -->
+          <svg class="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="90" x2="1000" y2="90" stroke="#7E7262" stroke-width="14" />
+            <line x1="0" y1="240" x2="1000" y2="240" stroke="#7E7262" stroke-width="26" />
+            <line x1="160" y1="0" x2="160" y2="600" stroke="#7E7262" stroke-width="18" />
+            <line x1="420" y1="0" x2="420" y2="600" stroke="#7E7262" stroke-width="24" />
+            <line x1="680" y1="0" x2="680" y2="600" stroke="#7E7262" stroke-width="16" />
+            <!-- Park shape -->
+            <rect x="200" y="28" width="180" height="170" rx="8" fill="#B7CCA5" />
+          </svg>
+
+          <!-- Park label -->
+          <div class="absolute top-12 left-56 text-[11px] font-bold text-forest/70 uppercase tracking-widest pointer-events-none select-none">
+            Elmwood Memorial Park
+          </div>
+
+          <!-- Active Marker Pin -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div class="bg-forest-dark text-cream text-xs px-3.5 py-1.5 rounded-full shadow-warm-lg border border-amberwood/50 flex items-center gap-2 mb-1">
+              <i class="fa-solid fa-wheat-awn text-amberwood"></i>
+              <span class="font-bold">The Daily Crust &amp; Co.</span>
+            </div>
+            
+            <div class="w-8 h-8 rounded-full bg-terracotta text-white flex items-center justify-center text-sm shadow-warm ring-4 ring-white animate-bounce">
+              <i class="fa-solid fa-utensils text-xs"></i>
+            </div>
+            <div class="w-4 h-1.5 bg-charcoal/20 rounded-full blur-[1px]"></div>
+          </div>
+
+          <!-- Transit Info Badge overlay -->
+          <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/95 backdrop-blur-md p-3 rounded-xl border border-cream-border shadow-md text-xs space-y-1">
+            <div class="font-bold text-forest flex items-center gap-1.5">
+              <i class="fa-solid fa-train-subway text-terracotta"></i>
+              Subway &amp; Parking Notes
+            </div>
+            <p class="text-charcoal/70">Bedford Ave Station (L) &bull; 4 min walk.</p>
+            <p class="text-charcoal/70">Dedicated bicycle hitch rails in front of patio.</p>
+          </div>
+
+        </div>
+
+        <!-- Map Footer Quick Link -->
+        <div class="p-4 bg-cream-card border-t border-cream-border flex items-center justify-between text-xs">
+          <span class="text-charcoal/60">Street parking available on Elmwood Ave &amp; N 4th.</span>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="font-semibold text-terracotta hover:underline">
+            Open in Google Maps &rarr;
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= NEWSLETTER & FRESH BATCH CLUB ================= -->
+  <section class="py-16 bg-cream-soft border-t border-cream-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-12 h-12 rounded-full bg-terracotta/10 text-terracotta flex items-center justify-center text-xl mx-auto mb-4">
+        <i class="fa-solid fa-envelope-open-text"></i>
+      </div>
+      <h3 class="font-serif text-2xl sm:text-3xl font-bold text-forest">Join The 'Baker's Batch' Club</h3>
+      <p class="text-charcoal/70 text-sm mt-2 max-w-lg mx-auto">
+        Receive our weekend secret sandwich menu alerts, Friday wine tastings, and invitations to private sourdough baking masterclasses.
+      </p>
+
+      <form onsubmit="handleNewsletter(event)" class="mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input 
+          type="email" 
+          id="newsletterEmail" 
+          required 
+          placeholder="Enter your email address" 
+          class="flex-1 px-4 py-3 rounded-full bg-cream-card border border-cream-border focus:outline-none focus:ring-2 focus:ring-terracotta text-sm"
+        />
+        <button type="submit" class="bg-forest hover:bg-forest-light text-white font-semibold px-6 py-3 rounded-full text-sm transition shadow">
+          Subscribe
+        </button>
+      </form>
+      <div id="newsletterMsg" class="mt-3 text-xs text-forest font-medium hidden">
+        Thanks for joining! We've sent a 15% pickup voucher to your inbox.
+      </div>
+      <p class="text-[11px] text-charcoal/50 mt-2">Zero spam. Unsubscribe with one click anytime.</p>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-forest-dark text-parchment pt-16 pb-12 border-t border-forest">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-forest-light/60">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-forest text-amberwood flex items-center justify-center border border-amberwood/40">
+              <i class="fa-solid fa-wheat-awn text-lg"></i>
+            </div>
+            <span class="font-serif font-bold text-xl text-cream tracking-tight">The Daily Crust &amp; Co.</span>
+          </div>
+          <p class="text-xs text-parchment/70 max-w-sm leading-relaxed">
+            Independent artisanal sandwich house, delicatessen pantry, and specialty coffee bar. 
+            Honoring honest ingredients, long-fermentation bread, and community hospitality since 2018.
+          </p>
+          <div class="flex items-center gap-3 text-cream/80 pt-2">
+            <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full bg-forest flex items-center justify-center hover:bg-terracotta transition text-xs"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full bg-forest flex items-center justify-center hover:bg-terracotta transition text-xs"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="TikTok" class="w-8 h-8 rounded-full bg-forest flex items-center justify-center hover:bg-terracotta transition text-xs"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" aria-label="Yelp" class="w-8 h-8 rounded-full bg-forest flex items-center justify-center hover:bg-terracotta transition text-xs"><i class="fa-brands fa-yelp"></i></a>
+          </div>
+        </div>
+
+        <!-- Links 1 -->
+        <div>
+          <h4 class="font-serif text-sm font-bold text-cream uppercase tracking-wider mb-3">Navigation</h4>
+          <ul class="space-y-2 text-xs text-parchment/70">
+            <li><a href="#story" class="hover:text-amberwood transition">Our Story &amp; Starter</a></li>
+            <li><a href="#menu" class="hover:text-amberwood transition">Signature Sandwiches</a></li>
+            <li><a href="#deli-counter" class="hover:text-amberwood transition">Deli Pantry Counter</a></li>
+            <li><a href="#features" class="hover:text-amberwood transition">Ethical Sourcing</a></li>
+            <li><a href="#location" class="hover:text-amberwood transition">Hours &amp; Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 2 -->
+        <div>
+          <h4 class="font-serif text-sm font-bold text-cream uppercase tracking-wider mb-3">Catering &amp; Orders</h4>
+          <ul class="space-y-2 text-xs text-parchment/70">
+            <li><a href="javascript:void(0)" onclick="openModal('orderModal')" class="hover:text-amberwood transition">Order Ahead for Pickup</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('reserveModal')" class="hover:text-amberwood transition">Patio Table Reservations</a></li>
+            <li><a href="#deli-counter" class="hover:text-amberwood transition">Charcuterie Grazing Boxes</a></li>
+            <li><a href="#location" class="hover:text-amberwood transition">Office Lunch Catering</a></li>
+            <li><a href="#" class="hover:text-amberwood transition">Wholesale Loaves</a></li>
+          </ul>
+        </div>
+
+        <!-- Hours Summary -->
+        <div>
+          <h4 class="font-serif text-sm font-bold text-cream uppercase tracking-wider mb-3">Today's Kitchen</h4>
+          <p class="text-xs text-parchment/70 leading-relaxed">
+            Fresh loaves baked daily at 7:00 AM &amp; 1:00 PM.<br/>
+            Deli counter cuts close 30 minutes before cafe doors shut.
+          </p>
+          <div class="mt-4 p-3 bg-forest rounded-xl border border-forest-muted">
+            <span class="text-[11px] text-amberwood block font-bold">Catering Inquiries:</span>
+            <span class="text-xs text-parchment">orders@dailycrustdeli.com</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-parchment/50 gap-4">
+        <div>
+          &copy; <span id="currentYear">2026</span> The Daily Crust &amp; Co. Artisan Sandwiches &amp; Specialty Brews. All Rights Reserved.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Service</a>
+          <a href="#" class="hover:underline">Accessibility</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: ORDER ONLINE / PICKUP ================= -->
+  <div id="orderModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-cream-card w-full max-w-lg rounded-3xl p-6 sm:p-8 border border-cream-border shadow-warm-lg relative max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button onclick="closeModal('orderModal')" class="absolute top-5 right-5 text-charcoal/60 hover:text-charcoal p-1 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-terracotta text-white flex items-center justify-center">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-bold text-forest">Order Ahead &amp; Skip The Line</h3>
+          <p class="text-xs text-charcoal/60">Ready in 15&ndash;20 mins at our pickup window.</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleOrderSubmit(event)" class="space-y-4 mt-4">
+        <div>
+          <label class="block text-xs font-bold text-charcoal uppercase mb-1">Your Full Name</label>
+          <input type="text" required placeholder="Jane Doe" class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-terracotta focus:outline-none" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-charcoal uppercase mb-1">Mobile Phone</label>
+            <input type="tel" required placeholder="(555) 000-0000" class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-terracotta focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-charcoal uppercase mb-1">Pickup Time</label>
+            <select class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-terracotta focus:outline-none">
+              <option>As soon as possible (15-20 min)</option>
+              <option>In 45 minutes</option>
+              <option>In 1 hour</option>
+              <option>Scheduled for later today</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-charcoal uppercase mb-1">Select Main Item</label>
+          <select class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-terracotta focus:outline-none">
+            <option>Truffle Mortadella Focaccia ($16.50)</option>
+            <option>14-Day Brisket Pastrami on Rye ($17.50)</option>
+            <option>Crispy Porchetta Panini ($16.75)</option>
+            <option>Roasted Heirloom Veg &amp; Ricotta ($15.00)</option>
+            <option>Smoked Turkey &amp; Brie Melt ($15.50)</option>
+            <option>The Grand Italian Grinder ($16.25)</option>
+            <option>The Daily Butcher's Board ($28.00)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-charcoal uppercase mb-1">Add Specialty Coffee / Beverage</label>
+          <select class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-terracotta focus:outline-none">
+            <option>No drink, sandwich only</option>
+            <option>Velvet Flat White ($4.75)</option>
+            <option>Brown Sugar &amp; Cardamom Cold Brew ($5.75)</option>
+            <option>Single-Origin V60 Pour Over ($5.50)</option>
+            <option>Ceremonial Uji Matcha Latte ($6.25)</option>
+            <option>Sicilian Blood Orange Craft Soda ($4.50)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-charcoal uppercase mb-1">Bread Preference &amp; Special Notes</label>
+          <textarea rows="2" placeholder="e.g. Extra pickles, gluten-free bread option, dressing on the side..." class="w-full px-4 py-2 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-terracotta focus:outline-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-terracotta hover:bg-terracotta-hover text-white font-semibold py-3.5 rounded-full shadow-warm transition text-sm">
+          Confirm Order &amp; Pay at Pickup
+        </button>
+      </form>
+
+      <div id="orderSuccessMsg" class="hidden mt-4 p-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs">
+        <i class="fa-solid fa-circle-check mr-1.5"></i> <strong>Order Received!</strong> Your ticket was sent to the kitchen. We will text you when it's wrapped and warm!
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MODAL: PATIO RESERVATION ================= -->
+  <div id="reserveModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-cream-card w-full max-w-lg rounded-3xl p-6 sm:p-8 border border-cream-border shadow-warm-lg relative max-h-[90vh] overflow-y-auto">
+      
+      <button onclick="closeModal('reserveModal')" class="absolute top-5 right-5 text-charcoal/60 hover:text-charcoal p-1 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-forest text-amberwood flex items-center justify-center">
+          <i class="fa-solid fa-chair"></i>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-bold text-forest">Patio &amp; Cafe Table Reservation</h3>
+          <p class="text-xs text-charcoal/60">We reserve select patio tables for lunch and Friday aperitivo.</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleReserveSubmit(event)" class="space-y-4 mt-4">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-charcoal uppercase mb-1">Date</label>
+            <input type="date" required class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-forest focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-charcoal uppercase mb-1">Time</label>
+            <select class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-forest focus:outline-none">
+              <option>11:30 AM</option>
+              <option>12:15 PM</option>
+              <option>1:00 PM</option>
+              <option>1:45 PM</option>
+              <option>2:30 PM</option>
+              <option>Friday Aperitivo (5:00 PM)</option>
+              <option>Friday Aperitivo (6:00 PM)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-charcoal uppercase mb-1">Party Size</label>
+            <select class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-forest focus:outline-none">
+              <option>2 Guests</option>
+              <option>3-4 Guests</option>
+              <option>5-6 Guests</option>
+              <option>7+ Guests (Large party)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-charcoal uppercase mb-1">Seating Area</label>
+            <select class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-forest focus:outline-none">
+              <option>Covered Heated Patio (Dog-friendly)</option>
+              <option>Indoor Main Hall &amp; Bakery View</option>
+              <option>Sidewalk Bistro Table</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-charcoal uppercase mb-1">Full Name</label>
+          <input type="text" required placeholder="Alex Rivera" class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-forest focus:outline-none" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-charcoal uppercase mb-1">Email / Phone</label>
+          <input type="text" required placeholder="alex@example.com / (555) 123-4567" class="w-full px-4 py-2.5 rounded-xl border border-cream-border bg-white text-sm focus:ring-2 focus:ring-forest focus:outline-none" />
+        </div>
+
+        <button type="submit" class="w-full bg-forest hover:bg-forest-light text-white font-semibold py-3.5 rounded-full shadow transition text-sm">
+          Request Table Reservation
+        </button>
+      </form>
+
+      <div id="reserveSuccessMsg" class="hidden mt-4 p-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs">
+        <i class="fa-solid fa-circle-check mr-1.5"></i> <strong>Reservation Confirmed!</strong> A confirmation SMS and calendar invite has been dispatched.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= INLINE SCRIPT ================= -->
+  <script>
+    // Tab switching logic for Curated Menu
+    function switchTab(tabId) {
+      // Hide all contents
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Deactivate all button styles
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('active', 'bg-forest', 'text-cream', 'shadow-sm');
+        btn.classList.add('text-charcoal');
+      });
+
+      // Show selected tab content
+      const targetTab = document.getElementById('tab-' + tabId);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+
+      // Activate clicked button
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.add('active', 'bg-forest', 'text-cream', 'shadow-sm');
+        activeBtn.classList.remove('text-charcoal');
+      }
+    }
+
+    // Mobile Drawer Navigation toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    if (mobileBtn && mobileDrawer) {
+      mobileBtn.addEventListener('click', () => {
+        const isHidden = mobileDrawer.classList.contains('hidden');
+        if (isHidden) {
+          mobileDrawer.classList.remove('hidden');
+        } else {
+          mobileDrawer.classList.add('hidden');
+        }
+      });
+    }
+
+    function closeMobileMenu() {
+      if (mobileDrawer) {
+        mobileDrawer.classList.add('hidden');
+      }
+    }
+
+    // Modal Control Functions
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    }
+
+    // Close modals on clicking outside overlay
+    window.addEventListener('click', (e) => {
+      if (e.target.id === 'orderModal') closeModal('orderModal');
+      if (e.target.id === 'reserveModal') closeModal('reserveModal');
+    });
+
+    // Handle Forms
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const input = document.getElementById('newsletterEmail');
+      const msg = document.getElementById('newsletterMsg');
+      if (input && msg) {
+        msg.classList.remove('hidden');
+        input.value = '';
+        setTimeout(() => {
+          msg.classList.add('hidden');
+        }, 5000);
+      }
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const msg = document.getElementById('orderSuccessMsg');
+      if (msg) {
+        msg.classList.remove('hidden');
+        setTimeout(() => {
+          msg.classList.add('hidden');
+          closeModal('orderModal');
+          e.target.reset();
+        }, 2200);
+      }
+    }
+
+    function handleReserveSubmit(e) {
+      e.preventDefault();
+      const msg = document.getElementById('reserveSuccessMsg');
+      if (msg) {
+        msg.classList.remove('hidden');
+        setTimeout(() => {
+          msg.classList.add('hidden');
+          closeModal('reserveModal');
+          e.target.reset();
+        }, 2200);
+      }
+    }
+
+    // Set dynamic current year in footer
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Events & Culinary | Bespoke Event Planning & Boutique Catering</title>
+  
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aura: {
+              emerald: '#112922',
+              'emerald-dark': '#0b1c17',
+              gold: '#D4AF37',
+              'gold-light': '#F3E5AB',
+              'gold-muted': '#C5A059',
+              sand: '#FAF8F5',
+              cream: '#F4EFEA',
+              charcoal: '#1F2421',
+              muted: '#707771'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar & Utility transitions */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5A059;
+      border-radius: 4px;
+    }
+    .blur-backdrop {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+  </style>
+</head>
+<body class="bg-aura-sand text-aura-charcoal font-sans antialiased selection:bg-aura-gold selection:text-aura-emerald-dark">
+
+  <!-- ================= TOP NOTIFICATION BAR ================= -->
+  <div class="bg-aura-emerald text-aura-gold-light text-xs sm:text-sm py-2 px-4 text-center tracking-wider font-light flex items-center justify-center gap-2 border-b border-aura-gold/20">
+    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-aura-gold"></i>
+    <span>Now accepting inquiries for 2026/2027 curated celebrations & weddings</span>
+    <a href="#contact" class="underline font-semibold hover:text-white transition-colors ml-1">Reserve Dates</a>
+  </div>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header id="navbar" class="sticky top-0 z-50 transition-all duration-300 bg-aura-sand/90 blur-backdrop border-b border-aura-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#" class="flex flex-col group">
+          <span class="font-serif text-2xl sm:text-3xl tracking-widest text-aura-emerald uppercase font-semibold group-hover:text-aura-gold-muted transition-colors">
+            Aura
+          </span>
+          <span class="text-[10px] uppercase tracking-[0.3em] text-aura-gold-muted font-medium -mt-1">
+            Events & Culinary
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide text-aura-charcoal/80">
+          <a href="#services" class="hover:text-aura-gold-muted transition-colors py-1">Services</a>
+          <a href="#menus" class="hover:text-aura-gold-muted transition-colors py-1">Catering & Menus</a>
+          <a href="#portfolio" class="hover:text-aura-gold-muted transition-colors py-1">Portfolio</a>
+          <a href="#pricing" class="hover:text-aura-gold-muted transition-colors py-1">Packages</a>
+          <a href="#about" class="hover:text-aura-gold-muted transition-colors py-1">About Us</a>
+          <a href="#testimonials" class="hover:text-aura-gold-muted transition-colors py-1">Praise</a>
+        </nav>
+
+        <!-- Right CTA Button -->
+        <div class="hidden sm:flex items-center space-x-4">
+          <a href="#estimator" class="text-xs uppercase tracking-widest font-semibold px-4 py-2.5 rounded-full border border-aura-gold-muted text-aura-emerald hover:bg-aura-gold-muted/10 transition-all duration-300">
+            Estimate Event
+          </a>
+          <a href="#contact" class="text-xs uppercase tracking-widest font-semibold px-5 py-2.5 rounded-full bg-aura-emerald text-aura-sand hover:bg-aura-gold-muted hover:text-aura-emerald-dark shadow-sm hover:shadow transition-all duration-300 flex items-center gap-1.5">
+            <span>Inquire</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="p-2 text-aura-emerald rounded-lg hover:bg-aura-cream transition-colors">
+            <i data-lucide="menu" id="menuOpenIcon" class="w-6 h-6"></i>
+            <i data-lucide="x" id="menuCloseIcon" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-aura-cream bg-aura-sand/98 px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col space-y-4 text-base font-medium text-aura-charcoal">
+        <a href="#services" class="mobile-nav-link hover:text-aura-gold-muted">Services</a>
+        <a href="#menus" class="mobile-nav-link hover:text-aura-gold-muted">Catering & Menus</a>
+        <a href="#portfolio" class="mobile-nav-link hover:text-aura-gold-muted">Portfolio</a>
+        <a href="#pricing" class="mobile-nav-link hover:text-aura-gold-muted">Packages & Pricing</a>
+        <a href="#about" class="mobile-nav-link hover:text-aura-gold-muted">About Us</a>
+        <a href="#testimonials" class="mobile-nav-link hover:text-aura-gold-muted">Testimonials</a>
+        <div class="pt-4 border-t border-aura-cream flex flex-col gap-3">
+          <a href="#estimator" class="mobile-nav-link text-center text-xs uppercase tracking-widest font-semibold py-3 rounded-full border border-aura-gold-muted text-aura-emerald">
+            Instant Estimate
+          </a>
+          <a href="#contact" class="mobile-nav-link text-center text-xs uppercase tracking-widest font-semibold py-3 rounded-full bg-aura-emerald text-aura-sand">
+            Book Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-aura-emerald text-aura-sand pt-12 pb-20">
+    <!-- Subtle Background Pattern Overlay -->
+    <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+    <!-- Decorative soft blur accents -->
+    <div class="absolute top-1/4 left-10 w-96 h-96 bg-aura-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-80 h-80 bg-emerald-950/40 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      
+      <!-- Laurel pill badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-aura-sand/10 border border-aura-gold/30 text-aura-gold-light text-xs uppercase tracking-widest mb-8">
+        <i data-lucide="crown" class="w-3.5 h-3.5 text-aura-gold"></i>
+        <span>Full-Service Production & Haute Cuisine</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal leading-tight tracking-tight text-white mb-6">
+        Moments Crafted into <br class="hidden sm:inline" />
+        <span class="italic font-light text-aura-gold-light">Unforgettable Memories</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-base sm:text-lg text-aura-sand/80 font-light leading-relaxed mb-10">
+        From grand estate galas to intimate candlelight dinners, Aura orchestrates seamless event design, meticulous day-of execution, and bespoke culinary gastronomy.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full bg-aura-gold text-aura-emerald-dark font-medium tracking-wide text-sm hover:bg-aura-gold-light shadow-lg hover:shadow-aura-gold/20 transition-all duration-300 flex items-center justify-center gap-2">
+          <span>Request a Consultation</span>
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+        </a>
+        <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-full border border-aura-sand/30 hover:border-aura-gold-light text-aura-sand hover:text-aura-gold-light font-medium tracking-wide text-sm transition-all duration-300 flex items-center justify-center gap-2">
+          <span>Explore Packages</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Trust metrics / Stats banner -->
+      <div class="mt-16 pt-10 border-t border-aura-sand/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="font-serif text-3xl sm:text-4xl text-aura-gold-light font-light">12+</div>
+          <div class="text-xs uppercase tracking-widest text-aura-sand/70 mt-1">Years of Mastery</div>
+        </div>
+        <div>
+          <div class="font-serif text-3xl sm:text-4xl text-aura-gold-light font-light">450+</div>
+          <div class="text-xs uppercase tracking-widest text-aura-sand/70 mt-1">Galas & Weddings</div>
+        </div>
+        <div>
+          <div class="font-serif text-3xl sm:text-4xl text-aura-gold-light font-light">100%</div>
+          <div class="text-xs uppercase tracking-widest text-aura-sand/70 mt-1">Tailored Menus</div>
+        </div>
+        <div>
+          <div class="font-serif text-3xl sm:text-4xl text-aura-gold-light font-light">5.0 ★</div>
+          <div class="text-xs uppercase tracking-widest text-aura-sand/70 mt-1">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CORE SERVICE PILLARS ================= -->
+  <section id="services" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs uppercase tracking-[0.25em] text-aura-gold-muted font-bold">What We Deliver</span>
+      <h2 class="font-serif text-3xl sm:text-5xl text-aura-emerald mt-2 mb-4 font-normal">Our Signature Pillars</h2>
+      <p class="text-aura-muted text-base sm:text-lg font-light">
+        A harmonious convergence of high aesthetic production and culinary prestige, designed to let you remain entirely immersed in the joy of your celebration.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-white p-8 rounded-2xl border border-aura-cream shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+        <div class="w-14 h-14 rounded-xl bg-aura-cream flex items-center justify-center text-aura-emerald group-hover:bg-aura-emerald group-hover:text-aura-gold transition-colors mb-6">
+          <i data-lucide="compass" class="w-7 h-7"></i>
+        </div>
+        <h3 class="font-serif text-2xl text-aura-emerald mb-3">Bespoke Event Production</h3>
+        <p class="text-aura-muted text-sm leading-relaxed mb-6">
+          End-to-end conceptual styling, spatial 3D floor plans, lighting design, floral direction, vendor curation, and high-touch logistical supervision.
+        </p>
+        <ul class="text-xs text-aura-charcoal/80 space-y-2 border-t border-aura-cream pt-4">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Full Design Conception</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Budget & Vendor Management</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Custom Scenic Installations</li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white p-8 rounded-2xl border border-aura-cream shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+        <div class="w-14 h-14 rounded-xl bg-aura-cream flex items-center justify-center text-aura-emerald group-hover:bg-aura-emerald group-hover:text-aura-gold transition-colors mb-6">
+          <i data-lucide="clock" class="w-7 h-7"></i>
+        </div>
+        <h3 class="font-serif text-2xl text-aura-emerald mb-3">Day-of Coordination</h3>
+        <p class="text-aura-muted text-sm leading-relaxed mb-6">
+          Seamless timeline enforcement and master hospitality execution. We take over 60 days prior so you revel in every fleeting second stress-free.
+        </p>
+        <ul class="text-xs text-aura-charcoal/80 space-y-2 border-t border-aura-cream pt-4">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Comprehensive Run-of-Show</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Vendor Load-in Dispatch</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Lead Director & Assistant Staff</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white p-8 rounded-2xl border border-aura-cream shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+        <div class="w-14 h-14 rounded-xl bg-aura-cream flex items-center justify-center text-aura-emerald group-hover:bg-aura-emerald group-hover:text-aura-gold transition-colors mb-6">
+          <i data-lucide="utensils-crossed" class="w-7 h-7"></i>
+        </div>
+        <h3 class="font-serif text-2xl text-aura-emerald mb-3">Artisanal Catering</h3>
+        <p class="text-aura-muted text-sm leading-relaxed mb-6">
+          Seasonal, farm-to-table cuisine prepared by Michelin-trained kitchen teams. Tailored multi-course banquets, raw bars, and bespoke pastry tables.
+        </p>
+        <ul class="text-xs text-aura-charcoal/80 space-y-2 border-t border-aura-cream pt-4">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Custom Dietary Pairing</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Sommelier Wine Curation</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> White-Glove Butler Service</li>
+        </ul>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white p-8 rounded-2xl border border-aura-cream shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+        <div class="w-14 h-14 rounded-xl bg-aura-cream flex items-center justify-center text-aura-emerald group-hover:bg-aura-emerald group-hover:text-aura-gold transition-colors mb-6">
+          <i data-lucide="wine" class="w-7 h-7"></i>
+        </div>
+        <h3 class="font-serif text-2xl text-aura-emerald mb-3">Boutique Mixology</h3>
+        <p class="text-aura-muted text-sm leading-relaxed mb-6">
+          Handcrafted cocktail bars featuring garden-infused cordials, clarified spirits, crystal hand-carved ice, and curated mocktail alternatives.
+        </p>
+        <ul class="text-xs text-aura-charcoal/80 space-y-2 border-t border-aura-cream pt-4">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Signature His & Hers Libations</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Botanical Mocktail Programs</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-aura-gold-muted"></i> Portable Marble Bar Staging</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CATERING & MENUS SECTION ================= -->
+  <section id="menus" class="py-24 bg-aura-cream/50 border-y border-aura-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-[0.25em] text-aura-gold-muted font-bold">Culinary Mastery</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-aura-emerald mt-2 mb-4 font-normal">Tasting & Menus</h2>
+        <p class="text-aura-muted text-base font-light">
+          Seasonal, sustainable ingredients paired with artful culinary presentations. Explore sample curations crafted by Executive Chef Julian Vance.
+        </p>
+      </div>
+
+      <!-- Menu Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12" id="menuTabs">
+        <button data-tab="canapes" class="menu-tab-btn active px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all duration-200 bg-aura-emerald text-white shadow-sm">
+          Canapés & Cocktail Hour
+        </button>
+        <button data-tab="plated" class="menu-tab-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all duration-200 bg-white text-aura-charcoal hover:bg-aura-sand border border-aura-cream">
+          Multi-Course Plated
+        </button>
+        <button data-tab="grazing" class="menu-tab-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all duration-200 bg-white text-aura-charcoal hover:bg-aura-sand border border-aura-cream">
+          Grazing Tables & Raw Bar
+        </button>
+        <button data-tab="cocktails" class="menu-tab-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition-all duration-200 bg-white text-aura-charcoal hover:bg-aura-sand border border-aura-cream">
+          Mixology & Sweets
+        </button>
+      </div>
+
+      <!-- Tab 1: Canapés -->
+      <div id="tab-canapes" class="menu-pane grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Yellowfin Tuna Tartare Cones</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">GF / Pescatarian</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Sashimi-grade Ahi tuna, yuzu emulsion, toasted black sesame, and micro shiso nestled in crispy savory sesame tuiles.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Whipped Truffle Ricotta Crostini</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Vegetarian</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            House-churned sheep's milk ricotta, black truffle honey, roasted mission figs, and thyme on grilled artisan sourdough.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Petite Wagyu Beef Sliders</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Canapé</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            A5 Japanese Wagyu blend, aged Gruyère, sweet onion jam, and black garlic aioli in toasted golden brioche.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Crispy Cauliflower Blossom</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Vegan / GF</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Spiced tempura romanesco, Meyer lemon tahini dressing, Aleppo pepper glaze, and pomegranate jewel jewels.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 2: Plated -->
+      <div id="tab-plated" class="menu-pane hidden grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">First Course: Heirloom Burrata</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Salad</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            San Marzano tomato confit, fresh stone fruit, basil oil essence, aged Modena balsamic droplets, and pine nut brittle.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Main: Pan-Seared Chilean Sea Bass</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Entrée</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Crisp skin sea bass, sweet corn velouté, charred baby leeks, chive blossoms, and saffron reduction.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Main: Herb-Crusted Prime Tenderloin</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Entrée</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Truffled parsnip purée, wild forest mushroom ragout, roasted Romanesco, and 48-hour Bordeaux demi-glace.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Vegan: Smoked King Oyster Steak</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Entrée</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Cast-iron charred king oyster mushrooms, sunchoke puree, baby heirloom carrots, and chimichurri emulsion.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 3: Grazing & Raw Bar -->
+      <div id="tab-grazing" class="menu-pane hidden grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">The Grand European Grazing Table</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Stationary</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Artisanal imported cheeses (Manchego, Roquefort, Delice de Bourgogne), Prosciutto di Parma, Iberico salchichon, honeycomb, marinated olives, and lavash crisps.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Artic Ice Raw Bar</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Chilled Seafood</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Freshly shucked East & West Coast oysters, poached jumbo prawns, Alaskan king crab legs, mignonette flight, and house cocktail sauce.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 4: Mixology & Desserts -->
+      <div id="tab-cocktails" class="menu-pane hidden grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">The Aura Gilded French 75</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Cocktail</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Empress botanical gin, elderflower cordial, freshly squeezed lemon juice, topped with Veuve Clicquot and edible 24k gold leaf.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Smoked Rosemary Mezcalita</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Cocktail</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Single-estate artisanal mezcal, freshly squeezed ruby grapefruit, lime juice, agave nectar, smoked rosemary sprig, and volcanic black sea salt rim.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Valrhona Dark Chocolate Spheres</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Dessert</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            70% Guanaja chocolate ganache, passionfruit caramel center, sea-salted cocoa nib crumble, and spun sugar cage.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-aura-cream">
+          <div class="flex justify-between items-baseline border-b border-aura-cream pb-3 mb-3">
+            <h4 class="font-serif text-xl font-medium text-aura-emerald">Espresso Martini Affogato Bar</h4>
+            <span class="text-xs uppercase tracking-wider text-aura-gold-muted font-semibold">Interactive Station</span>
+          </div>
+          <p class="text-aura-muted text-sm leading-relaxed">
+            Freshly pulled single-origin espresso, house vanilla bean gelato, and spiced rum or bourbon floaters.
+          </p>
+        </div>
+      </div>
+
+      <!-- Menu Download Note -->
+      <div class="mt-12 text-center">
+        <p class="text-sm text-aura-muted inline-flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-aura-gold-muted"></i>
+          Dietary requirements including Celiac, Vegan, Kosher-style, and Halal menus are seamlessly tailored.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PORTFOLIO / GALLERY ================= -->
+  <section id="portfolio" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-[0.25em] text-aura-gold-muted font-bold">Past Productions</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-aura-emerald mt-2 font-normal">Our Event Gallery</h2>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="galleryFilters">
+        <button data-filter="all" class="gallery-filter-btn active px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-aura-emerald text-white">All Works</button>
+        <button data-filter="weddings" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-aura-cream text-aura-charcoal hover:bg-aura-gold/20">Weddings</button>
+        <button data-filter="corporate" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-aura-cream text-aura-charcoal hover:bg-aura-gold/20">Galas & Corporate</button>
+        <button data-filter="intimate" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-aura-cream text-aura-charcoal hover:bg-aura-gold/20">Private Soirées</button>
+      </div>
+    </div>
+
+    <!-- Gallery Grid with SVG/Curated Fallback Mock Visuals -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+      
+      <!-- Item 1: Wedding -->
+      <div class="gallery-item group relative h-80 rounded-2xl overflow-hidden shadow-sm" data-category="weddings">
+        <div class="absolute inset-0 bg-gradient-to-t from-aura-emerald-dark/90 via-aura-emerald-dark/30 to-transparent z-10"></div>
+        <!-- Decorative Fallback Canvas Background -->
+        <div class="w-full h-full bg-[#3d4d42] flex items-center justify-center text-aura-gold/40">
+          <i data-lucide="flower-2" class="w-20 h-20 opacity-30 transform group-hover:scale-110 transition-transform duration-700"></i>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
+          <span class="text-[10px] uppercase tracking-widest text-aura-gold-light font-bold">Wedding • Napa Valley Estate</span>
+          <h3 class="font-serif text-2xl font-normal mt-1">The Montgomery Vow Renewal</h3>
+          <p class="text-xs text-aura-sand/80 mt-1 line-clamp-2">220 guests, candlelit garden pavilion, 5-course paired wine dinner.</p>
+        </div>
+      </div>
+
+      <!-- Item 2: Corporate -->
+      <div class="gallery-item group relative h-80 rounded-2xl overflow-hidden shadow-sm" data-category="corporate">
+        <div class="absolute inset-0 bg-gradient-to-t from-aura-emerald-dark/90 via-aura-emerald-dark/30 to-transparent z-10"></div>
+        <div class="w-full h-full bg-[#202c28] flex items-center justify-center text-aura-gold/40">
+          <i data-lucide="award" class="w-20 h-20 opacity-30 transform group-hover:scale-110 transition-transform duration-700"></i>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
+          <span class="text-[10px] uppercase tracking-widest text-aura-gold-light font-bold">Annual Gala • Modern Museum</span>
+          <h3 class="font-serif text-2xl font-normal mt-1">Vanguard Philanthropy Ball</h3>
+          <p class="text-xs text-aura-sand/80 mt-1 line-clamp-2">Black-tie fundraising gala with custom interactive projection mapping and champagne towers.</p>
+        </div>
+      </div>
+
+      <!-- Item 3: Intimate -->
+      <div class="gallery-item group relative h-80 rounded-2xl overflow-hidden shadow-sm" data-category="intimate">
+        <div class="absolute inset-0 bg-gradient-to-t from-aura-emerald-dark/90 via-aura-emerald-dark/30 to-transparent z-10"></div>
+        <div class="w-full h-full bg-[#463d33] flex items-center justify-center text-aura-gold/40">
+          <i data-lucide="sparkles" class="w-20 h-20 opacity-30 transform group-hover:scale-110 transition-transform duration-700"></i>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
+          <span class="text-[10px] uppercase tracking-widest text-aura-gold-light font-bold">Private Soirée • Penthouse</span>
+          <h3 class="font-serif text-2xl font-normal mt-1">Aura Nocturne 40th Celebration</h3>
+          <p class="text-xs text-aura-sand/80 mt-1 line-clamp-2">35 guests, bespoke omakase styling, custom ice sculptures, and live jazz quartet.</p>
+        </div>
+      </div>
+
+      <!-- Item 4: Wedding -->
+      <div class="gallery-item group relative h-80 rounded-2xl overflow-hidden shadow-sm" data-category="weddings">
+        <div class="absolute inset-0 bg-gradient-to-t from-aura-emerald-dark/90 via-aura-emerald-dark/30 to-transparent z-10"></div>
+        <div class="w-full h-full bg-[#35433a] flex items-center justify-center text-aura-gold/40">
+          <i data-lucide="heart" class="w-20 h-20 opacity-30 transform group-hover:scale-110 transition-transform duration-700"></i>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
+          <span class="text-[10px] uppercase tracking-widest text-aura-gold-light font-bold">Wedding • Coastal Cliffside</span>
+          <h3 class="font-serif text-2xl font-normal mt-1">Elena & Lucas Coastline Nuptials</h3>
+          <p class="text-xs text-aura-sand/80 mt-1 line-clamp-2">Cascading white orchid canopy, ocean breeze oyster bar, and sunset fireworks display.</p>
+        </div>
+      </div>
+
+      <!-- Item 5: Corporate -->
+      <div class="gallery-item group relative h-80 rounded-2xl overflow-hidden shadow-sm" data-category="corporate">
+        <div class="absolute inset-0 bg-gradient-to-t from-aura-emerald-dark/90 via-aura-emerald-dark/30 to-transparent z-10"></div>
+        <div class="w-full h-full bg-[#2a3832] flex items-center justify-center text-aura-gold/40">
+          <i data-lucide="gem" class="w-20 h-20 opacity-30 transform group-hover:scale-110 transition-transform duration-700"></i>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
+          <span class="text-[10px] uppercase tracking-widest text-aura-gold-light font-bold">Product Premiere • Glass Pavilion</span>
+          <h3 class="font-serif text-2xl font-normal mt-1">Maison Haute Horlogerie Unveiling</h3>
+          <p class="text-xs text-aura-sand/80 mt-1 line-clamp-2">Editorial staging, bespoke gold leaf cocktails, and synchronized culinary courses.</p>
+        </div>
+      </div>
+
+      <!-- Item 6: Intimate -->
+      <div class="gallery-item group relative h-80 rounded-2xl overflow-hidden shadow-sm" data-category="intimate">
+        <div class="absolute inset-0 bg-gradient-to-t from-aura-emerald-dark/90 via-aura-emerald-dark/30 to-transparent z-10"></div>
+        <div class="w-full h-full bg-[#4a4037] flex items-center justify-center text-aura-gold/40">
+          <i data-lucide="cake" class="w-20 h-20 opacity-30 transform group-hover:scale-110 transition-transform duration-700"></i>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
+          <span class="text-[10px] uppercase tracking-widest text-aura-gold-light font-bold">Milestone • Tuscan Courtyard</span>
+          <h3 class="font-serif text-2xl font-normal mt-1">The Golden Jubilee Dinner</h3>
+          <p class="text-xs text-aura-sand/80 mt-1 line-clamp-2">50th Anniversary banquet under century-old olive trees with family-style heirloom pairings.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PACKAGES & ESTIMATOR ================= -->
+  <section id="pricing" class="py-24 bg-aura-cream/40 border-t border-aura-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] text-aura-gold-muted font-bold">Curated Service Tiers</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-aura-emerald mt-2 mb-4 font-normal">Transparent Package Guides</h2>
+        <p class="text-aura-muted text-base font-light">
+          Every celebration is uniquely tailored. Below are our baseline frameworks which serve as the foundation for our custom proposals.
+        </p>
+      </div>
+
+      <!-- Packages Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Tier 1 -->
+        <div class="bg-white rounded-3xl p-8 border border-aura-cream flex flex-col justify-between shadow-sm hover:shadow-lg transition-all">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xs uppercase tracking-widest text-aura-gold-muted font-bold">Essential Harmony</span>
+            </div>
+            <h3 class="font-serif text-2xl text-aura-emerald mb-2">Month-Of Coordination</h3>
+            <p class="text-aura-muted text-xs leading-relaxed mb-6">Ideal for hosts who have planned their design and require elite day-of managerial execution.</p>
+            <div class="mb-6">
+              <span class="text-3xl font-serif text-aura-emerald">Starting at $4,500</span>
+              <span class="text-xs text-aura-muted block mt-1">Coordination & staffing foundation</span>
+            </div>
+            
+            <ul class="text-xs text-aura-charcoal/80 space-y-3 mb-8 border-t border-aura-cream pt-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold-muted"></i> Takeover 60 days before event</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold-muted"></i> Comprehensive timeline creation</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold-muted"></i> 1 Lead Director + 1 Assistant on-site</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold-muted"></i> 10 hours continuous day-of management</li>
+            </ul>
+          </div>
+
+          <a href="#contact" class="w-full py-3.5 rounded-full border border-aura-emerald text-aura-emerald hover:bg-aura-emerald hover:text-white transition-all text-xs uppercase tracking-widest font-semibold text-center block">
+            Select Essential
+          </a>
+        </div>
+
+        <!-- Tier 2 (Featured) -->
+        <div class="bg-aura-emerald text-aura-sand rounded-3xl p-8 border-2 border-aura-gold flex flex-col justify-between shadow-2xl relative lg:-translate-y-2">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-aura-gold text-aura-emerald-dark text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow">
+            Most Requested
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-4 mt-2">
+              <span class="text-xs uppercase tracking-widest text-aura-gold-light font-bold">The Signature Experience</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Full Production & Culinary</h3>
+            <p class="text-aura-sand/80 text-xs leading-relaxed mb-6">Complete event architectural styling, timeline execution, and artisanal multi-course banquet design.</p>
+            <div class="mb-6">
+              <span class="text-3xl font-serif text-aura-gold-light">Starting at $11,500</span>
+              <span class="text-xs text-aura-sand/70 block mt-1">+ Menu selection per person</span>
+            </div>
+            
+            <ul class="text-xs text-aura-sand/90 space-y-3 mb-8 border-t border-aura-sand/20 pt-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold"></i> Full design deck & 3D spatial layout</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold"></i> Complete vendor contract negotiation</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold"></i> Private custom chef tasting session</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold"></i> Dedicated 4-person senior coordinator team</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold"></i> Full setup, tear-down & concierge host</li>
+            </ul>
+          </div>
+
+          <a href="#contact" class="w-full py-3.5 rounded-full bg-aura-gold text-aura-emerald-dark hover:bg-aura-gold-light transition-all text-xs uppercase tracking-widest font-semibold text-center block shadow">
+            Inquire Signature
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="bg-white rounded-3xl p-8 border border-aura-cream flex flex-col justify-between shadow-sm hover:shadow-lg transition-all">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xs uppercase tracking-widest text-aura-gold-muted font-bold">The Gilded Atelier</span>
+            </div>
+            <h3 class="font-serif text-2xl text-aura-emerald mb-2">Bespoke Gala & Estate</h3>
+            <p class="text-aura-muted text-xs leading-relaxed mb-6">Unrestricted luxury for multi-day weddings, high-security Galas, and private destination estates.</p>
+            <div class="mb-6">
+              <span class="text-3xl font-serif text-aura-emerald">Custom Quoted</span>
+              <span class="text-xs text-aura-muted block mt-1">Multi-day & destination scope</span>
+            </div>
+            
+            <ul class="text-xs text-aura-charcoal/80 space-y-3 mb-8 border-t border-aura-cream pt-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold-muted"></i> Multi-day weekend itinerary curation</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold-muted"></i> Master Sommelier wine cellar pairings</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold-muted"></i> Custom scenic staging, lighting & tenting</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-aura-gold-muted"></i> 24/7 dedicated Executive Producer</li>
+            </ul>
+          </div>
+
+          <a href="#contact" class="w-full py-3.5 rounded-full border border-aura-emerald text-aura-emerald hover:bg-aura-emerald hover:text-white transition-all text-xs uppercase tracking-widest font-semibold text-center block">
+            Request Atelier
+          </a>
+        </div>
+
+      </div>
+
+      <!-- INTERACTIVE ESTIMATE CALCULATOR -->
+      <div id="estimator" class="mt-20 bg-white rounded-3xl p-8 sm:p-12 border border-aura-cream shadow-md max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center gap-2 text-aura-gold-muted text-xs uppercase tracking-widest font-semibold mb-2">
+            <i data-lucide="calculator" class="w-4 h-4"></i>
+            <span>Interactive Estimator</span>
+          </div>
+          <h3 class="font-serif text-3xl text-aura-emerald font-normal">Plan Your Celebration Budget</h3>
+          <p class="text-xs sm:text-sm text-aura-muted">Adjust guest counts, culinary style, and beverage programs to receive an estimated ballpark range.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Controls -->
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-2">
+                <label for="guestSlider">Expected Guest Count:</label>
+                <span id="guestCountDisplay" class="text-aura-gold-muted text-sm font-bold">100 Guests</span>
+              </div>
+              <input type="range" id="guestSlider" min="20" max="350" step="5" value="100" class="w-full h-2 bg-aura-cream rounded-lg appearance-none cursor-pointer accent-aura-emerald">
+              <div class="flex justify-between text-[10px] text-aura-muted mt-1">
+                <span>20 (Intimate)</span>
+                <span>150</span>
+                <span>350+ (Grand Gala)</span>
+              </div>
+            </div>
+
+            <div>
+              <label for="cateringStyleSelect" class="block text-xs font-semibold mb-2">Culinary Format:</label>
+              <select id="cateringStyleSelect" class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted">
+                <option value="110">Artisanal Grazing & Passed Canapés ($110/guest)</option>
+                <option value="165" selected>3-Course Plated Gourmet Dinner ($165/guest)</option>
+                <option value="225">5-Course Grand Tasting Menu ($225/guest)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="barServiceSelect" class="block text-xs font-semibold mb-2">Bar & Mixology Program:</label>
+              <select id="barServiceSelect" class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted">
+                <option value="35">Wine & Craft Beer Service ($35/guest)</option>
+                <option value="60" selected>Full Boutique Open Bar & Signature Cocktails ($60/guest)</option>
+                <option value="95">Ultra-Premium Cellar Wines & Curated Spirits ($95/guest)</option>
+              </select>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <input type="checkbox" id="fullPlanningCheck" checked class="w-4 h-4 accent-aura-emerald rounded">
+              <label for="fullPlanningCheck" class="text-xs text-aura-charcoal cursor-pointer">
+                Include Full-Service Event Design & Production Management (+$6,500 base)
+              </label>
+            </div>
+          </div>
+
+          <!-- Result Display Box -->
+          <div class="bg-aura-sand rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-aura-cream">
+            <div>
+              <span class="text-xs uppercase tracking-widest text-aura-gold-muted font-bold block mb-1">Estimated Investment</span>
+              <div class="text-3xl sm:text-4xl font-serif text-aura-emerald mt-2" id="estimatedPriceTotal">
+                $29,000 - $33,500
+              </div>
+              <p class="text-xs text-aura-muted mt-3 leading-relaxed">
+                Includes catering culinary team, bar staff, glassware, linens, flatware rentals, and production oversight.
+              </p>
+              
+              <div class="mt-6 pt-4 border-t border-aura-cream space-y-2 text-xs">
+                <div class="flex justify-between">
+                  <span class="text-aura-muted">Estimated Food & Beverage:</span>
+                  <span id="fbSubtotal" class="font-semibold text-aura-charcoal">$22,500</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-aura-muted">Production & Coordination:</span>
+                  <span id="planningSubtotal" class="font-semibold text-aura-charcoal">$6,500</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact" class="mt-8 text-center text-xs uppercase tracking-widest font-semibold py-3 px-6 rounded-full bg-aura-emerald text-aura-sand hover:bg-aura-gold hover:text-aura-emerald-dark transition-all duration-300">
+              Lock In This Estimate
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ABOUT US ================= -->
+  <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
+      <!-- Visual Collage / Composition -->
+      <div class="relative">
+        <div class="bg-[#1e2e27] text-aura-sand rounded-3xl p-10 sm:p-14 shadow-xl border border-aura-gold/20 relative z-10 overflow-hidden">
+          <div class="absolute -right-8 -top-8 w-40 h-40 bg-aura-gold/15 rounded-full blur-2xl"></div>
+          
+          <span class="text-xs uppercase tracking-widest text-aura-gold-light font-bold">The Philosophy</span>
+          <h3 class="font-serif text-3xl sm:text-4xl text-white mt-3 mb-6">
+            "An extraordinary event is felt long after the final toast."
+          </h3>
+          <p class="text-aura-sand/80 text-sm leading-relaxed mb-6 font-light">
+            Founded by Creative Director Vivienne Sterling and Executive Chef Julian Vance, Aura Events & Culinary was born out of an obsession with atmospheric elegance and uncompromising hospitality.
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full border border-aura-gold/40 flex items-center justify-center font-serif text-aura-gold-light text-lg">
+              VS
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-white">Vivienne Sterling</div>
+              <div class="text-xs text-aura-gold-light">Founder & Lead Architectural Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Decorative Badge -->
+        <div class="hidden sm:block absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-aura-cream z-20 max-w-xs">
+          <div class="flex items-center gap-3">
+            <i data-lucide="award" class="w-8 h-8 text-aura-gold-muted flex-shrink-0"></i>
+            <div>
+              <div class="text-xs font-bold text-aura-emerald">Vogue Weddings Honoree</div>
+              <div class="text-[11px] text-aura-muted">Recognized top luxury coordinator & banquet team</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div>
+        <span class="text-xs uppercase tracking-[0.25em] text-aura-gold-muted font-bold">Refined Precision</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-aura-emerald mt-2 mb-6 font-normal">
+          Flawless Execution Meets Culinary Distinction
+        </h2>
+        <p class="text-aura-muted text-base leading-relaxed mb-6 font-light">
+          Unlike traditional planning agencies that outsource catering or caterers who lack design intuition, Aura unites both disciplines under one roof. We coordinate spatial floral structures with table linen textures, while our culinary artists sync the pacing of wine pairings to your speech program.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-aura-cream text-aura-emerald flex items-center justify-center flex-shrink-0 mt-1">
+              <i data-lucide="sparkle" class="w-4 h-4 text-aura-gold-muted"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-aura-emerald">Exclusive Date Bookings</h4>
+              <p class="text-xs text-aura-muted mt-0.5">We cap our annual engagements at 28 private events to maintain unwavering attention to every micro-detail.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-aura-cream text-aura-emerald flex-shrink-0 mt-1 flex items-center justify-center">
+              <i data-lucide="leaf" class="w-4 h-4 text-aura-gold-muted"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-aura-emerald">Regenerative Sourcing</h4>
+              <p class="text-xs text-aura-muted mt-0.5">All meats, seafood, and seasonal produce are sourced from certified biodynamic purveyors within 100 miles.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-aura-cream text-aura-emerald flex-shrink-0 mt-1 flex items-center justify-center">
+              <i data-lucide="shield-check" class="w-4 h-4 text-aura-gold-muted"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-aura-emerald">Discreet & White-Glove</h4>
+              <p class="text-xs text-aura-muted mt-0.5">Trusted by public figures, high-net-worth families, and Fortune 100 executives with comprehensive NDA protocols.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS SLIDER / REVIEWS ================= -->
+  <section id="testimonials" class="py-24 bg-aura-cream/50 border-y border-aura-cream overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] text-aura-gold-muted font-bold">Kind Words</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-aura-emerald mt-2 mb-4 font-normal">Client Praise</h2>
+        <p class="text-aura-muted text-sm sm:text-base font-light">
+          Our greatest privilege is having our clients enjoy their own milestone occasions entirely unburdened.
+        </p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="bg-white p-8 rounded-3xl border border-aura-cream shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-aura-gold mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-aura-charcoal/80 text-sm leading-relaxed italic mb-6">
+              "Vivienne and Julian turned our private estate wedding into something out of a European dream. The sea bass course was the best meal our guests had ever tasted, and not a single timeline hiccup occurred."
+            </p>
+          </div>
+          <div class="border-t border-aura-cream pt-4 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold text-aura-emerald">Lady Charlotte & Sir Thomas Vance</div>
+              <div class="text-[11px] text-aura-muted">Estate Wedding, 180 Guests</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-white p-8 rounded-3xl border border-aura-cream shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-aura-gold mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-aura-charcoal/80 text-sm leading-relaxed italic mb-6">
+              "Executing our tech foundation gala with 320 global VIPs required utmost discretion, security, and razor-sharp coordination. Aura's team was poise personified throughout the evening."
+            </p>
+          </div>
+          <div class="border-t border-aura-cream pt-4 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold text-aura-emerald">Marcus Sterling</div>
+              <div class="text-[11px] text-aura-muted">VP of Culture, Apex Technologies Gala</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-white p-8 rounded-3xl border border-aura-cream shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-aura-gold mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-aura-charcoal/80 text-sm leading-relaxed italic mb-6">
+              "The custom cocktail program alone was worth every penny. Clarified mezcal cocktails served over custom monogrammed ice cubes! Our guests are still raving three months later."
+            </p>
+          </div>
+          <div class="border-t border-aura-cream pt-4 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold text-aura-emerald">Dr. Evelyn Chen</div>
+              <div class="text-[11px] text-aura-muted">40th Birthday Soirée, Private Residence</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INQUIRY / BOOKING SECTION ================= -->
+  <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-aura-emerald rounded-3xl p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden">
+      
+      <!-- Decorative BG circle -->
+      <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-aura-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Contact Context Column -->
+        <div class="lg:col-span-5 flex flex-col justify-between">
+          <div>
+            <span class="text-xs uppercase tracking-widest text-aura-gold-light font-bold">Reserve Your Date</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-normal mt-2 mb-6">Let's Create Magic Together</h2>
+            <p class="text-aura-sand/80 text-sm leading-relaxed mb-8 font-light">
+              We look forward to learning about your vision. Please share your event parameters below, and our senior coordinator will reach out within 24 business hours.
+            </p>
+
+            <div class="space-y-4 text-xs text-aura-sand/90">
+              <div class="flex items-center gap-3">
+                <i data-lucide="map-pin" class="w-4 h-4 text-aura-gold"></i>
+                <span>San Francisco Bay Area • Napa Valley • Worldwide Destinations</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-lucide="mail" class="w-4 h-4 text-aura-gold"></i>
+                <span>concierge@auraeventsculinary.com</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-lucide="phone" class="w-4 h-4 text-aura-gold"></i>
+                <span>+1 (415) 890-2872</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-aura-sand/20 text-xs text-aura-sand/60">
+            * 2026 weekend dates are currently at 80% capacity. Early inquiry is strongly encouraged.
+          </div>
+        </div>
+
+        <!-- Comprehensive Form Column -->
+        <div class="lg:col-span-7 bg-white text-aura-charcoal rounded-2xl p-6 sm:p-10 shadow-lg">
+          <form id="inquiryForm" class="space-y-5">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-aura-muted mb-1.5">Your Full Name *</label>
+                <input type="text" id="fullName" required placeholder="Lady Eleanor Vance" class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted text-aura-charcoal">
+              </div>
+              <div>
+                <label for="emailAddress" class="block text-xs font-semibold uppercase tracking-wider text-aura-muted mb-1.5">Email Address *</label>
+                <input type="email" id="emailAddress" required placeholder="eleanor@example.com" class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted text-aura-charcoal">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="eventType" class="block text-xs font-semibold uppercase tracking-wider text-aura-muted mb-1.5">Event Type *</label>
+                <select id="eventType" required class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted text-aura-charcoal">
+                  <option value="">Select Event Type</option>
+                  <option value="wedding">Bespoke Wedding</option>
+                  <option value="corporate">Corporate Gala / Fundraiser</option>
+                  <option value="milestone">Milestone Birthday / Anniversary</option>
+                  <option value="private_dinner">Intimate Multi-Course Dinner</option>
+                  <option value="culinary_only">Culinary & Mixology Only</option>
+                </select>
+              </div>
+              <div>
+                <label for="eventDate" class="block text-xs font-semibold uppercase tracking-wider text-aura-muted mb-1.5">Preferred Event Date *</label>
+                <input type="date" id="eventDate" required class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted text-aura-charcoal">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="estimatedGuests" class="block text-xs font-semibold uppercase tracking-wider text-aura-muted mb-1.5">Estimated Guest Count</label>
+                <input type="number" id="estimatedGuests" min="10" max="1000" placeholder="e.g. 120" class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted text-aura-charcoal">
+              </div>
+              <div>
+                <label for="budgetRange" class="block text-xs font-semibold uppercase tracking-wider text-aura-muted mb-1.5">Estimated Total Budget</label>
+                <select id="budgetRange" class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted text-aura-charcoal">
+                  <option value="15k-30k">$15,000 – $30,000</option>
+                  <option value="30k-60k">$30,000 – $60,000</option>
+                  <option value="60k-100k">$60,000 – $100,000</option>
+                  <option value="100k+">$100,000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="dietaryNotes" class="block text-xs font-semibold uppercase tracking-wider text-aura-muted mb-1.5">Dietary & Beverage Preferences</label>
+              <input type="text" id="dietaryNotes" placeholder="e.g. Kosher-style, pescatarian course, artisanal tequila bar" class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted text-aura-charcoal">
+            </div>
+
+            <div>
+              <label for="visionMessage" class="block text-xs font-semibold uppercase tracking-wider text-aura-muted mb-1.5">Tell Us About Your Vision</label>
+              <textarea id="visionMessage" rows="3" placeholder="Describe the ambiance, aesthetic theme, or special requests..." class="w-full p-3 text-xs bg-aura-sand border border-aura-cream rounded-xl focus:outline-none focus:border-aura-gold-muted text-aura-charcoal"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl bg-aura-emerald text-aura-sand hover:bg-aura-gold hover:text-aura-emerald-dark font-medium text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 shadow">
+              <span>Submit Consultation Request</span>
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            </button>
+
+            <!-- Success Alert Notification (Hidden by default) -->
+            <div id="formSuccessMessage" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center">
+              <i data-lucide="check-circle" class="w-4 h-4 inline-block mr-1 text-emerald-600 align-text-bottom"></i>
+              Thank you! Your inquiry has been received. Our concierge team will review your date and details shortly.
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-aura-emerald-dark text-aura-sand/80 pt-16 pb-12 border-t border-aura-sand/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-1">
+          <span class="font-serif text-2xl tracking-widest text-white uppercase font-semibold">Aura</span>
+          <span class="text-[10px] uppercase tracking-[0.3em] text-aura-gold-light font-medium block mt-0.5">Events & Culinary</span>
+          <p class="text-xs text-aura-sand/60 mt-4 leading-relaxed font-light">
+            Luxury event architecture, flawless coordination, and bespoke culinary staging for elevated gatherings nationwide.
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-4">Navigation</h5>
+          <ul class="text-xs space-y-2.5">
+            <li><a href="#services" class="hover:text-aura-gold-light transition-colors">Our Services</a></li>
+            <li><a href="#menus" class="hover:text-aura-gold-light transition-colors">Catering Menus</a></li>
+            <li><a href="#portfolio" class="hover:text-aura-gold-light transition-colors">Featured Gallery</a></li>
+            <li><a href="#pricing" class="hover:text-aura-gold-light transition-colors">Pricing Packages</a></li>
+          </ul>
+        </div>
+
+        <!-- Experiences -->
+        <div>
+          <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-4">Experiences</h5>
+          <ul class="text-xs space-y-2.5">
+            <li><a href="#services" class="hover:text-aura-gold-light transition-colors">Estate Weddings</a></li>
+            <li><a href="#services" class="hover:text-aura-gold-light transition-colors">Philanthropic Galas</a></li>
+            <li><a href="#services" class="hover:text-aura-gold-light transition-colors">Chef's Table Dinners</a></li>
+            <li><a href="#services" class="hover:text-aura-gold-light transition-colors">Artisanal Bar Staging</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter / Social -->
+        <div>
+          <h5 class="text-xs uppercase tracking-widest text-white font-semibold mb-4">Stay Inspired</h5>
+          <p class="text-xs text-aura-sand/60 mb-3">Join our seasonal journal for table design trends and seasonal recipes.</p>
+          <div class="flex">
+            <input type="email" placeholder="Your email address" class="w-full px-3 py-2 text-xs bg-aura-sand/10 border border-aura-sand/20 rounded-l-lg text-white focus:outline-none focus:border-aura-gold">
+            <button class="bg-aura-gold text-aura-emerald-dark px-4 py-2 rounded-r-lg text-xs font-semibold hover:bg-aura-gold-light transition-colors" aria-label="Subscribe">
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-aura-sand/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-aura-sand/50">
+        <p>&copy; 2026 Aura Events & Culinary LLC. All rights reserved.</p>
+        <div class="flex gap-6 mt-4 sm:mt-0">
+          <a href="#" class="hover:text-aura-sand">Privacy Policy</a>
+          <a href="#" class="hover:text-aura-sand">Terms of Service</a>
+          <a href="#" class="hover:text-aura-sand">Catering License #CA-8921B</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= VANILLA JAVASCRIPT LOGIC ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Initialize Lucide Icons
+      lucide.createIcons();
+
+      // 2. Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuOpenIcon = document.getElementById('menuOpenIcon');
+      const menuCloseIcon = document.getElementById('menuCloseIcon');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMobileMenu() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          menuOpenIcon.classList.add('hidden');
+          menuCloseIcon.classList.remove('hidden');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuOpenIcon.classList.remove('hidden');
+          menuCloseIcon.classList.add('hidden');
+        }
+      }
+
+      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (!mobileMenu.classList.contains('hidden')) {
+            toggleMobileMenu();
+          }
+        });
+      });
+
+      // 3. Catering Menu Tab Switching
+      const menuTabs = document.querySelectorAll('.menu-tab-btn');
+      const menuPanes = document.querySelectorAll('.menu-pane');
+
+      menuTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const targetTab = tab.getAttribute('data-tab');
+
+          // Style tabs
+          menuTabs.forEach(btn => {
+            btn.classList.remove('bg-aura-emerald', 'text-white');
+            btn.classList.add('bg-white', 'text-aura-charcoal', 'border', 'border-aura-cream');
+          });
+          tab.classList.remove('bg-white', 'text-aura-charcoal', 'border', 'border-aura-cream');
+          tab.classList.add('bg-aura-emerald', 'text-white');
+
+          // Switch panes
+          menuPanes.forEach(pane => {
+            pane.classList.add('hidden');
+          });
+          const targetPane = document.getElementById(`tab-${targetTab}`);
+          if (targetPane) {
+            targetPane.classList.remove('hidden');
+          }
+        });
+      });
+
+      // 4. Portfolio Filter Logic
+      const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+
+          // Update active styles
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-aura-emerald', 'text-white');
+            b.classList.add('bg-aura-cream', 'text-aura-charcoal');
+          });
+          btn.classList.remove('bg-aura-cream', 'text-aura-charcoal');
+          btn.classList.add('bg-aura-emerald', 'text-white');
+
+          // Show/Hide items
+          galleryItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 5. Interactive Budget & Guest Estimator
+      const guestSlider = document.getElementById('guestSlider');
+      const guestCountDisplay = document.getElementById('guestCountDisplay');
+      const cateringStyleSelect = document.getElementById('cateringStyleSelect');
+      const barServiceSelect = document.getElementById('barServiceSelect');
+      const fullPlanningCheck = document.getElementById('fullPlanningCheck');
+      const estimatedPriceTotal = document.getElementById('estimatedPriceTotal');
+      const fbSubtotal = document.getElementById('fbSubtotal');
+      const planningSubtotal = document.getElementById('planningSubtotal');
+
+      function updateEstimator() {
+        const guests = parseInt(guestSlider.value, 10);
+        guestCountDisplay.textContent = `${guests} Guests`;
+
+        const foodCostPerGuest = parseFloat(cateringStyleSelect.value);
+        const barCostPerGuest = parseFloat(barServiceSelect.value);
+        const planningBase = fullPlanningCheck.checked ? 6500 : 0;
+
+        const foodAndBeverageTotal = guests * (foodCostPerGuest + barCostPerGuest);
+        const lowTotal = Math.round(foodAndBeverageTotal + planningBase);
+        const highTotal = Math.round(lowTotal * 1.15); // +15% buffer for service/customization
+
+        const formatter = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          maximumFractionDigits: 0
+        });
+
+        fbSubtotal.textContent = formatter.format(foodAndBeverageTotal);
+        planningSubtotal.textContent = planningBase > 0 ? formatter.format(planningBase) : '$0 (Coordination not included)';
+        estimatedPriceTotal.textContent = `${formatter.format(lowTotal)} - ${formatter.format(highTotal)}`;
+      }
+
+      guestSlider.addEventListener('input', updateEstimator);
+      cateringStyleSelect.addEventListener('change', updateEstimator);
+      barServiceSelect.addEventListener('change', updateEstimator);
+      fullPlanningCheck.addEventListener('change', updateEstimator);
+      updateEstimator(); // initialize values
+
+      // 6. Form Submission Simulation (No popups)
+      const inquiryForm = document.getElementById('inquiryForm');
+      const formSuccessMessage = document.getElementById('formSuccessMessage');
+
+      inquiryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Disable submit button temporarily
+        const submitBtn = inquiryForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Processing...</span>`;
+
+        setTimeout(() => {
+          submitBtn.classList.add('hidden');
+          formSuccessMessage.classList.remove('hidden');
+          lucide.createIcons(); // refresh check icon in success msg
+          inquiryForm.reset();
+        }, 800);
+      });
+    });
+  </script>
+</body>
+</html>

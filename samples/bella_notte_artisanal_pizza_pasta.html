@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bella Notte | Artisanal Wood-Fired Pizza & Fresh Pasta</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              terracotta: '#C85A32',
+              rust: '#A83B1E',
+              cream: '#FDFBF7',
+              linen: '#F6F1EA',
+              olive: '#4A5B44',
+              darkOlive: '#2D382A',
+              charcoal: '#1E1E1E',
+              gold: '#D4AF37'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom subtle texture & highlights */
+    .hero-gradient {
+      background: linear-gradient(180deg, rgba(20, 20, 20, 0.72) 0%, rgba(20, 20, 20, 0.88) 100%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+    }
+    .badge-glow {
+      box-shadow: 0 4px 20px -2px rgba(200, 90, 50, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-brand-cream text-brand-charcoal font-sans antialiased selection:bg-brand-terracotta selection:text-white">
+
+  <!-- ================= TOP NOTICE BAR ================= -->
+  <header class="bg-brand-darkOlive text-brand-cream text-xs sm:text-sm py-2 px-4 border-b border-brand-olive/30">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-brand-terracotta text-white">
+          <i class="ph ph-fire mr-1"></i> Wood-Fired Daily
+        </span>
+        <span class="hidden md:inline text-stone-300">Dine-In • Takeaway • Doorstep Delivery Available</span>
+      </div>
+      <div class="flex items-center gap-5 text-stone-300">
+        <a href="tel:+15550192834" class="hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+          <i class="ph ph-phone-call text-brand-terracotta"></i> (555) 019-2834
+        </a>
+        <span class="text-stone-500">•</span>
+        <span class="flex items-center gap-1"><i class="ph ph-clock text-brand-terracotta"></i> Open Today: 11:30 AM - 10:00 PM</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN NAVIGATION ================= -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-full bg-brand-terracotta flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+            <i class="ph-bold ph-pizza text-2xl"></i>
+          </div>
+          <div>
+            <span class="font-serif text-2xl font-bold tracking-tight text-brand-charcoal block leading-none">Bella Notte</span>
+            <span class="text-[10px] tracking-[0.22em] uppercase font-semibold text-brand-olive mt-1 block">Trattoria & Pizzeria</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu Links -->
+        <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-stone-700">
+          <a href="#about" class="hover:text-brand-terracotta transition-colors">Our Story</a>
+          <a href="#services" class="hover:text-brand-terracotta transition-colors">Services</a>
+          <a href="#menu" class="hover:text-brand-terracotta transition-colors">Artisanal Menu</a>
+          <a href="#specials" class="hover:text-brand-terracotta transition-colors">Chef's Specials</a>
+          <a href="#reviews" class="hover:text-brand-terracotta transition-colors">Reviews</a>
+          <a href="#contact" class="hover:text-brand-terracotta transition-colors">Find Us</a>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#reservation" class="px-4 py-2.5 rounded-full text-xs uppercase tracking-wider font-semibold text-brand-darkOlive border border-brand-olive/40 hover:bg-brand-linen transition-all">
+            Book Table
+          </a>
+          <a href="#order" class="px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-bold bg-brand-terracotta hover:bg-brand-rust text-white shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+            <i class="ph-bold ph-shopping-bag"></i> Order Online
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="lg:hidden p-2.5 text-stone-700 hover:text-brand-terracotta focus:outline-none">
+          <i class="ph-bold ph-list text-2xl" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-brand-cream border-b border-stone-200 px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col space-y-4 font-medium text-stone-800">
+        <a href="#about" class="mobile-link py-2 border-b border-stone-100">Our Story</a>
+        <a href="#services" class="mobile-link py-2 border-b border-stone-100">Dine In, Takeaway & Delivery</a>
+        <a href="#menu" class="mobile-link py-2 border-b border-stone-100">Artisanal Menu</a>
+        <a href="#specials" class="mobile-link py-2 border-b border-stone-100">Daily Specials</a>
+        <a href="#reviews" class="mobile-link py-2 border-b border-stone-100">Customer Reviews</a>
+        <a href="#contact" class="mobile-link py-2">Hours & Location</a>
+        <div class="pt-4 flex flex-col gap-3">
+          <a href="#reservation" class="mobile-link w-full text-center py-3 rounded-xl border border-brand-olive text-brand-darkOlive font-semibold">Reserve a Table</a>
+          <a href="#order" class="mobile-link w-full text-center py-3 rounded-xl bg-brand-terracotta text-white font-semibold shadow">Order Takeaway / Delivery</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-brand-charcoal text-white">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80" 
+           alt="Wood fired oven and rustic Italian table setting" 
+           class="w-full h-full object-cover object-center transform scale-105 filter brightness-75"
+           loading="eager">
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <!-- Tagline pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-brand-linen text-xs uppercase tracking-widest font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-brand-terracotta animate-pulse"></span>
+        Handcrafted with 72-Hour Fermented Dough
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+        Wood-Fired Pizza & <br class="hidden sm:inline">
+        <span class="italic font-normal text-amber-200">Hand-Rolled Fresh Pasta</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-stone-200 text-base sm:text-lg md:text-xl font-light mb-10 leading-relaxed">
+        From our blazing 850° Naples-imported oven to your plate. Experience classic trattoria flavors, slow-simmered sauces, and locally sourced heritage ingredients.
+      </p>
+
+      <!-- Primary CTA buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a href="#order" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-terracotta hover:bg-brand-rust text-white font-semibold text-sm tracking-wider uppercase transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2">
+          <i class="ph-bold ph-bag"></i> Order Takeaway & Delivery
+        </a>
+        <a href="#reservation" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white font-semibold text-sm tracking-wider uppercase transition-all flex items-center justify-center gap-2">
+          <i class="ph-bold ph-calendar-check"></i> Book a Table
+        </a>
+      </div>
+
+      <!-- Quick Metrics/Badges -->
+      <div class="mt-14 pt-8 border-t border-white/15 grid grid-cols-2 md:grid-cols-4 gap-6 text-stone-300 text-sm">
+        <div class="flex flex-col items-center">
+          <span class="font-serif text-2xl font-bold text-amber-200">72 Hrs</span>
+          <span class="text-xs uppercase tracking-wider text-stone-400 mt-1">Dough Fermentation</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="font-serif text-2xl font-bold text-amber-200">100%</span>
+          <span class="text-xs uppercase tracking-wider text-stone-400 mt-1">Fresh Egg Pasta</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="font-serif text-2xl font-bold text-amber-200">4.9 ★</span>
+          <span class="text-xs uppercase tracking-wider text-stone-400 mt-1">1,200+ Local Reviews</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="font-serif text-2xl font-bold text-amber-200">25 Min</span>
+          <span class="text-xs uppercase tracking-wider text-stone-400 mt-1">Avg. Fast Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW TO ENJOY / SERVICE BADGES ================= -->
+  <section id="services" class="relative -mt-10 z-20 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Card 1: Dine-in -->
+      <div class="bg-white rounded-2xl p-7 shadow-xl border border-stone-200/80 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-amber-50 text-brand-terracotta flex items-center justify-center text-3xl mb-5">
+            <i class="ph-duotone ph-wine"></i>
+          </div>
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-olive">The Experience</span>
+          <h3 class="font-serif text-2xl font-bold text-brand-charcoal mt-1 mb-2">Authentic Dine-In</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Rustic trattoria ambiance, Italian vinyl classics, candlelit tables, and an open hearth kitchen. Perfect for date nights and family feasts.
+          </p>
+        </div>
+        <a href="#reservation" class="inline-flex items-center text-sm font-bold text-brand-terracotta hover:text-brand-rust">
+          Reserve your table <i class="ph-bold ph-arrow-right ml-1"></i>
+        </a>
+      </div>
+
+      <!-- Card 2: Takeaway -->
+      <div class="bg-white rounded-2xl p-7 shadow-xl border-2 border-brand-terracotta/40 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 relative">
+        <span class="absolute -top-3 right-6 bg-brand-terracotta text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
+          15-Min Pickup
+        </span>
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-orange-50 text-brand-rust flex items-center justify-center text-3xl mb-5">
+            <i class="ph-duotone ph-tote"></i>
+          </div>
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-terracotta">Hot & Crispy</span>
+          <h3 class="font-serif text-2xl font-bold text-brand-charcoal mt-1 mb-2">Curbside Takeaway</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Call or order online. Packaged in custom ventilated pizza boxes and insulated pasta containers so your crust stays crisp and sauce velvety.
+          </p>
+        </div>
+        <a href="#order" class="inline-flex items-center text-sm font-bold text-brand-terracotta hover:text-brand-rust">
+          Schedule pickup <i class="ph-bold ph-arrow-right ml-1"></i>
+        </a>
+      </div>
+
+      <!-- Card 3: Delivery -->
+      <div class="bg-white rounded-2xl p-7 shadow-xl border border-stone-200/80 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-brand-olive flex items-center justify-center text-3xl mb-5">
+            <i class="ph-duotone ph-moped"></i>
+          </div>
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-olive">Direct To You</span>
+          <h3 class="font-serif text-2xl font-bold text-brand-charcoal mt-1 mb-2">Prompt Home Delivery</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-6">
+            Delivering piping hot Italian comfort food within a 7-mile radius through our in-house drivers and top platform partners.
+          </p>
+        </div>
+        <a href="#order" class="inline-flex items-center text-sm font-bold text-brand-olive hover:text-brand-darkOlive">
+          Check delivery areas <i class="ph-bold ph-arrow-right ml-1"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ABOUT SECTION ================= -->
+  <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      
+      <!-- Visual Collage -->
+      <div class="relative">
+        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+          <img src="https://images.unsplash.com/photo-1579684947550-22e945225d9a?auto=format&fit=crop&w=900&q=80" 
+               alt="Chef shaping fresh pasta" 
+               class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <!-- Floating secondary picture -->
+        <div class="hidden sm:block absolute -bottom-8 -right-8 w-60 h-60 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-20">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" 
+               alt="Authentic Margherita Pizza" 
+               class="w-full h-full object-cover">
+        </div>
+        <!-- Heritage badge -->
+        <div class="absolute -top-6 -left-6 bg-brand-darkOlive text-brand-cream p-5 rounded-2xl shadow-xl z-20 max-w-[170px] text-center hidden md:block">
+          <i class="ph-bold ph-shield-check text-brand-gold text-3xl mb-1"></i>
+          <p class="text-xs font-semibold leading-tight uppercase tracking-wider">Certified D.O.P. Ingredients</p>
+        </div>
+      </div>
+
+      <!-- Story Text -->
+      <div>
+        <div class="flex items-center gap-2 text-brand-terracotta uppercase font-bold text-xs tracking-widest mb-3">
+          <span class="w-6 h-[2px] bg-brand-terracotta"></span>
+          Family Tradition Since 1994
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-6 leading-tight">
+          Where Ancient Italian Recipes Meet Modern Passion.
+        </h2>
+        <p class="text-stone-600 leading-relaxed mb-6">
+          At <strong class="text-brand-charcoal">Bella Notte</strong>, we refuse to cut corners. Our pizza dough undergoes a rigorous 72-hour slow cold fermentation using organic unbleached flour, resulting in an airy, leopard-spotted crust that is delightfully crisp and gentle on digestion.
+        </p>
+        <p class="text-stone-600 leading-relaxed mb-8">
+          Every morning at 6:00 AM, our pasta artisans extrude bronze-die rigatoni and hand-fold delicate tagliatelle using pasture-raised heritage eggs and Italian semolina. Our sauces simmer for six hours with crushed San Marzano D.O.P. tomatoes, fresh sweet basil, and Ligurian extra-virgin olive oil.
+        </p>
+
+        <!-- Feature bullet points -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-medium text-stone-700">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+              <i class="ph-bold ph-check text-xs"></i>
+            </span>
+            <span>Imported San Marzano D.O.P.</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+              <i class="ph-bold ph-check text-xs"></i>
+            </span>
+            <span>100% Buffalo Mozzarella Campana</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+              <i class="ph-bold ph-check text-xs"></i>
+            </span>
+            <span>Gluten-Friendly Pasta Available</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+              <i class="ph-bold ph-check text-xs"></i>
+            </span>
+            <span>Handmade Desserts & Tiramisù</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CHEF'S DAILY SPECIALS ================= -->
+  <section id="specials" class="py-16 bg-brand-linen/60 border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-rust">Limited Batches Daily</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal mt-1">Chef Matteo's Blackboard Specials</h2>
+        </div>
+        <p class="text-stone-600 text-sm mt-2 md:mt-0 max-w-md">
+          Curated seasonal ingredients, available for dine-in and online ordering until sold out each evening.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Special 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200/90 group flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80" 
+                   alt="Tartufo & Wild Mushroom Pizza" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-duration-500 duration-500">
+              <span class="absolute top-3 right-3 bg-brand-charcoal text-white text-xs font-bold px-3 py-1 rounded-full">
+                $26.50
+              </span>
+              <span class="absolute bottom-3 left-3 bg-brand-olive text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
+                Chef Signature
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-brand-charcoal mb-2">Tartufo Nero & Funghi Pizza</h3>
+              <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                Fior di latte, roasted cremini & chanterelle mushrooms, black truffle cream, aged pecorino, and fresh thyme.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <a href="#order" class="w-full py-2.5 rounded-xl bg-stone-100 hover:bg-brand-terracotta hover:text-white text-stone-800 text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5">
+              <i class="ph-bold ph-plus"></i> Order Tonight
+            </a>
+          </div>
+        </div>
+
+        <!-- Special 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200/90 group flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281083?auto=format&fit=crop&w=700&q=80" 
+                   alt="Handmade Pappardelle with Slow Braised Osso Buco Ragù" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-duration-500 duration-500">
+              <span class="absolute top-3 right-3 bg-brand-charcoal text-white text-xs font-bold px-3 py-1 rounded-full">
+                $28.00
+              </span>
+              <span class="absolute bottom-3 left-3 bg-brand-terracotta text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
+                Slow-Braised 8h
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-brand-charcoal mb-2">Pappardelle al Ragù di Cinghiale</h3>
+              <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                Wide ribbon egg pasta with 8-hour braised Tuscan wild ragù, rosemary reduction, and Parmigiano-Reggiano 24-month.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <a href="#order" class="w-full py-2.5 rounded-xl bg-stone-100 hover:bg-brand-terracotta hover:text-white text-stone-800 text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5">
+              <i class="ph-bold ph-plus"></i> Order Tonight
+            </a>
+          </div>
+        </div>
+
+        <!-- Special 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200/90 group flex flex-col justify-between">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=700&q=80" 
+                   alt="Tiramisù al Pistacchio" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-duration-500 duration-500">
+              <span class="absolute top-3 right-3 bg-brand-charcoal text-white text-xs font-bold px-3 py-1 rounded-full">
+                $12.50
+              </span>
+              <span class="absolute bottom-3 left-3 bg-amber-600 text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
+                House Dessert
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-brand-charcoal mb-2">Bronte Pistachio Tiramisù</h3>
+              <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                Espresso-soaked Savoiardi biscuits layered with Sicilian pistachio cream, whipped mascarpone, and roasted pistachios.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <a href="#order" class="w-full py-2.5 rounded-xl bg-stone-100 hover:bg-brand-terracotta hover:text-white text-stone-800 text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5">
+              <i class="ph-bold ph-plus"></i> Order Tonight
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE TABBED MENU ================= -->
+  <section id="menu" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs uppercase font-bold tracking-widest text-brand-terracotta">Our Authentic Carta</span>
+      <h2 class="font-serif text-4xl sm:text-5xl font-bold text-brand-charcoal mt-1 mb-4">The Artisanal Menu</h2>
+      <p class="text-stone-600 text-base">
+        Crafted fresh daily with genuine regional Italian pride. All pasta is rolled fresh in our kitchen, and pizzas are baked in our blazing wood-fired oven.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="mt-8 flex flex-wrap justify-center gap-2 sm:gap-3 p-1.5 bg-stone-200/70 rounded-full max-w-2xl mx-auto">
+        <button onclick="switchTab('pizza')" id="tab-pizza" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-brand-terracotta shadow-sm">
+          🍕 Wood-Fired Pizza
+        </button>
+        <button onclick="switchTab('pasta')" id="tab-pasta" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all text-stone-700 hover:text-brand-charcoal">
+          🍝 Fresh Pasta
+        </button>
+        <button onclick="switchTab('starters')" id="tab-starters" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all text-stone-700 hover:text-brand-charcoal">
+          🥗 Antipasti
+        </button>
+        <button onclick="switchTab('desserts')" id="tab-desserts" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all text-stone-700 hover:text-brand-charcoal">
+          🍰 Dolce & Bevande
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB PANELS CONTAINER -->
+    <div id="menu-content" class="min-h-[500px]">
+      
+      <!-- ================= 1. WOOD-FIRED PIZZA ================= -->
+      <div id="panel-pizza" class="menu-panel grid grid-cols-1 md:grid-cols-2 gap-6 transition-opacity duration-300">
+        
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Margherita Verace D.O.P.</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">V</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              San Marzano tomatoes, fresh Buffalo mozzarella, extra virgin olive oil, and fresh torn sweet basil leaves.
+            </p>
+            <span class="text-xs text-stone-400 italic">12" Classic Crust</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$19.00</span>
+            <button onclick="addToOrderMock('Margherita Verace', 19.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Diavola Calabrese</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-red-100 text-red-800 px-2 py-0.5 rounded">Spicy</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Crushed tomato sauce, spicy Spianata Calabrese salami, fior di latte, hot chili oil, and roasted red peppers.
+            </p>
+            <span class="text-xs text-stone-400 italic">12" Classic Crust</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$23.00</span>
+            <button onclick="addToOrderMock('Diavola Calabrese', 23.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Prosciutto di Parma & Rucola</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 px-2 py-0.5 rounded">Favorite</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Bianca base with fior di latte, topped post-bake with 24-month aged Prosciutto di Parma, baby arugula, and shaved parmesan.
+            </p>
+            <span class="text-xs text-stone-400 italic">12" Classic Crust</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$25.00</span>
+            <button onclick="addToOrderMock('Prosciutto di Parma Pizza', 25.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Quattro Formaggi Bianco</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">V</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Gorgonzola Dolce, creamy ricotta, smoked provolone, fior di latte, finished with organic mountain wildflower honey.
+            </p>
+            <span class="text-xs text-stone-400 italic">12" Classic Crust</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$24.00</span>
+            <button onclick="addToOrderMock('Quattro Formaggi', 24.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Salsiccia & Friarielli</h4>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Hand-crumbled fennel Italian sausage, sautéed Neapolitan wild broccoli rabe, chili flakes, and smoked provola.
+            </p>
+            <span class="text-xs text-stone-400 italic">12" Classic Crust</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$23.50</span>
+            <button onclick="addToOrderMock('Salsiccia & Friarielli', 23.50)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Ortolana Giardino</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Vegan Opt</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Fire-roasted bell peppers, grilled zucchini, Sicilian eggplant, Kalamata olives, tomato sugo, and oregano.
+            </p>
+            <span class="text-xs text-stone-400 italic">12" Classic Crust</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$21.50</span>
+            <button onclick="addToOrderMock('Ortolana Giardino', 21.50)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= 2. FRESH HANDMADE PASTA ================= -->
+      <div id="panel-pasta" class="menu-panel hidden grid grid-cols-1 md:grid-cols-2 gap-6 transition-opacity duration-300">
+        
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Tagliatelle alla Bolognese Tradizionale</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 px-2 py-0.5 rounded">Chef Choice</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Ribbon pasta made fresh this morning, slow-cooked prime beef & pork ragù, whole milk, nutmeg, and Parmigiano.
+            </p>
+            <span class="text-xs text-stone-400 italic">Hand-cut Egg Pasta</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$24.50</span>
+            <button onclick="addToOrderMock('Tagliatelle Bolognese', 24.50)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Spaghetti alla Carbonara Autentica</h4>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Crispy cured pork guanciale, golden farm egg yolks, Pecorino Romano D.O.P., toasted Tellicherry black pepper. Never cream.
+            </p>
+            <span class="text-xs text-stone-400 italic">Bronze-Die Extruded</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$23.00</span>
+            <button onclick="addToOrderMock('Spaghetti Carbonara', 23.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Ravioli di Ricotta & Spinaci al Burro e Salvia</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">V</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Handmade parcels stuffed with sheep's milk ricotta and tender baby spinach, tossed in browned butter, crispy sage, and toasted pine nuts.
+            </p>
+            <span class="text-xs text-stone-400 italic">Hand-Pinched Daily</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$22.50</span>
+            <button onclick="addToOrderMock('Ravioli di Ricotta', 22.50)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Linguine ai Frutti di Mare</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-800 px-2 py-0.5 rounded">Seafood</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Local black mussels, clams, wild prawns, calamari, white wine reduction, light cherry tomato pomodoro, and parsley oil.
+            </p>
+            <span class="text-xs text-stone-400 italic">Bronze-Extruded Linguine</span>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$27.50</span>
+            <button onclick="addToOrderMock('Linguine ai Frutti di Mare', 27.50)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= 3. STARTERS & ANTIPASTI ================= -->
+      <div id="panel-starters" class="menu-panel hidden grid grid-cols-1 md:grid-cols-2 gap-6 transition-opacity duration-300">
+        
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Burrata Pugliese con Pomodorini</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">V</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Whole cream-filled Pugliese burrata, heirloom confit tomatoes, basil pesto drizzle, balsamic glaze, and wood-fired focaccia.
+            </p>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$16.50</span>
+            <button onclick="addToOrderMock('Burrata Pugliese', 16.50)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Arancini al Tartufo & Funghi</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">V</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Three golden crispy saffron risotto balls filled with wild mushrooms and molten taleggio cheese, served with garlic herb aioli.
+            </p>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$14.00</span>
+            <button onclick="addToOrderMock('Arancini al Tartufo', 14.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Calamari Fritti Croccanti</h4>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Semolina-dusted baby calamari lightly fried, sea salt flakes, charred lemon cheek, and house marinara dipping sauce.
+            </p>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$17.00</span>
+            <button onclick="addToOrderMock('Calamari Fritti', 17.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Focaccia all'Aglio & Rosmarino</h4>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Vegan</span>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Warm house-baked sourdough flatbread brushed with roasted garlic oil, Maldon flake salt, and fresh garden rosemary.
+            </p>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$9.50</span>
+            <button onclick="addToOrderMock('Garlic Rosemary Focaccia', 9.50)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= 4. DESSERTS & DRINKS ================= -->
+      <div id="panel-desserts" class="menu-panel hidden grid grid-cols-1 md:grid-cols-2 gap-6 transition-opacity duration-300">
+        
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Tiramisù Tradizionale della Casa</h4>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Savoiardi soaked in Lavazza espresso and Marsala, layers of whipped mascarpone cream, dusted with Valrhona cocoa powder.
+            </p>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$11.00</span>
+            <button onclick="addToOrderMock('Tiramisù Tradizionale', 11.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Cannoli Siciliani (Pair)</h4>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Crisp handmade pastry shells piped to order with sweet sheep's ricotta, candied orange peel, and crushed dark chocolate drops.
+            </p>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$10.00</span>
+            <button onclick="addToOrderMock('Cannoli Siciliani', 10.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">San Pellegrino Sparkling Beverages</h4>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Choice of Aranciata Rossa (Blood Orange), Limonata, Pompelmo, or Mineral Water (750ml bottle).
+            </p>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$4.50</span>
+            <button onclick="addToOrderMock('San Pellegrino', 4.50)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 hover:shadow-md transition-shadow flex justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="font-serif text-lg font-bold text-brand-charcoal">Italian Craft Soda & Beers</h4>
+            </div>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed mb-3">
+              Peroni Nastro Azzurro, Menabrea 1846, or Chinotto Lurisia artisan cola.
+            </p>
+          </div>
+          <div class="text-right flex flex-col justify-between items-end">
+            <span class="font-serif text-xl font-bold text-brand-terracotta">$7.00</span>
+            <button onclick="addToOrderMock('Peroni Beer / Italian Soda', 7.00)" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-linen hover:bg-brand-terracotta hover:text-white transition-colors flex items-center gap-1">
+              <i class="ph-bold ph-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Quick dietary note -->
+    <div class="mt-12 text-center text-xs text-stone-500">
+      <span class="font-semibold text-brand-charcoal">Dietary Information:</span> Gluten-free pasta available upon request (+$3). Vegan mozzarella substitution available for all pizzas (+$2.50). Please inform staff of any allergies when ordering.
+    </div>
+  </section>
+
+  <!-- ================= REVIEWS / TESTIMONIALS ================= -->
+  <section id="reviews" class="py-20 bg-brand-linen/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs uppercase font-bold tracking-widest text-brand-olive">Guest Experiences</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal mt-1">Loved by Locals & Travelers</h2>
+        <div class="flex items-center justify-center gap-1 text-amber-500 text-lg mt-3">
+          <i class="ph-fill ph-star"></i>
+          <i class="ph-fill ph-star"></i>
+          <i class="ph-fill ph-star"></i>
+          <i class="ph-fill ph-star"></i>
+          <i class="ph-fill ph-star"></i>
+          <span class="text-stone-700 font-bold text-sm ml-2">4.9 / 5.0 Rating</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200/60 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 text-sm mb-4">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <p class="text-stone-700 italic text-sm leading-relaxed mb-6">
+              "Without question the finest crust in town. The dough is light as air with those perfect blistered edges. We dine in almost every Friday and order takeaway on busy Tuesdays!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-stone-100 pt-4">
+            <div class="w-10 h-10 rounded-full bg-brand-terracotta/20 text-brand-terracotta font-serif font-bold flex items-center justify-center">
+              SR
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-brand-charcoal">Sophia Ricci</h5>
+              <p class="text-xs text-stone-500">Local Food Critic & Regular</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200/60 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 text-sm mb-4">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <p class="text-stone-700 italic text-sm leading-relaxed mb-6">
+              "Their hand-rolled Tagliatelle Bolognese is soul-warming. Delivery arrived in 25 minutes flat, piping hot and packed in eco-friendly containers. Five stars all day."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-stone-100 pt-4">
+            <div class="w-10 h-10 rounded-full bg-brand-olive/20 text-brand-olive font-serif font-bold flex items-center justify-center">
+              DC
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-brand-charcoal">David Campbell</h5>
+              <p class="text-xs text-stone-500">Takeaway & Delivery Customer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200/60 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 text-sm mb-4">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <p class="text-stone-700 italic text-sm leading-relaxed mb-6">
+              "Booked a corner booth for our anniversary dinner. The atmosphere, natural wine recommendations, and pistachio tiramisù made it unforgettable. Truly authentic Italian hospitality."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-stone-100 pt-4">
+            <div class="w-10 h-10 rounded-full bg-amber-100 text-brand-rust font-serif font-bold flex items-center justify-center">
+              EM
+            </div>
+            <div>
+              <h5 class="text-sm font-bold text-brand-charcoal">Elena & Marco</h5>
+              <p class="text-xs text-stone-500">Dine-in Guests</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= RESERVATION & ORDERING SECTION ================= -->
+  <section id="order" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- LEFT: ORDER TAKEAWAY & DELIVERY CTA (7 cols) -->
+      <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-stone-200 shadow-xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-100 text-brand-rust text-xs uppercase tracking-wider font-bold mb-4">
+          <i class="ph-bold ph-motorcycle"></i> Direct Order Hub
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal mb-4">
+          Ready for Dinner? Order Takeaway or Delivery
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base mb-8 leading-relaxed">
+          Order directly through our hotline to skip platform markups, or choose your preferred delivery partner below for seamless doorstep delivery.
+        </p>
+
+        <!-- Direct Phone Order Card -->
+        <div class="bg-brand-linen p-6 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-stone-200/70 mb-8">
+          <div>
+            <span class="text-xs uppercase font-bold text-brand-terracotta tracking-wider">Fastest Curbside Pickup</span>
+            <div class="text-2xl font-bold font-serif text-brand-charcoal mt-0.5">(555) 019-2834</div>
+            <p class="text-xs text-stone-500 mt-1">Average pickup readiness: 15–20 minutes</p>
+          </div>
+          <a href="tel:+15550192834" class="px-6 py-3 rounded-full bg-brand-charcoal hover:bg-black text-white text-xs uppercase tracking-wider font-bold transition-all shadow shrink-0 flex items-center gap-2">
+            <i class="ph-bold ph-phone"></i> Call To Order
+          </a>
+        </div>
+
+        <!-- Delivery Partner Buttons -->
+        <div>
+          <span class="block text-xs uppercase font-bold text-stone-500 tracking-wider mb-4">Or Order via Delivery Partners</span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a href="https://ubereats.com" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-stone-200 hover:border-black hover:bg-stone-50 transition-all font-semibold text-sm text-stone-800">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Uber Eats
+            </a>
+            <a href="https://doordash.com" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-stone-200 hover:border-red-500 hover:bg-stone-50 transition-all font-semibold text-sm text-stone-800">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> DoorDash
+            </a>
+            <a href="https://grubhub.com" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-stone-200 hover:border-orange-500 hover:bg-stone-50 transition-all font-semibold text-sm text-stone-800">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Grubhub
+            </a>
+          </div>
+        </div>
+
+        <!-- Floating Cart Mini Drawer / Mock Basket -->
+        <div id="mockOrderBox" class="mt-8 pt-6 border-t border-stone-200 hidden">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-bold text-sm text-brand-charcoal flex items-center gap-2">
+              <i class="ph-bold ph-shopping-bag text-brand-terracotta"></i> Your Selected Items (<span id="cartCount">0</span>)
+            </h4>
+            <button onclick="clearCart()" class="text-xs text-red-500 hover:underline">Clear</button>
+          </div>
+          <div id="cartItemsList" class="space-y-2 max-h-40 overflow-y-auto text-xs text-stone-600 pr-2"></div>
+          <div class="mt-4 flex items-center justify-between pt-3 border-t border-stone-100">
+            <span class="text-sm font-bold text-stone-800">Estimated Total:</span>
+            <span id="cartTotal" class="text-base font-bold text-brand-terracotta">$0.00</span>
+          </div>
+          <button onclick="confirmOrderPopup()" class="w-full mt-3 py-3 rounded-xl bg-brand-terracotta text-white font-bold text-xs uppercase tracking-wider hover:bg-brand-rust transition-colors shadow">
+            Proceed with Express Pickup
+          </button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: TABLE RESERVATION FORM (5 cols) -->
+      <div id="reservation" class="lg:col-span-5 bg-brand-darkOlive text-white p-8 sm:p-10 rounded-3xl shadow-xl">
+        <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Dine-In Bookings</span>
+        <h3 class="font-serif text-3xl font-bold mt-1 mb-2">Reserve a Table</h3>
+        <p class="text-stone-300 text-xs sm:text-sm mb-6">
+          We welcome reservations up to 30 days in advance. Walk-ins are always welcomed on a first-come basis.
+        </p>
+
+        <form id="reservationForm" onsubmit="handleReservation(event)" class="space-y-4 text-stone-800">
+          <div>
+            <label class="block text-xs font-semibold text-stone-200 uppercase tracking-wider mb-1">Your Full Name</label>
+            <input type="text" required placeholder="e.g. Marco Rossi" class="w-full px-4 py-2.5 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-terracotta">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-stone-200 uppercase tracking-wider mb-1">Date</label>
+              <input type="date" required id="resDate" class="w-full px-3 py-2.5 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-terracotta">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-stone-200 uppercase tracking-wider mb-1">Time</label>
+              <select class="w-full px-3 py-2.5 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-terracotta">
+                <option>12:00 PM (Lunch)</option>
+                <option>1:30 PM (Lunch)</option>
+                <option selected>5:30 PM (Dinner)</option>
+                <option>7:00 PM (Dinner)</option>
+                <option>8:30 PM (Dinner)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-stone-200 uppercase tracking-wider mb-1">Guests</label>
+              <select class="w-full px-3 py-2.5 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-terracotta">
+                <option>1 Guest</option>
+                <option selected>2 Guests</option>
+                <option>4 Guests</option>
+                <option>6 Guests</option>
+                <option>8+ (Large Party)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-stone-200 uppercase tracking-wider mb-1">Seating Area</label>
+              <select class="w-full px-3 py-2.5 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-terracotta">
+                <option>Main Dining Hearth</option>
+                <option>Window Terrace</option>
+                <option>Cozy Booth</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-stone-200 uppercase tracking-wider mb-1">Contact Phone</label>
+            <input type="tel" required placeholder="(555) 000-0000" class="w-full px-4 py-2.5 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-terracotta">
+          </div>
+
+          <div id="reservationStatus" class="hidden p-3 rounded-xl text-xs font-semibold text-center bg-white/20 text-white"></div>
+
+          <button type="submit" class="w-full py-3.5 mt-2 rounded-xl bg-brand-terracotta hover:bg-brand-rust text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl">
+            Confirm Reservation Request
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= LOCATION & HOURS SECTION ================= -->
+  <section id="contact" class="py-20 bg-brand-linen border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Hours Card -->
+        <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-orange-100 text-brand-terracotta flex items-center justify-center text-2xl mb-4">
+            <i class="ph-bold ph-clock"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-brand-charcoal mb-4">Hours of Operation</h3>
+          <ul class="space-y-3 text-sm text-stone-600">
+            <li class="flex justify-between pb-2 border-b border-stone-100">
+              <span class="font-medium text-stone-800">Monday – Thursday</span>
+              <span>11:30 AM – 9:30 PM</span>
+            </li>
+            <li class="flex justify-between pb-2 border-b border-stone-100">
+              <span class="font-medium text-stone-800">Friday – Saturday</span>
+              <span>11:30 AM – 10:30 PM</span>
+            </li>
+            <li class="flex justify-between pb-2 border-b border-stone-100">
+              <span class="font-medium text-stone-800">Sunday</span>
+              <span>12:00 PM – 9:00 PM</span>
+            </li>
+          </ul>
+          <p class="text-xs text-stone-500 mt-4">
+            *Kitchen closes 30 minutes before closing time.
+          </p>
+        </div>
+
+        <!-- Contact & Address Card -->
+        <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-olive flex items-center justify-center text-2xl mb-4">
+            <i class="ph-bold ph-map-pin"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-brand-charcoal mb-4">Trattoria Location</h3>
+          <address class="not-italic text-sm text-stone-600 space-y-2 mb-6">
+            <p class="font-semibold text-stone-900">Bella Notte Artisanal Trattoria</p>
+            <p>442 Via Napoli Boulevard, Suite 100</p>
+            <p>Little Italy District, NY 10013</p>
+          </address>
+          <div class="space-y-2 text-sm text-stone-700">
+            <p class="flex items-center gap-2">
+              <i class="ph-bold ph-phone text-brand-terracotta"></i> (555) 019-2834
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="ph-bold ph-envelope-simple text-brand-terracotta"></i> ciao@bellanottepizza.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive/Styled Map Placeholder -->
+        <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="relative h-48 bg-stone-200 flex items-center justify-center overflow-hidden">
+            <!-- Simulated Map Texture Graphic -->
+            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80" 
+                 alt="Map location visual" 
+                 class="w-full h-full object-cover filter contrast-75 opacity-70">
+            <div class="absolute inset-0 bg-stone-900/30 flex items-center justify-center">
+              <div class="bg-white text-brand-charcoal px-4 py-2 rounded-full font-bold text-xs shadow-lg flex items-center gap-2 animate-bounce">
+                <i class="ph-fill ph-map-pin text-brand-terracotta text-base"></i> 442 Via Napoli Blvd
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h4 class="font-serif text-base font-bold text-brand-charcoal mb-1">Easy Parking & Transit</h4>
+            <p class="text-xs text-stone-600 mb-4">Dedicated customer parking in rear lot. Valet parking available on Friday and Saturday evenings.</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener" class="w-full py-2.5 rounded-xl border border-stone-300 hover:bg-stone-100 text-stone-800 text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+              <i class="ph-bold ph-navigation-arrow"></i> Open in Maps
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-charcoal text-stone-400 py-14 text-sm border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        
+        <!-- Brand Summary -->
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 text-white mb-3">
+            <i class="ph-bold ph-pizza text-brand-terracotta text-2xl"></i>
+            <span class="font-serif text-xl font-bold">Bella Notte</span>
+          </div>
+          <p class="text-xs text-stone-400 leading-relaxed mb-4">
+            Honoring traditional Italian gastronomy with slow-fermented dough, fresh farm eggs, and imported San Marzano tomatoes.
+          </p>
+          <div class="flex items-center space-x-3 text-lg text-stone-300">
+            <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-terracotta hover:text-white flex items-center justify-center transition-colors"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-terracotta hover:text-white flex items-center justify-center transition-colors"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" aria-label="TripAdvisor" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-terracotta hover:text-white flex items-center justify-center transition-colors"><i class="ph ph-chat-teardrop-dots"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#about" class="hover:text-white transition-colors">About Our Kitchen</a></li>
+            <li><a href="#menu" class="hover:text-white transition-colors">Pizza & Pasta Menu</a></li>
+            <li><a href="#specials" class="hover:text-white transition-colors">Daily Blackboard Specials</a></li>
+            <li><a href="#reservation" class="hover:text-white transition-colors">Table Reservations</a></li>
+            <li><a href="#order" class="hover:text-white transition-colors">Takeaway Orders</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-4">Ways To Enjoy</h4>
+          <ul class="space-y-2 text-xs">
+            <li><span class="text-stone-300 font-medium">Dine-in:</span> Candlelit trattoria seating</li>
+            <li><span class="text-stone-300 font-medium">Takeaway:</span> Express curbside pickup</li>
+            <li><span class="text-stone-300 font-medium">Delivery:</span> 7-mile radius direct & partners</li>
+            <li><span class="text-stone-300 font-medium">Catering:</span> Pasta trays & pizza parties</li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Perks -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-4">Join The Famiglia</h4>
+          <p class="text-xs text-stone-400 mb-3">Subscribe for secret weekly specials and an antipasto on us.</p>
+          <form onsubmit="handleSubscribe(event)" class="flex flex-col gap-2">
+            <input type="email" required placeholder="Enter your email" class="px-3.5 py-2 rounded-lg bg-stone-800 border border-stone-700 text-white text-xs focus:outline-none focus:border-brand-terracotta">
+            <button type="submit" class="py-2 px-4 rounded-lg bg-brand-terracotta hover:bg-brand-rust text-white font-bold text-xs uppercase tracking-wider transition-colors">
+              Subscribe
+            </button>
+            <span id="subStatus" class="text-[11px] text-emerald-400 hidden">Grazie! Check your inbox soon.</span>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p>© 2026 Bella Notte Pizzeria & Trattoria. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Service</a>
+          <a href="#" class="hover:underline">Allergen Guide</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        menuIcon.className = isOpen ? 'ph-bold ph-x text-2xl' : 'ph-bold ph-list text-2xl';
+      });
+    }
+
+    // Auto-close mobile drawer when click link
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.className = 'ph-bold ph-list text-2xl';
+      });
+    });
+
+    // Menu Tabs Switcher
+    function switchTab(category) {
+      // Hide all panels
+      const panels = document.querySelectorAll('.menu-panel');
+      panels.forEach(p => p.classList.add('hidden'));
+
+      // Deactivate all buttons
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => {
+        b.classList.remove('bg-white', 'text-brand-terracotta', 'shadow-sm');
+        b.classList.add('text-stone-700');
+      });
+
+      // Show selected panel
+      const targetPanel = document.getElementById(`panel-${category}`);
+      if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+      }
+
+      // Highlight active button
+      const activeBtn = document.getElementById(`tab-${category}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-stone-700');
+        activeBtn.classList.add('bg-white', 'text-brand-terracotta', 'shadow-sm');
+      }
+    }
+
+    // Simulated Quick Cart State
+    let cart = [];
+
+    function addToOrderMock(itemName, price) {
+      cart.push({ name: itemName, price: price });
+      updateCartUI();
+      
+      // Auto-open order summary section
+      const box = document.getElementById('mockOrderBox');
+      if (box && box.classList.contains('hidden')) {
+        box.classList.remove('hidden');
+      }
+    }
+
+    function updateCartUI() {
+      const box = document.getElementById('mockOrderBox');
+      const list = document.getElementById('cartItemsList');
+      const count = document.getElementById('cartCount');
+      const totalEl = document.getElementById('cartTotal');
+
+      if (!box || !list || !count || !totalEl) return;
+
+      if (cart.length === 0) {
+        box.classList.add('hidden');
+        return;
+      }
+
+      count.textContent = cart.length;
+      list.innerHTML = '';
+      
+      let sum = 0;
+      cart.forEach((item, index) => {
+        sum += item.price;
+        const row = document.createElement('div');
+        row.className = 'flex justify-between items-center py-1 border-b border-stone-100';
+        row.innerHTML = `
+          <span>${item.name}</span>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-stone-800">$${item.price.toFixed(2)}</span>
+            <button onclick="removeItem(${index})" class="text-stone-400 hover:text-red-500 text-sm">×</button>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+
+      totalEl.textContent = `$${sum.toFixed(2)}`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function clearCart() {
+      cart = [];
+      updateCartUI();
+    }
+
+    function confirmOrderPopup() {
+      const total = document.getElementById('cartTotal').textContent;
+      const orderBox = document.getElementById('mockOrderBox');
+      orderBox.innerHTML = `
+        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-center text-emerald-800">
+          <i class="ph-fill ph-check-circle text-3xl mb-1 inline-block"></i>
+          <h5 class="font-bold text-sm">Express Order Prepared!</h5>
+          <p class="text-xs mt-1">Order total ${total}. Please dial <strong class="underline">(555) 019-2834</strong> or present this confirmation at the pickup counter.</p>
+          <button onclick="location.reload()" class="mt-3 px-4 py-1.5 bg-emerald-800 text-white rounded-lg text-xs font-semibold">Start Fresh</button>
+        </div>
+      `;
+    }
+
+    // Reservation Handler
+    function handleReservation(event) {
+      event.preventDefault();
+      const status = document.getElementById('reservationStatus');
+      status.classList.remove('hidden');
+      status.innerHTML = `
+        <span class="text-brand-gold font-bold">Grazie!</span> Your reservation request has been received. Our host will confirm via SMS shortly.
+      `;
+      event.target.reset();
+    }
+
+    // Newsletter Handler
+    function handleSubscribe(event) {
+      event.preventDefault();
+      const st = document.getElementById('subStatus');
+      if (st) {
+        st.classList.remove('hidden');
+        event.target.reset();
+      }
+    }
+
+    // Set today's date as default min for booking
+    window.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('resDate');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+        dateInput.value = today;
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanguard Legal & Injury Advocates | Family & Personal Injury Law</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Playfair Display for legal prestige typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              850: '#0B1528',
+              900: '#070E1B',
+              950: '#040810',
+            },
+            gold: {
+              400: '#E6C687',
+              500: '#C5A059',
+              600: '#AA843D',
+              700: '#8A6728',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            cinzel: ['Cinzel', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom subtle glassmorphism and accents */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #F3E7C4 0%, #C5A059 50%, #99752D 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge-blur {
+      backdrop-filter: blur(8px);
+      background: rgba(11, 21, 40, 0.75);
+    }
+    /* Hide scrollbars on tabs while keeping scrollability */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white">
+
+  <!-- TOP EMERGENCY & PHONE STRIP -->
+  <header class="bg-navy-950 text-slate-300 border-b border-navy-850/60 text-xs sm:text-sm py-2 px-4 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center text-gold-400 font-medium">
+          <svg class="w-3.5 h-3.5 mr-1.5 animate-pulse text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+            <circle cx="10" cy="10" r="6"/>
+          </svg>
+          24/7 Urgent Legal Intake Available
+        </span>
+        <span class="hidden md:inline text-slate-500">|</span>
+        <span class="hidden md:inline text-slate-300">Confidential, No-Obligation Case Reviews</span>
+      </div>
+      <div class="flex items-center gap-6 ml-auto">
+        <a href="tel:18005558264" class="flex items-center font-semibold text-white hover:text-gold-400 transition-colors">
+          <svg class="w-4 h-4 mr-1.5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          1-800-555-VANGUARD (8264)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN NAVIGATION -->
+  <nav class="bg-navy-900/95 backdrop-blur-md sticky top-[37px] z-40 border-b border-slate-800 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-gold-400 via-gold-500 to-gold-700 p-0.5 shadow-lg flex items-center justify-center">
+            <div class="w-full h-full bg-navy-900 rounded-md flex items-center justify-center">
+              <!-- Scales of Justice Icon -->
+              <svg class="w-6 h-6 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 3v17M4 7h16M7 7l-3 6h6L7 7zm10 0l-3 6h6l-3-6zM9 20h6"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="font-cinzel text-xl sm:text-2xl font-bold tracking-wider text-white">VANGUARD</div>
+            <div class="text-[10px] tracking-[0.22em] uppercase text-gold-400 font-medium">Legal & Injury Advocates</div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-200">
+          <a href="#practice-areas" class="hover:text-gold-400 transition-colors py-1">Practice Areas</a>
+          <a href="#why-us" class="hover:text-gold-400 transition-colors py-1">Why Choose Us</a>
+          <a href="#roadmap" class="hover:text-gold-400 transition-colors py-1">Our Process</a>
+          <a href="#assessment-tool" class="hover:text-gold-400 transition-colors py-1 flex items-center gap-1.5 text-gold-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Case Evaluation Tool
+          </a>
+          <a href="#testimonials" class="hover:text-gold-400 transition-colors py-1">Client Results</a>
+          <a href="#faq" class="hover:text-gold-400 transition-colors py-1">FAQ</a>
+        </div>
+
+        <!-- CTA & Mobile Toggle -->
+        <div class="flex items-center gap-3">
+          <a href="#assessment-tool" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-md font-semibold text-xs tracking-wider uppercase bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 shadow-md hover:shadow-gold-500/20 transition-all">
+            Free Consultation
+          </a>
+          <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="lg:hidden p-2 rounded-md text-slate-400 hover:text-white hover:bg-navy-800 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-800 bg-navy-950 px-4 pt-3 pb-6 space-y-3">
+      <a href="#practice-areas" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-850">Practice Areas</a>
+      <a href="#why-us" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-850">Why Choose Us</a>
+      <a href="#roadmap" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-850">Our Process</a>
+      <a href="#assessment-tool" class="block py-2 text-gold-400 font-semibold border-b border-navy-850">Interactive Case Evaluator</a>
+      <a href="#testimonials" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-850">Client Testimonials</a>
+      <a href="#faq" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-850">Frequently Asked Questions</a>
+      <a href="#contact" class="block py-2 text-slate-200 hover:text-gold-400">Contact & Locations</a>
+      <div class="pt-2">
+        <a href="#assessment-tool" class="block w-full text-center py-3 rounded bg-gold-500 text-navy-950 font-bold uppercase text-xs tracking-wider">
+          Request Confidential Consultation
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-navy-900 text-white overflow-hidden py-16 sm:py-24 lg:py-28 border-b border-slate-800">
+    <!-- Atmospheric Background Gradients & Subtle Grid -->
+    <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(#C5A059 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="absolute top-1/4 -right-40 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 -left-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Main Message -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-gold-500/30 text-xs font-semibold text-gold-400 tracking-wide">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+            FAMILY LAW & PERSONAL INJURY LITIGATORS
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-5xl lg:text-5xl font-bold leading-tight tracking-tight">
+            Guiding You Through Life’s Hardest Battles with <span class="gold-gradient-text italic font-serif">Strength & Empathy.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl font-light leading-relaxed">
+            Whether protecting your family’s future or recovering financial stability after a catastrophic injury, you deserve more than standard advice. We provide relentless advocacy backed by strategic trial experience and compassionate counsel.
+          </p>
+
+          <!-- Core Call to Actions -->
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="#assessment-tool" class="px-8 py-4 rounded-lg bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold text-center tracking-wider text-sm transition-all shadow-lg hover:shadow-gold-500/25 flex items-center justify-center gap-2 group">
+              Start Confidential Case Assessment
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+            <a href="tel:18005558264" class="px-7 py-4 rounded-lg border border-slate-700 hover:border-gold-500/60 bg-navy-850/60 hover:bg-navy-800 text-slate-200 font-semibold text-sm transition-all flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              Speak to a Senior Partner
+            </a>
+          </div>
+
+          <!-- Trust Badges Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
+            <div class="p-3 rounded-lg bg-navy-850/70 border border-slate-800">
+              <div class="text-2xl font-bold font-serif text-gold-400">25+</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Years Trial Mastery</div>
+            </div>
+            <div class="p-3 rounded-lg bg-navy-850/70 border border-slate-800">
+              <div class="text-2xl font-bold font-serif text-emerald-400">98.4%</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Satisfied Resolutions</div>
+            </div>
+            <div class="col-span-2 sm:col-span-1 p-3 rounded-lg bg-navy-850/70 border border-slate-800">
+              <div class="text-2xl font-bold font-serif text-gold-400">No Win, No Fee*</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">For Personal Injury</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right: Quick Contact & Assurance Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-gradient-to-b from-navy-850 to-navy-900 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+            <div class="absolute -top-3.5 right-6 px-3 py-1 rounded bg-gold-500 text-navy-950 font-bold text-xs uppercase tracking-wider shadow">
+              Strictly Confidential
+            </div>
+
+            <h3 class="text-xl font-serif font-bold text-white mb-2">Speak Directly With Our Legal Team</h3>
+            <p class="text-slate-400 text-sm mb-6">Receive immediate strategic clarity on your rights, statutory time limits, and claim viability.</p>
+
+            <form id="heroQuickForm" onsubmit="event.preventDefault(); handleQuickConsult(event);" class="space-y-4">
+              <div>
+                <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Your Full Name</label>
+                <input type="text" required placeholder="e.g. Eleanor Vance" class="w-full px-4 py-2.5 rounded bg-navy-950/90 border border-slate-700 focus:border-gold-500 focus:outline-none text-slate-100 text-sm placeholder-slate-500">
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Direct Phone</label>
+                  <input type="tel" required placeholder="0400 000 000" class="w-full px-4 py-2.5 rounded bg-navy-950/90 border border-slate-700 focus:border-gold-500 focus:outline-none text-slate-100 text-sm placeholder-slate-500">
+                </div>
+                <div>
+                  <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Practice Area</label>
+                  <select class="w-full px-3 py-2.5 rounded bg-navy-950/90 border border-slate-700 focus:border-gold-500 focus:outline-none text-slate-100 text-sm">
+                    <option value="family">Family Law</option>
+                    <option value="injury">Personal Injury</option>
+                    <option value="undecided">Not Sure / Multi-Issue</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Brief Overview</label>
+                <textarea rows="2" placeholder="Briefly describe your situation..." class="w-full px-4 py-2 rounded bg-navy-950/90 border border-slate-700 focus:border-gold-500 focus:outline-none text-slate-100 text-sm placeholder-slate-500 resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold uppercase tracking-wider text-xs transition duration-200 shadow-md">
+                Request Priority Callback (Within 2 Hours)
+              </button>
+              
+              <div id="quickFormMsg" class="hidden text-xs text-center p-2 rounded bg-emerald-900/60 border border-emerald-500 text-emerald-200 mt-2">
+                Thank you. A senior advocate will reach out directly.
+              </div>
+
+              <p class="text-[11px] text-slate-400 text-center pt-2">
+                Protected by attorney-client privilege. We never share your personal information.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUAL PRACTICE AREAS (FAMILY LAW & PERSONAL INJURY) -->
+  <section id="practice-areas" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="text-xs font-bold tracking-widest text-gold-600 uppercase mb-2">Dedicated Specializations</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-950">Dual-Focus Legal Advocacy</h2>
+        <div class="w-20 h-1 bg-gold-500 mx-auto my-4 rounded"></div>
+        <p class="text-slate-600 text-base">
+          Legal issues rarely exist in isolation. Our specialized teams offer focused trial power in Family Law and Personal Injury to safeguard your family and secure the financial restoration you are owed.
+        </p>
+
+        <!-- Area Switcher Tabs -->
+        <div class="flex justify-center mt-8">
+          <div class="inline-flex p-1.5 rounded-xl bg-slate-100 border border-slate-200 shadow-inner">
+            <button id="tabBtnFamily" onclick="switchPracticeTab('family')" class="px-6 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-sm bg-navy-900 text-white">
+              Family & Matrimonial Law
+            </button>
+            <button id="tabBtnInjury" onclick="switchPracticeTab('injury')" class="px-6 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-navy-900 transition-all">
+              Personal Injury & Compensation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAMILY LAW CONTENT TAB -->
+      <div id="familyLawSection" class="transition-opacity duration-300">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">Divorce & Separation</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Guiding you through legal separation prerequisites, joint/sole applications, and resolving jurisdictional complexities with dignity.
+              </p>
+            </div>
+            <button onclick="openModal('divorce')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">Child Custody & Parenting</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Protecting parental rights and structuring enforceable parenting plans centered around your children’s best interests and psychological stability.
+              </p>
+            </div>
+            <button onclick="openModal('custody')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">Property Settlement & Asset Division</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Expert forensic handling of complex marital property pools, family businesses, trusts, superannuation splitting, and hidden assets.
+              </p>
+            </div>
+            <button onclick="openModal('property')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">Mediation & Collaborative Law</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Cost-effective out-of-court resolutions designed to minimize conflict, protect privacy, and preserve constructive co-parenting relationships.
+              </p>
+            </div>
+            <button onclick="openModal('mediation')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">Domestic Violence Orders (DVO / IVO)</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Swift emergency intervention for restraining orders to secure family safety, or robust defense against groundless tactical allegations.
+              </p>
+            </div>
+            <button onclick="openModal('dvo')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 6: Fixed Fee Consultation Banner -->
+          <div class="rounded-2xl p-6 bg-navy-900 text-white flex flex-col justify-between border border-gold-500/40">
+            <div>
+              <span class="px-2.5 py-1 rounded bg-gold-500/20 text-gold-400 font-semibold text-xs tracking-wider uppercase">Financial Predictability</span>
+              <h3 class="text-xl font-serif font-bold text-white mt-4 mb-2">Fixed-Fee Family Strategy</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                We believe in zero billing surprises. Ask about our fixed-fee initial assessment packages and transparent staged litigation quotes.
+              </p>
+            </div>
+            <a href="#assessment-tool" class="w-full py-3 text-center bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold rounded text-xs uppercase tracking-wider transition">
+              Book Strategy Session
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PERSONAL INJURY CONTENT TAB (HIDDEN INITIALLY) -->
+      <div id="injuryLawSection" class="hidden transition-opacity duration-300">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">Motor Vehicle Accidents (CTP)</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Car, motorcycle, pedestrian, and cyclist compensation covering medical rehabilitation, lost earnings, and non-economic damages.
+              </p>
+            </div>
+            <button onclick="openModal('mva')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">Workplace Injury & Workers Comp</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Statutory benefit claims and common law negligence lawsuits against employers for unsafe job sites and catastrophic workplace events.
+              </p>
+            </div>
+            <button onclick="openModal('workcover')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">Public Liability & Slip and Fall</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Holding negligent property owners, commercial venues, and shopping centers liable for dangerous premises that caused severe physical harm.
+              </p>
+            </div>
+            <button onclick="openModal('publicliability')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">Medical Negligence</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Demanding accountability for surgical errors, misdiagnoses, delayed treatments, and birth-related trauma with top independent medical specialists.
+              </p>
+            </div>
+            <button onclick="openModal('medneg')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="group bg-slate-50 border border-slate-200 hover:border-gold-500/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl relative flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-lg bg-navy-900/5 text-navy-900 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-navy-950 mb-2">TPD (Total & Permanent Disability)</h3>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                Unlocking substantial lump-sum insurance payouts embedded in your superannuation funds when chronic illness or injuries permanently prevent work.
+              </p>
+            </div>
+            <button onclick="openModal('tpd')" class="text-sm font-semibold text-gold-700 hover:text-gold-600 inline-flex items-center gap-1 group-hover:underline">
+              Detailed breakdown <span>&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Card 6: No Win No Fee Guarantee -->
+          <div class="rounded-2xl p-6 bg-navy-900 text-white flex flex-col justify-between border border-gold-500/40">
+            <div>
+              <span class="px-2.5 py-1 rounded bg-gold-500/20 text-gold-400 font-semibold text-xs tracking-wider uppercase">Our Commitment</span>
+              <h3 class="text-xl font-serif font-bold text-white mt-4 mb-2">No Win, No Fee* Guarantee</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                You pay zero professional legal fees unless we win your compensation claim. We carry the financial risk so you can focus on physical recovery.
+              </p>
+            </div>
+            <a href="#assessment-tool" class="w-full py-3 text-center bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold rounded text-xs uppercase tracking-wider transition">
+              Assess Your Injury Claim Free
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE MODAL FOR IN-DEPTH PRACTICE DETAILS -->
+  <div id="practiceModal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
+      <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50 rounded-t-2xl">
+        <h3 id="modalTitle" class="text-xl font-serif font-bold text-navy-950">Practice Detail</h3>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-lg">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="modalBody" class="p-6 space-y-4 text-slate-700 text-sm leading-relaxed">
+        <!-- Injected via JS -->
+      </div>
+      <div class="p-6 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 bg-slate-50 rounded-b-2xl">
+        <span class="text-xs text-slate-500">Need specific advice for your situation?</span>
+        <a href="#assessment-tool" onclick="closeModal()" class="px-5 py-2.5 rounded bg-gold-500 text-navy-950 font-bold text-xs uppercase tracking-wider hover:bg-gold-400 transition">
+          Book Free Case Review
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUE PROPOSITION / WHY CHOOSE US -->
+  <section id="why-us" class="py-20 bg-slate-100 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="text-xs font-bold tracking-widest text-gold-600 uppercase">The Vanguard Advantage</div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-950 leading-tight">
+            We Never Treat Your Life or Claim as a Routine File.
+          </h2>
+          <p class="text-slate-600 text-base leading-relaxed">
+            Large volume firms often pass clients from partner to paralegal, settling early for convenient fractions of true value. At Vanguard, our dual-focus litigators dedicate relentless attention, forensic evidence preparation, and courtroom readiness to every matter.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center shrink-0 font-bold text-sm">✓</div>
+              <div>
+                <h4 class="font-bold text-navy-950">Dedicated Senior Partner Oversight</h4>
+                <p class="text-slate-600 text-sm">Your case strategy is directly crafted and driven by an experienced trial attorney.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center shrink-0 font-bold text-sm">✓</div>
+              <div>
+                <h4 class="font-bold text-navy-950">Courtroom Tested & Negotiation Feared</h4>
+                <p class="text-slate-600 text-sm">Insurance defense teams and opposing counsel know we prepare every file as if it goes to a final verdict.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center shrink-0 font-bold text-sm">✓</div>
+              <div>
+                <h4 class="font-bold text-navy-950">Transparent Pricing & No Hidden Costs</h4>
+                <p class="text-slate-600 text-sm">Fixed fees for Family Law milestones and contingency fee guarantees for Personal Injury.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <!-- Box 1 -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="text-gold-600 font-bold text-2xl font-serif mb-2">$85M+</div>
+              <div class="text-navy-950 font-bold text-base mb-1">Recovered in Settlements</div>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Substantial compensation won for motor vehicle victims, worker claims, and medical trauma claimants across our jurisdictions.
+              </p>
+            </div>
+            <!-- Box 2 -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="text-gold-600 font-bold text-2xl font-serif mb-2">1,800+</div>
+              <div class="text-navy-950 font-bold text-base mb-1">Families Protected</div>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Successful parenting agreements, negotiated splits, and collaborative family law outcomes keeping children secure.
+              </p>
+            </div>
+            <!-- Box 3 -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="text-gold-600 font-bold text-2xl font-serif mb-2">91%</div>
+              <div class="text-navy-950 font-bold text-base mb-1">Pre-Trial Resolutions</div>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Leveraging airtight evidence to win commanding settlements in mediation without prolonged court stress.
+              </p>
+            </div>
+            <!-- Box 4 -->
+            <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="text-gold-600 font-bold text-2xl font-serif mb-2">100%</div>
+              <div class="text-navy-950 font-bold text-base mb-1">Confidential Discretion</div>
+              <p class="text-slate-500 text-xs leading-relaxed">
+                Rigorous digital encryption and private meeting rooms to protect personal reputation and sensitive high-net-worth data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE APPROACH & ROADMAP -->
+  <section id="roadmap" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold tracking-widest text-gold-600 uppercase mb-2">Strategic Workflow</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-950">Your Path from Crisis to Resolution</h2>
+        <div class="w-20 h-1 bg-gold-500 mx-auto my-4 rounded"></div>
+        <p class="text-slate-600 text-base">
+          Legal disputes can feel paralyzing. We eliminate ambiguity through our disciplined 4-stage representation methodology.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8 relative">
+        <!-- Step 1 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 relative">
+          <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center mb-4">1</div>
+          <h3 class="text-lg font-serif font-bold text-navy-950 mb-2">Initial Case Assessment</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            A comprehensive, obligation-free consultation to scrutinize liability, identify urgent limitation deadlines, and determine legal viability.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 relative">
+          <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center mb-4">2</div>
+          <h3 class="text-lg font-serif font-bold text-navy-950 mb-2">Investigation & Evidence</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We subpoena records, retain forensic accountants, medical specialists, and reconstruction experts to build an unshakeable dossier.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 relative">
+          <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center mb-4">3</div>
+          <h3 class="text-lg font-serif font-bold text-navy-950 mb-2">Strategic Mediation</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We enter negotiations from a position of overwhelming strength, aiming for a maximal settlement while curtailing court delays and costs.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 relative">
+          <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center mb-4">4</div>
+          <h3 class="text-lg font-serif font-bold text-navy-950 mb-2">Trial & Final Settlement</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            If insurance companies or spouses refuse fair terms, our seasoned advocates advance to trial to fight for judgment and complete order execution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FEE & CASE INQUIRY ASSESSMENT TOOL -->
+  <section id="assessment-tool" class="py-20 bg-navy-900 text-white relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-3">
+          Interactive Case Triaging
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Confidential Case & Claim Estimator</h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+          Complete this 60-second guided assessment to understand your options, fee structures, and immediate statutory considerations.
+        </p>
+      </div>
+
+      <!-- Assessment Multi-Step Card -->
+      <div class="bg-navy-850 border border-slate-700/80 rounded-2xl p-6 sm:p-10 shadow-2xl">
+        
+        <!-- Step Indicator -->
+        <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-700/70">
+          <div class="flex items-center gap-2">
+            <span id="stepIndicatorNumber" class="w-7 h-7 rounded-full bg-gold-500 text-navy-950 font-bold text-xs flex items-center justify-center">1</span>
+            <span id="stepIndicatorLabel" class="text-sm font-semibold text-slate-200">Select Legal Area</span>
+          </div>
+          <span class="text-xs text-slate-400">Step <span id="currentStepText">1</span> of 3</span>
+        </div>
+
+        <form id="assessmentForm" onsubmit="event.preventDefault(); nextStep();">
+          <!-- STEP 1: SELECT CATEGORY -->
+          <div id="quizStep1" class="space-y-6">
+            <label class="block text-sm font-medium text-slate-300">What type of legal situation are you facing?</label>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="border border-slate-700 rounded-xl p-5 hover:border-gold-500 cursor-pointer transition-all bg-navy-900/50 flex flex-col justify-between">
+                <div class="flex items-start gap-3">
+                  <input type="radio" name="claim_category" value="family" class="mt-1 text-gold-500 focus:ring-gold-500" checked onchange="toggleCategorySpecifics('family')">
+                  <div>
+                    <span class="font-bold text-white block text-base">Family Law Matter</span>
+                    <span class="text-xs text-slate-400 mt-1 block">Divorce, parenting arrangements, property divisions, or binding agreements.</span>
+                  </div>
+                </div>
+                <span class="text-[11px] text-gold-400 font-medium mt-4">Fixed-Fee Assessment Available</span>
+              </label>
+
+              <label class="border border-slate-700 rounded-xl p-5 hover:border-gold-500 cursor-pointer transition-all bg-navy-900/50 flex flex-col justify-between">
+                <div class="flex items-start gap-3">
+                  <input type="radio" name="claim_category" value="injury" class="mt-1 text-gold-500 focus:ring-gold-500" onchange="toggleCategorySpecifics('injury')">
+                  <div>
+                    <span class="font-bold text-white block text-base">Personal Injury / Claim</span>
+                    <span class="text-xs text-slate-400 mt-1 block">Vehicle crashes, work accidents, public slips, or medical negligence.</span>
+                  </div>
+                </div>
+                <span class="text-[11px] text-emerald-400 font-medium mt-4">No Win, No Fee* Applicable</span>
+              </label>
+            </div>
+            
+            <div class="flex justify-end pt-4">
+              <button type="button" onclick="goToStep(2)" class="px-7 py-3 rounded bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold text-xs uppercase tracking-wider transition">
+                Continue to Case Specifics &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: DETAILS & TIMELINE -->
+          <div id="quizStep2" class="space-y-6 hidden">
+            <!-- Family specific sub-options -->
+            <div id="familySubOptions" class="space-y-4">
+              <label class="block text-sm font-medium text-slate-300">What is the primary objective in your family matter?</label>
+              <select id="familyObjective" class="w-full px-4 py-3 rounded bg-navy-900 border border-slate-700 focus:border-gold-500 text-slate-200 text-sm">
+                <option value="property">Fair Division of Property & Financial Assets</option>
+                <option value="custody">Parenting Orders & Children's Living Arrangements</option>
+                <option value="urgent_dvo">Urgent Protection Order (DVO) / Injunction</option>
+                <option value="divorce_only">Clean Divorce & Settlement Closure</option>
+              </select>
+            </div>
+
+            <!-- Injury specific sub-options -->
+            <div id="injurySubOptions" class="space-y-4 hidden">
+              <label class="block text-sm font-medium text-slate-300">Where and when did the injury take place?</label>
+              <select id="injuryType" class="w-full px-4 py-3 rounded bg-navy-900 border border-slate-700 focus:border-gold-500 text-slate-200 text-sm mb-3">
+                <option value="car">Road / Traffic / Motor Vehicle Collision</option>
+                <option value="work">At Workplace / During Employment Duties</option>
+                <option value="public">Public Place (Store, Mall, Council Property)</option>
+                <option value="hospital">Hospital / Medical Procedure</option>
+              </select>
+
+              <label class="block text-sm font-medium text-slate-300">Timeframe since incident:</label>
+              <select id="injuryTimeframe" class="w-full px-4 py-3 rounded bg-navy-900 border border-slate-700 focus:border-gold-500 text-slate-200 text-sm">
+                <option value="recent">Within the last 6 months (Optimal for evidence)</option>
+                <option value="moderate">6 to 24 months ago</option>
+                <option value="urgent">Over 2 years ago (Immediate limitation check needed)</option>
+              </select>
+            </div>
+
+            <div class="flex justify-between pt-4">
+              <button type="button" onclick="goToStep(1)" class="px-5 py-3 rounded border border-slate-700 text-slate-300 font-semibold text-xs uppercase tracking-wider hover:bg-slate-800 transition">
+                &larr; Back
+              </button>
+              <button type="button" onclick="goToStep(3)" class="px-7 py-3 rounded bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold text-xs uppercase tracking-wider transition">
+                Review & Get Assessment &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: CONTACT & SUBMIT -->
+          <div id="quizStep3" class="space-y-5 hidden">
+            <div class="bg-navy-900/90 border border-gold-500/30 rounded-xl p-4 text-xs text-slate-300 space-y-1">
+              <div class="font-bold text-gold-400 uppercase">Assessment Summary Ready</div>
+              <p>Based on your selections, your situation qualifies for a <strong class="text-white" id="assessmentBenefit">Priority Case Strategy & Statutory Review</strong>.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Your Full Name</label>
+                <input id="clientName" type="text" required placeholder="Johnathan Doe" class="w-full px-4 py-2.5 rounded bg-navy-900 border border-slate-700 focus:border-gold-500 text-slate-100 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Direct Phone</label>
+                <input id="clientPhone" type="tel" required placeholder="0400 123 456" class="w-full px-4 py-2.5 rounded bg-navy-900 border border-slate-700 focus:border-gold-500 text-slate-100 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Confidential Email Address</label>
+              <input id="clientEmail" type="email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded bg-navy-900 border border-slate-700 focus:border-gold-500 text-slate-100 text-sm">
+            </div>
+
+            <div class="flex items-start gap-2 pt-1">
+              <input type="checkbox" id="urgentCallback" checked class="mt-1 text-gold-500 rounded bg-navy-900 border-slate-700">
+              <label for="urgentCallback" class="text-xs text-slate-400">
+                Yes, request an advocate to call me confidentially to review key limitation dates and next steps.
+              </label>
+            </div>
+
+            <div class="flex justify-between pt-4">
+              <button type="button" onclick="goToStep(2)" class="px-5 py-3 rounded border border-slate-700 text-slate-300 font-semibold text-xs uppercase tracking-wider hover:bg-slate-800 transition">
+                &larr; Back
+              </button>
+              <button type="submit" class="px-8 py-3.5 rounded bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold text-xs uppercase tracking-wider shadow-lg transition">
+                Submit For Case Evaluation
+              </button>
+            </div>
+          </div>
+
+          <!-- SUCCESS STATE -->
+          <div id="quizSuccess" class="hidden text-center py-8 space-y-4">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white">Your Case Assessment Has Been Logged</h3>
+            <p class="text-slate-300 text-sm max-w-lg mx-auto">
+              Our Senior Legal Assessment Director has received your inquiry. Given the critical deadlines involved in both Family and Injury claims, we will review your notes and contact you within 2 hours.
+            </p>
+            <div class="pt-4">
+              <a href="tel:18005558264" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-navy-900 border border-gold-500 text-gold-400 text-sm font-semibold hover:bg-gold-500 hover:text-navy-950 transition">
+                Need Immediate Help? Call 1-800-555-8264 Now
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT TESTIMONIALS & SOCIAL PROOF -->
+  <section id="testimonials" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold tracking-widest text-gold-600 uppercase mb-2">Verified Client Testimonials</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-950">Trusted When Everything Was on the Line</h2>
+        <div class="w-20 h-1 bg-gold-500 mx-auto my-4 rounded"></div>
+        <p class="text-slate-600 text-base">
+          Read candid reflections from individuals and families we guided through intense family disputes and significant compensation recoveries.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+              "During an agonizing custody and high-asset business separation, Vanguard was my rock. They were compassionate behind closed doors and ironclad in the courtroom. We reached a favorable resolution without bankrupting my company."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-navy-950 text-sm">Marcus H.</div>
+              <div class="text-xs text-slate-400">Melbourne, VIC</div>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-[11px] font-medium">Family Law</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+              "After my spinal injury from a highway truck crash, the insurance company tried to stonewall my claim. Vanguard stepped in under No Win No Fee. Their medical experts completely disproved the insurer's lowball offer."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-navy-950 text-sm">Sarah L.</div>
+              <div class="text-xs text-slate-400">Sydney, NSW</div>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 text-[11px] font-medium">Motor Vehicle Claim</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+              "The fixed pricing on the property settlement gave me complete peace of mind. No terrifying surprise hourly invoices. Their mediation approach saved tens of thousands in pointless court fees."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-navy-950 text-sm">David & Claire K.</div>
+              <div class="text-xs text-slate-400">Brisbane, QLD</div>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-[11px] font-medium">Property Division</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <div class="text-xs font-bold tracking-widest text-gold-600 uppercase mb-2">Legal Clarity</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-950">Frequently Asked Questions</h2>
+        <div class="w-20 h-1 bg-gold-500 mx-auto my-4 rounded"></div>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+          <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left font-serif font-bold text-navy-950 flex justify-between items-center hover:bg-slate-100 transition">
+            <span>What strict time limits apply to Personal Injury and Family Law claims?</span>
+            <span id="faqIcon1" class="text-gold-600 text-xl font-bold">+</span>
+          </button>
+          <div id="faqContent1" class="hidden px-6 pb-5 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-200/50">
+            For personal injury, statutory limitation periods are generally <strong>3 years</strong> from the date of injury (or date of discoverability), though urgent notices to insurers must often be filed within <strong>28 to 90 days</strong>. In Family Law, married couples must initiate property settlement proceedings within <strong>12 months of divorce becoming final</strong>, and de facto couples within <strong>2 years of separation</strong>. Delaying can extinguish your legal rights.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+          <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left font-serif font-bold text-navy-950 flex justify-between items-center hover:bg-slate-100 transition">
+            <span>How does the 'No Win, No Fee' guarantee work for injury claims?</span>
+            <span id="faqIcon2" class="text-gold-600 text-xl font-bold">+</span>
+          </button>
+          <div id="faqContent2" class="hidden px-6 pb-5 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-200/50">
+            Under our conditional costs agreement, you pay nothing upfront for our professional legal services. We also disburse out-of-pocket costs (such as independent expert specialist medical reports). You only pay our legal fees if we successfully negotiate a financial settlement or obtain a court verdict in your favor. If the case does not succeed, you do not owe our professional fees.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+          <button onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left font-serif font-bold text-navy-950 flex justify-between items-center hover:bg-slate-100 transition">
+            <span>Do all family law disputes have to end up in Court?</span>
+            <span id="faqIcon3" class="text-gold-600 text-xl font-bold">+</span>
+          </button>
+          <div id="faqContent3" class="hidden px-6 pb-5 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-200/50">
+            No. In fact, over 90% of our family law matters are settled successfully through structured mediation, private conciliation conferences, or collaborative law. We proactively keep you out of court whenever possible to save immense costs and emotional wear, while preparing every file so strongly that opponents are incentivized to settle.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+          <button onclick="toggleFaq(4)" class="w-full px-6 py-4 text-left font-serif font-bold text-navy-950 flex justify-between items-center hover:bg-slate-100 transition">
+            <span>What happens during our Free Confidential Assessment?</span>
+            <span id="faqIcon4" class="text-gold-600 text-xl font-bold">+</span>
+          </button>
+          <div id="faqContent4" class="hidden px-6 pb-5 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-200/50">
+            You will speak directly with an advocate who reviews the facts of your incident or separation, analyzes relevant documentation, flags immediate deadlines, and gives you a frank evaluation of prospects, estimated value ranges, and costs with zero sales pressure.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & LOCATION DETAILS -->
+  <section id="contact" class="py-20 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="text-xs font-bold tracking-widest text-gold-600 uppercase">Consultation Centers</div>
+          <h2 class="font-serif text-3xl font-bold text-navy-950">Meet In Person or Via Secure Video Conference</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We provide private boardroom suites across metropolitan centers, hospital and home bedside visits for catastrophic injury clients, and encrypted video consultations nationwide.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="p-4 rounded-xl bg-white border border-slate-200 flex gap-4 items-start">
+              <div class="text-gold-600 mt-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-navy-950 text-sm">Headquarters & Litigation Chambers</h4>
+                <p class="text-slate-500 text-xs mt-0.5">Level 28, Vanguard Tower, 100 Financial Way, Legal Precinct</p>
+                <p class="text-slate-400 text-xs mt-1">Open Mon-Fri: 8:00 AM – 6:30 PM (24/7 Telephone Intake)</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white border border-slate-200 flex gap-4 items-start">
+              <div class="text-gold-600 mt-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-navy-950 text-sm">Direct Electronic Dispatch</h4>
+                <p class="text-slate-500 text-xs mt-0.5">intake@vanguardlegaladvocates.com</p>
+                <p class="text-slate-400 text-xs mt-1">Encrypted client document portal access provided upon inquiry</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <h3 class="font-serif text-2xl font-bold text-navy-950 mb-2">Schedule a Private Case Strategy Review</h3>
+          <p class="text-slate-500 text-sm mb-6">Complete this direct attorney intake form for swift dispatch to our practice group leaders.</p>
+
+          <form onsubmit="event.preventDefault(); handleGeneralContact(event);" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Your Name *</label>
+                <input type="text" required placeholder="First and last name" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:border-gold-500 focus:outline-none text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Phone *</label>
+                <input type="tel" required placeholder="Best contact number" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:border-gold-500 focus:outline-none text-sm">
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email *</label>
+                <input type="email" required placeholder="name@domain.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:border-gold-500 focus:outline-none text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Urgency Level</label>
+                <select class="w-full px-3 py-2.5 rounded-lg border border-slate-300 focus:border-gold-500 focus:outline-none text-sm">
+                  <option>Standard (Call within 24 business hours)</option>
+                  <option>Urgent (Upcoming court date / limitation expiry)</option>
+                  <option>Emergency (Immediate protection orders)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Brief Description of Circumstances</label>
+              <textarea rows="3" placeholder="Provide background regarding separation, injuries, dates, or opposing party (if applicable)..." class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:border-gold-500 focus:outline-none text-sm resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 bg-navy-900 hover:bg-navy-850 text-gold-400 font-bold uppercase tracking-wider text-xs rounded-lg transition duration-200">
+              Submit Strictly Confidential Request
+            </button>
+            <div id="contactFormAlert" class="hidden p-3 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs text-center font-medium">
+              Your inquiry has been encrypted and routed to our intake counsel. Expect contact shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER & LEGAL DISCLAIMERS -->
+  <footer class="bg-navy-950 text-slate-400 text-xs border-t border-slate-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-10 border-b border-slate-850">
+        <div class="space-y-3 md:col-span-1">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded bg-gold-500 flex items-center justify-center text-navy-950 font-bold font-cinzel">V</div>
+            <span class="text-white font-cinzel text-lg font-bold tracking-wider">VANGUARD</span>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Premier dual-practice law firm delivering results in complex matrimonial disputes, child protection, and severe personal injury compensation.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold uppercase tracking-wider text-xs mb-3">Family Law Group</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#practice-areas" onclick="switchPracticeTab('family')" class="hover:text-gold-400 transition">Divorce & Dissolution</a></li>
+            <li><a href="#practice-areas" onclick="switchPracticeTab('family')" class="hover:text-gold-400 transition">High-Net-Worth Property Pools</a></li>
+            <li><a href="#practice-areas" onclick="switchPracticeTab('family')" class="hover:text-gold-400 transition">Child Custody & Relocation</a></li>
+            <li><a href="#practice-areas" onclick="switchPracticeTab('family')" class="hover:text-gold-400 transition">Mediation & Arbitration</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold uppercase tracking-wider text-xs mb-3">Injury & Compensation</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#practice-areas" onclick="switchPracticeTab('injury')" class="hover:text-gold-400 transition">Motor Vehicle & CTP Claims</a></li>
+            <li><a href="#practice-areas" onclick="switchPracticeTab('injury')" class="hover:text-gold-400 transition">Workers Compensation</a></li>
+            <li><a href="#practice-areas" onclick="switchPracticeTab('injury')" class="hover:text-gold-400 transition">Medical Negligence</a></li>
+            <li><a href="#practice-areas" onclick="switchPracticeTab('injury')" class="hover:text-gold-400 transition">TPD Superannuation Claims</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold uppercase tracking-wider text-xs mb-3">Emergency Response</h4>
+          <p class="text-slate-400 mb-2">Available 24/7 for urgent protection injunctions and catastrophic trauma accidents.</p>
+          <div class="font-bold text-gold-400 text-sm">1-800-555-8264</div>
+          <div class="text-[11px] text-slate-500 mt-2">Calls recorded and treated under strict legal professional privilege.</div>
+        </div>
+      </div>
+
+      <!-- Mandatory Legal Compliance Disclaimers -->
+      <div class="space-y-3 text-[11px] text-slate-300 leading-normal">
+        <p>
+          *<strong>Personal Injury 'No Win, No Fee' Disclaimers:</strong> Conditions apply. In personal injury matters, our 'No Win No Fee' arrangement applies to our professional legal fees only. In the unlikely event of an adverse court judgment, opposing party costs may still be ordered by the court depending on the state jurisdiction. Normal disbursements incurred on your behalf (such as independent expert reports) are recoverable upon successful settlement.
+        </p>
+        <p>
+          <strong>General Information Disclaimer:</strong> The information contained on this website is for educational and informational purposes only and does not constitute formal legal advice. Viewing this website or contacting Vanguard Legal Advocates via online forms does not create a solicitor-client relationship. Prior case outcomes do not guarantee similar results for future matters.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row justify-between items-center text-slate-300 border-t border-slate-900 gap-2">
+          <div>&copy; 2026 Vanguard Legal & Injury Advocates. All Rights Reserved.</div>
+          <div class="flex gap-4">
+            <a href="#" class="hover:underline">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="hover:underline">Terms of Engagement</a>
+            <span>•</span>
+            <a href="#" class="hover:underline">Costs Disclosure</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC & INTERACTION -->
+  <script>
+    // Mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Practice Area Tab Switcher
+    function switchPracticeTab(tab) {
+      const familySection = document.getElementById('familyLawSection');
+      const injurySection = document.getElementById('injuryLawSection');
+      const btnFamily = document.getElementById('tabBtnFamily');
+      const btnInjury = document.getElementById('tabBtnInjury');
+
+      if (tab === 'family') {
+        familySection.classList.remove('hidden');
+        injurySection.classList.add('hidden');
+        btnFamily.className = 'px-6 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-sm bg-navy-900 text-white';
+        btnInjury.className = 'px-6 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-navy-900 transition-all';
+      } else {
+        injurySection.classList.remove('hidden');
+        familySection.classList.add('hidden');
+        btnInjury.className = 'px-6 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-sm bg-navy-900 text-white';
+        btnFamily.className = 'px-6 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-navy-900 transition-all';
+      }
+    }
+
+    // Modal Details Dictionary
+    const modalData = {
+      divorce: {
+        title: "Divorce & Separation Legal Strategies",
+        content: `
+          <p class="mb-3">Our family lawyers advise on both friendly mutual divorces and highly contested cross-border separations. In Australia and commonwealth jurisdictions, demonstrating twelve continuous months of separation is mandatory, even when living under the same roof.</p>
+          <h4 class="font-bold text-navy-950 mb-1">Key Considerations:</h4>
+          <ul class="list-disc pl-5 space-y-1 mb-3 text-slate-600">
+            <li>Separation under one roof evidentiary affidavits.</li>
+            <li>Protecting separate financial accounts immediately upon separation.</li>
+            <li>Formalizing clean financial separation to terminate future spouse claim rights.</li>
+          </ul>
+          <p>We ensure correct service of divorce proceedings and represent clients in Court if attendance is required due to minor children or disputed service.</p>
+        `
+      },
+      custody: {
+        title: "Child Custody & Parenting Plans",
+        content: `
+          <p class="mb-3">The paramount consideration of the court is always the 'best interests of the child'. We structure robust parenting plans and apply for Consent Orders covering residential care, school holidays, overseas travel, and religious education.</p>
+          <h4 class="font-bold text-navy-950 mb-1">Our Focus Areas:</h4>
+          <ul class="list-disc pl-5 space-y-1 mb-3 text-slate-600">
+            <li>Parental alienation and high-conflict resolution.</li>
+            <li>Interstate and international parental relocation restrictions.</li>
+            <li>Emergency Recovery Orders if a child is withheld unlawfully.</li>
+          </ul>
+          <p>We work closely with child psychologists and family consultants to craft durable agreements that prevent perpetual relitigation.</p>
+        `
+      },
+      property: {
+        title: "High-Net-Worth Property & Asset Division",
+        content: `
+          <p class="mb-3">We deploy a rigorous 4-step property division model: identifying the net property pool, assessing financial/non-financial contributions, adjusting for future needs (earning capacity, child care), and ensuring the resulting settlement is just and equitable.</p>
+          <h4 class="font-bold text-navy-950 mb-1">Asset Types We Manage:</h4>
+          <ul class="list-disc pl-5 space-y-1 mb-3 text-slate-600">
+            <li>Complex discretionary family trust structures and company shares.</li>
+            <li>Superannuation and pension splitting orders.</li>
+            <li>Forensic investigation for non-disclosed or hidden overseas assets.</li>
+          </ul>
+          <p>Our firm partners with forensic accountants to deliver exact valuations and prevent unfair tax exposure.</p>
+        `
+      },
+      mediation: {
+        title: "Mediation & Collaborative Dispute Resolution",
+        content: `
+          <p class="mb-3">Litigation is costly, stressful, and public. Mediation allows both parties to maintain confidentiality and draft flexible solutions that judges are powerless to order.</p>
+          <p class="mb-3">Our lawyers serve as strategic advisors through Family Dispute Resolution (FDR) conferences, section 60I certificates, and lawyer-assisted negotiations.</p>
+          <p>We ensure that agreements made in mediation are immediately drafted into binding Court Consent Orders to give you total finality.</p>
+        `
+      },
+      dvo: {
+        title: "Domestic Violence Orders (DVO / IVO)",
+        content: `
+          <p class="mb-3">Safety is non-negotiable. If you or your children are experiencing physical intimidation, financial coercion, stalking, or emotional abuse, we act within hours to file emergency protection orders.</p>
+          <p class="mb-3">Conversely, in tactical relationship breakdowns, false allegations are sometimes fabricated to gain upper-hand custody leverage. We provide uncompromising defense to clear reputations and defend livelihoods.</p>
+        `
+      },
+      mva: {
+        title: "Motor Vehicle Accident (CTP) Claims",
+        content: `
+          <p class="mb-3">Whether you were a driver, passenger, pedestrian, or motorcycle rider, compulsory third-party (CTP) insurance covers medical treatment, lost past and future wages, domestic assistance, and lump-sum pain and suffering.</p>
+          <h4 class="font-bold text-navy-950 mb-1">Immediate Actions:</h4>
+          <ul class="list-disc pl-5 space-y-1 mb-3 text-slate-600">
+            <li>Submit accident reports to police within 28 days.</li>
+            <li>Obtain formal independent specialist impairment assessments.</li>
+            <li>Counter insurer efforts to dismiss soft tissue or whiplash trauma.</li>
+          </ul>
+        `
+      },
+      workcover: {
+        title: "Workplace Injury & Workers Compensation",
+        content: `
+          <p class="mb-3">Injured workers are entitled to immediate statutory support covering weekly income replacement and medical procedures regardless of fault.</p>
+          <p class="mb-3">If your employer’s negligence contributed to the injury (faulty machinery, inadequate safety gear, excessive workloads), you can also pursue a substantial Common Law damages lawsuit for permanent impairment.</p>
+          <p>We navigate employer disputes, rejected claims, and return-to-work intimidations.</p>
+        `
+      },
+      publicliability: {
+        title: "Public Liability & Slip/Fall Accidents",
+        content: `
+          <p class="mb-3">Commercial landlords, retail stores, local councils, and entertainment venues owe an absolute duty of care to maintain safe premises for visitors.</p>
+          <p>If broken flooring, wet surfaces without warnings, inadequate lighting, or falling objects caused severe injury, we force property insurers to compensate your surgery, rehabilitation, and lifestyle loss.</p>
+        `
+      },
+      medneg: {
+        title: "Medical Negligence & Malpractice",
+        content: `
+          <p class="mb-3">Adverse medical results are not always negligence, but when healthcare providers breach accepted medical standards, the results can be catastrophic.</p>
+          <h4 class="font-bold text-navy-950 mb-1">Matters We Investigate:</h4>
+          <ul class="list-disc pl-5 space-y-1 mb-3 text-slate-600">
+            <li>Misdiagnosis or fatal delay in cancer detection.</li>
+            <li>Surgical negligence and anesthesia complications.</li>
+            <li>Obstetric and birth injury management resulting in cerebral palsy.</li>
+          </ul>
+        `
+      },
+      tpd: {
+        title: "Total & Permanent Disability (TPD) Claims",
+        content: `
+          <p class="mb-3">Most superannuation policies contain hidden TPD insurance that pays a lump sum if you are unable to return to your customary employment due to physical illness, injury, or psychological disability.</p>
+          <p class="mb-3">You do not have to prove that someone else was at fault—only that you meet the policy definition of work incapacity.</p>
+          <p>We fight insurer delays and unjustified claim denials to secure your policy proceeds.</p>
+        `
+      }
+    };
+
+    function openModal(key) {
+      const data = modalData[key];
+      if (!data) return;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalBody').innerHTML = data.content;
+      document.getElementById('practiceModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('practiceModal').classList.add('hidden');
+    }
+
+    // Interactive Assessment Tool Multi-step Logic
+    let currentStep = 1;
+    function goToStep(step) {
+      currentStep = step;
+      document.getElementById('quizStep1').classList.add('hidden');
+      document.getElementById('quizStep2').classList.add('hidden');
+      document.getElementById('quizStep3').classList.add('hidden');
+      document.getElementById('quizSuccess').classList.add('hidden');
+
+      if (step === 1) {
+        document.getElementById('quizStep1').classList.remove('hidden');
+        document.getElementById('stepIndicatorLabel').innerText = "Select Legal Area";
+      } else if (step === 2) {
+        document.getElementById('quizStep2').classList.remove('hidden');
+        document.getElementById('stepIndicatorLabel').innerText = "Matter Specifics";
+      } else if (step === 3) {
+        document.getElementById('quizStep3').classList.remove('hidden');
+        document.getElementById('stepIndicatorLabel').innerText = "Confidential Details";
+      }
+      document.getElementById('currentStepText').innerText = step;
+      document.getElementById('stepIndicatorNumber').innerText = step;
+    }
+
+    function toggleCategorySpecifics(cat) {
+      const fam = document.getElementById('familySubOptions');
+      const inj = document.getElementById('injurySubOptions');
+      const benefit = document.getElementById('assessmentBenefit');
+      if (cat === 'family') {
+        fam.classList.remove('hidden');
+        inj.classList.add('hidden');
+        benefit.innerText = "Fixed-Fee Family Law Strategy Session";
+      } else {
+        inj.classList.remove('hidden');
+        fam.classList.add('hidden');
+        benefit.innerText = "No Win, No Fee Compensation Case Evaluation";
+      }
+    }
+
+    // Submit Assessment
+    function nextStep() {
+      if (currentStep === 3) {
+        document.getElementById('quizStep3').classList.add('hidden');
+        document.getElementById('quizSuccess').classList.remove('hidden');
+        document.getElementById('stepIndicatorLabel').innerText = "Assessment Complete";
+      }
+    }
+
+    // FAQ Accordion
+    function toggleFaq(num) {
+      const content = document.getElementById(`faqContent${num}`);
+      const icon = document.getElementById(`faqIcon${num}`);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.innerText = '−';
+      } else {
+        content.classList.add('hidden');
+        icon.innerText = '+';
+      }
+    }
+
+    // Simple Alert replacement handlers
+    function handleQuickConsult(e) {
+      const msg = document.getElementById('quickFormMsg');
+      msg.classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => {
+        msg.classList.add('hidden');
+      }, 5000);
+    }
+
+    function handleGeneralContact(e) {
+      const alertBox = document.getElementById('contactFormAlert');
+      alertBox.classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => {
+        alertBox.classList.add('hidden');
+      }, 6000);
+    }
+
+    // Close modal on escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>

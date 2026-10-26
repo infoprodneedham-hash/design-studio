@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Bubbles Mobile Pet Spa | Stress-Free Grooming at Your Doorstep</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spa: {
+                            50: '#F0F9F8',
+                            100: '#D7F0ED',
+                            200: '#B0E1DC',
+                            400: '#52B6AD',
+                            500: '#319B91',
+                            600: '#267D76',
+                            700: '#1F635E',
+                            900: '#143C39',
+                        },
+                        cream: '#FDFBF7',
+                        peach: {
+                            100: '#FFEEDB',
+                            200: '#FFDEC0',
+                            400: '#FFA45B',
+                            500: '#F97316',
+                            600: '#EA580C',
+                        },
+                        gold: '#F59E0B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #1F2937;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .bubble-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B0E1DC;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #52B6AD;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-spa-200 selection:text-spa-900">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-spa-700 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-peach-400 text-white">PROMO</span>
+        <span>✨ Spring Pamper: Get <strong>15% OFF</strong> your first luxury grooming session with code <strong>PAWFRESH</strong></span>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-spa-100 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-spa-500 to-spa-400 flex items-center justify-center shadow-md shadow-spa-500/20 group-hover:scale-105 transition-transform">
+                    <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" opacity="0.3"/>
+                        <circle cx="7" cy="8.5" r="2.5"/>
+                        <circle cx="17" cy="8.5" r="2.5"/>
+                        <circle cx="4" cy="14" r="2.5"/>
+                        <circle cx="20" cy="14" r="2.5"/>
+                        <path d="M12 10.5c-3.1 0-5.5 2.1-5.5 5.5 0 2.2 2 4 5.5 4s5.5-1.8 5.5-4c0-3.4-2.4-5.5-5.5-5.5z"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-xl sm:text-2xl font-bold font-heading text-spa-900 tracking-tight flex items-center gap-1.5">
+                        Paws & Bubbles
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-peach-100 text-peach-600 font-semibold tracking-normal uppercase hidden sm:inline-block">Mobile Spa</span>
+                    </span>
+                    <span class="block text-xs text-spa-600 font-medium">Doorstep Pet Wellness & Styling</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-700">
+                <a href="#services" class="hover:text-spa-500 transition-colors">Services & Pricing</a>
+                <a href="#calculator" class="hover:text-spa-500 transition-colors">Price Estimator</a>
+                <a href="#why-us" class="hover:text-spa-500 transition-colors">Why Mobile?</a>
+                <a href="#how-it-works" class="hover:text-spa-500 transition-colors">How It Works</a>
+                <a href="#gallery" class="hover:text-spa-500 transition-colors">Showcase</a>
+                <a href="#coverage" class="hover:text-spa-500 transition-colors">Service Area</a>
+                <a href="#faq" class="hover:text-spa-500 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <a href="tel:18007297729" class="hidden lg:flex items-center gap-2 text-xs font-semibold text-spa-700 bg-spa-50 hover:bg-spa-100 px-3 py-2 rounded-xl border border-spa-200 transition">
+                    <svg class="w-4 h-4 text-spa-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    (800) 729-PAWS
+                </a>
+                <button onclick="openBookingModal()" class="bg-gradient-to-r from-peach-500 to-peach-400 hover:from-peach-600 hover:to-peach-500 text-white font-bold text-sm px-5 py-2.5 rounded-full shadow-lg shadow-peach-500/25 hover:shadow-peach-500/40 hover:-translate-y-0.5 transition-all">
+                    Book Spa Visit
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-xl text-gray-700 hover:bg-spa-50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-spa-100 px-6 py-4 shadow-xl">
+            <div class="flex flex-col gap-3 font-medium text-gray-800">
+                <a href="#services" onclick="toggleMobileMenu()" class="py-2 hover:text-spa-500 border-b border-gray-50">Services & Pricing</a>
+                <a href="#calculator" onclick="toggleMobileMenu()" class="py-2 hover:text-spa-500 border-b border-gray-50">Price Estimator</a>
+                <a href="#why-us" onclick="toggleMobileMenu()" class="py-2 hover:text-spa-500 border-b border-gray-50">Why Mobile Grooming?</a>
+                <a href="#how-it-works" onclick="toggleMobileMenu()" class="py-2 hover:text-spa-500 border-b border-gray-50">How It Works</a>
+                <a href="#gallery" onclick="toggleMobileMenu()" class="py-2 hover:text-spa-500 border-b border-gray-50">Before & After Gallery</a>
+                <a href="#coverage" onclick="toggleMobileMenu()" class="py-2 hover:text-spa-500 border-b border-gray-50">Service Area Coverage</a>
+                <a href="#faq" onclick="toggleMobileMenu()" class="py-2 hover:text-spa-500">FAQ</a>
+                <div class="pt-2">
+                    <a href="tel:18007297729" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-spa-50 text-spa-700 font-semibold border border-spa-200">
+                        📞 Call (800) 729-PAWS
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="relative overflow-hidden pt-8 pb-16 lg:py-24 bg-gradient-to-b from-spa-50/70 via-cream to-white">
+            <!-- Background Decorative Bubbles -->
+            <div class="absolute top-10 left-5 w-24 h-24 rounded-full bg-spa-200/40 blur-xl bubble-float pointer-events-none"></div>
+            <div class="absolute bottom-20 right-10 w-44 h-44 rounded-full bg-peach-200/40 blur-2xl bubble-float pointer-events-none" style="animation-delay: -3s;"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-spa-100 border border-spa-200 text-spa-800 text-xs sm:text-sm font-bold shadow-sm">
+                            <span class="flex h-2.5 w-2.5 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-spa-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-spa-500"></span>
+                            </span>
+                            🚐 We Come Right to Your Doorstep!
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.15]">
+                            Gentle, Luxury Grooming <br class="hidden sm:inline">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-spa-600 via-spa-500 to-peach-500">In Your Own Driveway.</span>
+                        </h1>
+
+                        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Zero cages. Zero car sickness. Zero noisy waiting rooms. Just a fully self-contained, heated, luxury spa-on-wheels providing personalized 1-on-1 pampering for your furry best friends.
+                        </p>
+
+                        <!-- CTA Row -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-peach-500 to-peach-400 hover:from-peach-600 hover:to-peach-500 text-white font-bold text-base shadow-xl shadow-peach-500/30 hover:shadow-peach-500/50 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                Book Appointment
+                            </button>
+                            <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-spa-50 text-spa-700 font-bold text-base border-2 border-spa-200 hover:border-spa-400 shadow-sm transition-all text-center">
+                                View Service Menu
+                            </a>
+                        </div>
+
+                        <!-- Trust Pillars / Metrics -->
+                        <div class="pt-6 border-t border-gray-200/60 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                            <div class="text-center lg:text-left">
+                                <p class="text-2xl sm:text-3xl font-extrabold text-spa-600">4.9★</p>
+                                <p class="text-xs text-gray-500 font-medium">500+ Verified Reviews</p>
+                            </div>
+                            <div class="text-center lg:text-left border-x border-gray-200 px-3">
+                                <p class="text-2xl sm:text-3xl font-extrabold text-spa-600">100%</p>
+                                <p class="text-xs text-gray-500 font-medium">Cage-Free Comfort</p>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <p class="text-2xl sm:text-3xl font-extrabold text-spa-600">Self-Fed</p>
+                                <p class="text-xs text-gray-500 font-medium">Warm Water & Solar Power</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Visual Card -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <!-- Visual Backdrop Card -->
+                            <div class="absolute -inset-2 bg-gradient-to-r from-spa-300 to-peach-200 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+
+                            <div class="relative rounded-3xl overflow-hidden bg-white shadow-2xl border-4 border-white">
+                                <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=80" 
+                                     alt="Fluffy Golden Doodle receiving luxury bath in pet spa van" 
+                                     class="w-full h-80 sm:h-96 object-cover transform hover:scale-105 transition duration-700">
+                                
+                                <!-- Floating Van Badge -->
+                                <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-lg border border-spa-100 flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-xl bg-spa-100 text-spa-600 flex items-center justify-center font-bold">
+                                        🚐
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-gray-800">State-of-the-Art Spa Rig</p>
+                                        <p class="text-[11px] text-gray-500">Hydro-massage warm tub</p>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Quote Pill -->
+                                <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-peach-100 max-w-xs">
+                                    <div class="flex items-center gap-1 text-gold text-xs font-bold mb-1">
+                                        ★★★★★ <span class="text-gray-600 text-[10px] ml-1">(No stress!)</span>
+                                    </div>
+                                    <p class="text-xs text-gray-700 italic">"Milo normally trembles at salons, but he ran right into the Paws & Bubbles van wagging his tail!"</p>
+                                    <p class="text-[10px] font-bold text-spa-700 mt-1.5">— Sarah M. & Milo (Poodle Mix)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY MOBILE GROOMING (BENEFITS) -->
+        <section id="why-us" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-wider text-spa-600 bg-spa-50 px-3 py-1.5 rounded-full border border-spa-200">The Modern Way to Groom</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-4">Why Parents & Pets Love Mobile Over Salons</h2>
+                    <p class="text-gray-600 text-base sm:text-lg">Traditional salons mean noisy kennels, hours of waiting, car sickness, and nervous barkers. We bring the tranquility of a 5-star private spa right outside your window.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-8 rounded-3xl bg-spa-50/60 border border-spa-100 hover:border-spa-300 hover:shadow-xl transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-spa-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-spa-500/20 group-hover:scale-110 transition-transform">
+                            🧘
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">100% Cage-Free & Low Stress</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            No sitting in uncomfortable cages for 4-6 hours waiting their turn. Your pet enters our warm, soothing salon and is continuously attended to until finished.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="p-8 rounded-3xl bg-cream border border-peach-200/60 hover:border-peach-300 hover:shadow-xl transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-peach-400 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-peach-400/20 group-hover:scale-110 transition-transform">
+                            🤝
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Dedicated 1-on-1 Stylist Attention</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            The same certified master groomer works exclusively with your pet from nose to tail, forging trust, reading body cues, and ensuring absolute safety.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-8 rounded-3xl bg-spa-50/60 border border-spa-100 hover:border-spa-300 hover:shadow-xl transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-spa-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-spa-500/20 group-hover:scale-110 transition-transform">
+                            🧼
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Hospital-Grade Sanitation</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Because there are no other animals sharing the space, the risk of contagious kennel cough, parasites, or fleas is eliminated. Every tool is UV-sterilized between appointments.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="p-8 rounded-3xl bg-cream border border-peach-200/60 hover:border-peach-300 hover:shadow-xl transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-peach-400 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-peach-400/20 group-hover:scale-110 transition-transform">
+                            ⏰
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Massive Time-Saving Convenience</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            No two-way driving in traffic, messy car rides, or scheduling your entire Saturday around drop-off and pickup times. Continue working or relaxing while we work outside.
+                        </p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="p-8 rounded-3xl bg-spa-50/60 border border-spa-100 hover:border-spa-300 hover:shadow-xl transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-spa-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-spa-500/20 group-hover:scale-110 transition-transform">
+                            ⚡
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Fully Self-Sustained Vans</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            No garden hose or electrical cords required! Our custom Mercedes Sprinter van carries 70 gallons of purified heated water and whispers-quiet green lithium power.
+                        </p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="p-8 rounded-3xl bg-cream border border-peach-200/60 hover:border-peach-300 hover:shadow-xl transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-peach-400 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-peach-400/20 group-hover:scale-110 transition-transform">
+                            🌿
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Eco & Hypoallergenic Care</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            We exclusively utilize organic, sulfate-free, biodegradable shampoos, soothing oatmeal treatments, and natural tearless facial cleansers tailored to sensitive coats.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS (4-STEP PROCESS) -->
+        <section id="how-it-works" class="py-20 bg-spa-50/50 border-y border-spa-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-wider text-spa-600 bg-white px-3 py-1.5 rounded-full border border-spa-200">Effortless Experience</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-4">How Doorstep Pampering Works</h2>
+                    <p class="text-gray-600 text-base sm:text-lg">Enjoying a pristine, great-smelling pet has never been this seamless.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-7 rounded-3xl border border-spa-100 shadow-sm relative flex flex-col justify-between">
+                        <div class="absolute -top-4 -right-2 w-10 h-10 rounded-full bg-spa-600 text-white font-extrabold flex items-center justify-center shadow-md">
+                            1
+                        </div>
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-peach-100 text-peach-600 flex items-center justify-center text-xl mb-4 font-bold">
+                                📅
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Book Your Window</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Select your service package, choose your preferred date, and notify us of your pet’s unique personality or medical notes.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-100 text-xs text-spa-600 font-semibold">
+                            ✓ Instant quote estimation
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-7 rounded-3xl border border-spa-100 shadow-sm relative flex flex-col justify-between">
+                        <div class="absolute -top-4 -right-2 w-10 h-10 rounded-full bg-spa-600 text-white font-extrabold flex items-center justify-center shadow-md">
+                            2
+                        </div>
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-spa-100 text-spa-600 flex items-center justify-center text-xl mb-4 font-bold">
+                                🚐
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">We Pull Up & Greet</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Our mobile spa arrives outside your house. We meet your pet at the door, give friendly belly rubs, and escort them just a few steps to the van.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-100 text-xs text-spa-600 font-semibold">
+                            ✓ Gentle, low-stress transition
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-7 rounded-3xl border border-spa-100 shadow-sm relative flex flex-col justify-between">
+                        <div class="absolute -top-4 -right-2 w-10 h-10 rounded-full bg-spa-600 text-white font-extrabold flex items-center justify-center shadow-md">
+                            3
+                        </div>
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-peach-100 text-peach-600 flex items-center justify-center text-xl mb-4 font-bold">
+                                🫧
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">1-on-1 Hydro-Spa Care</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Heated warm hydro-massage, luxury shampooing, gentle hand blow dry, deshedding, nail trims, and custom breed scissor styling.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-100 text-xs text-spa-600 font-semibold">
+                            ✓ Safe, climate-controlled cabin
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white p-7 rounded-3xl border border-spa-100 shadow-sm relative flex flex-col justify-between">
+                        <div class="absolute -top-4 -right-2 w-10 h-10 rounded-full bg-spa-600 text-white font-extrabold flex items-center justify-center shadow-md">
+                            4
+                        </div>
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-spa-100 text-spa-600 flex items-center justify-center text-xl mb-4 font-bold">
+                                🐕
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Happy Pet Returned</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                In 60 to 90 minutes, your freshly fluffed, sweet-scented darling is hand-delivered back to your front door wearing a complimentary seasonal bandana!
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-100 text-xs text-spa-600 font-semibold">
+                            ✓ Cashless tap-to-pay convenience
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES & TRANSPARENT PACKAGES -->
+        <section id="services" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-wider text-spa-600 bg-spa-50 px-3 py-1.5 rounded-full border border-spa-200">Crystal Clear Menu</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-4">Signature Spa Packages</h2>
+                    <p class="text-gray-600 text-base sm:text-lg">Every package includes warm water hydro-massage, organic tearless blueberry facial, ear cleansing, and nail grinding at no extra cost.</p>
+                </div>
+
+                <!-- Package Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                    
+                    <!-- Package 1 -->
+                    <div class="rounded-3xl border border-gray-200 bg-white p-8 flex flex-col justify-between hover:shadow-xl transition-all relative">
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold text-xs mb-4">
+                                Maintenance & Refresh
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">The Bath & Fluff</h3>
+                            <p class="text-gray-500 text-sm mt-1 mb-6">Ideal for short coats, active pups, or regular freshness between haircut cycles.</p>
+                            
+                            <div class="mb-6 flex items-baseline">
+                                <span class="text-4xl font-extrabold text-gray-900">From $85</span>
+                                <span class="text-gray-500 text-sm ml-2">/ small dogs</span>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Double organic aromatherapy bath
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Gentle high-velocity fluff blowout
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Nail clip & precision dremel grinding
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Ear cleaning & ear hair plucking
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Sanitary trim & paw pad shaving
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="selectPackageForEstimate('bath-fluff')" class="w-full py-3 rounded-2xl bg-spa-50 hover:bg-spa-100 text-spa-700 font-bold border border-spa-200 transition">
+                            Calculate Price
+                        </button>
+                    </div>
+
+                    <!-- Package 2 (FEATURED) -->
+                    <div class="rounded-3xl border-2 border-peach-400 bg-white p-8 flex flex-col justify-between shadow-2xl relative lg:-translate-y-2">
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-peach-500 to-peach-400 text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md">
+                            Most Popular Choice
+                        </div>
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-peach-100 text-peach-700 font-semibold text-xs mb-4">
+                                Head-to-Tail Redesign
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">The Full Spa & Haircut</h3>
+                            <p class="text-gray-500 text-sm mt-1 mb-6">Complete bath + full custom body styling, teddy bear cuts, or breed-standard scissor styling.</p>
+                            
+                            <div class="mb-6 flex items-baseline">
+                                <span class="text-4xl font-extrabold text-spa-700">From $115</span>
+                                <span class="text-gray-500 text-sm ml-2">/ small dogs</span>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                                <li class="flex items-center gap-2 font-medium text-gray-800">
+                                    <svg class="w-5 h-5 text-peach-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    <strong>Everything in The Bath & Fluff</strong>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-peach-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Custom breed haircut or pet parent style
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-peach-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Precision scissor finish on face, tail & paws
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-peach-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Coat conditioning de-tangling mask
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-peach-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Complimentary silk bandana & spritz
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="selectPackageForEstimate('full-spa')" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-peach-500 to-peach-400 hover:from-peach-600 hover:to-peach-500 text-white font-bold shadow-lg shadow-peach-500/20 transition">
+                            Book This Package
+                        </button>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="rounded-3xl border border-gray-200 bg-white p-8 flex flex-col justify-between hover:shadow-xl transition-all relative">
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-spa-100 text-spa-700 font-semibold text-xs mb-4">
+                                Gentle Acclimation
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Puppy or Kitty Care</h3>
+                            <p class="text-gray-500 text-sm mt-1 mb-6">Created for puppies under 6 months or sensitive felines needing quiet, gentle handling.</p>
+                            
+                            <div class="mb-6 flex items-baseline">
+                                <span class="text-4xl font-extrabold text-gray-900">From $75</span>
+                                <span class="text-gray-500 text-sm ml-2">/ session</span>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Ultra-slow sensory positive intro to sounds
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Extra gentle warm sponge / hydro bath
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Nail trim, eye clearing & paw pad check
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Cat waterless foam groom option available
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-spa-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Patience-first treats & cuddles
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="selectPackageForEstimate('puppy-cat')" class="w-full py-3 rounded-2xl bg-spa-50 hover:bg-spa-100 text-spa-700 font-bold border border-spa-200 transition">
+                            Calculate Price
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Add-Ons Strip -->
+                <div class="mt-16 bg-cream rounded-3xl p-8 border border-peach-200/80">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span>✨ Popular Add-On Upgrades</span>
+                        <span class="text-xs bg-peach-100 text-peach-700 px-2 py-0.5 rounded-full font-semibold">Customize Any Visit</span>
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-white p-4 rounded-2xl border border-peach-100">
+                            <p class="font-bold text-gray-800 text-sm">De-Shedding Treatment</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Specialty brush-out & furminator mask</p>
+                            <span class="inline-block mt-2 font-bold text-spa-600 text-xs">+$25</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-peach-100">
+                            <p class="font-bold text-gray-800 text-sm">Teeth Brushing & Gel</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Enzyme mint polish + fresh breath</p>
+                            <span class="inline-block mt-2 font-bold text-spa-600 text-xs">+$15</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-peach-100">
+                            <p class="font-bold text-gray-800 text-sm">Flea & Tick Defense</p>
+                            <p class="text-xs text-gray-500 mt-0.5">All-natural citrus botanical wash</p>
+                            <span class="inline-block mt-2 font-bold text-spa-600 text-xs">+$20</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-peach-100">
+                            <p class="font-bold text-gray-800 text-sm">Nose & Paw Balm</p>
+                            <p class="text-xs text-gray-500 mt-0.5">Organic shea butter pad restoration</p>
+                            <span class="inline-block mt-2 font-bold text-spa-600 text-xs">+$12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE FEATURE: PRICE ESTIMATOR / QUOTE CALCULATOR -->
+        <section id="calculator" class="py-20 bg-gradient-to-b from-white via-spa-50/40 to-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-bold uppercase tracking-wider text-spa-600 bg-spa-100 px-3 py-1.5 rounded-full">No Surprise Fees</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-2">Instant Price Estimator</h2>
+                    <p class="text-gray-600 text-sm sm:text-base">Configure your pet’s size and desired pampering to calculate an instant ballpark estimate.</p>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-spa-100 shadow-xl overflow-hidden p-6 sm:p-10">
+                    <div class="space-y-8">
+                        
+                        <!-- 1. Pet Type -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-800 mb-3">1. Select Pet Companion</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="pet-type-card border-2 border-spa-500 bg-spa-50/50 rounded-2xl p-4 flex items-center gap-3 cursor-pointer transition">
+                                    <input type="radio" name="calc-pet-type" value="dog" checked class="text-spa-600 focus:ring-spa-400">
+                                    <span class="text-2xl">🐕</span>
+                                    <div>
+                                        <div class="font-bold text-gray-900 text-sm">Dog</div>
+                                        <div class="text-xs text-gray-500">All breeds & sizes</div>
+                                    </div>
+                                </label>
+                                <label class="pet-type-card border-2 border-gray-200 bg-white rounded-2xl p-4 flex items-center gap-3 cursor-pointer hover:border-spa-300 transition">
+                                    <input type="radio" name="calc-pet-type" value="cat" class="text-spa-600 focus:ring-spa-400">
+                                    <span class="text-2xl">🐈</span>
+                                    <div>
+                                        <div class="font-bold text-gray-900 text-sm">Cat</div>
+                                        <div class="text-xs text-gray-500">Short & long haired</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 2. Weight / Size (Dynamic for Dog/Cat) -->
+                        <div id="size-selector-container">
+                            <label class="block text-sm font-bold text-gray-800 mb-3">2. Weight & Size Category</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center" id="dog-sizes">
+                                <label class="size-pill border-2 border-spa-500 bg-spa-50 p-3 rounded-2xl cursor-pointer transition">
+                                    <input type="radio" name="calc-size" value="small" checked class="sr-only">
+                                    <span class="block text-xs font-bold text-gray-800">Small</span>
+                                    <span class="block text-[11px] text-gray-500">Under 20 lbs</span>
+                                </label>
+                                <label class="size-pill border-2 border-gray-200 bg-white p-3 rounded-2xl cursor-pointer hover:border-spa-300 transition">
+                                    <input type="radio" name="calc-size" value="medium" class="sr-only">
+                                    <span class="block text-xs font-bold text-gray-800">Medium</span>
+                                    <span class="block text-[11px] text-gray-500">21 - 45 lbs</span>
+                                </label>
+                                <label class="size-pill border-2 border-gray-200 bg-white p-3 rounded-2xl cursor-pointer hover:border-spa-300 transition">
+                                    <input type="radio" name="calc-size" value="large" class="sr-only">
+                                    <span class="block text-xs font-bold text-gray-800">Large</span>
+                                    <span class="block text-[11px] text-gray-500">46 - 75 lbs</span>
+                                </label>
+                                <label class="size-pill border-2 border-gray-200 bg-white p-3 rounded-2xl cursor-pointer hover:border-spa-300 transition">
+                                    <input type="radio" name="calc-size" value="xlarge" class="sr-only">
+                                    <span class="block text-xs font-bold text-gray-800">Giant</span>
+                                    <span class="block text-[11px] text-gray-500">76+ lbs</span>
+                                </label>
+                            </div>
+                            <div class="hidden grid-cols-2 gap-3 text-center" id="cat-sizes">
+                                <label class="size-pill border-2 border-spa-500 bg-spa-50 p-3 rounded-2xl cursor-pointer transition">
+                                    <input type="radio" name="calc-cat-coat" value="short" checked class="sr-only">
+                                    <span class="block text-xs font-bold text-gray-800">Short Hair Cat</span>
+                                    <span class="block text-[11px] text-gray-500">Domestic short, Siamese</span>
+                                </label>
+                                <label class="size-pill border-2 border-gray-200 bg-white p-3 rounded-2xl cursor-pointer hover:border-spa-300 transition">
+                                    <input type="radio" name="calc-cat-coat" value="long" class="sr-only">
+                                    <span class="block text-xs font-bold text-gray-800">Long Hair / Lion Cut</span>
+                                    <span class="block text-[11px] text-gray-500">Persian, Maine Coon, Ragdoll</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 3. Package Selection -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-800 mb-3">3. Choose Spa Package</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <label class="pkg-choice border-2 border-gray-200 bg-white p-4 rounded-2xl cursor-pointer hover:border-spa-300 transition flex flex-col justify-between">
+                                    <div class="flex items-start justify-between">
+                                        <span class="text-sm font-bold text-gray-900">The Bath & Fluff</span>
+                                        <input type="radio" name="calc-package" value="bath-fluff" class="text-spa-600 focus:ring-spa-400">
+                                    </div>
+                                    <span class="text-xs text-gray-500 mt-2">Hydro-bath, ear/nail, blowdry</span>
+                                </label>
+                                <label class="pkg-choice border-2 border-spa-500 bg-spa-50/50 p-4 rounded-2xl cursor-pointer transition flex flex-col justify-between">
+                                    <div class="flex items-start justify-between">
+                                        <span class="text-sm font-bold text-gray-900">The Full Spa & Cut</span>
+                                        <input type="radio" name="calc-package" value="full-spa" checked class="text-spa-600 focus:ring-spa-400">
+                                    </div>
+                                    <span class="text-xs text-gray-500 mt-2">Full haircut + bath & blowdry</span>
+                                </label>
+                                <label class="pkg-choice border-2 border-gray-200 bg-white p-4 rounded-2xl cursor-pointer hover:border-spa-300 transition flex flex-col justify-between">
+                                    <div class="flex items-start justify-between">
+                                        <span class="text-sm font-bold text-gray-900">Puppy/Cat Care</span>
+                                        <input type="radio" name="calc-package" value="puppy-cat" class="text-spa-600 focus:ring-spa-400">
+                                    </div>
+                                    <span class="text-xs text-gray-500 mt-2">Gentle touch & intro clean</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 4. Add-Ons Checkboxes -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-800 mb-3">4. Custom Upgrades (Optional)</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <input type="checkbox" id="addon-deshed" value="25" class="rounded text-spa-600 focus:ring-spa-400 calc-addon">
+                                        <span class="text-gray-700">De-Shedding FURminator® Mask</span>
+                                    </div>
+                                    <span class="font-bold text-spa-600 text-xs">+$25</span>
+                                </label>
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <input type="checkbox" id="addon-teeth" value="15" class="rounded text-spa-600 focus:ring-spa-400 calc-addon">
+                                        <span class="text-gray-700">Teeth Brushing + Peppermint Gel</span>
+                                    </div>
+                                    <span class="font-bold text-spa-600 text-xs">+$15</span>
+                                </label>
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <input type="checkbox" id="addon-flea" value="20" class="rounded text-spa-600 focus:ring-spa-400 calc-addon">
+                                        <span class="text-gray-700">All-Natural Flea & Tick Dip</span>
+                                    </div>
+                                    <span class="font-bold text-spa-600 text-xs">+$20</span>
+                                </label>
+                                <label class="flex items-center justify-between p-3 rounded-xl border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <input type="checkbox" id="addon-paw" value="12" class="rounded text-spa-600 focus:ring-spa-400 calc-addon">
+                                        <span class="text-gray-700">Organic Paw Pad & Nose Balm</span>
+                                    </div>
+                                    <span class="font-bold text-spa-600 text-xs">+$12</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Calculation Output Banner -->
+                        <div class="p-6 rounded-2xl bg-gradient-to-r from-spa-500 to-spa-600 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg shadow-spa-600/20">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-spa-100 font-bold block">Estimated Doorstep Total</span>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-4xl sm:text-5xl font-extrabold" id="calcResultPrice">$115</span>
+                                    <span class="text-spa-100 text-sm">approx. 60–90 mins</span>
+                                </div>
+                                <p class="text-xs text-spa-100 mt-1">Includes travel fee, mobile hookups, and organic coat conditioner.</p>
+                            </div>
+                            <button onclick="bookWithEstimate()" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-peach-500 hover:bg-peach-600 text-white font-bold text-sm shadow-md transition whitespace-nowrap">
+                                Lock In This Quote →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BEFORE & AFTER / SHOWCASE GALLERY WITH FILTER TABS -->
+        <section id="gallery" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-bold uppercase tracking-wider text-spa-600 bg-spa-50 px-3 py-1.5 rounded-full border border-spa-200">Real Transformations</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-4">Happy Pets & Fresh Makeovers</h2>
+                    <p class="text-gray-600 text-base">From scruffy adventurer to showstopper salon royalty. See our recent doorstep clients!</p>
+                    
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap items-center justify-center gap-2 mt-8" id="galleryFilters">
+                        <button onclick="filterGallery('all')" class="gallery-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-spa-600 text-white transition">
+                            All Pets (6)
+                        </button>
+                        <button onclick="filterGallery('dogs')" class="gallery-btn px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-gray-100 text-gray-700 hover:bg-spa-100 transition">
+                            Dogs
+                        </button>
+                        <button onclick="filterGallery('cats')" class="gallery-btn px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-gray-100 text-gray-700 hover:bg-spa-100 transition">
+                            Cats
+                        </button>
+                        <button onclick="filterGallery('before-after')" class="gallery-btn px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-gray-100 text-gray-700 hover:bg-spa-100 transition">
+                            Split Transformations
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Showcase Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+                    
+                    <!-- Card 1: Dog Before/After -->
+                    <div class="gallery-item group relative rounded-3xl overflow-hidden shadow-md border border-gray-100 bg-white" data-category="dogs before-after">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80" alt="Freshly groomed happy beagle dog" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-spa-600/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Before & After</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="font-bold text-gray-900">Barnaby the Golden Doodle</h3>
+                                <span class="text-xs bg-peach-100 text-peach-700 px-2 py-0.5 rounded-md font-semibold">Full Spa & Teddy Cut</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Matting removal, blueberry facial & round teddy paws.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Dog Bath -->
+                    <div class="gallery-item group relative rounded-3xl overflow-hidden shadow-md border border-gray-100 bg-white" data-category="dogs">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Pug wrapped warmly in towel after hydro-massage bath" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-peach-500/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Hydro-Bath</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="font-bold text-gray-900">Otis the Pug</h3>
+                                <span class="text-xs bg-spa-100 text-spa-700 px-2 py-0.5 rounded-md font-semibold">The Bath & Fluff</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Sensitive skin oatmeal bath + wrinkle sanitation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Cat -->
+                    <div class="gallery-item group relative rounded-3xl overflow-hidden shadow-md border border-gray-100 bg-white" data-category="cats">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" alt="Orange cat looking clean and content" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-spa-600/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Kitty Pamper</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="font-bold text-gray-900">Clementine (Domestic Longhair)</h3>
+                                <span class="text-xs bg-peach-100 text-peach-700 px-2 py-0.5 rounded-md font-semibold">Lion Mane & Deshed</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Zero-noise foam groom, sanitary trim, soft claw caps.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Dog Before/After -->
+                    <div class="gallery-item group relative rounded-3xl overflow-hidden shadow-md border border-gray-100 bg-white" data-category="dogs before-after">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80" alt="Puppy enjoying post-grooming session" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-spa-600/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Puppy 1st Groom</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="font-bold text-gray-900">Archie (Cavalier King Charles)</h3>
+                                <span class="text-xs bg-spa-100 text-spa-700 px-2 py-0.5 rounded-md font-semibold">Puppy Acclimation</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Gentle foot scissor, ear hygiene & positive treat play.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Cat Groom -->
+                    <div class="gallery-item group relative rounded-3xl overflow-hidden shadow-md border border-gray-100 bg-white" data-category="cats before-after">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80" alt="Fluffy Persian cat resting peacefully" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-spa-600/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Before & After</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="font-bold text-gray-900">Duchess the Persian</h3>
+                                <span class="text-xs bg-peach-100 text-peach-700 px-2 py-0.5 rounded-md font-semibold">Sanitary & Undercoat Blowout</span>
+                            </div>
+                            <p class="text-xs text-gray-500">De-matting coat restoration without razor shaving.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Dog Standard -->
+                    <div class="gallery-item group relative rounded-3xl overflow-hidden shadow-md border border-gray-100 bg-white" data-category="dogs">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80" alt="Playful terrier after fresh groom" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-peach-500/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Breed Style</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="font-bold text-gray-900">Jasper the Schnauzer</h3>
+                                <span class="text-xs bg-spa-100 text-spa-700 px-2 py-0.5 rounded-md font-semibold">Full Styling</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Signature beard trimming & precision skirt line.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE AREA CHECKER (INTERACTIVE ZIP/SUBURB LOOKUP) -->
+        <section id="coverage" class="py-20 bg-spa-900 text-white relative overflow-hidden">
+            <!-- Background circles -->
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-spa-600/20 blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-spa-800 border border-spa-700 text-spa-200 text-xs font-bold">
+                            📍 Doorstep Coverage Area
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Do We Service Your Neighborhood?</h2>
+                        <p class="text-spa-100 text-base leading-relaxed">
+                            Our fleet of customized mobile spa vans is stationed across metropolitan and suburban zones to ensure timely, quiet arrivals right on your street.
+                        </p>
+
+                        <!-- Interactive Postal Search Form -->
+                        <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 max-w-lg">
+                            <label class="block text-xs font-bold text-spa-200 mb-2 uppercase tracking-wider">Enter Your 5-Digit ZIP Code or Suburb</label>
+                            <form id="zipForm" onsubmit="checkZipCode(event)" class="flex flex-col sm:flex-row gap-2">
+                                <input type="text" id="zipInput" placeholder="Try 90210, 90001, 90211..." required
+                                       class="w-full px-4 py-3 rounded-2xl bg-white text-gray-900 placeholder-gray-400 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-peach-400">
+                                <button type="submit" class="px-6 py-3 rounded-2xl bg-peach-500 hover:bg-peach-600 text-white font-bold text-sm transition whitespace-nowrap shadow-lg">
+                                    Check Area
+                                </button>
+                            </form>
+                            
+                            <!-- Search Result Feedback -->
+                            <div id="zipResult" class="mt-4 hidden p-3 rounded-xl text-xs font-medium"></div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-xs text-spa-200">
+                            <span class="font-bold text-white">Popular Daily Hubs:</span>
+                            <span class="bg-spa-800 px-2.5 py-1 rounded-lg">Westside</span>
+                            <span class="bg-spa-800 px-2.5 py-1 rounded-lg">Highland Park</span>
+                            <span class="bg-spa-800 px-2.5 py-1 rounded-lg">Beverly Crest</span>
+                            <span class="bg-spa-800 px-2.5 py-1 rounded-lg">Pasadena Foothills</span>
+                            <span class="bg-spa-800 px-2.5 py-1 rounded-lg">Silver Lake</span>
+                        </div>
+                    </div>
+
+                    <!-- Coverage Map Mock Illustration -->
+                    <div class="lg:col-span-6">
+                        <div class="relative bg-spa-800/80 rounded-3xl p-6 border border-spa-700 shadow-2xl overflow-hidden">
+                            <div class="flex items-center justify-between pb-4 border-b border-spa-700/80">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
+                                    <span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span>
+                                    <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
+                                    <span class="text-xs text-spa-300 font-mono ml-2">fleet-gps-status.live</span>
+                                </div>
+                                <span class="text-xs text-peach-300 font-semibold flex items-center gap-1">
+                                    <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span> 4 Vans Active Today
+                                </span>
+                            </div>
+
+                            <!-- Styled Map Grid Mockup -->
+                            <div class="relative h-64 sm:h-72 my-4 rounded-2xl bg-spa-950/70 border border-spa-700/50 flex items-center justify-center overflow-hidden">
+                                <!-- Abstract Road Grid Lines -->
+                                <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="0" y1="50" x2="100%" y2="50" stroke="#52B6AD" stroke-width="2" stroke-dasharray="6"/>
+                                    <line x1="0" y1="140" x2="100%" y2="140" stroke="#52B6AD" stroke-width="3"/>
+                                    <line x1="0" y1="210" x2="100%" y2="210" stroke="#52B6AD" stroke-width="1"/>
+                                    <line x1="120" y1="0" x2="120" y2="100%" stroke="#52B6AD" stroke-width="3"/>
+                                    <line x1="280" y1="0" x2="280" y2="100%" stroke="#52B6AD" stroke-width="2" stroke-dasharray="6"/>
+                                    <circle cx="50%" cy="50%" r="90" fill="#319B91" fill-opacity="0.15" stroke="#319B91" stroke-width="2"/>
+                                    <circle cx="50%" cy="50%" r="130" fill="none" stroke="#FFA45B" stroke-width="1.5" stroke-dasharray="4"/>
+                                </svg>
+
+                                <!-- Pulsing Map Pins -->
+                                <div class="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 text-center group cursor-pointer">
+                                    <div class="w-9 h-9 rounded-full bg-peach-500 text-white flex items-center justify-center text-sm shadow-lg ring-4 ring-peach-400/30 animate-bounce">
+                                        🚐
+                                    </div>
+                                    <span class="text-[10px] bg-gray-900/90 text-white px-2 py-0.5 rounded shadow mt-1 inline-block">Van #1 (En Route)</span>
+                                </div>
+
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                                    <div class="w-10 h-10 rounded-full bg-spa-400 text-spa-950 flex items-center justify-center text-base shadow-xl font-bold ring-4 ring-spa-300/30">
+                                        ★
+                                    </div>
+                                    <span class="text-[10px] bg-spa-900 text-spa-100 px-2 py-0.5 rounded shadow mt-1 inline-block font-bold">Central Dispatch Hub</span>
+                                </div>
+
+                                <div class="absolute bottom-1/4 right-1/4 text-center">
+                                    <div class="w-9 h-9 rounded-full bg-peach-500 text-white flex items-center justify-center text-sm shadow-lg ring-4 ring-peach-400/30">
+                                        🚐
+                                    </div>
+                                    <span class="text-[10px] bg-gray-900/90 text-white px-2 py-0.5 rounded shadow mt-1 inline-block">Van #3 (Spa in Session)</span>
+                                </div>
+                            </div>
+
+                            <p class="text-center text-xs text-spa-200">
+                                Outside of our main zone? We occasionally accommodate neighboring areas with a modest fuel surcharge.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS & VERIFIED REVIEWS -->
+        <section class="py-20 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-wider text-spa-600 bg-white px-3 py-1.5 rounded-full border border-spa-200">Loved by 1,200+ Pets</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-4">What Neighborhood Pet Parents Say</h2>
+                    <p class="text-gray-600 text-base">Read why our door-to-door spa experience gets 5-star reviews across Google and Yelp.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="bg-white p-8 rounded-3xl border border-peach-200/60 shadow-sm flex flex-col justify-between hover:shadow-lg transition">
+                        <div>
+                            <div class="flex items-center gap-1 text-gold text-sm mb-4">
+                                ★★★★★
+                                <span class="ml-2 text-xs bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+                                    <svg class="w-3 h-3 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                    Verified Client
+                                </span>
+                            </div>
+                            <p class="text-gray-700 text-sm leading-relaxed mb-6 italic">
+                                "My Labradoodle Chloe used to get horrific car sickness driving to salon shops. Having Paws & Bubbles pull directly into our driveway changed everything. She was done in an hour and smelled like sweet vanilla for weeks!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <div class="w-11 h-11 rounded-full bg-peach-100 text-peach-600 font-bold flex items-center justify-center text-sm">
+                                MC
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-900">Marcus Chen</h4>
+                                <p class="text-xs text-gray-500">Parent to Chloe (Labradoodle)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-white p-8 rounded-3xl border border-peach-200/60 shadow-sm flex flex-col justify-between hover:shadow-lg transition">
+                        <div>
+                            <div class="flex items-center gap-1 text-gold text-sm mb-4">
+                                ★★★★★
+                                <span class="ml-2 text-xs bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+                                    <svg class="w-3 h-3 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                    Verified Client
+                                </span>
+                            </div>
+                            <p class="text-gray-700 text-sm leading-relaxed mb-6 italic">
+                                "I was nervous because grooming cats can be tricky, but groomer Elena was extraordinary. She took her time, gave sweet cheek scratches, and removed all the undercoat mats without any distress. 10/10 recommend!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <div class="w-11 h-11 rounded-full bg-spa-100 text-spa-600 font-bold flex items-center justify-center text-sm">
+                                ER
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-900">Elena Rostova</h4>
+                                <p class="text-xs text-gray-500">Parent to Oliver (Ragdoll Cat)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-white p-8 rounded-3xl border border-peach-200/60 shadow-sm flex flex-col justify-between hover:shadow-lg transition">
+                        <div>
+                            <div class="flex items-center gap-1 text-gold text-sm mb-4">
+                                ★★★★★
+                                <span class="ml-2 text-xs bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+                                    <svg class="w-3 h-3 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                    Verified Client
+                                </span>
+                            </div>
+                            <p class="text-gray-700 text-sm leading-relaxed mb-6 italic">
+                                "As a work-from-home mom with 2 kids, I couldn’t stand spending 4 hours on Saturday dealing with salon drop-offs. The van pulls up, takes Buster, and 75 mins later he is back with neatly ground nails and a cute bandana!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <div class="w-11 h-11 rounded-full bg-peach-100 text-peach-600 font-bold flex items-center justify-center text-sm">
+                                JT
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-900">Jessica Torres</h4>
+                                <p class="text-xs text-gray-500">Parent to Buster (French Bulldog)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-bold uppercase tracking-wider text-spa-600 bg-spa-50 px-3 py-1.5 rounded-full border border-spa-200">Got Questions?</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-gray-600 text-base">Everything you need to know about our driveway grooming visit.</p>
+                </div>
+
+                <!-- Accordion Items -->
+                <div class="space-y-4" id="faqAccordion">
+                    
+                    <!-- Item 1 -->
+                    <div class="border border-gray-200 rounded-2xl overflow-hidden transition-colors">
+                        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-spa-50/50 font-bold text-gray-900 text-base">
+                            <span>Do you need to plug into my home water or electricity?</span>
+                            <span class="faq-icon text-spa-600 text-xl font-bold transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed bg-white">
+                            Nope! Our Mercedes Sprinter vans are completely self-sufficient. We carry our own 70-gallon heated fresh water supply, dirty water recovery tank, and whisper-quiet green lithium power systems. We never need your electrical outlets or garden hoses.
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="border border-gray-200 rounded-2xl overflow-hidden transition-colors">
+                        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-spa-50/50 font-bold text-gray-900 text-base">
+                            <span>What are your vaccination policies?</span>
+                            <span class="faq-icon text-spa-600 text-xl font-bold transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed bg-white">
+                            To ensure optimal wellness and safety for all our furry clients, we require proof of up-to-date Rabies vaccination for all dogs and cats over 16 weeks of age. DHPP and Bordetella are highly recommended. You can quickly upload your vet paperwork during booking!
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="border border-gray-200 rounded-2xl overflow-hidden transition-colors">
+                        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-spa-50/50 font-bold text-gray-900 text-base">
+                            <span>Can you groom anxious or aggressive pets?</span>
+                            <span class="faq-icon text-spa-600 text-xl font-bold transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed bg-white">
+                            We specialize in anxious, timid, and senior pets because our environment is completely quiet and free from barking salon distractions. For pets with known bite tendencies, please let us know beforehand. We use Fear-Free gentle handling techniques and never push a pet past their comfort threshold.
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="border border-gray-200 rounded-2xl overflow-hidden transition-colors">
+                        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-spa-50/50 font-bold text-gray-900 text-base">
+                            <span>What is your cancellation and rescheduling policy?</span>
+                            <span class="faq-icon text-spa-600 text-xl font-bold transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed bg-white">
+                            We understand life happens! We kindly ask for at least 48 hours notice to cancel or reschedule without fee so we can reallocate our travel route. Cancellations made under 24 hours are subject to a $45 travel route reservation fee.
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="border border-gray-200 rounded-2xl overflow-hidden transition-colors">
+                        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-spa-50/50 font-bold text-gray-900 text-base">
+                            <span>Where do you park while grooming?</span>
+                            <span class="faq-icon text-spa-600 text-xl font-bold transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed bg-white">
+                            We require a relatively flat driveway or legal street parking space directly in front of your home (about 2 normal car lengths or 24 feet). Our vans have high clearance and fit comfortably in standard residential driveways.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PRE-FOOTER CTA SECTION -->
+        <section class="py-16 bg-gradient-to-r from-spa-500 via-spa-600 to-peach-500 text-white text-center relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                    🚐 Limited Weekly Route Slots
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">Ready to Give Your Best Friend the VIP Spa Experience?</h2>
+                <p class="text-base sm:text-lg text-spa-50 max-w-2xl mx-auto mb-8 font-medium">
+                    Skip the chaotic car rides. Let our certified mobile groomers roll up and pamper your pet in luxury comfort.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-spa-700 hover:bg-spa-50 font-extrabold text-base shadow-2xl hover:scale-105 transition-all">
+                        Schedule Doorstep Visit Now
+                    </button>
+                    <a href="tel:18007297729" class="w-full sm:w-auto px-8 py-4 rounded-full bg-spa-900/40 hover:bg-spa-900/60 border border-white/30 text-white font-bold text-base transition">
+                        Call (800) 729-PAWS
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-16 text-sm border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <!-- Col 1: About -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-spa-500 flex items-center justify-center text-white font-bold">
+                            🐾
+                        </div>
+                        <span class="text-xl font-bold font-heading text-white">Paws & Bubbles</span>
+                    </div>
+                    <p class="text-xs text-gray-400 max-w-sm leading-relaxed">
+                        Paws & Bubbles Mobile Pet Spa provides boutique cage-free grooming right at your front door. Fully insured, AKC S.A.F.E. certified, and committed to warm, low-stress care.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 text-white">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-spa-500 flex items-center justify-center transition">IG</a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-spa-500 flex items-center justify-center transition">FB</a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-spa-500 flex items-center justify-center transition">YT</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="hover:text-white transition">The Bath & Fluff</a></li>
+                        <li><a href="#services" class="hover:text-white transition">The Full Spa & Cut</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Puppy's First Groom</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Feline Luxury Spa</a></li>
+                        <li><a href="#services" class="hover:text-white transition">De-Shedding Treatment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Areas -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Service Areas</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#coverage" class="hover:text-white transition">Metro Downtown</a></li>
+                        <li><a href="#coverage" class="hover:text-white transition">West Suburbs</a></li>
+                        <li><a href="#coverage" class="hover:text-white transition">Northern Valley</a></li>
+                        <li><a href="#coverage" class="hover:text-white transition">Oakridge Foothills</a></li>
+                        <li><a href="#coverage" class="hover:text-white transition">South Harbor Communities</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Contact & Hours</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li class="text-white font-medium">Mon - Sat: 7:30 AM - 6:30 PM</li>
+                        <li>Sunday: By Advance Request</li>
+                        <li class="pt-2 text-spa-400 font-semibold">📞 (800) 729-PAWS</li>
+                        <li>✉️ hello@pawsandbubbles.com</li>
+                        <li class="text-gray-500 text-[11px] pt-1">Licensed, Bonded & Insured</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>© 2026 Paws & Bubbles Mobile Pet Spa LLC. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                    <a href="#" class="hover:underline">Safety Standard</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE BOOKING INQUIRY MODAL -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative my-8 animate-in fade-in zoom-in duration-200">
+            <!-- Close Button -->
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 p-1.5 rounded-full hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="mb-6">
+                <div class="w-10 h-10 rounded-xl bg-peach-100 text-peach-600 font-bold flex items-center justify-center mb-2">
+                    🚐
+                </div>
+                <h3 class="text-2xl font-bold font-heading text-gray-900">Request Mobile Spa Visit</h3>
+                <p class="text-xs text-gray-500 mt-1">Fill out your pet details and driveway address. We'll confirm your arrival window!</p>
+            </div>
+
+            <!-- Booking Form -->
+            <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Your Name *</label>
+                        <input type="text" required placeholder="e.g. Alex Morgan" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Phone Number *</label>
+                        <input type="tel" required placeholder="(555) 000-0000" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Pet Name & Breed *</label>
+                        <input type="text" required id="modalPetBreed" placeholder="e.g. Bella (Goldendoodle)" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Pet Weight (lbs) *</label>
+                        <input type="number" required placeholder="e.g. 28" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Selected Package *</label>
+                    <select id="modalPackageSelect" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none bg-white">
+                        <option value="full-spa">The Full Spa & Haircut (Haircut, Bath, Scissor styling)</option>
+                        <option value="bath-fluff">The Bath & Fluff (Bath, Blowdry, Nails, Hygiene)</option>
+                        <option value="puppy-cat">Puppy or Kitty Care (Intro acclimation visit)</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Service Street Address *</label>
+                        <input type="text" required placeholder="123 Blossom Hill Rd" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">ZIP Code *</label>
+                        <input type="text" required id="modalZip" placeholder="e.g. 90210" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Preferred Date</label>
+                        <input type="date" required class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Time Preference</label>
+                        <select class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none bg-white">
+                            <option>Morning (8:00 AM - 11:30 AM)</option>
+                            <option>Mid-Day (11:30 AM - 2:30 PM)</option>
+                            <option>Late Afternoon (2:30 PM - 5:30 PM)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Pet Temperament or Special Notes</label>
+                    <textarea rows="2" placeholder="e.g. Sensitive ears, hates loud dryers, super friendly with treats" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-spa-400 outline-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-full bg-gradient-to-r from-peach-500 to-peach-400 hover:from-peach-600 hover:to-peach-500 text-white font-bold text-sm shadow-xl transition">
+                    Confirm Appointment Request →
+                </button>
+            </form>
+
+            <!-- Success Message Notification (Inline) -->
+            <div id="bookingSuccessNotice" class="hidden mt-4 p-4 rounded-2xl bg-green-50 border border-green-200 text-green-800 text-xs">
+                <p class="font-bold">🎉 Hooray! Your booking request was sent.</p>
+                <p class="mt-1">Our dispatch team will verify driveway route availability and text your arrival window within 15 minutes.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function toggleMobileMenu() {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // FAQ ACCORDION INTERACTION
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+            const isExpanded = !content.classList.contains('hidden');
+
+            // Close all items
+            document.querySelectorAll('.faq-content').forEach(item => item.classList.add('hidden'));
+            document.querySelectorAll('.faq-icon').forEach(ic => {
+                ic.textContent = '+';
+                ic.classList.remove('rotate-45');
+            });
+
+            if (!isExpanded) {
+                content.classList.remove('hidden');
+                icon.textContent = '−';
+            }
+        }
+
+        // PRICE ESTIMATOR LOGIC
+        const basePrices = {
+            dog: {
+                'bath-fluff': { small: 85, medium: 95, large: 110, xlarge: 130 },
+                'full-spa':   { small: 115, medium: 135, large: 155, xlarge: 180 },
+                'puppy-cat':  { small: 75, medium: 75, large: 85, xlarge: 90 }
+            },
+            cat: {
+                'bath-fluff': { short: 90, long: 110 },
+                'full-spa':   { short: 120, long: 145 },
+                'puppy-cat':  { short: 80, long: 80 }
+            }
+        };
+
+        const petTypeInputs = document.querySelectorAll('input[name="calc-pet-type"]');
+        const dogSizesContainer = document.getElementById('dog-sizes');
+        const catSizesContainer = document.getElementById('cat-sizes');
+        const calcResultPrice = document.getElementById('calcResultPrice');
+        const addonCheckboxes = document.querySelectorAll('.calc-addon');
+
+        function updatePriceCalculator() {
+            const petType = document.querySelector('input[name="calc-pet-type"]:checked').value;
+            const packageType = document.querySelector('input[name="calc-package"]:checked').value;
+            
+            let base = 100;
+            if (petType === 'dog') {
+                dogSizesContainer.classList.remove('hidden');
+                dogSizesContainer.classList.add('grid');
+                catSizesContainer.classList.add('hidden');
+                catSizesContainer.classList.remove('grid');
+
+                const dogSize = document.querySelector('input[name="calc-size"]:checked')?.value || 'small';
+                base = basePrices.dog[packageType][dogSize] || 115;
+            } else {
+                catSizesContainer.classList.remove('hidden');
+                catSizesContainer.classList.add('grid');
+                dogSizesContainer.classList.add('hidden');
+                dogSizesContainer.classList.remove('grid');
+
+                const catCoat = document.querySelector('input[name="calc-cat-coat"]:checked')?.value || 'short';
+                base = basePrices.cat[packageType][catCoat] || 120;
+            }
+
+            // Sum addons
+            let addonsTotal = 0;
+            addonCheckboxes.forEach(cb => {
+                if (cb.checked) {
+                    addonsTotal += parseInt(cb.value);
+                }
+            });
+
+            calcResultPrice.textContent = `$${base + addonsTotal}`;
+        }
+
+        // Attach event listeners for calculator
+        document.querySelectorAll('input[name="calc-pet-type"], input[name="calc-package"], input[name="calc-size"], input[name="calc-cat-coat"]').forEach(input => {
+            input.addEventListener('change', () => {
+                // Update active styles
+                highlightSelectedCards();
+                updatePriceCalculator();
+            });
+        });
+
+        addonCheckboxes.forEach(cb => {
+            cb.addEventListener('change', updatePriceCalculator);
+        });
+
+        function highlightSelectedCards() {
+            // Style pet type card
+            document.querySelectorAll('.pet-type-card').forEach(card => {
+                const radio = card.querySelector('input[type="radio"]');
+                if (radio.checked) {
+                    card.classList.add('border-spa-500', 'bg-spa-50/50');
+                    card.classList.remove('border-gray-200', 'bg-white');
+                } else {
+                    card.classList.remove('border-spa-500', 'bg-spa-50/50');
+                    card.classList.add('border-gray-200', 'bg-white');
+                }
+            });
+
+            // Style package selection
+            document.querySelectorAll('.pkg-choice').forEach(card => {
+                const radio = card.querySelector('input[type="radio"]');
+                if (radio.checked) {
+                    card.classList.add('border-spa-500', 'bg-spa-50/50');
+                    card.classList.remove('border-gray-200', 'bg-white');
+                } else {
+                    card.classList.remove('border-spa-500', 'bg-spa-50/50');
+                    card.classList.add('border-gray-200', 'bg-white');
+                }
+            });
+
+            // Style size pills
+            document.querySelectorAll('.size-pill').forEach(pill => {
+                const radio = pill.querySelector('input[type="radio"]');
+                if (radio.checked) {
+                    pill.classList.add('border-spa-500', 'bg-spa-50');
+                    pill.classList.remove('border-gray-200', 'bg-white');
+                } else {
+                    pill.classList.remove('border-spa-500', 'bg-spa-50');
+                    pill.classList.add('border-gray-200', 'bg-white');
+                }
+            });
+        }
+
+        // Connect Service Menu packages directly to Calculator
+        function selectPackageForEstimate(pkgId) {
+            const targetRadio = document.querySelector(`input[name="calc-package"][value="${pkgId}"]`);
+            if (targetRadio) {
+                targetRadio.checked = true;
+                highlightSelectedCards();
+                updatePriceCalculator();
+                document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function bookWithEstimate() {
+            const currentPkg = document.querySelector('input[name="calc-package"]:checked').value;
+            const selectElem = document.getElementById('modalPackageSelect');
+            if (selectElem) {
+                selectElem.value = currentPkg;
+            }
+            openBookingModal();
+        }
+
+        // GALLERY FILTER SYSTEM
+        function filterGallery(category) {
+            const buttons = document.querySelectorAll('.gallery-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-spa-600', 'text-white');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+            event.target.classList.add('bg-spa-600', 'text-white');
+            event.target.classList.remove('bg-gray-100', 'text-gray-700');
+
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                const categories = item.getAttribute('data-category');
+                if (category === 'all' || categories.includes(category)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        // SERVICE AREA ZIP CODE CHECKER
+        const supportedZips = ['90210', '90211', '90212', '90001', '90024', '90049', '91101', '91105', '90026', '90039'];
+        
+        function checkZipCode(event) {
+            event.preventDefault();
+            const input = document.getElementById('zipInput').value.trim();
+            const resultBox = document.getElementById('zipResult');
+
+            resultBox.classList.remove('hidden');
+
+            // Simple demo match
+            if (supportedZips.includes(input) || input.toLowerCase().includes('valley') || input.toLowerCase().includes('west') || input.length === 5) {
+                resultBox.className = "mt-4 p-3.5 rounded-xl text-xs font-semibold bg-emerald-500/20 text-emerald-200 border border-emerald-400/40 flex items-center justify-between";
+                resultBox.innerHTML = `
+                    <span>🎉 Great news! We service <strong>${input}</strong> with zero travel surcharge!</span>
+                    <button onclick="openBookingModalWithZip('${input}')" class="ml-2 bg-emerald-400 hover:bg-emerald-300 text-spa-950 px-3 py-1 rounded-lg text-xs font-bold transition">Book Van</button>
+                `;
+            } else {
+                resultBox.className = "mt-4 p-3.5 rounded-xl text-xs font-semibold bg-amber-500/20 text-amber-200 border border-amber-400/40";
+                resultBox.innerHTML = `📍 We are expanding into <strong>${input}</strong> soon! Inquire today to request a custom route stop.`;
+            }
+        }
+
+        function openBookingModalWithZip(zip) {
+            document.getElementById('modalZip').value = zip;
+            openBookingModal();
+        }
+
+        // BOOKING MODAL LOGIC
+        const bookingModal = document.getElementById('bookingModal');
+        const bookingSuccessNotice = document.getElementById('bookingSuccessNotice');
+
+        function openBookingModal() {
+            bookingModal.classList.remove('hidden');
+            bookingSuccessNotice.classList.add('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            bookingModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on backdrop click
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                closeBookingModal();
+            }
+        });
+
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            bookingSuccessNotice.classList.remove('hidden');
+            setTimeout(() => {
+                event.target.reset();
+            }, 500);
+        }
+
+        // Initialize state
+        window.onload = function() {
+            highlightSelectedCards();
+            updatePriceCalculator();
+        };
+    </script>
+</body>
+</html>

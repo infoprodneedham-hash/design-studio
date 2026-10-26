@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geelong Metro Auto Works | Premium Automotive Servicing & Mechanical Repairs</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B111E',
+                            surface: '#131B2E',
+                            card: '#182238',
+                            border: '#23314F',
+                            accent: '#0284C7',     /* vibrant bay blue */
+                            electric: '#38BDF8',   /* electric cyan */
+                            amber: '#F59E0B',      /* warm gold */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and sleek glass gradients */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B111E;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #23314F;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284C7;
+        }
+        .hero-pattern {
+            background-color: #0B111E;
+            background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 0), radial-gradient(rgba(2, 132, 199, 0.05) 1px, #0B111E 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+        .metal-shine {
+            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-electric selection:text-brand-dark">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-slate-900 via-brand-surface to-slate-900 border-b border-brand-border/60 text-xs text-slate-400 py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 text-brand-electric font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Open Today: 7:30 AM – 5:30 PM
+                </span>
+                <span class="hidden md:inline text-slate-600">|</span>
+                <span class="hidden md:inline text-slate-300 flex items-center gap-1">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand-amber"></i> VACC Accredited & VicRoads Licensed Tester
+                </span>
+            </div>
+            <div class="flex items-center gap-5 ml-auto sm:ml-0">
+                <a href="tel:0352224090" class="hover:text-brand-electric transition flex items-center gap-1 font-medium text-slate-200">
+                    <i data-lucide="phone-call" class="w-3.5 h-3.5 text-brand-electric"></i> (03) 5222 4090
+                </a>
+                <span class="bg-rose-500/20 text-rose-300 border border-rose-500/30 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
+                    <i data-lucide="alert-circle" class="w-3 h-3"></i> Priority Breakdown Support
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark/90 border-b border-brand-border/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-accent to-sky-600 flex items-center justify-center text-white shadow-lg shadow-sky-900/30 group-hover:scale-105 transition-transform">
+                        <i data-lucide="gauge" class="w-6 h-6 stroke-[2.2]"></i>
+                    </div>
+                    <div>
+                        <div class="font-display font-extrabold text-xl tracking-tight text-white flex items-center">
+                            GEELONG<span class="text-brand-electric ml-1">METRO</span>
+                        </div>
+                        <p class="text-[10px] tracking-widest text-slate-400 font-semibold uppercase">Auto Works & Mechanical</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-300">
+                    <a href="#services" class="hover:text-brand-electric transition">Services</a>
+                    <a href="#advantage" class="hover:text-brand-electric transition">The Metro Advantage</a>
+                    <a href="#coverage" class="hover:text-brand-electric transition">Geelong Coverage</a>
+                    <a href="#reviews" class="hover:text-brand-electric transition">Reviews</a>
+                    <a href="#booking" class="hover:text-brand-electric transition">Online Quote</a>
+                </nav>
+
+                <!-- Action CTA -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="tel:0352224090" class="px-4 py-2.5 rounded-lg border border-brand-border hover:border-slate-500 text-sm font-semibold text-slate-200 transition flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4 text-brand-electric"></i>
+                        Call Bay
+                    </a>
+                    <a href="#booking" class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-brand-accent to-sky-500 hover:from-sky-500 hover:to-sky-400 text-white text-sm font-bold shadow-lg shadow-sky-600/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        Book Service
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-brand-surface focus:outline-none">
+                    <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden border-b border-brand-border bg-brand-surface px-4 pt-3 pb-6 space-y-3">
+            <a href="#services" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-brand-card">Services</a>
+            <a href="#advantage" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-brand-card">The Metro Advantage</a>
+            <a href="#coverage" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-brand-card">Geelong Suburb Coverage</a>
+            <a href="#reviews" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-brand-card">Reviews</a>
+            <a href="#booking" class="block px-3 py-2 rounded-lg text-base font-medium text-brand-electric font-semibold hover:bg-brand-card">Request a Quote</a>
+            <div class="pt-3 flex flex-col gap-2">
+                <a href="tel:0352224090" class="w-full text-center py-2.5 rounded-lg border border-brand-border text-slate-200 font-semibold flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4 text-brand-electric"></i> Call (03) 5222 4090
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative hero-pattern pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden border-b border-brand-border/60">
+        <!-- Ambient lighting glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-accent/15 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left text content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-surface border border-brand-border text-xs font-semibold text-slate-300">
+                        <span class="w-2 h-2 rounded-full bg-brand-electric"></span>
+                        Geelong's Premier Dealership Alternative
+                    </div>
+
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+                        Expert Precision Auto Servicing For <span class="bg-gradient-to-r from-sky-400 via-brand-electric to-blue-200 bg-clip-text text-transparent">Greater Geelong.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Full warranty-compliant logbook servicing, dealer-level diagnostic telemetry, European & Japanese expertise, and certified Roadworthy inspections—without inflated dealership pricing.
+                    </p>
+
+                    <!-- Trust badging chips -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-medium text-slate-300">
+                        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-surface/80 border border-brand-border">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                            <span>100% New Car Warranty Safe</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-surface/80 border border-brand-border">
+                            <i data-lucide="award" class="w-4 h-4 text-brand-amber"></i>
+                            <span>VACC Certified Master Technicians</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-surface/80 border border-brand-border">
+                            <i data-lucide="car" class="w-4 h-4 text-brand-electric"></i>
+                            <span>Complimentary Loan Cars</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Group -->
+                    <div class="pt-4 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#booking" class="px-7 py-3.5 rounded-xl bg-brand-accent hover:bg-sky-500 text-white font-bold text-base shadow-xl shadow-sky-700/25 transition-all text-center flex items-center justify-center gap-2">
+                            <span>Get An Instant Quote</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="tel:0352224090" class="px-7 py-3.5 rounded-xl bg-brand-surface hover:bg-brand-card border border-brand-border text-slate-200 font-semibold text-base transition text-center flex items-center justify-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-brand-electric"></i>
+                            <span>Speak to a Technician</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Card / Workshop Quick Stat Box -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl bg-gradient-to-b from-brand-surface to-brand-card border border-brand-border p-6 sm:p-8 shadow-2xl metal-shine overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-40 h-40 bg-brand-electric/10 rounded-full blur-2xl"></div>
+
+                        <div class="flex items-center justify-between pb-6 border-b border-brand-border">
+                            <div>
+                                <h2 class="font-display font-bold text-white text-lg">Workshop Status: Active</h2>
+                                <p class="text-xs text-slate-400">Bay 1 to 6 Operational • Geelong CBD Fringe</p>
+                            </div>
+                            <span class="flex h-3 w-3 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                            </span>
+                        </div>
+
+                        <!-- Highlights grid -->
+                        <div class="grid grid-cols-2 gap-4 my-6">
+                            <div class="p-4 rounded-xl bg-brand-dark/70 border border-brand-border/60">
+                                <div class="text-2xl font-black text-brand-electric">20+</div>
+                                <div class="text-xs font-medium text-slate-400 mt-1">Years Geelong Experience</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-brand-dark/70 border border-brand-border/60">
+                                <div class="text-2xl font-black text-brand-amber">4.9 ★</div>
+                                <div class="text-xs font-medium text-slate-400 mt-1">Over 480 Google Reviews</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-brand-dark/70 border border-brand-border/60">
+                                <div class="text-2xl font-black text-white">24 Mo</div>
+                                <div class="text-xs font-medium text-slate-400 mt-1">Nationwide Work Warranty</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-brand-dark/70 border border-brand-border/60">
+                                <div class="text-2xl font-black text-emerald-400">100%</div>
+                                <div class="text-xs font-medium text-slate-400 mt-1">Upfront Quote Guarantee</div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center gap-3">
+                            <i data-lucide="clock" class="w-5 h-5 text-brand-electric shrink-0"></i>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                <strong class="text-white">Same-Day Servicing:</strong> Vehicles dropped off by 8:30 AM are prepared for collection by 4:30 PM.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-20 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-electric">Comprehensive Automotive Care</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-2">Specialised Mechanical Services</h2>
+                <p class="text-slate-400 mt-3 text-base">From everyday passenger hatchbacks and 4WD overland vehicles to European prestige marques, our Geelong workshop is fitted with modern scan tools and precision equipment.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group rounded-2xl bg-brand-surface border border-brand-border p-6 hover:border-brand-electric/50 transition-all hover:shadow-xl hover:shadow-brand-accent/5 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center text-brand-electric group-hover:scale-110 transition-transform mb-5">
+                            <i data-lucide="book-open-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Logbook Servicing</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Protect your new car statutory manufacturer warranty. We follow strict factory service schedules, use OEM-specified fluids, filters, and stamp your digital or hardcopy logbook.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> New vehicle warranty compliant</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Premium Penrite & Castrol synthetic oils</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group rounded-2xl bg-brand-surface border border-brand-border p-6 hover:border-brand-electric/50 transition-all hover:shadow-xl hover:shadow-brand-accent/5 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center text-brand-amber group-hover:scale-110 transition-transform mb-5">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Engine & Electronic Diagnostics</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Check engine light, sluggish acceleration, or DPF issues? We utilize dealership-level OBD-II scanning equipment to accurately diagnose fault codes without guesswork.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> ECU sensor & wiring diagnostics</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Common rail diesel & turbo checks</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group rounded-2xl bg-brand-surface border border-brand-border p-6 hover:border-brand-electric/50 transition-all hover:shadow-xl hover:shadow-brand-accent/5 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform mb-5">
+                            <i data-lucide="disc" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Brakes & Clutch Systems</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Ensure stopping power on Geelong and Surf Coast coastal corridors. Disc machining, performance pad upgrades, hydraulic brake fluid flushing, and dual-mass clutch replacements.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Bendix & DBA rotor installations</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> ABS controller diagnostics</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group rounded-2xl bg-brand-surface border border-brand-border p-6 hover:border-brand-electric/50 transition-all hover:shadow-xl hover:shadow-brand-accent/5 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center text-sky-400 group-hover:scale-110 transition-transform mb-5">
+                            <i data-lucide="snowflake" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Auto Electrical & Air Conditioning</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Licensed ARC refrigerant handling, condenser leak testing, re-gassing (R134a & R1234yf), alternator replacements, dual-battery 4WD systems, and starter motor overhauls.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> ARC Tick Licensed (#AU48291)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Anti-bacterial cabin evaporator decontam</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group rounded-2xl bg-brand-surface border border-brand-border p-6 hover:border-brand-electric/50 transition-all hover:shadow-xl hover:shadow-brand-accent/5 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center text-brand-electric group-hover:scale-110 transition-transform mb-5">
+                            <i data-lucide="file-badge-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Roadworthy Certificates (RWC)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            VicRoads Accredited Licensed Vehicle Tester (LVT). Fast, compliant inspections for vehicle transfers, interstate re-registration, or private vehicle sales across Greater Geelong.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Official VicRoads tester station</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Fast re-inspection turnaround</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="group rounded-2xl bg-brand-surface border border-brand-border p-6 hover:border-brand-electric/50 transition-all hover:shadow-xl hover:shadow-brand-accent/5 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform mb-5">
+                            <i data-lucide="compass" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Suspension, Steering & Tyres</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Shock absorbers, struts, bush replacements, 4x4 lift kit setups, ball joints, and high-precision laser wheel alignments to maximize tyre longevity and driving safety.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Digital 3D wheel alignment</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 4WD GVM & suspension upgrades</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / The Metro Advantage -->
+    <section id="advantage" class="py-20 bg-brand-surface border-y border-brand-border relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-electric">The Metro Advantage</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Why Discerning Geelong Drivers Skip The Main Dealerships
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        We founded Geelong Metro Auto Works to deliver high-calibre automotive craftsmanship with straightforward honesty. No unnecessary work upsold, no hidden workshop surcharges, and direct access to the technician working on your vehicle.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-card border border-brand-border flex items-center justify-center text-brand-electric shrink-0">
+                                <i data-lucide="car-front" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Modern Courtesy Loan Fleet</h4>
+                                <p class="text-xs text-slate-400 mt-1">Stay mobile across Geelong while your car is serviced. Clean, automatic loan vehicles available upon booking reserve.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-card border border-brand-border flex items-center justify-center text-brand-amber shrink-0">
+                                <i data-lucide="receipt-text" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Fixed Price Transparency</h4>
+                                <p class="text-xs text-slate-400 mt-1">We quote in advance. Should our diagnostic reveal unexpected wear, we contact you for explicit authorization before turning a wrench.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-card border border-brand-border flex items-center justify-center text-emerald-400 shrink-0">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">2-Year / 40,000 km Warranty</h4>
+                                <p class="text-xs text-slate-400 mt-1">All workmanship and installed components are backed by our comprehensive warranty for peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet & Workshop Capability Visual Box -->
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+                    <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-3">
+                        <div class="text-brand-electric font-semibold text-xs tracking-wider uppercase">Euro Specialist</div>
+                        <h3 class="text-lg font-bold text-white">Audi, BMW, VW & Mercedes</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Dedicated Ross-Tech VCDS and BMW ISTA scan tooling to read proprietary dealer codes and reset adaptation parameters.</p>
+                        <div class="text-xs text-slate-300 font-medium pt-2 flex items-center gap-1.5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-electric"></i> Specialised synthetic oil blends
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-3">
+                        <div class="text-brand-electric font-semibold text-xs tracking-wider uppercase">Heavy Duty & Trade</div>
+                        <h3 class="text-lg font-bold text-white">4x4, Utes & Commercial Fleets</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Priority maintenance schedules for local Geelong trades, couriers, and builders. Keep your commercial vehicles earning.</p>
+                        <div class="text-xs text-slate-300 font-medium pt-2 flex items-center gap-1.5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-electric"></i> Priority turnaround for work utes
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-3">
+                        <div class="text-brand-electric font-semibold text-xs tracking-wider uppercase">Family Passenger Cars</div>
+                        <h3 class="text-lg font-bold text-white">Toyota, Mazda, Hyundai & Subaru</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Affordable, reliable everyday maintenance keeping Geelong school runs and Melbourne highway commutes effortless.</p>
+                        <div class="text-xs text-slate-300 font-medium pt-2 flex items-center gap-1.5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-electric"></i> Free 62-point vehicle health check
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-3">
+                        <div class="text-brand-electric font-semibold text-xs tracking-wider uppercase">Electric & Hybrid Ready</div>
+                        <h3 class="text-lg font-bold text-white">EV & Hybrid Certified</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Certified high-voltage technicians trained in regenerative braking, battery cooling loops, and electric powertrain servicing.</p>
+                        <div class="text-xs text-slate-300 font-medium pt-2 flex items-center gap-1.5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-electric"></i> High-voltage safety certified
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suburb Coverage Area Section -->
+    <section id="coverage" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-electric">Greater Geelong & Surrounds</span>
+                <h2 class="font-display text-3xl font-extrabold text-white mt-1">Servicing Motorists Across The Geelong Region</h2>
+                <p class="text-slate-400 text-sm mt-2">Centrally located with rapid access to the Princes Highway and Latrobe Terrace, we are within minutes of Geelong's major suburbs.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6">
+                <!-- Suburb List 1: Central & Northern -->
+                <div class="p-6 rounded-2xl bg-brand-surface border border-brand-border">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-brand-electric flex items-center justify-center font-bold">1</div>
+                        <h3 class="font-bold text-white text-base">Geelong CBD & Northern Suburbs</h3>
+                    </div>
+                    <ul class="text-sm text-slate-300 space-y-2.5">
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Geelong Central (3220)</span>
+                            <span class="text-xs text-slate-500">3 min</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>North Geelong & Rippleside</span>
+                            <span class="text-xs text-slate-500">5 min</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Geelong West & Newtown</span>
+                            <span class="text-xs text-slate-500">4 min</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Corio, Norlane & Bell Park</span>
+                            <span class="text-xs text-slate-500">8 min</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Suburb List 2: Southern & Waurn Ponds -->
+                <div class="p-6 rounded-2xl bg-brand-surface border border-brand-border">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-brand-electric flex items-center justify-center font-bold">2</div>
+                        <h3 class="font-bold text-white text-base">Southern Suburbs & Growth Corridor</h3>
+                    </div>
+                    <ul class="text-sm text-slate-300 space-y-2.5">
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Belmont & Highton</span>
+                            <span class="text-xs text-slate-500">6 min</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Grovedale & Marshall</span>
+                            <span class="text-xs text-slate-500">8 min</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Waurn Ponds & Deakin precinct</span>
+                            <span class="text-xs text-slate-500">10 min</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Armstrong Creek & Charlemont</span>
+                            <span class="text-xs text-slate-500">12 min</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Suburb List 3: Eastern & Surf Coast link -->
+                <div class="p-6 rounded-2xl bg-brand-surface border border-brand-border">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-brand-electric flex items-center justify-center font-bold">3</div>
+                        <h3 class="font-bold text-white text-base">Eastern Geelong & Coastal Links</h3>
+                    </div>
+                    <ul class="text-sm text-slate-300 space-y-2.5">
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>East Geelong & South Geelong</span>
+                            <span class="text-xs text-slate-500">4 min</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Thomson, Breakwater & Newcomb</span>
+                            <span class="text-xs text-slate-500">6 min</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Leopold & Bellarine Link</span>
+                            <span class="text-xs text-slate-500">12 min</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-1.5 border-b border-brand-border/40">
+                            <span>Torquay & Surf Coast Fringe</span>
+                            <span class="text-xs text-slate-500">18 min</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Workshop Location Map Card -->
+            <div class="mt-8 rounded-2xl bg-brand-surface border border-brand-border p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center text-brand-electric shrink-0">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-base">Workshop Address: 144 Bellerine Street, Geelong VIC 3220</h4>
+                        <p class="text-xs text-slate-400 mt-0.5">Off-street customer parking, close to South Geelong Railway Station & Westfield Geelong.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <a href="https://maps.google.com/?q=Geelong+VIC+3220" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto text-center px-4 py-2.5 rounded-lg bg-brand-card hover:bg-brand-border text-xs font-semibold text-white border border-brand-border flex items-center justify-center gap-1.5 transition">
+                        <i data-lucide="navigation" class="w-3.5 h-3.5 text-brand-electric"></i>
+                        Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews / Testimonials -->
+    <section id="reviews" class="py-20 bg-brand-surface border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-electric">Verified Feedback</span>
+                    <h2 class="font-display text-3xl font-extrabold text-white mt-1">What Geelong Motorists Say</h2>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center gap-2">
+                    <div class="flex text-brand-amber">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <span class="text-sm font-bold text-white">4.9 / 5.0</span>
+                    <span class="text-xs text-slate-400">(480+ local Geelong drivers)</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="rounded-2xl bg-brand-card border border-brand-border p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-amber mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">
+                            "Took my Golf GTI here after being quoted an astronomical figure by the Melbourne road dealership. Geelong Metro diagnosed the DSG issue accurately, saved me over $800, and provided a free loan car so I could get to work in Belmont without missing a beat."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+                        <div>
+                            <p class="font-bold text-white text-sm">Marcus L.</p>
+                            <p class="text-xs text-slate-400">Belmont • VW Golf GTI Servicing</p>
+                        </div>
+                        <span class="text-[11px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Verified</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="rounded-2xl bg-brand-card border border-brand-border p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-amber mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">
+                            "Fast, honest Roadworthy Certificate (RWC) for selling my family Prado. They walked me through the itemised safety check report transparently. It's refreshing to find a mechanic in Geelong that doesn't invent phantom repairs."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+                        <div>
+                            <p class="font-bold text-white text-sm">Sarah Jenkins</p>
+                            <p class="text-xs text-slate-400">Highton • RWC & Brake Service</p>
+                        </div>
+                        <span class="text-[11px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Verified</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="rounded-2xl bg-brand-card border border-brand-border p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-amber mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">
+                            "Our electrical contracting business runs 5 HiAce vans through Geelong Metro. Turnaround is exceptional, logbooks are kept pristine for resale value, and we've had zero downtime across 3 years. Best auto workshop in Geelong."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+                        <div>
+                            <p class="font-bold text-white text-sm">Darren O'Connor</p>
+                            <p class="text-xs text-slate-400">North Geelong • Commercial Fleet</p>
+                        </div>
+                        <span class="text-[11px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Verified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quote Estimator & Service Request Form -->
+    <section id="booking" class="py-20 bg-brand-dark relative border-t border-brand-border">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-electric">Fast Online Reservation</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-1">Request An Upfront Quote Or Booking</h2>
+                <p class="text-slate-400 text-sm mt-2">Select your vehicle details and required service below. Our service manager will confirm availability within 2 business hours.</p>
+            </div>
+
+            <div class="rounded-3xl bg-brand-surface border border-brand-border p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                <form id="bookingForm" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="custName">Full Name *</label>
+                            <input type="text" id="custName" required placeholder="e.g. David Henderson" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-electric transition">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="custPhone">Phone Number *</label>
+                            <input type="tel" id="custPhone" required placeholder="e.g. 0412 345 678" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-electric transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <!-- Vehicle Make / Model -->
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="custVehicle">Vehicle Make, Model & Year *</label>
+                            <input type="text" id="custVehicle" required placeholder="e.g. 2021 Toyota RAV4 Hybrid" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-electric transition">
+                        </div>
+
+                        <!-- Suburb -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="custSuburb">Geelong Suburb *</label>
+                            <select id="custSuburb" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-electric transition">
+                                <option value="">Select Suburb</option>
+                                <option value="Geelong CBD / Central">Geelong CBD (3220)</option>
+                                <option value="Belmont / Highton">Belmont / Highton</option>
+                                <option value="Grovedale / Waurn Ponds">Grovedale / Waurn Ponds</option>
+                                <option value="Newtown / Geelong West">Newtown / Geelong West</option>
+                                <option value="North Geelong / Corio">North Geelong / Corio</option>
+                                <option value="East Geelong / Newcomb">East Geelong / Newcomb</option>
+                                <option value="Armstrong Creek / Charlemont">Armstrong Creek / Charlemont</option>
+                                <option value="Other Greater Geelong">Other Geelong / Surf Coast</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Primary Service Required -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="serviceType">Primary Service *</label>
+                            <select id="serviceType" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-electric transition">
+                                <option value="">Choose Service Required</option>
+                                <option value="Manufacturer Logbook Servicing">Manufacturer Logbook Servicing</option>
+                                <option value="Standard Mechanical & Oil Service">Standard Minor / Major Service</option>
+                                <option value="Brake Pad & Rotor Replacement">Brake & Clutch Repairs</option>
+                                <option value="Engine Check Light / Diagnostics">Engine Diagnostics & Electrical</option>
+                                <option value="Air Conditioning Regas & Service">Air Conditioning Regas & Service</option>
+                                <option value="Roadworthy Certificate (RWC)">Roadworthy Certificate (RWC)</option>
+                                <option value="Suspension, Steering & Alignment">Suspension & 4WD Upgrades</option>
+                            </select>
+                        </div>
+
+                        <!-- Preferred Date -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="prefDate">Preferred Service Date *</label>
+                            <input type="date" id="prefDate" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-electric transition">
+                        </div>
+                    </div>
+
+                    <!-- Loan Car option -->
+                    <div class="p-4 rounded-xl bg-brand-dark/60 border border-brand-border/60 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="car" class="w-5 h-5 text-brand-electric"></i>
+                            <div>
+                                <span class="text-sm font-semibold text-white">Require a Complimentary Loan Car?</span>
+                                <p class="text-xs text-slate-400">Subject to booking availability for Geelong motorists.</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="loanCar" class="sr-only peer">
+                            <div class="w-11 h-6 bg-brand-card peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-accent"></div>
+                        </label>
+                    </div>
+
+                    <!-- Notes -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="custNotes">Vehicle Symptoms / Special Requests (Optional)</label>
+                        <textarea id="custNotes" rows="3" placeholder="e.g. Squeaking noise when braking from 60km/h, or upcoming 60,000 km logbook milestone..." class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-electric transition resize-none"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-accent to-sky-500 hover:from-sky-500 hover:to-sky-400 text-white font-bold text-base shadow-xl shadow-sky-600/25 transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>Confirm Service Request & Quote</span>
+                    </button>
+                    <p class="text-center text-xs text-slate-500">No payment required now. Fixed quote provided before any workshop repair commences.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Modal (Hidden by default) -->
+    <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 hidden">
+        <div class="bg-brand-surface border border-brand-border rounded-2xl max-w-md w-full p-6 sm:p-8 text-center space-y-4 shadow-2xl relative">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center border border-emerald-500/30">
+                <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white">Booking Request Received!</h3>
+            <p id="modalSummary" class="text-sm text-slate-300 leading-relaxed">
+                Thank you. We have logged your request.
+            </p>
+            <div class="p-3 bg-brand-dark rounded-xl border border-brand-border text-xs text-slate-400 text-left space-y-1">
+                <div>• Location: <strong>144 Bellerine St, Geelong VIC 3220</strong></div>
+                <div>• Response window: <strong>Within 2 working hours</strong></div>
+                <div>• Phone: <strong>(03) 5222 4090</strong></div>
+            </div>
+            <button id="closeModalBtn" class="w-full py-2.5 rounded-xl bg-brand-accent hover:bg-sky-500 text-white font-bold text-sm transition">
+                Return to Website
+            </button>
+        </div>
+    </div>
+
+    <!-- Comprehensive Footer -->
+    <footer class="bg-brand-dark border-t border-brand-border text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Col 1: About -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-brand-accent flex items-center justify-center text-white">
+                            <i data-lucide="gauge" class="w-5 h-5"></i>
+                        </div>
+                        <span class="font-display font-extrabold text-white text-lg tracking-tight">GEELONG METRO</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Geelong Metropolitan's recognized independent automotive repair workshop. Delivering dealership-grade diagnostics, warranty-safe logbook servicing, and certified road safety testing.
+                    </p>
+                    <div class="pt-2 text-xs text-slate-300">
+                        <span class="block font-bold text-white">ABN: 48 192 481 029</span>
+                        <span class="block">VicRoads Licensed Tester #11942</span>
+                        <span class="block">ARC Lic: #AU48291</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Workshop Services</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#services" class="hover:text-brand-electric transition">Logbook Servicing (Warranty Safe)</a></li>
+                        <li><a href="#services" class="hover:text-brand-electric transition">European & Japanese Mechanical</a></li>
+                        <li><a href="#services" class="hover:text-brand-electric transition">Brake & Clutch Overhauls</a></li>
+                        <li><a href="#services" class="hover:text-brand-electric transition">Air Conditioning Re-gas & Repairs</a></li>
+                        <li><a href="#services" class="hover:text-brand-electric transition">Roadworthy Certificates (RWC)</a></li>
+                        <li><a href="#services" class="hover:text-brand-electric transition">4WD Suspension & GVM Upgrades</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Hours & Contact -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Trading Hours</h4>
+                    <ul class="space-y-1.5 text-xs text-slate-400">
+                        <li class="flex justify-between"><span class="text-slate-300">Monday – Thursday:</span> <span>7:30 AM – 5:30 PM</span></li>
+                        <li class="flex justify-between"><span class="text-slate-300">Friday:</span> <span>7:30 AM – 5:00 PM</span></li>
+                        <li class="flex justify-between"><span class="text-slate-300">Saturday:</span> <span>8:00 AM – 12:00 PM (By Appt)</span></li>
+                        <li class="flex justify-between"><span class="text-slate-300">Sunday & Public Hols:</span> <span class="text-rose-400">Closed</span></li>
+                    </ul>
+
+                    <div class="mt-4 pt-4 border-t border-brand-border/60">
+                        <p class="text-xs text-slate-300 font-semibold mb-1">Direct Workshop Line:</p>
+                        <a href="tel:0352224090" class="text-brand-electric font-bold text-base hover:underline">(03) 5222 4090</a>
+                    </div>
+                </div>
+
+                <!-- Col 4: Location & Accreditations -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Geelong Service Hub</h4>
+                    <address class="not-italic text-xs text-slate-400 space-y-2">
+                        <p class="text-slate-300 font-medium">144 Bellerine Street<br>Geelong VIC 3220, Australia</p>
+                        <p>Adjacent to South Geelong train link and Latrobe Terrace access arterial.</p>
+                    </address>
+
+                    <!-- Clean Accreditation Badges -->
+                    <div class="mt-5 pt-4 border-t border-brand-border/60">
+                        <span class="text-[11px] font-semibold text-slate-300 uppercase tracking-wider block mb-2">Accredited Member</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded bg-brand-surface border border-brand-border text-[11px] font-bold text-slate-200">
+                                VACC Accredited
+                            </span>
+                            <span class="px-2.5 py-1 rounded bg-brand-surface border border-brand-border text-[11px] font-bold text-slate-200">
+                                VicRoads RWC
+                            </span>
+                            <span class="px-2.5 py-1 rounded bg-brand-surface border border-brand-border text-[11px] font-bold text-slate-200">
+                                ARC Tick Approved
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Sub-footer -->
+            <div class="mt-12 pt-8 border-t border-brand-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>© 2026 Geelong Metro Auto Works Pty Ltd. All rights reserved. Servicing Greater Geelong, Bellarine Peninsula & Surf Coast.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-300 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-300 transition">Logbook Guarantee</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal Interactive Script -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            const iconName = isHidden ? 'menu' : 'x';
+            mobileMenuBtn.innerHTML = `<i data-lucide="${iconName}" class="w-6 h-6"></i>`;
+            lucide.createIcons();
+        });
+
+        // Close mobile drawer on navigation link tap
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.innerHTML = `<i data-lucide="menu" class="w-6 h-6"></i>`;
+                lucide.createIcons();
+            });
+        });
+
+        // Set default minimum date for date picker to today
+        const prefDateInput = document.getElementById('prefDate');
+        if (prefDateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            prefDateInput.min = today;
+        }
+
+        // Form submission & confirmation modal handling
+        const bookingForm = document.getElementById('bookingForm');
+        const bookingModal = document.getElementById('bookingModal');
+        const modalSummary = document.getElementById('modalSummary');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const vehicle = document.getElementById('custVehicle').value.trim();
+            const service = document.getElementById('serviceType').value;
+            const date = document.getElementById('prefDate').value;
+            const loanCar = document.getElementById('loanCar').checked;
+            const suburb = document.getElementById('custSuburb').value;
+
+            // Generate customized confirmation modal summary
+            modalSummary.innerHTML = `
+                Thank you, <strong class="text-white">${name}</strong>! Your quote request for your <strong class="text-white">${vehicle}</strong> (${service}) on <strong>${date}</strong> from <strong>${suburb}</strong> has been logged. ${loanCar ? '<br><span class="text-brand-electric font-medium">✓ Courtesy Loan Car requested.</span>' : ''}
+            `;
+
+            // Display modal
+            bookingModal.classList.remove('hidden');
+
+            // Reset form
+            bookingForm.reset();
+        });
+
+        // Close Modal handler
+        closeModalBtn.addEventListener('click', () => {
+            bookingModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside backdrop
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                bookingModal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

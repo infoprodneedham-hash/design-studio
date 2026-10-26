@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VANCE KANE | Elite Athletic Advisory & Performance</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0a0c0f',
+            charcoal: '#11151c',
+            surface: '#181e28',
+            surfaceHover: '#202836',
+            accent: '#00E676',       /* Electric Lime */
+            accentDark: '#00B859',
+            accentGlow: 'rgba(0, 230, 118, 0.25)',
+            borderMuted: '#242d3d',
+            goldAccent: '#F3B552'
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom Luxury Glass & Utilities */
+    .glass-card {
+      background: rgba(24, 30, 40, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(0, 230, 118, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px -12px rgba(0, 230, 118, 0.18);
+    }
+
+    .mesh-gradient-bg {
+      background-color: #0a0c0f;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(0, 230, 118, 0.08) 0px, transparent 50%),
+        radial-gradient(at 90% 20%, rgba(243, 181, 82, 0.05) 0px, transparent 45%),
+        radial-gradient(at 50% 80%, rgba(0, 230, 118, 0.05) 0px, transparent 55%);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff 40%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lime-gradient-text {
+      background: linear-gradient(135deg, #00E676 0%, #a7f3d0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0c0f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #242d3d;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00E676;
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-slate-300 font-sans selection:bg-accent selection:text-obsidian antialiased mesh-gradient-bg">
+
+  <!-- TOP CONCIERGE BAR -->
+  <div class="bg-charcoal/90 border-b border-borderMuted/60 text-xs py-2 px-4 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-accent font-semibold tracking-wider text-[11px] uppercase">
+          <span class="w-2 h-2 rounded-full bg-accent animate-ping inline-block"></span>
+          Accepting Q2/Q3 Private Retainers
+        </span>
+        <span class="hidden md:inline text-slate-500">•</span>
+        <span class="hidden md:inline text-slate-400">Zurich | London | Sydney | Global Travel On-Call</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="tel:+18005550199" class="hover:text-accent transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-phone text-[10px]"></i> +1 (800) 555-0199
+        </a>
+        <span class="text-slate-600">|</span>
+        <a href="#consultation" class="text-white hover:text-accent font-medium transition-colors">Direct Telegram / Concierge Desk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between relative z-40">
+    <a href="#" class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-lg bg-surface border border-accent/40 flex items-center justify-center text-accent font-display font-extrabold text-xl shadow-lg shadow-accent/10">
+        VK
+      </div>
+      <div>
+        <span class="font-display font-bold text-lg tracking-wider text-white uppercase block leading-tight">Vance Kane</span>
+        <span class="text-[10px] tracking-widest text-slate-400 uppercase">Athletic Advisory & Concierge</span>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <a href="#about" class="hover:text-accent transition-colors">Profile</a>
+      <a href="#disciplines" class="hover:text-accent transition-colors">The 4 Disciplines</a>
+      <a href="#services" class="hover:text-accent transition-colors">Specialized Solutions</a>
+      <a href="#case-studies" class="hover:text-accent transition-colors">Advisory Dossier</a>
+      <a href="#credentials" class="hover:text-accent transition-colors">Accreditations</a>
+      <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#consultation" class="px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase bg-accent text-obsidian hover:bg-emerald-300 transition-all shadow-md shadow-accent/20 flex items-center gap-2">
+        <i class="fa-solid fa-shield-halved text-xs"></i>
+        <span>Request Intake</span>
+      </a>
+      <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="lg:hidden w-10 h-10 rounded-lg bg-surface border border-borderMuted flex items-center justify-center text-slate-300 hover:text-white">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobileMenu" class="hidden lg:hidden fixed inset-x-0 top-[96px] bg-charcoal/95 border-b border-borderMuted backdrop-blur-xl z-50 p-6 flex flex-col gap-4 text-base">
+    <a href="#about" class="py-2 border-b border-slate-800 text-slate-200 mobile-nav-link">Executive Profile</a>
+    <a href="#disciplines" class="py-2 border-b border-slate-800 text-slate-200 mobile-nav-link">The 4 Core Pillars</a>
+    <a href="#services" class="py-2 border-b border-slate-800 text-slate-200 mobile-nav-link">Bespoke Solutions</a>
+    <a href="#case-studies" class="py-2 border-b border-slate-800 text-slate-200 mobile-nav-link">Case Profiles</a>
+    <a href="#credentials" class="py-2 border-b border-slate-800 text-slate-200 mobile-nav-link">Accreditations</a>
+    <a href="#faq" class="py-2 border-b border-slate-800 text-slate-200 mobile-nav-link">FAQ</a>
+    <a href="#consultation" class="mt-2 text-center py-3 rounded-lg bg-accent text-obsidian font-bold uppercase tracking-wider mobile-nav-link">Book Private Assessment</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface border border-accent/30 text-accent text-xs font-semibold uppercase tracking-wider">
+          <i class="fa-solid fa-award text-sm"></i>
+          Excellence Under Discretion & Precision
+        </div>
+
+        <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08] text-white">
+          Architect of <span class="lime-gradient-text">Human Performance</span> & Athletic Governance.
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
+          Integrated physical mastery for the world’s most demanding clientele. Bridging <strong class="text-slate-200">1-on-1 body transformations</strong>, <strong class="text-slate-200">elite speed & agility systems</strong>, confidential <strong class="text-slate-200">private gym chaperoning</strong>, and institutional <strong class="text-slate-200">sporting club advisory</strong>.
+        </p>
+
+        <!-- Quick Discipline Badges -->
+        <div class="flex flex-wrap gap-2.5 pt-2">
+          <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-charcoal border border-borderMuted text-slate-300 flex items-center gap-2">
+            <i class="fa-solid fa-dumbbell text-accent"></i> Elite Personal Trainer
+          </span>
+          <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-charcoal border border-borderMuted text-slate-300 flex items-center gap-2">
+            <i class="fa-solid fa-person-running text-accent"></i> High-Performance Coach
+          </span>
+          <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-charcoal border border-borderMuted text-slate-300 flex items-center gap-2">
+            <i class="fa-solid fa-user-shield text-accent"></i> VIP Gym Escort
+          </span>
+          <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-charcoal border border-borderMuted text-slate-300 flex items-center gap-2">
+            <i class="fa-solid fa-clipboard-check text-accent"></i> Club Director & Consultant
+          </span>
+        </div>
+
+        <!-- CTA Action Row -->
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <a href="#consultation" class="px-8 py-4 rounded-xl text-sm font-bold tracking-wider uppercase bg-accent text-obsidian hover:bg-emerald-300 transition-all shadow-lg shadow-accent/25 hover:shadow-accent/40 flex items-center gap-3">
+            <span>Arrange Direct Consultation</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#disciplines" class="px-7 py-4 rounded-xl text-sm font-semibold tracking-wider bg-surface border border-borderMuted hover:border-slate-500 text-white transition-all flex items-center gap-2.5">
+            <i class="fa-solid fa-compass text-slate-400"></i> Explore 4 Pillars
+          </a>
+        </div>
+
+        <!-- Trust Metric Badges -->
+        <div class="pt-8 border-t border-borderMuted/80 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div>
+            <div class="text-2xl sm:text-3xl font-display font-extrabold text-white count-up" data-target="16">0</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-0.5">Years Track Record</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-display font-extrabold text-white count-up" data-target="42">0</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-0.5">Pro Athletes Coached</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-display font-extrabold text-accent count-up" data-target="100">0</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-0.5">% NDA Discretion</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-display font-extrabold text-white count-up" data-target="18">0</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-0.5">Clubs & Facilities Advised</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Visual Representation -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-2xl overflow-hidden glass-card p-2 border border-borderMuted/80 shadow-2xl">
+          <!-- Artistic Athletic Framing -->
+          <div class="relative rounded-xl overflow-hidden bg-charcoal aspect-[4/5] flex items-end p-6">
+            <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M0,0 L100,100 M20,0 L100,80 M0,20 L80,100" stroke="#00E676" stroke-width="0.3" fill="none" />
+            </svg>
+
+            <!-- Decorative Visual Backdrop Graphic -->
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent z-10"></div>
+            
+            <div class="absolute inset-0 flex items-center justify-center opacity-40">
+              <i class="fa-solid fa-person-running text-[160px] text-slate-700"></i>
+            </div>
+
+            <!-- Floating VIP Chaperone & Coach Badge -->
+            <div class="relative z-20 w-full space-y-3">
+              <div class="inline-flex items-center gap-2 bg-charcoal/90 border border-goldAccent/40 px-3.5 py-1.5 rounded-full text-goldAccent text-xs font-semibold backdrop-blur-md">
+                <i class="fa-solid fa-shield-cat"></i> High Net-Worth Protocol Ready
+              </div>
+              <h3 class="text-xl font-display font-bold text-white">Vance Kane, MSc, CSCS*D</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Former International Decathlete, Master Strength & Conditioning Specialist, and Strategic Fitness Governance Officer.
+              </p>
+              
+              <!-- Security Clearance Chip -->
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                <span class="flex items-center gap-1.5">
+                  <i class="fa-solid fa-lock text-accent"></i> Level-3 Confidentiality
+                </span>
+                <span class="text-slate-400">Global Passport & Biometric Clearances</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtle Glow Orb -->
+        <div class="absolute -top-10 -right-10 w-48 h-48 bg-accent/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: THE 4 DISCIPLINARY PILLARS -->
+  <section id="disciplines" class="py-20 border-t border-borderMuted/60 bg-charcoal/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-accent text-xs font-bold uppercase tracking-widest block mb-2">Cross-Disciplinary Command</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Four Pillars of Singular Authority
+        </h2>
+        <p class="text-slate-400 mt-4 text-base">
+          Unlike ordinary trainers or siloed coaches, Vance combines elite physiological science, executive privacy, and sports organization leadership under one bespoke banner.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1: Elite PT -->
+        <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-surface border border-accent/30 flex items-center justify-center text-accent text-2xl mb-6 shadow-inner">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Pillar 01</span>
+            <h3 class="text-xl font-display font-bold text-white mt-1 mb-3">Elite Personal Trainer</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Precision body recomposition, hypertrophic sequencing, neurological muscle activation, and biomarker-driven nutrition for high-stakes professionals.
+            </p>
+          </div>
+          <div class="mt-6 pt-5 border-t border-slate-800/80">
+            <ul class="text-xs space-y-2 text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-[10px]"></i> DEXA/Metabolic Calibration</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-[10px]"></i> Injury Mitigation Architecture</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-[10px]"></i> 1-on-1 Ultra-Discreet Suites</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 2: High Performance Coach -->
+        <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-surface border border-accent/30 flex items-center justify-center text-accent text-2xl mb-6 shadow-inner">
+              <i class="fa-solid fa-stopwatch-20"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Pillar 02</span>
+            <h3 class="text-xl font-display font-bold text-white mt-1 mb-3">High-Performance Sports Coach</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Explosive power development, linear/change-of-direction sprint mechanics, and tactical conditioning for professional athletes and emerging prodigies.
+            </p>
+          </div>
+          <div class="mt-6 pt-5 border-t border-slate-800/80">
+            <ul class="text-xs space-y-2 text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-[10px]"></i> Force-Velocity Profiling</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-[10px]"></i> Multi-Sport Conditioning Systems</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-[10px]"></i> Match-Day Readiness Tactics</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Private Gym Escort / VIP Chaperone -->
+        <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between border-accent/20">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-surface border border-goldAccent/40 flex items-center justify-center text-goldAccent text-2xl mb-6 shadow-inner">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-goldAccent">Pillar 03 • Concierge</span>
+            <h3 class="text-xl font-display font-bold text-white mt-1 mb-3">VIP Gym Escort & Chaperone</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Accompanying dignitaries, executives, and high-profile individuals into ultra-exclusive hotel gyms, private superyacht facilities, and discreet training facilities.
+            </p>
+          </div>
+          <div class="mt-6 pt-5 border-t border-slate-800/80">
+            <ul class="text-xs space-y-2 text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-goldAccent text-[10px]"></i> Strict NDA & Privacy Protocols</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-goldAccent text-[10px]"></i> Travel & Transit Workout Sentry</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-goldAccent text-[10px]"></i> Floor De-escalation & Safety</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Club Supervisor & Consultant -->
+        <div class="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-surface border border-accent/30 flex items-center justify-center text-accent text-2xl mb-6 shadow-inner">
+              <i class="fa-solid fa-building-shield"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Pillar 04</span>
+            <h3 class="text-xl font-display font-bold text-white mt-1 mb-3">Club Supervisor & Consultant</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Executive fitness governance for premier sporting organizations, luxury health clubs, university athletic wings, and corporate wellness headquarters.
+            </p>
+          </div>
+          <div class="mt-6 pt-5 border-t border-slate-800/80">
+            <ul class="text-xs space-y-2 text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-[10px]"></i> Safety & Risk Compliance Audits</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-[10px]"></i> Coach Staffing & Curriculum Design</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-[10px]"></i> Gym Equipment Sourcing & Layout</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: SERVICES & PORTFOLIO DEEP-DIVE (TABBED) -->
+  <section id="services" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-accent text-xs font-bold uppercase tracking-widest block mb-2">Scope of Engagement</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">
+            Tailored Engagement Frameworks
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md">
+          Select an advisory category to review protocols, deliverables, and service scopes engineered for decisive results.
+        </p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-charcoal border border-borderMuted mb-8">
+        <button onclick="switchTab('tab-pt')" id="btn-tab-pt" class="tab-btn active px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-accent text-obsidian shadow-md">
+          <i class="fa-solid fa-dumbbell mr-1.5"></i> 1-on-1 PT Retainer
+        </button>
+        <button onclick="switchTab('tab-hpc')" id="btn-tab-hpc" class="tab-btn px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white transition-all">
+          <i class="fa-solid fa-bolt mr-1.5"></i> High-Performance Coaching
+        </button>
+        <button onclick="switchTab('tab-escort')" id="btn-tab-escort" class="tab-btn px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white transition-all">
+          <i class="fa-solid fa-user-shield mr-1.5"></i> VIP Private Gym Chaperone
+        </button>
+        <button onclick="switchTab('tab-club')" id="btn-tab-club" class="tab-btn px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white transition-all">
+          <i class="fa-solid fa-building-circle-check mr-1.5"></i> Sporting Club Advisory
+        </button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="glass-card rounded-2xl p-8 sm:p-12 border border-borderMuted">
+        
+        <!-- CONTENT: TAB 1 (PT) -->
+        <div id="tab-pt" class="tab-pane block">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-5">
+              <span class="inline-block px-3 py-1 rounded bg-accent/10 text-accent text-xs font-mono uppercase font-semibold">Tier 1: Bespoke Physique Engineering</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">Intensive 1-on-1 Personal Training & Longevity Architecture</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Reserved for corporate chiefs, entertainment stars, and dedicated individuals needing radical body recomposition or sustainable athletic resilience under extreme schedule constraints.
+              </p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-chart-line text-accent"></i> Biomarker Monitoring
+                  </h4>
+                  <p class="text-xs text-slate-400">Regular blood chemistry review, sleep stage tracking, and recovery metric adjustments.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-utensils text-accent"></i> Private Chef Directives
+                  </h4>
+                  <p class="text-xs text-slate-400">Custom meal macro-target guidelines handed directly to client domestic staff.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-person-shelter text-accent"></i> Sanctuary Facility Access
+                  </h4>
+                  <p class="text-xs text-slate-400">Training conducted inside secure, private boutique gym suites with zero bystander intrusion.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-heart-pulse text-accent"></i> Longevity Integration
+                  </h4>
+                  <p class="text-xs text-slate-400">VO2 Max optimization, joint cartilage preservation, and zone 2 aerobic base building.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-charcoal/80 rounded-xl p-6 border border-slate-800 space-y-4">
+              <h4 class="text-sm font-bold uppercase tracking-wider text-white">Client Snapshot: C-Suite Executive</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                "In 16 weeks, Vance took my body fat from 24% to 13.8% while adding 4kg of lean mass, all while I traveled between London, Frankfurt, and Singapore without missing a beat."
+              </p>
+              <div class="pt-4 border-t border-slate-800 text-xs flex justify-between items-center text-slate-400">
+                <span>Engagement Model:</span>
+                <span class="text-white font-medium">Quarterly Retainer (3x/wk)</span>
+              </div>
+              <a href="#consultation" class="block text-center w-full py-3 rounded-lg bg-surface border border-accent/40 text-accent font-bold text-xs uppercase tracking-wider hover:bg-accent hover:text-obsidian transition-colors">
+                Apply for Private PT Waitlist
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENT: TAB 2 (High Performance Coaching) -->
+        <div id="tab-hpc" class="tab-pane hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-5">
+              <span class="inline-block px-3 py-1 rounded bg-accent/10 text-accent text-xs font-mono uppercase font-semibold">Tier 2: Speed, Power & Agility Mastery</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">High-Performance Sport-Specific Athletic Conditioning</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Engineered for tennis touring pros, football athletes, combat sports fighters, and motorsports racers who require milliseconds off their sprint splits and supreme neuromuscular durability.
+              </p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-gauge-high text-accent"></i> VBT (Velocity Based Training)
+                  </h4>
+                  <p class="text-xs text-slate-400">Linear encoder tracking on barbell lifts to maximize peak power wattage output.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-wind text-accent"></i> Multi-Planar Deceleration
+                  </h4>
+                  <p class="text-xs text-slate-400">Eccentric braking protocols that safeguard ACLs and augment change-of-direction speed.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-trophy text-accent"></i> Peaking & Taper Protocols
+                  </h4>
+                  <p class="text-xs text-slate-400">Synchronized training cycles aligning with major tournaments and championship fixtures.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-brain text-accent"></i> Cognitive Agility Drills
+                  </h4>
+                  <p class="text-xs text-slate-400">Reaction-time light gates and dual-task neuromuscular stimulation under fatigued states.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-charcoal/80 rounded-xl p-6 border border-slate-800 space-y-4">
+              <h4 class="text-sm font-bold uppercase tracking-wider text-white">Pro Athlete Impact</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                "Vance engineered my pre-season camp. 0.18s shaved off my 20-meter acceleration, and I experienced zero soft-tissue strains during a grueling 38-fixture domestic campaign."
+              </p>
+              <div class="pt-4 border-t border-slate-800 text-xs flex justify-between items-center text-slate-400">
+                <span>Discipline:</span>
+                <span class="text-white font-medium">Top Flight Rugby & Football</span>
+              </div>
+              <a href="#consultation" class="block text-center w-full py-3 rounded-lg bg-surface border border-accent/40 text-accent font-bold text-xs uppercase tracking-wider hover:bg-accent hover:text-obsidian transition-colors">
+                Enquire For Pro Athlete Camp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENT: TAB 3 (Private Gym Escort / VIP Chaperone) -->
+        <div id="tab-escort" class="tab-pane hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-5">
+              <span class="inline-block px-3 py-1 rounded bg-goldAccent/10 text-goldAccent text-xs font-mono uppercase font-semibold">Tier 3: Executive Protection & Wellness Accompanying</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">Private Gym Escort & VIP Fitness Chaperone</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Designed for ultra-high-net-worth individuals (UHNWI), family offices, traveling dignitaries, and celebrities. Vance serves as your dedicated, discreet workout companion, physical security presence, and fitness floor manager wherever you stay in the world.
+              </p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-plane-departure text-goldAccent"></i> Global Travel Companion
+                  </h4>
+                  <p class="text-xs text-slate-400">Available to accompany clients on private jet itineraries, yacht charters, and international retreats.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-shield-halved text-goldAccent"></i> Floor Buffer & Discretion
+                  </h4>
+                  <p class="text-xs text-slate-400">Guarantees no unwanted interruptions, photographs, or filming in public luxury gyms and member clubs.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-key text-goldAccent"></i> Turnkey Equipment Prep
+                  </h4>
+                  <p class="text-xs text-slate-400">Advance site reconnaissance of hotel gym suites, sanitization checks, and custom gear staging.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-file-contract text-goldAccent"></i> Ironclad Non-Disclosure
+                  </h4>
+                  <p class="text-xs text-slate-400">Institutional-grade privacy compliance. No social media posting, zero disclosure guaranteed.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-charcoal/80 rounded-xl p-6 border border-goldAccent/30 space-y-4">
+              <div class="flex items-center gap-2 text-goldAccent text-xs font-bold uppercase tracking-wider">
+                <i class="fa-solid fa-crown"></i> Concierge Protocol Case
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                "Having Vance chaperone my workouts while conducting business across Dubai, Paris, and Manhattan brought complete peace of mind. He secures the perimeter, calibrates the weights, keeps me strictly on tempo, and maintains unyielding discretion."
+              </p>
+              <div class="pt-4 border-t border-slate-800 text-xs flex justify-between items-center text-slate-400">
+                <span>Client Classification:</span>
+                <span class="text-goldAccent font-semibold">Global Tech Founder (Private Office)</span>
+              </div>
+              <a href="#consultation" class="block text-center w-full py-3 rounded-lg bg-goldAccent text-obsidian font-bold text-xs uppercase tracking-wider hover:bg-amber-300 transition-colors">
+                Request Chaperone Vetting
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENT: TAB 4 (Club Supervisor & Consultant) -->
+        <div id="tab-club" class="tab-pane hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-5">
+              <span class="inline-block px-3 py-1 rounded bg-accent/10 text-accent text-xs font-mono uppercase font-semibold">Tier 4: Enterprise & Institutional Advisory</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">Sporting Club Supervision & Operational Consulting</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Providing sporting boards, country clubs, resort gym directors, and athletic directors with executive supervision, safety certification compliance, and world-class athletic curriculum design.
+              </p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-list-check text-accent"></i> Facility Safety & Liability Audits
+                  </h4>
+                  <p class="text-xs text-slate-400">Comprehensive risk reviews reducing insurer premiums and securing member safety standards.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-chalkboard-user text-accent"></i> Staff S&C Development
+                  </h4>
+                  <p class="text-xs text-slate-400">Upskilling internal trainers, coaches, and gym supervisors in modern periodization and emergency care.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-cubes-stacked text-accent"></i> Academy Syllabus Design
+                  </h4>
+                  <p class="text-xs text-slate-400">Developing age-graded long-term athlete development (LTAD) frameworks for youth squads.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-surface/70 border border-slate-800">
+                  <h4 class="font-bold text-white text-sm flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-compass-drafting text-accent"></i> Architecture & Biomechanical Layout
+                  </h4>
+                  <p class="text-xs text-slate-400">Optimizing weight room flow, flooring density, acoustics, and bio-ergonomic equipment acquisition.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-charcoal/80 rounded-xl p-6 border border-slate-800 space-y-4">
+              <h4 class="text-sm font-bold uppercase tracking-wider text-white">Institutional Engagement</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                "Vance restructured our Premier Division club's strength facility and gym supervision protocol. In twelve months, staff accountability jumped tenfold and soft tissue down-time dropped 34%."
+              </p>
+              <div class="pt-4 border-t border-slate-800 text-xs flex justify-between items-center text-slate-400">
+                <span>Organization:</span>
+                <span class="text-white font-medium">Metropolitan Athletic Association</span>
+              </div>
+              <a href="#consultation" class="block text-center w-full py-3 rounded-lg bg-surface border border-accent/40 text-accent font-bold text-xs uppercase tracking-wider hover:bg-accent hover:text-obsidian transition-colors">
+                Book Club Audit Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: ADVISORY DOSSIER / CASE STUDIES -->
+  <section id="case-studies" class="py-20 bg-charcoal/50 border-t border-b border-borderMuted/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-accent text-xs font-bold uppercase tracking-widest block mb-2">Verified Outgrowths</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Advisory Dossier</h2>
+        <p class="text-slate-400 text-sm mt-3">Selected anonymized case profiles illustrating real-world deliverables across our core domains.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Case 1 -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300">CASE: #EXEC-419</span>
+              <span class="text-xs text-accent font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-shield"></i> VIP Escort + PT
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Multi-City Roadshow Physique Conditioning</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Accompanied a private equity managing partner across 7 international capital cities over 42 days. Delivered high-yield 40-minute hotel room and private club workouts, monitored bio-markers, and ensured complete privacy in high-traffic European facilities.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-300">
+            <span class="text-slate-500 block mb-1">Outcome:</span>
+            <span class="text-white font-medium">+3kg lean tissue, zero travel fatigue episodes, 100% schedule adherence.</span>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300">CASE: #ATH-882</span>
+              <span class="text-xs text-accent font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-bolt"></i> High-Performance
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Olympic Class Sprint Acceleration Camp</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Designed a proprietary 12-week off-season sprint and eccentric hamstring program for an elite wide receiver / winger. Utilized high-speed cinematography, force plates, and contrast potentiation.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-300">
+            <span class="text-slate-500 block mb-1">Outcome:</span>
+            <span class="text-white font-medium">Top sprint speed increased from 33.8 km/h to 35.6 km/h. Zero muscle strains recorded.</span>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300">CASE: #CLUB-104</span>
+              <span class="text-xs text-accent font-semibold flex items-center gap-1">
+                <i class="fa-solid fa-building-circle-check"></i> Club Director Advisory
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Country Club Performance Wing Modernization</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Supervised the $1.8M redesign and operational overhaul of a historic athletic facility. Retrained 14 floor trainers, deployed digital load monitoring protocols, and restructured equipment zoning for member safety.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-300">
+            <span class="text-slate-500 block mb-1">Outcome:</span>
+            <span class="text-white font-medium">Facility member utilization up 72%, annual liability claims reduced to zero.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: CREDENTIALS & GOVERNANCE ACCREDITATIONS -->
+  <section id="credentials" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-accent text-xs font-bold uppercase tracking-widest block">Pedigree & Qualifications</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">
+            Uncompromised Standards of Practice
+          </h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Every program, consultation, and private assignment is underpinned by terminal sports science qualifications, global strength credentials, and formal emergency risk certifications.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-surface border border-slate-800">
+              <i class="fa-solid fa-graduation-cap text-accent text-lg"></i>
+              <div>
+                <div class="text-sm font-bold text-white">M.Sc. Human Performance & Biomechanics</div>
+                <div class="text-xs text-slate-400">Loughborough University (First Class Honors)</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-surface border border-slate-800">
+              <i class="fa-solid fa-certificate text-accent text-lg"></i>
+              <div>
+                <div class="text-sm font-bold text-white">NSCA CSCS*D & RSCC*E</div>
+                <div class="text-xs text-slate-400">Certified Strength & Conditioning Specialist with Distinction</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-surface border border-slate-800">
+              <i class="fa-solid fa-heart-pulse text-accent text-lg"></i>
+              <div>
+                <div class="text-sm font-bold text-white">Tactical Trauma & Advanced First Responder</div>
+                <div class="text-xs text-slate-400">PHTLS & AED Certified for VIP Escort Protocols</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-surface border border-slate-800">
+              <i class="fa-solid fa-shield-virus text-accent text-lg"></i>
+              <div>
+                <div class="text-sm font-bold text-white">Facility Safety Supervisor License</div>
+                <div class="text-xs text-slate-400">Club Fitness Governance & Occupational Risk Auditor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Credentials Grid Banner -->
+        <div class="lg:col-span-7 glass-card rounded-2xl p-8 border border-borderMuted">
+          <h3 class="text-lg font-display font-bold text-white mb-6 flex items-center justify-between">
+            <span>Guaranteed Operational Protocols</span>
+            <span class="text-xs font-mono text-accent bg-accent/10 px-3 py-1 rounded">VANCE KANE CODE</span>
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <div class="text-accent font-bold text-sm flex items-center gap-2">
+                <i class="fa-solid fa-user-lock"></i> Absolute Client Privacy
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Bi-lateral Non-Disclosure Agreements (NDAs) signed prior to discovery calls. Zero geo-tagging, no personal branding exploitation.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="text-accent font-bold text-sm flex items-center gap-2">
+                <i class="fa-solid fa-microchip"></i> Evidence-Led Methodologies
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                No trendy fitness fads. Every rep, set, recovery window, and protocol is rooted in peer-reviewed exercise physiology and measurable KPIs.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="text-accent font-bold text-sm flex items-center gap-2">
+                <i class="fa-solid fa-globe"></i> Frictionless Mobility
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Full valid international visas and security clearances facilitating rapid travel to private islands, estates, and yachts.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="text-accent font-bold text-sm flex items-center gap-2">
+                <i class="fa-solid fa-scale-balanced"></i> Regulatory Risk Safeguards
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Sporting club consulting aligned with OSHA, UK Athletics, and international sports federation fitness standards.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Quote -->
+          <div class="mt-8 p-4 rounded-xl bg-charcoal/90 border border-slate-800 text-xs italic text-slate-300 text-center">
+            "Athletic supremacy is neither accidental nor chaotic. It is calculated, protected, and executed with unrelenting precision."
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: FAQ ACCORDION -->
+  <section id="faq" class="py-20 bg-charcoal/30 border-t border-borderMuted/60">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-14">
+        <span class="text-accent text-xs font-bold uppercase tracking-widest block mb-2">Clarification & Process</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">Frequently Addressed Questions</h2>
+        <p class="text-slate-400 text-sm mt-2">Concise answers regarding retainers, travel arrangements, and club consultations.</p>
+      </div>
+
+      <div class="space-y-4" id="faqAccordion">
+        
+        <!-- FAQ 1 -->
+        <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-medium text-sm focus:outline-none">
+            <span>What does the "Private Gym Escort / VIP Fitness Chaperone" service entail?</span>
+            <i class="fa-solid fa-chevron-down text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 bg-charcoal/50 text-xs text-slate-400">
+            <div class="py-4 leading-relaxed">
+              This service is bespoke to high-profile figures, diplomats, or executives who cannot train in standard public gyms without disturbance, compromise to security, or unwanted photography. Vance arrives ahead of time, inspects and sanitizes the workout area, acts as a physical floor buffer, guides your workout with maximum efficiency, and departs quietly. Travel accompaniment across global locations is available on monthly or quarterly retainers.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-medium text-sm focus:outline-none">
+            <span>How does club supervision consulting work for sporting organizations?</span>
+            <i class="fa-solid fa-chevron-down text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 bg-charcoal/50 text-xs text-slate-400">
+            <div class="py-4 leading-relaxed">
+              Vance acts as an external Director of Performance or interim Supervisor. Engagements begin with an on-site audit of the club's gym operations, trainer qualifications, emergency readiness, and athletic programming. Vance provides an executive roadmap to eliminate liability, optimize member or athlete progression, and train staff to world-class coaching benchmarks.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-medium text-sm focus:outline-none">
+            <span>Can Vance work with private security details and executive protection teams?</span>
+            <i class="fa-solid fa-chevron-down text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 bg-charcoal/50 text-xs text-slate-400">
+            <div class="py-4 leading-relaxed">
+              Yes. Vance has extensive experience coordinating with Close Protection Officers (CPOs) and private security coordinators. Training venues, transit times, and private club access are synchronized seamlessly with your security bubble without creating logistical friction.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+          <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-medium text-sm focus:outline-none">
+            <span>What is the minimum engagement period for high-performance athletic coaching?</span>
+            <i class="fa-solid fa-chevron-down text-accent transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 bg-charcoal/50 text-xs text-slate-400">
+            <div class="py-4 leading-relaxed">
+              High-performance athletic development is offered through intensive 6-to-12-week pre-season blocks or full annual seasonal campaign retainers. A minimum of 6 weeks is mandatory to execute valid physiological testing, neuromuscular adaptations, and sport-specific transference.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: INTAKE & CONSULTATION BOOKING MODAL/FORM -->
+  <section id="consultation" class="py-24 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      
+      <div class="glass-card rounded-3xl p-8 sm:p-14 border border-accent/30 shadow-2xl relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <div class="lg:col-span-5 space-y-5">
+            <div class="inline-flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-wider">
+              <i class="fa-solid fa-lock"></i> Confidential Inquiry
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+              Initiate Private Consultation
+            </h2>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Direct inquiries are handled with absolute confidentiality. Outline your requirement or facility scope below to initiate the preliminary briefing.
+            </p>
+
+            <div class="space-y-4 pt-4 border-t border-slate-800 text-xs">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-phone-volume text-accent mt-1"></i>
+                <div>
+                  <span class="text-white font-semibold block">Direct Concierge Hotline</span>
+                  <span class="text-slate-400">+1 (800) 555-0199</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <i class="fa-brands fa-whatsapp text-accent mt-1 text-sm"></i>
+                <div>
+                  <span class="text-white font-semibold block">Encrypted Signal / WhatsApp Desk</span>
+                  <a href="https://wa.me/18005550199" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Launch Secure Chat Session</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-envelope text-accent mt-1"></i>
+                <div>
+                  <span class="text-white font-semibold block">Executive Advisory Desk</span>
+                  <span class="text-slate-400">concierge@vancekaneperformance.com</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Discretion Seal -->
+            <div class="p-3.5 rounded-xl bg-charcoal/80 border border-slate-800 flex items-center gap-3 text-xs text-slate-400">
+              <i class="fa-solid fa-user-shield text-goldAccent text-lg"></i>
+              <span>All engagements covered by standard reciprocal Non-Disclosure Agreement prior to onboarding.</span>
+            </div>
+          </div>
+
+          <!-- Interactive Form -->
+          <div class="lg:col-span-7">
+            <form id="intakeForm" class="space-y-4" onsubmit="handleFormSubmit(event)">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5" for="fullName">Full Name / Office</label>
+                  <input type="text" id="fullName" required placeholder="e.g. Sterling Thorne" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-slate-700 text-white text-xs placeholder-slate-500 focus:outline-none focus:border-accent transition-colors" />
+                </div>
+                <div>
+                  <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5" for="email">Confidential Email</label>
+                  <input type="email" id="email" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-slate-700 text-white text-xs placeholder-slate-500 focus:outline-none focus:border-accent transition-colors" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5" for="phone">Phone / WhatsApp</label>
+                  <input type="tel" id="phone" placeholder="+1 (555) 000-0000" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-slate-700 text-white text-xs placeholder-slate-500 focus:outline-none focus:border-accent transition-colors" />
+                </div>
+                <div>
+                  <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5" for="servicePillar">Discipline Focus</label>
+                  <select id="servicePillar" required class="w-full px-4 py-3 rounded-xl bg-charcoal border border-slate-700 text-white text-xs focus:outline-none focus:border-accent transition-colors">
+                    <option value="" disabled selected>Select Primary Pillar</option>
+                    <option value="pt">1-on-1 Elite Personal Training</option>
+                    <option value="hpc">High-Performance Sports Coaching</option>
+                    <option value="escort">Private Gym Escort / VIP Chaperone</option>
+                    <option value="club">Sporting Club Supervision & Audit</option>
+                    <option value="multi">Comprehensive Multi-Service Retainer</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5" for="locationScope">Target Location / Travel Scope</label>
+                <input type="text" id="locationScope" placeholder="e.g. London & Geneva, Private Villa, or On-site Club Facility" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-slate-700 text-white text-xs placeholder-slate-500 focus:outline-none focus:border-accent transition-colors" />
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5" for="notes">Brief Scope & Special Directives</label>
+                <textarea id="notes" rows="4" placeholder="Detail goals, timelines, confidentiality instructions, or facility specifications..." class="w-full px-4 py-3 rounded-xl bg-charcoal border border-slate-700 text-white text-xs placeholder-slate-500 focus:outline-none focus:border-accent transition-colors"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl bg-accent text-obsidian font-display font-bold text-xs uppercase tracking-widest hover:bg-emerald-300 transition-all shadow-lg shadow-accent/20 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+                <span>Submit Confidential Brief</span>
+              </button>
+            </form>
+
+            <!-- Form Success Message -->
+            <div id="formSuccessMessage" class="hidden mt-4 p-4 rounded-xl bg-accent/20 border border-accent text-accent text-xs font-semibold text-center">
+              <i class="fa-solid fa-circle-check mr-2"></i> Your brief has been received. Vance Kane's executive desk will respond within 6 hours under strict confidentiality.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-charcoal py-14 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        
+        <div class="space-y-3 md:col-span-2">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-surface border border-accent/40 flex items-center justify-center text-accent font-display font-extrabold text-sm">
+              VK
+            </div>
+            <span class="font-display font-bold text-base text-white tracking-wider">VANCE KANE</span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+            High-Performance Sports Coach, Master Personal Trainer, Private Gym Escort, and Institutional Sporting Club Consultant. Operating worldwide with verified credentials and total discretion.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://wa.me/18005550199" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-slate-300 hover:text-accent border border-slate-800 hover:border-accent transition-colors" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+            </a>
+            <a href="mailto:concierge@vancekaneperformance.com" class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-slate-300 hover:text-accent border border-slate-800 hover:border-accent transition-colors" aria-label="Email">
+              <i class="fa-solid fa-envelope text-sm"></i>
+            </a>
+            <a href="#consultation" class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-slate-300 hover:text-accent border border-slate-800 hover:border-accent transition-colors" aria-label="Telegram Concierge">
+              <i class="fa-brands fa-telegram text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold uppercase tracking-wider mb-3 text-[11px]">Primary Portfolios</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#services" class="hover:text-accent transition-colors">Elite Personal Training</a></li>
+            <li><a href="#services" class="hover:text-accent transition-colors">High-Performance Athletic Systems</a></li>
+            <li><a href="#services" class="hover:text-accent transition-colors">VIP Private Gym Chaperone</a></li>
+            <li><a href="#services" class="hover:text-accent transition-colors">Club Facility & Governance Audits</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold uppercase tracking-wider mb-3 text-[11px]">Executive Governance</h4>
+          <ul class="space-y-2 text-xs">
+            <li><span class="text-slate-300">Confidentiality Protocol:</span> Strict Mutual NDA</li>
+            <li><span class="text-slate-300">Liability Assurance:</span> £10M Global Cover</li>
+            <li><span class="text-slate-300">Jurisdictions:</span> UK, EU, UAE, US & Australasia</li>
+            <li><span class="text-slate-300">Response Window:</span> Under 6 Hours</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div>
+          &copy; <span id="currentYear"></span> Vance Kane Performance Advisory. All rights reserved.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-300 transition-colors">Privacy Charter</a>
+          <a href="#" class="hover:text-slate-300 transition-colors">VIP Chaperone Conduct Standard</a>
+          <a href="#" class="hover:text-slate-300 transition-colors">Terms of Retainer</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Set Current Year in Footer
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+    // Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a navigation item is clicked
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Service Tabs Switcher
+    function switchTab(tabId) {
+      // Hide all panes
+      document.querySelectorAll('.tab-pane').forEach(pane => {
+        pane.classList.add('hidden');
+        pane.classList.remove('block');
+      });
+
+      // Show targeted pane
+      const targetPane = document.getElementById(tabId);
+      if (targetPane) {
+        targetPane.classList.remove('hidden');
+        targetPane.classList.add('block');
+      }
+
+      // Reset all buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-accent', 'text-obsidian', 'shadow-md');
+        btn.classList.add('text-slate-400');
+      });
+
+      // Activate clicked button
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-400');
+        activeBtn.classList.add('bg-accent', 'text-obsidian', 'shadow-md');
+      }
+    }
+
+    // FAQ Accordion Toggle
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+        // Close all answers
+        document.querySelectorAll('.faq-answer').forEach(el => {
+          el.style.maxHeight = null;
+        });
+        document.querySelectorAll('.faq-toggle i').forEach(ic => {
+          ic.classList.remove('rotate-180');
+        });
+
+        // Toggle current
+        if (!isOpen) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+
+    // Animated Metric Counters on Scroll
+    let countersDone = false;
+    const counters = document.querySelectorAll('.count-up');
+    
+    function animateCounters() {
+      if (countersDone) return;
+      const heroSection = document.querySelector('.count-up');
+      if (!heroSection) return;
+
+      const rect = heroSection.getBoundingClientRect();
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          let current = 0;
+          const step = Math.max(1, Math.ceil(target / 40));
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              counter.innerText = target + (target === 100 ? '%' : '+');
+              clearInterval(timer);
+            } else {
+              counter.innerText = current;
+            }
+          }, 35);
+        });
+        countersDone = true;
+      }
+    }
+
+    window.addEventListener('scroll', animateCounters);
+    window.addEventListener('load', animateCounters);
+
+    // Form Submission Handling
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('intakeForm');
+      const successMsg = document.getElementById('formSuccessMessage');
+      
+      // Simulate submission processing
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i> Encrypting & Dispatching...';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        form.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        successMsg.classList.remove('hidden');
+
+        setTimeout(() => {
+          successMsg.classList.add('hidden');
+        }, 8000);
+      }, 1200);
+    }
+  </script>
+</body>
+</html>

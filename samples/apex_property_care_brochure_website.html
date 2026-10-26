@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Property Care | Complete Residential & Commercial Maintenance</title>
+  <meta name="description" content="Professional property maintenance, repairs, tenancy turnarounds, pressure washing, grounds care, and strata management services. Fully insured with $20M Public Liability.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            },
+            slateNavy: {
+              800: '#111827',
+              900: '#0b1120',
+              950: '#030712',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom clip-path & slider utilities */
+    .clip-handle {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
+    }
+    /* Smooth transitions */
+    .transition-base {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-slateNavy-900 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-brand-400 font-medium">
+          <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+          24/7 Priority Emergency Attendance Available
+        </span>
+        <span class="hidden md:inline text-slate-600">|</span>
+        <span class="hidden md:inline text-slate-400">Serving Metro & Regional Districts</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-brand-400"></i> $20M Public Liability</span>
+        <span class="hidden sm:flex items-center gap-1.5"><i data-lucide="file-check-2" class="w-4 h-4 text-brand-400"></i> Police Cleared & Licensed</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Glassmorphic Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200/80 transition-all shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-600 to-emerald-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="wrench" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="font-display font-extrabold text-xl text-slate-900 tracking-tight block leading-none">
+            APEX <span class="text-brand-600">PROPERTY</span>
+          </span>
+          <span class="text-[10px] tracking-widest text-slate-500 font-semibold uppercase">Care & Maintenance</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+        <a href="#services" class="hover:text-brand-600 transition-colors">Services</a>
+        <a href="#why-us" class="hover:text-brand-600 transition-colors">Why Apex</a>
+        <a href="#showcase" class="hover:text-brand-600 transition-colors">Before & After</a>
+        <a href="#estimator" class="hover:text-brand-600 transition-colors">Instant Estimate</a>
+        <a href="#testimonials" class="hover:text-brand-600 transition-colors">Reviews</a>
+        <a href="#faq" class="hover:text-brand-600 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Desktop Callout & CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="tel:1300892739" class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 transition-colors text-left">
+          <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center">
+            <i data-lucide="phone-call" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Direct Dispatch</div>
+            <div class="text-xs font-bold text-slate-900">1300 892 739</div>
+          </div>
+        </a>
+
+        <a href="#quote-section" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm shadow-md shadow-brand-600/25 hover:shadow-lg hover:shadow-brand-600/35 transition-all flex items-center gap-2">
+          <span>Get Free Quote</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Toggle menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-5 shadow-xl transition-all">
+      <div class="flex flex-col space-y-4 font-semibold text-slate-700 text-base">
+        <a href="#services" class="mobile-link hover:text-brand-600">Core Services</a>
+        <a href="#why-us" class="mobile-link hover:text-brand-600">Why Choose Us</a>
+        <a href="#showcase" class="mobile-link hover:text-brand-600">Before & After Project</a>
+        <a href="#estimator" class="mobile-link hover:text-brand-600">Instant Estimate Tool</a>
+        <a href="#testimonials" class="mobile-link hover:text-brand-600">Client Reviews</a>
+        <a href="#faq" class="mobile-link hover:text-brand-600">Common Questions</a>
+        <hr class="border-slate-100">
+        <div class="pt-2 flex flex-col gap-3">
+          <a href="tel:1300892739" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-100 font-bold text-slate-900">
+            <i data-lucide="phone" class="w-4 h-4 text-brand-600"></i>
+            Call 1300 892 739
+          </a>
+          <a href="#quote-section" class="mobile-link flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-600 font-bold text-white shadow-md">
+            Request an Inspection / Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-100/70 via-white to-slate-50 pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <!-- Subtle Background Grid & Blur Orbs -->
+    <div class="absolute inset-0 bg-[radial-gradient(#059669_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-200/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-32 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-800 text-xs sm:text-sm font-semibold tracking-wide">
+            <span class="flex h-2 w-2 rounded-full bg-brand-600"></span>
+            Certified Strata, Commercial & Residential Upkeep
+          </div>
+
+          <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.12]">
+            Reliable, End-to-End <br class="hidden sm:inline">
+            <span class="bg-gradient-to-r from-brand-700 via-brand-600 to-teal-600 bg-clip-text text-transparent">Property Maintenance</span> Made Effortless.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            From scheduled strata grounds care and rapid tenancy turnarounds to commercial facility repairs. One accountable team, transparent digital reporting, and guaranteed quality trades.
+          </p>
+
+          <!-- Dual CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#quote-section" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-base shadow-xl shadow-brand-600/25 hover:shadow-2xl hover:shadow-brand-600/35 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="calendar" class="w-5 h-5"></i>
+              <span>Request Inspection & Quote</span>
+            </a>
+            <a href="tel:1300892739" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-900 font-bold text-base border border-slate-300 shadow-sm transition-all flex items-center justify-center gap-2">
+              <i data-lucide="phone-outgoing" class="w-5 h-5 text-brand-600"></i>
+              <span>Speak to a Supervisor</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges List -->
+          <div class="pt-6 border-t border-slate-200/80">
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Trusted By 180+ Real Estate Agencies & Strata Corporations</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="shield" class="w-4 h-4"></i>
+                </div>
+                <div class="text-xs leading-tight">
+                  <strong class="block text-slate-900 font-semibold">$20M Insured</strong>
+                  <span class="text-slate-500">Public Liability</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="camera" class="w-4 h-4"></i>
+                </div>
+                <div class="text-xs leading-tight">
+                  <strong class="block text-slate-900 font-semibold">Photo Reports</strong>
+                  <span class="text-slate-500">Every completion</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="zap" class="w-4 h-4"></i>
+                </div>
+                <div class="text-xs leading-tight">
+                  <strong class="block text-slate-900 font-semibold">Rapid Dispatch</strong>
+                  <span class="text-slate-500">2-4hr urgent SLA</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="award" class="w-4 h-4"></i>
+                </div>
+                <div class="text-xs leading-tight">
+                  <strong class="block text-slate-900 font-semibold">Vetted Trades</strong>
+                  <span class="text-slate-500">Police Cleared</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card Feature / Visual Mockup -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Glow background -->
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-600 to-teal-500 opacity-20 blur-xl"></div>
+            
+            <div class="relative bg-white rounded-2xl border border-slate-200/90 shadow-2xl p-6 sm:p-7 space-y-6">
+              <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                <div class="flex items-center gap-3">
+                  <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Live Operations Board</span>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-brand-50 text-brand-700 border border-brand-200">
+                  Active Dispatch Ready
+                </span>
+              </div>
+
+              <!-- Quick Stats Metric Pills -->
+              <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                  <div class="font-display text-xl font-bold text-slate-900">99.4%</div>
+                  <div class="text-[11px] text-slate-500 font-medium">On-Time SLA</div>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                  <div class="font-display text-xl font-bold text-brand-600">4,200+</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Jobs Closed</div>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                  <div class="font-display text-xl font-bold text-slate-900">4.9/5</div>
+                  <div class="text-[11px] text-slate-500 font-medium">Agency Rating</div>
+                </div>
+              </div>
+
+              <!-- Interactive mini-summary box -->
+              <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl p-5 shadow-inner">
+                <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                  <span>Recent Work Order #APX-8821</span>
+                  <span class="text-emerald-400 font-semibold flex items-center gap-1">
+                    <i data-lucide="check-circle" class="w-3 h-3"></i> Completed
+                  </span>
+                </div>
+                <h4 class="font-semibold text-sm text-white mb-1">Commercial Office Park - Exterior & Safety Audit</h4>
+                <p class="text-xs text-slate-300 mb-3">Pressure wash walkways, replace entrance door seals, inspect emergency exit hardware & clear stormwater grates.</p>
+                <div class="flex items-center justify-between text-xs pt-2 border-t border-slate-700/70 text-slate-400">
+                  <span>Signed off by: Knight Frank PM</span>
+                  <span class="text-brand-300 font-semibold">Report Generated</span>
+                </div>
+              </div>
+
+              <!-- Fast Quick-Quote CTA inside Hero -->
+              <div class="bg-brand-50 rounded-xl p-4 border border-brand-100 flex items-center justify-between gap-4">
+                <div>
+                  <div class="text-xs font-bold text-brand-900">Need a quote within 60 minutes?</div>
+                  <div class="text-[11px] text-brand-700">Property managers & landlords get priority quotes.</div>
+                </div>
+                <a href="#quote-section" class="flex-shrink-0 px-3.5 py-2 bg-brand-600 text-white rounded-lg text-xs font-semibold hover:bg-brand-700 transition-colors">
+                  Fast Estimate
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services Grid Section -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Comprehensive Capability</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">
+          Everything Your Property Needs Under One Roof
+        </h2>
+        <p class="text-slate-600 text-base mt-4">
+          Say goodbye to juggling half a dozen contractors. From regular garden upkeep to urgent drywall and lock replacements, our skilled teams deliver prompt craftsmanship.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1: Grounds & Garden Care -->
+        <div class="group bg-slate-50 hover:bg-white rounded-2xl p-7 border border-slate-200/90 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all">
+              <i data-lucide="trees" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900 mb-2.5">Grounds & Garden Care</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Regular mowing schedules, precision hedge sculpturing, mulch replacement, green waste clearing, and proactive seasonal weed control for pristine curb appeal.
+            </p>
+            <ul class="text-xs font-medium text-slate-700 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Scheduled strata & body corporate mowing</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Tree trimming & boundary clearance</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Irrigation testing & sprinkler repairs</li>
+            </ul>
+          </div>
+          <a href="#quote-section" onclick="selectService('Grounds & Garden Care')" class="text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5 pt-4 border-t border-slate-200">
+            Book Grounds Service <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Service 2: Building Repairs & Handyman -->
+        <div class="group bg-slate-50 hover:bg-white rounded-2xl p-7 border border-slate-200/90 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
+              <i data-lucide="hammer" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900 mb-2.5">Building Repairs & Handyman</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Rapid rectification of tenant damage, broken doors, loose cabinetry, door hardware upgrades, drywall patch-ups, and minor carpentry work.
+            </p>
+            <ul class="text-xs font-medium text-slate-700 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Plastering, holes & crack repairs</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Locksets, handles & deadbolts replacement</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Skirting boards, architraves & shelving</li>
+            </ul>
+          </div>
+          <a href="#quote-section" onclick="selectService('Building Repairs & Handyman')" class="text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5 pt-4 border-t border-slate-200">
+            Book Handyman Repairs <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Service 3: Pressure Washing & Exterior Cleaning -->
+        <div class="group bg-slate-50 hover:bg-white rounded-2xl p-7 border border-slate-200/90 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white transition-all">
+              <i data-lucide="droplets" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900 mb-2.5">Pressure Washing & Soft Wash</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              High-pressure rotary concrete cleaning, driveway rejuvenation, oil stain degreasing, exterior brick washdown, and gutter debris clearance.
+            </p>
+            <ul class="text-xs font-medium text-slate-700 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Driveways, footpaths & carparks</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Mold & lichen eradication treatments</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Multi-story gutter cleaning & downpipes</li>
+            </ul>
+          </div>
+          <a href="#quote-section" onclick="selectService('Pressure Washing & Exterior Cleaning')" class="text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5 pt-4 border-t border-slate-200">
+            Book Pressure Wash <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Service 4: Tenancy Turnarounds & Make-Ready -->
+        <div class="group bg-slate-50 hover:bg-white rounded-2xl p-7 border border-slate-200/90 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all">
+              <i data-lucide="key-round" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900 mb-2.5">Tenancy Turnarounds</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Engineered specifically for Property Managers and Landlords. Fast, turnkey turnover between leases to minimize vacancy days and secure premium rental yields.
+            </p>
+            <ul class="text-xs font-medium text-slate-700 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Full bond-return snagging & fixes</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Wall patch, sand & precision touch-up</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Smoke alarm & compliance certification</li>
+            </ul>
+          </div>
+          <a href="#quote-section" onclick="selectService('Tenancy Turnarounds')" class="text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5 pt-4 border-t border-slate-200">
+            Book Turnaround Package <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Service 5: Commercial Facility Maintenance -->
+        <div class="group bg-slate-50 hover:bg-white rounded-2xl p-7 border border-slate-200/90 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all">
+              <i data-lucide="building-2" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900 mb-2.5">Commercial Facilities & Strata</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Scheduled monthly or quarterly asset maintenance for corporate headquarters, industrial units, retail strips, and common areas.
+            </p>
+            <ul class="text-xs font-medium text-slate-700 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Fire exit & emergency light compliance</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Carpark line marking & speed bump fixes</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Restroom plumbing maintenance & seals</li>
+            </ul>
+          </div>
+          <a href="#quote-section" onclick="selectService('Commercial Facilities & Strata')" class="text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5 pt-4 border-t border-slate-200">
+            Book Commercial Care <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Service 6: Painting & Protective Coatings -->
+        <div class="group bg-slate-50 hover:bg-white rounded-2xl p-7 border border-slate-200/90 hover:border-brand-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all">
+              <i data-lucide="paint-bucket" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900 mb-2.5">Painting & Timber Sealing</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Interior room repaints, exterior weatherboard protection, fence recoating, deck sanding, and oiling to preserve exterior structural timber against harsh weather.
+            </p>
+            <ul class="text-xs font-medium text-slate-700 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Low-VOC interior wall & ceiling finishes</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Timber deck pressure wash & restaining</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Metal gate anti-corrosion enamels</li>
+            </ul>
+          </div>
+          <a href="#quote-section" onclick="selectService('Painting & Protective Coatings')" class="text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5 pt-4 border-t border-slate-200">
+            Book Painting Service <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Before / After Visual Slider Section -->
+  <section id="showcase" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brand-400 font-semibold text-sm uppercase tracking-wider">Proven Transformation</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-2">
+          Real Results: See The Difference
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Drag the interactive slider below to inspect our comprehensive exterior restoration and garden overhaul.
+        </p>
+      </div>
+
+      <!-- Before/After Slider Container -->
+      <div class="max-w-4xl mx-auto bg-slate-800 rounded-3xl p-3 sm:p-5 border border-slate-700 shadow-2xl">
+        <div id="slider-wrapper" class="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden select-none cursor-ew-resize">
+          
+          <!-- "AFTER" Layer (Full Background) -->
+          <div class="absolute inset-0 w-full h-full bg-gradient-to-tr from-emerald-950 via-slate-800 to-teal-900 flex flex-col justify-between p-6 sm:p-10">
+            <!-- Simulated High-End Finished Deck/Garden Graphic via Clean SVGs -->
+            <svg class="absolute inset-0 w-full h-full opacity-35" preserveAspectRatio="none" viewBox="0 0 800 500">
+              <rect x="0" y="320" width="800" height="180" fill="#047857" opacity="0.6" />
+              <!-- Pristine stone pavers -->
+              <path d="M 0 340 L 800 340 M 0 380 L 800 380 M 0 420 L 800 420 M 0 460 L 800 460" stroke="#34d399" stroke-width="2" stroke-dasharray="15,10" />
+              <!-- Trimmed Hedgeline -->
+              <path d="M 0 320 Q 100 290 200 320 T 400 320 T 600 320 T 800 320 L 800 500 L 0 500 Z" fill="#065f46" />
+              <!-- Restored Clean Wall -->
+              <rect x="0" y="0" width="800" height="320" fill="#1e293b" />
+              <circle cx="680" cy="90" r="45" fill="#f59e0b" opacity="0.8" />
+            </svg>
+
+            <div class="relative z-10 flex justify-end">
+              <span class="bg-brand-500/90 text-white font-extrabold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-lg backdrop-blur-md uppercase tracking-wide flex items-center gap-1.5">
+                <i data-lucide="sparkles" class="w-4 h-4"></i> After (Restored & Cleaned)
+              </span>
+            </div>
+            <div class="relative z-10 bg-slate-900/80 backdrop-blur-md p-4 rounded-xl border border-emerald-500/40 max-w-xs ml-auto">
+              <div class="text-xs font-bold text-brand-400">Restoration Highlights</div>
+              <p class="text-[11px] text-slate-200 mt-1 leading-snug">Industrial rotary hydro-wash, weed clearance, premium timber seal coat & hedging.</p>
+            </div>
+          </div>
+
+          <!-- "BEFORE" Layer (Clipped by slider handle) -->
+          <div id="before-layer" class="absolute inset-0 w-1/2 h-full bg-gradient-to-tr from-stone-900 via-neutral-900 to-amber-950 flex flex-col justify-between p-6 sm:p-10 border-r-2 border-white/80 overflow-hidden">
+            <!-- Simulated Neglected/Dirty Area -->
+            <svg class="absolute inset-0 w-full h-full opacity-40" preserveAspectRatio="none" viewBox="0 0 800 500">
+              <rect x="0" y="320" width="800" height="180" fill="#44403c" />
+              <!-- Dark mold & overgrown weeds -->
+              <path d="M 0 340 L 800 340 M 0 380 L 800 380" stroke="#78716c" stroke-width="2" />
+              <path d="M 0 300 C 50 240 120 340 180 270 C 240 330 310 260 380 310 L 400 500 L 0 500 Z" fill="#292524" />
+              <circle cx="120" cy="380" r="60" fill="#1c1917" opacity="0.9" />
+              <circle cx="280" cy="410" r="45" fill="#1c1917" opacity="0.8" />
+            </svg>
+
+            <div class="relative z-10 flex justify-start">
+              <span class="bg-slate-900/90 text-amber-300 font-extrabold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-lg backdrop-blur-md uppercase tracking-wide flex items-center gap-1.5 border border-amber-500/30">
+                <i data-lucide="alert-circle" class="w-4 h-4"></i> Before (Neglected)
+              </span>
+            </div>
+            <div class="relative z-10 bg-black/80 backdrop-blur-md p-4 rounded-xl border border-stone-700 max-w-xs">
+              <div class="text-xs font-bold text-amber-400">Previous Condition</div>
+              <p class="text-[11px] text-stone-300 mt-1 leading-snug">Severe grime & algae buildup, overgrown vegetation, slippery trip hazards.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Drag Handle Bar -->
+          <div id="slider-handle" class="absolute top-0 bottom-0 left-1/2 -ml-5 w-10 flex items-center justify-center cursor-ew-resize pointer-events-none z-30">
+            <div class="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center clip-handle shadow-2xl border-2 border-brand-500">
+              <i data-lucide="chevrons-left-right" class="w-5 h-5 text-brand-700"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Instructions -->
+        <div class="flex items-center justify-between text-xs text-slate-400 pt-4 px-2">
+          <span class="flex items-center gap-1"><i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Slide left to reveal After</span>
+          <span class="text-slate-500 font-mono">Drag or hover slider across image</span>
+          <span class="flex items-center gap-1">Slide right to reveal Before <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 'Why Choose Us' / Value Highlights Section -->
+  <section id="why-us" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">The Professional Standard</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
+          Why Top Property Managers Choose Apex
+        </h2>
+        <p class="text-slate-600 text-base mt-4">
+          We built our company specifically to eliminate the usual maintenance headaches: missing contractors, delayed invoices, untidy work, and zero photographic evidence.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+            <i data-lucide="camera" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Digital Photo Reports</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Every work order concludes with clear time-stamped Before & After images sent directly to your portal or email. Perfect for landlord sign-offs and bond claims.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+            <i data-lucide="receipt" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Itemized Invoicing</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Transparent pricing with zero hidden fees. Itemized tax invoices with broken-down labor and materials tailored for strata trust accounts and corporate software.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+            <i data-lucide="user-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Dedicated Account Lead</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            One single point of contact who understands your portfolio, property access codes, key collection protocols, and preferred tenant communication channels.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+            <i data-lucide="clock" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Guaranteed SLA Turnarounds</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Non-urgent quotes delivered within 24 hours; critical repairs attended within 2 to 4 hours. We keep your tenants satisfied and your assets fully compliant.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">OH&S & WHS Compliant</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Strict adherence to workplace health and safety guidelines, Safe Work Method Statements (SWMS), height safety certification, and full insurance coverage.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">100% Workmanship Warranty</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We stand behind every repair. If any repair doesn't meet the landlord's or agent's standard, we return within 24 hours to rectify it at zero additional cost.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Instant Quote / Ballpark Calculator Widget -->
+  <section id="estimator" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 rounded-3xl p-6 sm:p-10 text-white shadow-2xl border border-slate-800">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="inline-block px-3 py-1 bg-brand-500/20 text-brand-400 border border-brand-500/30 rounded-full text-xs font-semibold uppercase tracking-wider mb-2">
+            Interactive Calculator
+          </span>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            Instant Ballpark Cost Estimator
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm mt-2">
+            Configure your property requirements to calculate an estimated price range, then book with a single click.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+          <!-- Form Controls -->
+          <div class="md:col-span-7 space-y-6">
+            <!-- Property Type Selector -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">1. Property Type</label>
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" onclick="setPropType('residential')" id="btn-prop-residential" class="prop-btn py-2.5 px-3 rounded-xl text-xs font-semibold border border-brand-500 bg-brand-600 text-white transition-all text-center">
+                  Residential
+                </button>
+                <button type="button" onclick="setPropType('commercial')" id="btn-prop-commercial" class="prop-btn py-2.5 px-3 rounded-xl text-xs font-semibold border border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all text-center">
+                  Commercial
+                </button>
+                <button type="button" onclick="setPropType('strata')" id="btn-prop-strata" class="prop-btn py-2.5 px-3 rounded-xl text-xs font-semibold border border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all text-center">
+                  Strata / Body Corp
+                </button>
+              </div>
+            </div>
+
+            <!-- Property Size -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">2. Property Scope / Size</label>
+                <span id="size-label" class="text-xs font-bold text-brand-400">Medium (2-3 Bed / ~200m²)</span>
+              </div>
+              <input type="range" id="size-range" min="1" max="3" value="2" step="1" oninput="updateEstimate()" class="w-full accent-brand-500 cursor-pointer">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                <span>Compact / 1-2 Bed</span>
+                <span>Standard / Medium</span>
+                <span>Extensive / Commercial</span>
+              </div>
+            </div>
+
+            <!-- Service Checkboxes -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">3. Services Required (Select one or more)</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-800/80 border border-slate-700 hover:border-slate-600 cursor-pointer">
+                  <input type="checkbox" id="svc-garden" checked onchange="updateEstimate()" class="rounded text-brand-600 focus:ring-0">
+                  <span>Grounds & Garden Mowing</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-800/80 border border-slate-700 hover:border-slate-600 cursor-pointer">
+                  <input type="checkbox" id="svc-handyman" checked onchange="updateEstimate()" class="rounded text-brand-600 focus:ring-0">
+                  <span>Handyman & Repairs</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-800/80 border border-slate-700 hover:border-slate-600 cursor-pointer">
+                  <input type="checkbox" id="svc-pressure" onchange="updateEstimate()" class="rounded text-brand-600 focus:ring-0">
+                  <span>Pressure Jet Washing</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-800/80 border border-slate-700 hover:border-slate-600 cursor-pointer">
+                  <input type="checkbox" id="svc-turnaround" onchange="updateEstimate()" class="rounded text-brand-600 focus:ring-0">
+                  <span>End of Lease Turnover</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estimation Display Card -->
+          <div class="md:col-span-5 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700 text-center flex flex-col justify-between h-full">
+            <div>
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-1">Estimated Ballpark</span>
+              <div class="flex items-baseline justify-center gap-1 my-3">
+                <span class="text-2xl text-brand-400 font-extrabold">$</span>
+                <span id="estimate-price" class="font-display text-4xl sm:text-5xl font-extrabold text-white">280 - 390</span>
+              </div>
+              <p class="text-[11px] text-slate-400 leading-relaxed mb-6">
+                *Preliminary estimate based on typical standard maintenance packages. Formal quote provided after brief on-site or digital verification.
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <button onclick="applyEstimateToForm()" class="w-full py-3.5 px-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-xl text-sm shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2">
+                <span>Lock In This Estimate</span>
+                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              </button>
+              <div class="text-[11px] text-slate-400 flex items-center justify-center gap-1">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-400"></i>
+                No obligation. 100% free quote.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials & Client Trust Section -->
+  <section id="testimonials" class="py-20 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Client Endorsements</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
+          Endorsed by Top Real Estate & Strata Networks
+        </h2>
+        <p class="text-slate-600 text-base mt-4">
+          Read what seasoned real estate principals, body corporate leaders, and commercial facility managers say about our turnaround speeds and trade reliability.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Review 1 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+              "Apex has been a lifesaver for our rent-roll of over 450 residential apartments. Their before-and-after photographic job sign-offs save our property managers hours of dispute handling with owners."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+            <div class="w-10 h-10 rounded-full bg-slate-200 font-bold text-slate-700 flex items-center justify-center text-xs">
+              SK
+            </div>
+            <div>
+              <div class="text-xs font-bold text-slate-900">Sarah Jenkins</div>
+              <div class="text-[11px] text-slate-500">Head of Property Management, Harcourts Metro</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+              "Managing an industrial park means zero room for delayed repairs or safety risks. Apex manages our carpark sweeping, exterior graffiti removal, and building repairs with exceptional diligence."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+            <div class="w-10 h-10 rounded-full bg-brand-100 font-bold text-brand-800 flex items-center justify-center text-xs">
+              MR
+            </div>
+            <div>
+              <div class="text-xs font-bold text-slate-900">Marcus Sterling</div>
+              <div class="text-[11px] text-slate-500">Senior Asset Manager, Logistics REIT</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+              "We had a multi-unit complex needing emergency deck repairs and pressure washing before an auction campaign. Apex mobilised within 3 hours and finished ahead of schedule."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+            <div class="w-10 h-10 rounded-full bg-slate-200 font-bold text-slate-700 flex items-center justify-center text-xs">
+              EL
+            </div>
+            <div>
+              <div class="text-xs font-bold text-slate-900">Elena Liu</div>
+              <div class="text-[11px] text-slate-500">Strata Committee Secretary, The Peninsula</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Contact & Inspection Booking Form Section -->
+  <section id="quote-section" class="py-20 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Side Information -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Fast Turnaround Quotations</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Book an On-Site Inspection or Fast-Track Quote
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Fill in the details of your property maintenance requirements. For emergencies or urgent same-day jobs, please call our 24/7 hotline directly.
+          </p>
+
+          <div class="space-y-4 pt-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold uppercase text-slate-400">Direct Telephone</div>
+                <a href="tel:1300892739" class="text-base font-bold text-slate-900 hover:text-brand-600 transition-colors">1300 892 739 (Toll Free)</a>
+                <div class="text-xs text-slate-500">Mon - Sat: 6:30 AM - 7:00 PM (Emergency 24/7)</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold uppercase text-slate-400">Email Enquiries</div>
+                <a href="mailto:dispatch@apexpropertycare.com.au" class="text-base font-bold text-slate-900 hover:text-brand-600 transition-colors">dispatch@apexpropertycare.com.au</a>
+                <div class="text-xs text-slate-500">Digital work orders & invoices processed daily</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold uppercase text-slate-400">Central Depot & Offices</div>
+                <div class="text-base font-bold text-slate-900">Suite 4, 120 Commercial Way</div>
+                <div class="text-xs text-slate-500">Servicing North, South, East & West Districts</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fast Guarantee Callout -->
+          <div class="p-5 bg-slate-50 rounded-2xl border border-slate-200 mt-6">
+            <div class="flex items-center gap-3 mb-2">
+              <i data-lucide="clock-alert" class="w-5 h-5 text-brand-600"></i>
+              <span class="text-sm font-bold text-slate-900">Our Rapid Response Promise</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Quotes submitted during regular business hours are reviewed and responded to within 60 minutes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Side Interactive Form -->
+        <div class="lg:col-span-7">
+          <div class="bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-xl relative">
+            
+            <!-- Successful Submission Notification (Hidden initially) -->
+            <div id="form-success" class="hidden mb-6 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800">
+              <div class="flex items-center gap-2 font-bold text-base mb-1">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i>
+                Quote Request Received Successfully!
+              </div>
+              <p class="text-xs sm:text-sm text-emerald-700">
+                Thank you. We have dispatched your request to our scheduling desk. A supervisor will review your specifications and contact you shortly.
+              </p>
+            </div>
+
+            <form id="quote-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
+                  <input type="text" id="form-name" required placeholder="e.g. Michael Campbell" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none transition-all">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number *</label>
+                  <input type="tel" id="form-phone" required placeholder="e.g. 0412 345 678" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none transition-all">
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address *</label>
+                  <input type="email" id="form-email" required placeholder="e.g. m.campbell@agency.com.au" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none transition-all">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Property Type</label>
+                  <select id="form-prop-type" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none bg-white transition-all">
+                    <option value="Residential Property">Residential Home / Unit</option>
+                    <option value="Commercial Facility">Commercial / Industrial Office</option>
+                    <option value="Strata Complex">Strata / Body Corporate</option>
+                    <option value="Tenancy Handover">Tenancy Handover / End of Lease</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Property Address / Suburb *</label>
+                <input type="text" id="form-address" required placeholder="e.g. 74 Victoria Parade, Suite 12" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none transition-all">
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Primary Service Needed</label>
+                  <select id="form-service" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none bg-white transition-all">
+                    <option value="Grounds & Garden Care">Grounds & Garden Care</option>
+                    <option value="Building Repairs & Handyman">Building Repairs & Handyman</option>
+                    <option value="Pressure Washing & Exterior Cleaning">Pressure Washing & Exterior Cleaning</option>
+                    <option value="Tenancy Turnaround Prep">Tenancy Turnaround Prep</option>
+                    <option value="Commercial Facility Maintenance">Commercial Facility Maintenance</option>
+                    <option value="Painting & Protective Coatings">Painting & Protective Coatings</option>
+                    <option value="Multiple Maintenance Services">Multiple Services / Full Upkeep</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Preferred Timeframe</label>
+                  <select id="form-urgency" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none bg-white transition-all">
+                    <option value="Standard (Within 3-5 days)">Standard (Within 3-5 days)</option>
+                    <option value="Urgent (Next 24-48 hours)">Urgent (Next 24-48 hours)</option>
+                    <option value="Emergency (Immediate Attention)">Emergency (Immediate Attention)</option>
+                    <option value="Routine Recurring Contract">Routine Scheduled Maintenance</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Scope Description / Notes</label>
+                <textarea id="form-notes" rows="3" placeholder="Briefly specify issues (e.g., hedge overgrown along driveway, patch drywall in bedroom, high-pressure wash courtyard)..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-brand-600 focus:ring-1 focus:ring-brand-600 outline-none transition-all"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-base shadow-xl shadow-brand-600/25 transition-all flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Submit Maintenance Request</span>
+              </button>
+
+              <div class="text-center">
+                <span class="text-[11px] text-slate-400">
+                  <i data-lucide="lock" class="w-3 h-3 inline mr-1"></i> Your information is kept strictly confidential. No spam guaranteed.
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive FAQ Accordion Section -->
+  <section id="faq" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Got Questions?</span>
+        <h2 class="font-display text-3xl font-extrabold text-slate-900 mt-2">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">
+          Everything you need to know about working with Apex Property Care.
+        </p>
+      </div>
+
+      <div class="space-y-3" id="faq-container">
+        <!-- FAQ 1 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(1)" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+            <span>Are your tradespeople fully insured and police checked?</span>
+            <i id="faq-icon-1" data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="faq-content-1" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Yes, 100%. We carry $20 Million Public Liability insurance, full Workers Compensation, and every trade contractor and staff member undergoes rigorous National Police Background clearances and Working With Children (WWCC) verifications.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(2)" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+            <span>Do you provide itemized invoices and photo completion reports?</span>
+            <i id="faq-icon-2" data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="faq-content-2" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Absolutely. Designed particularly for strata managers and real estate agents, our field technicians upload before-and-after photo evidence directly through our mobile system. Invoices are itemized by labor and materials for effortless landlord approval and audit readiness.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(3)" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+            <span>How fast can you attend to urgent or emergency maintenance?</span>
+            <i id="faq-icon-3" data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="faq-content-3" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            For critical issues (e.g., burst pipes, insecure locks, storm hazard branch removals, or trip hazards), our rapid response vehicle can be dispatched within 2 to 4 hours. For non-urgent general maintenance, we typically complete works within 2 to 4 business days.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(4)" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+            <span>Can you arrange property keys from local real estate offices?</span>
+            <i id="faq-icon-4" data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="faq-content-4" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Yes. We collect and return keys from agency offices on a daily basis. We sign keys in and out under strict chain-of-custody protocols and can coordinate access directly with existing tenants when required.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(5)" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+            <span>Do you offer recurring maintenance contracts for strata or commercial parks?</span>
+            <i id="faq-icon-5" data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="faq-content-5" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Yes. We offer weekly, fortnightly, monthly, and seasonal recurring maintenance schedules with locked-in volume rates, priority booking slots, and dedicated site supervisors.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Footer -->
+  <footer class="bg-slateNavy-950 text-slate-400 text-xs border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        
+        <!-- Company Identity -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white font-bold">
+              <i data-lucide="wrench" class="w-5 h-5"></i>
+            </div>
+            <span class="font-display font-extrabold text-xl text-white tracking-tight">
+              APEX <span class="text-brand-500">PROPERTY CARE</span>
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+            Professional property upkeep, reactive maintenance, grounds care, and turnover solutions for residential portfolios, commercial complexes, and body corporates.
+          </p>
+          <div class="space-y-1 text-slate-400 text-[11px]">
+            <div><strong>ABN:</strong> 48 912 834 102 | Registered Trade Contractor</div>
+            <div><strong>Licence Number:</strong> QBCC / Fair Trading #8931210</div>
+            <div><strong>Public Liability:</strong> $20,000,000 Policy #PL-90218</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white uppercase tracking-wider text-xs">Core Services</h4>
+          <ul class="space-y-2">
+            <li><a href="#services" class="hover:text-white transition-colors">Grounds & Lawn Care</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Handyman Repairs</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Pressure Jet Cleaning</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Tenancy Turnarounds</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Commercial Strata Maintenance</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Interior & Exterior Painting</a></li>
+          </ul>
+        </div>
+
+        <!-- Service Coverage Areas -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white uppercase tracking-wider text-xs">Service Coverage</h4>
+          <ul class="space-y-2">
+            <li>Metro CBD & Inner Suburbs</li>
+            <li>Northern Business Parks</li>
+            <li>Eastern Residential Corridors</li>
+            <li>Western Logistics & Industrial Hubs</li>
+            <li>Southern Coastal & Bayside Districts</li>
+          </ul>
+        </div>
+
+        <!-- Contact & Hours -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white uppercase tracking-wider text-xs">Dispatch & Hours</h4>
+          <div class="space-y-2 text-slate-400">
+            <div>
+              <strong class="text-white block">Toll-Free Dispatch:</strong>
+              <a href="tel:1300892739" class="text-brand-400 hover:text-brand-300 font-bold">1300 892 739</a>
+            </div>
+            <div>
+              <strong class="text-white block">Emergency After-Hours:</strong>
+              <span>Available 24 Hours / 7 Days</span>
+            </div>
+            <div>
+              <strong class="text-white block">Office Trading Hours:</strong>
+              <span>Mon - Fri: 7:00 AM – 6:00 PM</span><br>
+              <span>Sat: 8:00 AM – 2:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div>
+          &copy; <span id="current-year"></span> Apex Property Care Pty Ltd. All rights reserved.
+        </div>
+        <div class="flex items-center space-x-6">
+          <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400">Terms of Service</a>
+          <a href="#" class="hover:text-slate-400">Safe Work Method Statements (SWMS)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Logic -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Set dynamic current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Hamburger Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when link is clicked
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Interactive Before & After Slider Logic
+    const sliderWrapper = document.getElementById('slider-wrapper');
+    const beforeLayer = document.getElementById('before-layer');
+    const sliderHandle = document.getElementById('slider-handle');
+
+    let isDragging = false;
+
+    function updateSlider(xPos) {
+      const rect = sliderWrapper.getBoundingClientRect();
+      let offsetX = xPos - rect.left;
+      if (offsetX < 0) offsetX = 0;
+      if (offsetX > rect.width) offsetX = rect.width;
+      const percentage = (offsetX / rect.width) * 100;
+
+      beforeLayer.style.width = percentage + '%';
+      sliderHandle.style.left = percentage + '%';
+    }
+
+    sliderWrapper.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      updateSlider(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updateSlider(e.clientX);
+    });
+
+    // Touch Support for Before/After Slider
+    sliderWrapper.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      if (e.touches.length > 0) updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      if (e.touches.length > 0) updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+
+    // Interactive Estimate Calculator Logic
+    let currentPropType = 'residential';
+
+    function setPropType(type) {
+      currentPropType = type;
+      document.querySelectorAll('.prop-btn').forEach(btn => {
+        btn.classList.remove('border-brand-500', 'bg-brand-600', 'text-white');
+        btn.classList.add('border-slate-700', 'bg-slate-800', 'text-slate-300');
+      });
+
+      const activeBtn = document.getElementById(`btn-prop-${type}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-slate-700', 'bg-slate-800', 'text-slate-300');
+        activeBtn.classList.add('border-brand-500', 'bg-brand-600', 'text-white');
+      }
+      updateEstimate();
+    }
+
+    function updateEstimate() {
+      const sizeVal = parseInt(document.getElementById('size-range').value);
+      const sizeLabel = document.getElementById('size-label');
+      
+      const hasGarden = document.getElementById('svc-garden').checked;
+      const hasHandyman = document.getElementById('svc-handyman').checked;
+      const hasPressure = document.getElementById('svc-pressure').checked;
+      const hasTurnaround = document.getElementById('svc-turnaround').checked;
+
+      // Base rates by size
+      let baseLow = 140;
+      let baseHigh = 220;
+
+      if (sizeVal === 1) {
+        sizeLabel.textContent = "Compact (1-2 Bed / <100m²)";
+        baseLow = 130;
+        baseHigh = 210;
+      } else if (sizeVal === 2) {
+        sizeLabel.textContent = "Medium (2-3 Bed / ~200m²)";
+        baseLow = 220;
+        baseHigh = 340;
+      } else {
+        sizeLabel.textContent = "Extensive / Commercial (>350m²)";
+        baseLow = 380;
+        baseHigh = 580;
+      }
+
+      // Prop type multiplier
+      let multiplier = 1.0;
+      if (currentPropType === 'commercial') multiplier = 1.35;
+      if (currentPropType === 'strata') multiplier = 1.25;
+
+      // Service additive amounts
+      let addonLow = 0;
+      let addonHigh = 0;
+
+      if (hasGarden) { addonLow += 60; addonHigh += 90; }
+      if (hasHandyman) { addonLow += 80; addonHigh += 140; }
+      if (hasPressure) { addonLow += 90; addonHigh += 150; }
+      if (hasTurnaround) { addonLow += 120; addonHigh += 220; }
+
+      // Compute total
+      let totalLow = Math.round((baseLow + addonLow) * multiplier);
+      let totalHigh = Math.round((baseHigh + addonHigh) * multiplier);
+
+      if (!hasGarden && !hasHandyman && !hasPressure && !hasTurnaround) {
+        document.getElementById('estimate-price').textContent = "0 - 0";
+      } else {
+        document.getElementById('estimate-price').textContent = `${totalLow} - ${totalHigh}`;
+      }
+    }
+
+    function applyEstimateToForm() {
+      // Map current calculator values directly to the booking form
+      const propSelect = document.getElementById('form-prop-type');
+      if (currentPropType === 'residential') propSelect.value = 'Residential Property';
+      if (currentPropType === 'commercial') propSelect.value = 'Commercial Facility';
+      if (currentPropType === 'strata') propSelect.value = 'Strata Complex';
+
+      const estimatePrice = document.getElementById('estimate-price').textContent;
+      const notes = document.getElementById('form-notes');
+      notes.value = `Ballpark Estimate: $${estimatePrice}. (Calculated via online tool for ${currentPropType}). Please confirm availability.`;
+
+      // Smooth scroll to form
+      document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Quick selection helper from service cards
+    function selectService(serviceName) {
+      const select = document.getElementById('form-service');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === serviceName) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    // FAQ Accordion Toggle
+    function toggleFaq(index) {
+      const content = document.getElementById(`faq-content-${index}`);
+      const icon = document.getElementById(`faq-icon-${index}`);
+      
+      const isOpen = !content.classList.contains('hidden');
+      
+      // Close all first for clean accordion UX
+      for (let i = 1; i <= 5; i++) {
+        const item = document.getElementById(`faq-content-${i}`);
+        const ic = document.getElementById(`faq-icon-${i}`);
+        if (item) item.classList.add('hidden');
+        if (ic) ic.classList.remove('rotate-180');
+      }
+
+      if (!isOpen) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    }
+
+    // Form Submission Feedback
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const successBox = document.getElementById('form-success');
+      successBox.classList.remove('hidden');
+      
+      // Re-trigger lucide icons inside dynamically shown elements
+      lucide.createIcons();
+
+      // Reset form fields
+      document.getElementById('quote-form').reset();
+
+      // Smooth scroll up slightly to show feedback
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Initialize calculator on page load
+    window.onload = function() {
+      updateEstimate();
+    };
+  </script>
+</body>
+</html>
