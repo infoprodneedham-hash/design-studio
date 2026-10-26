@@ -345,255 +345,258 @@
       </div>
     </section>
 
-    <!-- DESIGN STYLES & THEMES SHOWCASE (With Interactive Modal Previews) -->
-    <section id="themes" class="py-20 bg-sand-100/60 border-t border-slate-200/80">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
-          <span class="text-brand-600 text-xs font-bold uppercase tracking-wider">Visual Archetypes</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
-            Explore 6 distinct design styles to match your business.
-          </h2>
-          <p class="text-slate-600 text-base sm:text-lg">
-            Every business has its own personality. Click any card below to launch an interactive live preview of the archetype, typography, and palette.
+    <!-- THEME SHOWCASE / SAMPLES SECTION -->
+<section id="samples" class="py-20 bg-slate-50 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
+      <span class="text-brand-600 text-xs font-bold uppercase tracking-wider">Design Archetypes & Demos</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+        Explore Live Static Theme Samples
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+        Click any theme below to view a fully interactive, lightweight demonstration in a new tab. Each design can be customized with your branding, color palette, and bespoke features.
+      </p>
+    </div>
+
+    <!-- Theme Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 1. Apex Property Care -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-sky-50 text-sky-700 border border-sky-100">Trades & Maintenance</span>
+            <i data-lucide="wrench" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Apex Property Care</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Clean, high-trust brochure layout designed for domestic property care, landscaping, and building maintenance trades.
           </p>
         </div>
-
-        <!-- 6 Distinct Theme Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7" id="themesGrid">
-          
-          <!-- Theme 1: The Craftsman / Bold & Rugged -->
-          <div class="theme-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition flex flex-col group cursor-pointer" onclick="openThemeModal('craftsman')">
-            <div class="relative h-52 bg-stone-900 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=700&q=80" alt="Craftsman Style" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/40 to-transparent"></div>
-              <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-amber-500 text-stone-950 text-[11px] font-black uppercase tracking-wider">
-                Bold & Rugged
-              </div>
-              <div class="absolute bottom-3 left-4 text-white">
-                <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider block">Theme 01</span>
-                <h4 class="font-bold text-lg leading-tight">The Craftsman & Builder</h4>
-              </div>
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                  Deep charcoal, aged timber, and amber accents with strong, sturdy typography. Conveys heavy-duty quality and dependable trade execution.
-                </p>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <span class="text-[11px] font-semibold text-slate-500">Best for:</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Builders</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Carpenters</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Earthmoving</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-                <div class="flex items-center gap-1.5">
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#1c1917] border border-slate-300"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#f59e0b]"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#f5f5f4]"></span>
-                </div>
-                <span class="text-xs font-bold text-brand-600 group-hover:text-brand-800 flex items-center gap-1">
-                  Preview Live Mockup <i data-lucide="eye" class="w-3.5 h-3.5"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Theme 2: Coastal Salon & Botanical -->
-          <div class="theme-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition flex flex-col group cursor-pointer" onclick="openThemeModal('coastal')">
-            <div class="relative h-52 bg-emerald-900 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=80" alt="Breezy Coastal" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-85">
-              <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent"></div>
-              <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider">
-                Light & Breezy
-              </div>
-              <div class="absolute bottom-3 left-4 text-white">
-                <span class="text-xs text-emerald-300 font-semibold uppercase tracking-wider block">Theme 02</span>
-                <h4 class="font-bold text-lg leading-tight">Coastal Salon & Botanical</h4>
-              </div>
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                  Soft linen backgrounds, muted sage eucalyptus tones, and gentle terracotta highlights. Relaxing, approachable, and beautifully inviting.
-                </p>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <span class="text-[11px] font-semibold text-slate-500">Best for:</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Hair Salons</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Day Spas</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Florists</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-                <div class="flex items-center gap-1.5">
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#fbf9f5] border border-slate-300"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#657d6a]"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#d9825b]"></span>
-                </div>
-                <span class="text-xs font-bold text-brand-600 group-hover:text-brand-800 flex items-center gap-1">
-                  Preview Live Mockup <i data-lucide="eye" class="w-3.5 h-3.5"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Theme 3: Executive & Architectural -->
-          <div class="theme-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition flex flex-col group cursor-pointer" onclick="openThemeModal('executive')">
-            <div class="relative h-52 bg-slate-900 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=80" alt="Executive Architectural" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-              <div class="absolute inset-0 bg-gradient-to-t from-darkstone-950 via-darkstone-900/60 to-transparent"></div>
-              <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-slate-800 text-sky-300 text-[11px] font-bold uppercase tracking-wider border border-slate-700">
-                Architectural
-              </div>
-              <div class="absolute bottom-3 left-4 text-white">
-                <span class="text-xs text-sky-400 font-semibold uppercase tracking-wider block">Theme 03</span>
-                <h4 class="font-bold text-lg leading-tight">Executive & Convention Center</h4>
-              </div>
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                  Midnight slate, sharp geometric grid layouts, and minimalist luxury accents. Gives high-end credibility to modern venues and commercial firms.
-                </p>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <span class="text-[11px] font-semibold text-slate-500">Best for:</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Venues</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Architects</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Consultancies</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-                <div class="flex items-center gap-1.5">
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#0d1013]"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#38bdf8]"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#f8fafc] border border-slate-300"></span>
-                </div>
-                <span class="text-xs font-bold text-brand-600 group-hover:text-brand-800 flex items-center gap-1">
-                  Preview Live Mockup <i data-lucide="eye" class="w-3.5 h-3.5"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Theme 4: Fresh Retail, Cafe & Bakery -->
-          <div class="theme-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition flex flex-col group cursor-pointer" onclick="openThemeModal('artisan')">
-            <div class="relative h-52 bg-amber-900 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80" alt="Artisan Retail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-85">
-              <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent"></div>
-              <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-amber-100 text-amber-800 text-[11px] font-bold uppercase tracking-wider">
-                Warm & Artisan
-              </div>
-              <div class="absolute bottom-3 left-4 text-white">
-                <span class="text-xs text-amber-300 font-semibold uppercase tracking-wider block">Theme 04</span>
-                <h4 class="font-bold text-lg leading-tight">Fresh Retail, Cafe & Bakery</h4>
-              </div>
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                  Warm sourdough creams, rich coffee undertones, and vibrant sunny punch. Perfect for engaging food lovers and neighborhood shoppers.
-                </p>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <span class="text-[11px] font-semibold text-slate-500">Best for:</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Bakeries</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Boutiques</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Specialty Food</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-                <div class="flex items-center gap-1.5">
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#fffbeb] border border-slate-300"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#b45309]"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#f97316]"></span>
-                </div>
-                <span class="text-xs font-bold text-brand-600 group-hover:text-brand-800 flex items-center gap-1">
-                  Preview Live Mockup <i data-lucide="eye" class="w-3.5 h-3.5"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Theme 5: Modern Health & Professional Care -->
-          <div class="theme-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition flex flex-col group cursor-pointer" onclick="openThemeModal('health')">
-            <div class="relative h-52 bg-cyan-900 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80" alt="Health Care" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-85">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-              <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-teal-100 text-teal-800 text-[11px] font-bold uppercase tracking-wider">
-                Crisp & Reassuring
-              </div>
-              <div class="absolute bottom-3 left-4 text-white">
-                <span class="text-xs text-teal-300 font-semibold uppercase tracking-wider block">Theme 05</span>
-                <h4 class="font-bold text-lg leading-tight">Professional Health & Clinic</h4>
-              </div>
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                  Pristine clinical whites, calming dental teal/cyan accents, and maximum typography legibility for patients seeking reassurance and fast booking.
-                </p>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <span class="text-[11px] font-semibold text-slate-500">Best for:</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Physios</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Dental</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Allied Health</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-                <div class="flex items-center gap-1.5">
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#ffffff] border border-slate-300"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#0d9488]"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#0284c7]"></span>
-                </div>
-                <span class="text-xs font-bold text-brand-600 group-hover:text-brand-800 flex items-center gap-1">
-                  Preview Live Mockup <i data-lucide="eye" class="w-3.5 h-3.5"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Theme 6: Clean Trades & Rapid Callouts -->
-          <div class="theme-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition flex flex-col group cursor-pointer" onclick="openThemeModal('emergency')">
-            <div class="relative h-52 bg-slate-900 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80" alt="Trades Callout" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-85">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>
-              <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-amber-400 text-slate-950 text-[11px] font-black uppercase tracking-wider">
-                High-Contrast Action
-              </div>
-              <div class="absolute bottom-3 left-4 text-white">
-                <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider block">Theme 06</span>
-                <h4 class="font-bold text-lg leading-tight">Rapid Response Trades</h4>
-              </div>
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                  Safety navy and electric warning amber with oversized call-to-action buttons designed for urgent domestic and commercial callouts.
-                </p>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <span class="text-[11px] font-semibold text-slate-500">Best for:</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Plumbers</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Sparkies</span>
-                  <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium">Locksmiths</span>
-                </div>
-              </div>
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-                <div class="flex items-center gap-1.5">
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#0f172a]"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#f59e0b]"></span>
-                  <span class="w-3.5 h-3.5 rounded-full bg-[#22c55e]"></span>
-                </div>
-                <span class="text-xs font-bold text-brand-600 group-hover:text-brand-800 flex items-center gap-1">
-                  Preview Live Mockup <i data-lucide="eye" class="w-3.5 h-3.5"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+        <a 
+          href="samples/apex_property_care_brochure_website.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
       </div>
-    </section>
+
+      <!-- 2. Aura Events Culinary -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-100">Events & Catering</span>
+            <i data-lucide="utensils" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Aura Events & Culinary</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Sophisticated culinary presentation template featuring editorial menu highlights and private booking inquiries.
+          </p>
+        </div>
+        <a 
+          href="samples/aura_events_culinary_website.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 3. Bella Notte Artisanal Pizza & Pasta -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-100">Dining & Hospitality</span>
+            <i data-lucide="pizza" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Bella Notte Artisanal</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Warm, rustic layout engineered for trattorias, woodfired pizzerias, and takeaway dining menus.
+          </p>
+        </div>
+        <a 
+          href="samples/bella_notte_artisanal_pizza_pasta.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 4. Elite Athletic Advisory -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100">Fitness & Performance</span>
+            <i data-lucide="activity" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Elite Athletic Advisory</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Bold, high-energy layout tailored for strength coaches, personal trainers, and performance consulting.
+          </p>
+        </div>
+        <a 
+          href="samples/elite_athletic_advisory_performance.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 5. Geelong Metro Auto Works -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">Automotive</span>
+            <i data-lucide="car" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Geelong Metro Auto Works</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Structured trade design showcasing mechanical servicing, logbook maintenance, and instant booking requests.
+          </p>
+        </div>
+        <a 
+          href="samples/geelong_metro_auto_works.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 6. Paws & Bubbles Mobile Pet Spa -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-teal-50 text-teal-700 border border-teal-100">Pet Care & Mobile Services</span>
+            <i data-lucide="heart" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Paws & Bubbles Pet Spa</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Friendly, vibrant theme optimized for mobile grooming vans, hydrobaths, and direct service scheduling.
+          </p>
+        </div>
+        <a 
+          href="samples/paws_bubbles_mobile_pet_spa.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 7. Sol & Salt Coastal Day Spa -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-100">Wellness & Beauty</span>
+            <i data-lucide="sparkles" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Sol & Salt Coastal Spa</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Minimalist, calming aesthetic designed for day spas, mineral baths, massage therapies, and skin clinics.
+          </p>
+        </div>
+        <a 
+          href="samples/sol_salt_coastal_day_spa.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 8. The Daily Crust Co. Artisan Deli -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-orange-50 text-orange-700 border border-orange-100">Bakery & Café</span>
+            <i data-lucide="coffee" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">The Daily Crust Co.</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Earthy, artisanal bakery and coffee house showcase with opening hours, seasonal baked items, and deli catering.
+          </p>
+        </div>
+        <a 
+          href="samples/the_daily_crust_co_artisan_deli_coffee.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 9. The Driftwood Cove B&B -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">Accommodation</span>
+            <i data-lucide="home" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">The Driftwood Cove B&B</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Boutique coastal retreat template highlighting suites, guest amenities, localized guides, and reservation inquiries.
+          </p>
+        </div>
+        <a 
+          href="samples/the_driftwood_cove_b_b.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- 10. Vanguard Legal Injury Advocates -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">Professional Services</span>
+            <i data-lucide="scale" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Vanguard Legal Advocates</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6 leading-relaxed">
+            Authoritative, corporate layout built for legal practices, compensation advocates, and case consultations.
+          </p>
+        </div>
+        <a 
+          href="samples/vanguard_legal_injury_advocates.html" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2"
+        >
+          <span>Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
     <!-- NOT JUST WEBSITES: MORE STRINGS TO THE BOW -->
     <section id="utilities" class="py-20 bg-white border-t border-slate-200">
