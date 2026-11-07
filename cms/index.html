@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Web Studio & CMS Generator</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Studio Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .preview-device-desktop { width: 100%; height: 100%; }
+    .preview-device-tablet { width: 768px; height: 95%; margin: auto; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4); }
+    .preview-device-mobile { width: 390px; height: 92%; margin: auto; border-radius: 28px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4); }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col">
+
+  <!-- Main Top Bar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-md">
+          <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold text-slate-900 leading-tight">WebCraft CMS</h1>
+          <p class="text-xs text-slate-500">Static Website Generator & Studio</p>
+        </div>
+      </div>
+
+      <!-- Generator Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="btnAiPrompt" type="button" class="inline-flex items-center gap-2 px-3 py-2 text-xs sm:text-sm font-medium rounded-lg text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 transition">
+          <i class="fa-solid fa-robot"></i>
+          <span class="hidden sm:inline">Generate</span> AI Prompt
+        </button>
+
+        <button id="btnLivePreview" type="button" class="inline-flex items-center gap-2 px-3 py-2 text-xs sm:text-sm font-medium rounded-lg text-sky-700 bg-sky-50 hover:bg-sky-100 border border-sky-200 transition">
+          <i class="fa-solid fa-eye"></i>
+          <span>Live Preview</span>
+        </button>
+
+        <button id="btnDownloadHtml" type="button" class="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg text-white bg-sky-600 hover:bg-sky-700 shadow-sm transition">
+          <i class="fa-solid fa-download"></i>
+          <span class="hidden sm:inline">Export</span> HTML
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Studio Dashboard Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row gap-6">
+
+    <!-- Navigation Tabs / Section Selectors (Sidebar on Desktop) -->
+    <nav class="lg:w-64 flex lg:flex-col gap-1.5 overflow-x-auto pb-2 lg:pb-0 shrink-0">
+      <button class="nav-tab active flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-left transition bg-sky-600 text-white shadow-sm" data-tab="tab-branding">
+        <i class="fa-solid fa-shapes w-5 text-center"></i>
+        <span>Branding & Identity</span>
+      </button>
+      <button class="nav-tab flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-left transition text-slate-600 hover:bg-white hover:text-slate-900" data-tab="tab-theme">
+        <i class="fa-solid fa-palette w-5 text-center"></i>
+        <span>Theme & Typography</span>
+      </button>
+      <button class="nav-tab flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-left transition text-slate-600 hover:bg-white hover:text-slate-900" data-tab="tab-layout">
+        <i class="fa-solid fa-bars-staggered w-5 text-center"></i>
+        <span>Layout & Drawer</span>
+      </button>
+      <button class="nav-tab flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-left transition text-slate-600 hover:bg-white hover:text-slate-900" data-tab="tab-media">
+        <i class="fa-solid fa-images w-5 text-center"></i>
+        <span>Media & Gallery</span>
+      </button>
+      <button class="nav-tab flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-left transition text-slate-600 hover:bg-white hover:text-slate-900" data-tab="tab-pages">
+        <i class="fa-solid fa-file-lines w-5 text-center"></i>
+        <span>Page CMS Content</span>
+      </button>
+      <button class="nav-tab flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-left transition text-slate-600 hover:bg-white hover:text-slate-900" data-tab="tab-social">
+        <i class="fa-solid fa-share-nodes w-5 text-center"></i>
+        <span>Social Share Config</span>
+      </button>
+    </nav>
+
+    <!-- Main Configuration Form Panels -->
+    <div class="flex-1 bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 sm:p-8 overflow-y-auto">
+
+      <!-- SECTION 1: BRANDING & IDENTITY -->
+      <section id="tab-branding" class="tab-pane space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Branding & Identity</h2>
+          <p class="text-sm text-slate-500">Configure your business identity, title, slogan, and header logo.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Business / Site Name</label>
+            <input type="text" id="cfgSiteName" value="Aura Design Studio" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Logo</label>
+            <div class="flex items-center gap-3">
+              <div id="logoPreviewBox" class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center overflow-hidden shrink-0">
+                <i class="fa-solid fa-gem text-sky-600 text-xl"></i>
+              </div>
+              <input type="file" id="cfgLogoFile" accept="image/*" class="text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-sky-50 file:text-sky-700 hover:file:bg-sky-100 cursor-pointer">
+            </div>
+            <p class="text-xs text-slate-400 mt-1">Leaves default geometric vector if unselected.</p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Home Slogan / Center Heading</label>
+          <input type="text" id="cfgSlogan" value="Crafting Meaningful Digital Experiences with Precision" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Subheading (Optional)</label>
+          <input type="text" id="cfgSubheading" value="We transform complex ideas into modern, intuitive and highly scalable web applications." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm">
+        </div>
+      </section>
+
+      <!-- SECTION 2: THEME & TYPOGRAPHY -->
+      <section id="tab-theme" class="tab-pane hidden space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Styling & Theme</h2>
+          <p class="text-sm text-slate-500">Choose site typography, palette mode, and custom accent highlight.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Font Family</label>
+            <select id="cfgFontFamily" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm bg-white">
+              <option value="'Trebuchet MS', 'Lucida Sans Unicode', sans-serif">Trebuchet MS</option>
+              <option value="Arial, Helvetica, sans-serif">Arial</option>
+              <option value="'Century Gothic', AppleGothic, sans-serif">Century Gothic</option>
+              <option value="ui-monospace, SFMono-Regular, Menlo, monospace">Monospace</option>
+              <option value="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" selected>Modern Sans-Serif</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Theme Mode</label>
+            <select id="cfgThemeMode" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm bg-white">
+              <option value="light" selected>Light Mode</option>
+              <option value="dark">Dark Mode</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Primary Accent Color</label>
+            <div class="flex items-center gap-3">
+              <input type="color" id="cfgAccentColor" value="#0284c7" class="w-10 h-10 rounded-lg cursor-pointer border-0 p-0">
+              <span id="cfgAccentHex" class="text-xs font-mono font-medium text-slate-600 bg-slate-100 px-2 py-1 rounded">#0284c7</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: LAYOUT & DRAWER -->
+      <section id="tab-layout" class="tab-pane hidden space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Layout & Navigation Drawer</h2>
+          <p class="text-sm text-slate-500">Configure slide-out drawers, layout behaviors, and active web pages.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Slide-out Drawer Direction</label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="flex items-center p-3.5 border rounded-xl cursor-pointer hover:bg-slate-50 border-slate-200">
+                <input type="radio" name="drawerSide" value="right" checked class="text-sky-600 focus:ring-sky-500 mr-2">
+                <span class="text-sm font-medium">Slide from Right</span>
+              </label>
+              <label class="flex items-center p-3.5 border rounded-xl cursor-pointer hover:bg-slate-50 border-slate-200">
+                <input type="radio" name="drawerSide" value="left" class="text-sky-600 focus:ring-sky-500 mr-2">
+                <span class="text-sm font-medium">Slide from Left</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Active Navigation Pages</label>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <label class="flex items-center space-x-2 text-slate-700">
+                <input type="checkbox" id="pageHome" checked disabled class="rounded text-sky-600"> <span>Home (Core)</span>
+              </label>
+              <label class="flex items-center space-x-2 text-slate-700">
+                <input type="checkbox" id="pageAbout" checked class="rounded text-sky-600"> <span>About Page</span>
+              </label>
+              <label class="flex items-center space-x-2 text-slate-700">
+                <input type="checkbox" id="pageContact" checked class="rounded text-sky-600"> <span>Contact Page</span>
+              </label>
+              <label class="flex items-center space-x-2 text-slate-700">
+                <input type="checkbox" id="pageTestimonials" checked class="rounded text-sky-600"> <span>Testimonials</span>
+              </label>
+              <label class="flex items-center space-x-2 text-slate-700">
+                <input type="checkbox" id="pageGallery" checked class="rounded text-sky-600"> <span>Photo Gallery</span>
+              </label>
+              <label class="flex items-center space-x-2 text-slate-700">
+                <input type="checkbox" id="pageTerms" checked class="rounded text-sky-600"> <span>Terms & Conditions</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: MEDIA & IMAGES -->
+      <section id="tab-media" class="tab-pane hidden space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Media & Photography</h2>
+          <p class="text-sm text-slate-500">Configured with high-resolution Unsplash stock presets. Upload custom pictures anytime to override.</p>
+        </div>
+
+        <!-- Hero Pic -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">Hero Header Image</label>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <img id="heroPreviewImg" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" alt="Hero Preview" class="w-32 h-20 object-cover rounded-lg border shadow-sm">
+            <div class="flex-1">
+              <input type="file" id="cfgHeroUpload" accept="image/*" class="text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-sky-50 file:text-sky-700 hover:file:bg-sky-100 cursor-pointer">
+              <p class="text-xs text-slate-400 mt-1">Accepts JPG, PNG, WEBP. Converts seamlessly to self-contained Base64 data.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 Gallery/Slideshow Pics -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-xs font-semibold uppercase tracking-wider text-slate-700">8 Gallery & Slideshow Photos</label>
+            <span class="text-xs text-slate-400">Default Architecture & Studio Stock Ready</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="galleryInputsContainer">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: CMS PAGE CONTENT -->
+      <section id="tab-pages" class="tab-pane hidden space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">CMS Page Content</h2>
+          <p class="text-sm text-slate-500">Manage textual copy and data for each active page.</p>
+        </div>
+
+        <!-- CMS Sub Tabs -->
+        <div class="flex border-b border-slate-200 overflow-x-auto gap-4">
+          <button class="cms-subtab active py-2 text-sm font-semibold border-b-2 border-sky-600 text-sky-600" data-cms="cms-home">Home Page</button>
+          <button class="cms-subtab py-2 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800" data-cms="cms-about">About Page</button>
+          <button class="cms-subtab py-2 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800" data-cms="cms-contact">Contact Page</button>
+          <button class="cms-subtab py-2 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800" data-cms="cms-testimonials">Testimonials</button>
+          <button class="cms-subtab py-2 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800" data-cms="cms-terms">Terms & Conditions</button>
+        </div>
+
+        <!-- CMS: HOME -->
+        <div id="cms-home" class="cms-panel space-y-4">
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <label class="text-xs font-semibold uppercase tracking-wider text-slate-600">Home Body Copy (Max 800 Chars)</label>
+              <span id="charCountLabel" class="text-xs font-mono text-slate-500">0 / 800</span>
+            </div>
+            <textarea id="cfgHomeBody" maxlength="800" rows="5" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm">Welcome to our design sanctuary. We specialize in bespoke digital development, timeless interface architectures, and high-performance applications designed to help visionary businesses flourish in an ever-evolving landscape. By fusing strategic engineering with artful design, we turn complex problems into refined, user-first solutions. Explore our latest showcases, discover our ethos, and reach out to collaborate on something truly extraordinary today.</textarea>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Hero Call To Action (Button Text)</label>
+              <input type="text" id="cfgHomeCtaText" value="Explore Showcase" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-sky-500">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">CTA Target Page</label>
+              <select id="cfgHomeCtaTarget" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm bg-white">
+                <option value="gallery">Photo Gallery</option>
+                <option value="about">About Page</option>
+                <option value="contact">Contact Form</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- CMS: ABOUT -->
+        <div id="cms-about" class="cms-panel hidden space-y-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">About Headline</label>
+            <input type="text" id="cfgAboutHeadline" value="We believe in purity of craft, innovation, and genuine human connection." class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Our Story & Bio</label>
+            <textarea id="cfgAboutStory" rows="4" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">Founded over a decade ago, our team brings together interdisciplinary software architects, digital designers, and product researchers. We take pride in building software with minimal friction, maximum performance, and accessible standards that empower everyday people.</textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Values & Mission</label>
+            <textarea id="cfgAboutMission" rows="3" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">To design sustainable, elegant digital products that stand the test of time through simplicity, robust craftsmanship, and ethical software practices.</textarea>
+          </div>
+        </div>
+
+        <!-- CMS: CONTACT -->
+        <div id="cms-contact" class="cms-panel hidden space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Direct Email</label>
+              <input type="text" id="cfgContactEmail" value="hello@aurastudio.design" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Phone Number</label>
+              <input type="text" id="cfgContactPhone" value="+1 (555) 234-5678" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Physical Location</label>
+              <input type="text" id="cfgContactAddress" value="440 Innovation Blvd, Suite 200, San Francisco CA" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">
+            </div>
+          </div>
+          <div class="p-4 bg-sky-50 rounded-xl border border-sky-100 text-xs text-sky-800 space-y-1">
+            <p class="font-semibold"><i class="fa-solid fa-shield-halved mr-1"></i> Interactive Contact Form Built-in Features:</p>
+            <p>✓ Math Captcha verification for human spam defense.</p>
+            <p>✓ Radio switch for preferred inquiry channel: "Request a Call Back" vs "Email Response".</p>
+          </div>
+        </div>
+
+        <!-- CMS: TESTIMONIALS -->
+        <div id="cms-testimonials" class="cms-panel hidden space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-semibold text-slate-800">Client Reviews</h3>
+            <button type="button" id="btnAddReview" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg font-medium transition">
+              <i class="fa-solid fa-plus mr-1"></i> Add Review
+            </button>
+          </div>
+          <div id="reviewsContainer" class="space-y-3">
+            <!-- Reviews injected dynamically -->
+          </div>
+        </div>
+
+        <!-- CMS: TERMS -->
+        <div id="cms-terms" class="cms-panel hidden space-y-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Terms and Conditions Text</label>
+            <textarea id="cfgTermsContent" rows="7" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm font-mono text-xs">All content, imagery, and intellectual property showcased on this website are protected under international copyright regulations. By accessing this platform, you agree to browse for personal, non-commercial purposes unless granted explicit written authorization.
+
+Privacy Notice: Any communication submitted through our contact forms is treated confidentially and is never sold or distributed to third-party advertising vendors.</textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: SOCIAL SHARE CONFIG -->
+      <section id="tab-social" class="tab-pane hidden space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Social Share Drawer & Floating Bar</h2>
+          <p class="text-sm text-slate-500">Configure quick sharing buttons and external profile links displayed in the slide-out drawer.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
+              <i class="fa-brands fa-x-twitter text-slate-900 mr-1"></i> X / Twitter URL
+            </label>
+            <input type="text" id="cfgSocialX" value="https://x.com/designstudio" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
+              <i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Facebook URL
+            </label>
+            <input type="text" id="cfgSocialFb" value="https://facebook.com/designstudio" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
+              <i class="fa-brands fa-instagram text-pink-600 mr-1"></i> Instagram URL
+            </label>
+            <input type="text" id="cfgSocialInsta" value="https://instagram.com/designstudio" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
+              <i class="fa-brands fa-tiktok text-black mr-1"></i> TikTok URL
+            </label>
+            <input type="text" id="cfgSocialTiktok" value="https://tiktok.com/@designstudio" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm">
+          </div>
+        </div>
+
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center">
+              <i class="fa-solid fa-link text-sm"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-slate-800">1-Click "Copy Site URL" Integration</p>
+              <p class="text-xs text-slate-500">Automatically enabled in both the floating menu and drawer.</p>
+            </div>
+          </div>
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+            Enabled
+          </span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- MODAL: LIVE PREVIEW -->
+  <div id="previewModal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden flex-col">
+    <!-- Modal Header Controls -->
+    <div class="h-14 bg-slate-900 px-4 sm:px-6 flex items-center justify-between border-b border-slate-800 shrink-0 text-white">
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+        <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+        <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+        <span class="text-xs text-slate-400 font-mono ml-3 hidden sm:inline">Live Sandbox Preview</span>
+      </div>
+
+      <!-- Responsive Device Toggles -->
+      <div class="flex items-center bg-slate-800 rounded-lg p-1 border border-slate-700">
+        <button id="deviceDesktop" class="px-3 py-1 rounded text-xs font-medium text-white bg-sky-600 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-desktop"></i> <span class="hidden md:inline">Desktop</span>
+        </button>
+        <button id="deviceTablet" class="px-3 py-1 rounded text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5">
+          <i class="fa-solid fa-tablet-screen-button"></i> <span class="hidden md:inline">Tablet</span>
+        </button>
+        <button id="deviceMobile" class="px-3 py-1 rounded text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5">
+          <i class="fa-solid fa-mobile-screen"></i> <span class="hidden md:inline">Mobile</span>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="btnModalDownload" class="px-3 py-1.5 bg-sky-600 hover:bg-sky-500 text-white rounded-lg text-xs font-semibold transition">
+          <i class="fa-solid fa-download mr-1"></i> Export
+        </button>
+        <button id="btnClosePreview" class="text-slate-400 hover:text-white p-2 rounded-lg text-lg leading-none transition">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Frame Container -->
+    <div class="flex-1 bg-slate-950 p-2 sm:p-4 overflow-hidden flex items-center justify-center">
+      <iframe id="previewIframe" class="preview-device-desktop bg-white border-0 transition-all duration-300" sandbox="allow-scripts allow-forms allow-modals"></iframe>
+    </div>
+  </div>
+
+  <!-- MODAL: AI PROMPT -->
+  <div id="aiPromptModal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-slate-200">
+      <div class="p-5 border-b border-slate-200 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-indigo-700 font-bold">
+          <i class="fa-solid fa-robot"></i>
+          <span>Engineered AI Specification Prompt</span>
+        </div>
+        <button id="btnCloseAiPrompt" class="text-slate-400 hover:text-slate-700 text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-3">
+        <p class="text-xs text-slate-500">Copy this structured prompt to feed directly into Gemini or other LLMs to produce matching designs, custom backend APIs, or tailored components:</p>
+        <div class="relative">
+          <textarea id="aiPromptContent" readonly rows="12" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 font-mono text-xs text-slate-800 leading-relaxed"></textarea>
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-200 flex justify-end gap-3 bg-slate-50 rounded-b-2xl">
+        <button id="btnCopyPrompt" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold transition flex items-center gap-2">
+          <i class="fa-regular fa-copy"></i>
+          <span>Copy to Clipboard</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Feedback Toast (Never alerts) -->
+  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl border border-slate-700 text-sm flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+    <span id="toastMsg">Operation successful</span>
+  </div>
+
+  <!-- Studio Javascript Logic -->
+  <script>
+    // State Store for Gallery Images (8 default stock photography presets)
+    const defaultGalleryImages = [
+      { id: 1, label: 'Studio Architecture', url: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80' },
+      { id: 2, label: 'Creative Workspace', url: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80' },
+      { id: 3, label: 'Minimalist Interior', url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80' },
+      { id: 4, label: 'Hardware & Tech', url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80' },
+      { id: 5, label: 'Geometric Design', url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80' },
+      { id: 6, label: 'Digital Collaboration', url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80' },
+      { id: 7, label: 'Modern Aesthetic', url: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80' },
+      { id: 8, label: 'Creative Blueprint', url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80' }
+    ];
+
+    let currentGallery = [...defaultGalleryImages];
+    let customLogoBase64 = null;
+    let customHeroBase64 = null;
+
+    // Testimonials State
+    let testimonialsList = [
+      { author: "Elena Rostova", role: "VP of Product, FinFlow", quote: "The elegance, velocity, and design execution exceeded all our highest expectations.", rating: 5 },
+      { author: "Marcus Vance", role: "Creative Director, Studio IX", quote: "A rare combination of refined minimalism and seamless responsiveness. Exceptional work.", rating: 5 },
+      { author: "Sophia Lin", role: "Founder, BioSensa", quote: "Our engagement rates doubled within three weeks of launching the new site structure.", rating: 5 }
+    ];
+
+    // Notification Toast helper
+    function showToast(message, isSuccess = true) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMsg');
+      const toastIcon = document.getElementById('toastIcon');
+      
+      toastMsg.innerText = message;
+      toastIcon.className = isSuccess ? "fa-solid fa-circle-check text-emerald-400 text-lg" : "fa-solid fa-circle-exclamation text-amber-400 text-lg";
+      
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3200);
+    }
+
+    // Helper: Convert File to Base64
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Initialize Studio UI
+    window.onload = function() {
+      setupTabNavigation();
+      renderGalleryInputs();
+      renderTestimonials();
+      setupCharacterCounter();
+      setupColorPickerSync();
+      setupUploadListeners();
+      setupActionHandlers();
+    };
+
+    // Navigation Tabs
+    function setupTabNavigation() {
+      const tabs = document.querySelectorAll('.nav-tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('bg-sky-600', 'text-white', 'shadow-sm');
+            t.classList.add('text-slate-600');
+          });
+          tab.classList.add('bg-sky-600', 'text-white', 'shadow-sm');
+          tab.classList.remove('text-slate-600');
+
+          const targetId = tab.getAttribute('data-tab');
+          document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.add('hidden'));
+          document.getElementById(targetId).classList.remove('hidden');
+        });
+      });
+
+      // CMS Subtabs
+      const cmsSubtabs = document.querySelectorAll('.cms-subtab');
+      cmsSubtabs.forEach(subtab => {
+        subtab.addEventListener('click', () => {
+          cmsSubtabs.forEach(s => {
+            s.classList.remove('border-sky-600', 'text-sky-600');
+            s.classList.add('border-transparent', 'text-slate-500');
+          });
+          subtab.classList.add('border-sky-600', 'text-sky-600');
+          subtab.classList.remove('border-transparent', 'text-slate-500');
+
+          const targetCms = subtab.getAttribute('data-cms');
+          document.querySelectorAll('.cms-panel').forEach(p => p.classList.add('hidden'));
+          document.getElementById(targetCms).classList.remove('hidden');
+        });
+      });
+    }
+
+    // Render Gallery Media inputs
+    function renderGalleryInputs() {
+      const container = document.getElementById('galleryInputsContainer');
+      container.innerHTML = '';
+
+      currentGallery.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = "bg-slate-50 p-2.5 rounded-xl border border-slate-200 flex flex-col space-y-2";
+        card.innerHTML = `
+          <div class="relative w-full h-24 rounded-lg overflow-hidden bg-slate-200">
+            <img src="${item.url}" id="previewGalleryImg-${index}" alt="${item.label}" class="w-full h-full object-cover">
+            <span class="absolute bottom-1 left-1 bg-black/60 text-white text-[10px] px-1.5 py-0.5 rounded font-mono">#${index + 1}</span>
+          </div>
+          <input type="text" id="galleryLabel-${index}" value="${item.label}" class="text-xs px-2 py-1 rounded border border-slate-300 w-full" placeholder="Photo Title">
+          <input type="file" id="galleryFile-${index}" accept="image/*" class="text-[11px] text-slate-500 file:mr-1.5 file:py-1 file:px-2 file:rounded file:border-0 file:text-[10px] file:bg-sky-50 file:text-sky-700 hover:file:bg-sky-100 cursor-pointer w-full">
+        `;
+        container.appendChild(card);
+
+        // Upload handler for this slot
+        const fileInput = card.querySelector(`#galleryFile-${index}`);
+        fileInput.addEventListener('change', async (e) => {
+          if (e.target.files && e.target.files[0]) {
+            try {
+              const b64 = await fileToBase64(e.target.files[0]);
+              currentGallery[index].url = b64;
+              document.getElementById(`previewGalleryImg-${index}`).src = b64;
+              showToast(`Photo #${index + 1} updated`);
+            } catch (err) {
+              showToast("Failed to load image file", false);
+            }
+          }
+        });
+
+        // Label update handler
+        const labelInput = card.querySelector(`#galleryLabel-${index}`);
+        labelInput.addEventListener('input', (e) => {
+          currentGallery[index].label = e.target.value;
+        });
+      });
+    }
+
+    // Render Testimonials List
+    function renderTestimonials() {
+      const container = document.getElementById('reviewsContainer');
+      container.innerHTML = '';
+
+      testimonialsList.forEach((item, idx) => {
+        const itemBox = document.createElement('div');
+        itemBox.className = "p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-2 relative";
+        itemBox.innerHTML = `
+          <div class="flex items-center justify-between">
+            <input type="text" value="${item.author}" placeholder="Client Name" class="review-author text-xs font-semibold px-2 py-1 border border-slate-300 rounded w-1/3" data-idx="${idx}">
+            <input type="text" value="${item.role}" placeholder="Client Company/Role" class="review-role text-xs px-2 py-1 border border-slate-300 rounded w-1/2" data-idx="${idx}">
+            <button type="button" class="btn-remove-review text-rose-500 hover:text-rose-700 text-xs px-2" data-idx="${idx}"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <textarea rows="2" class="review-quote text-xs p-2 border border-slate-300 rounded w-full" placeholder="Testimonial text..." data-idx="${idx}">${item.quote}</textarea>
+        `;
+        container.appendChild(itemBox);
+      });
+
+      // Bind input events
+      container.querySelectorAll('.review-author').forEach(input => {
+        input.addEventListener('input', (e) => testimonialsList[e.target.dataset.idx].author = e.target.value);
+      });
+      container.querySelectorAll('.review-role').forEach(input => {
+        input.addEventListener('input', (e) => testimonialsList[e.target.dataset.idx].role = e.target.value);
+      });
+      container.querySelectorAll('.review-quote').forEach(input => {
+        input.addEventListener('input', (e) => testimonialsList[e.target.dataset.idx].quote = e.target.value);
+      });
+      container.querySelectorAll('.btn-remove-review').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const idx = parseInt(btn.dataset.idx);
+          testimonialsList.splice(idx, 1);
+          renderTestimonials();
+        });
+      });
+    }
+
+    // Setup Character Counter
+    function setupCharacterCounter() {
+      const textarea = document.getElementById('cfgHomeBody');
+      const counter = document.getElementById('charCountLabel');
+      
+      const updateCount = () => {
+        counter.textContent = `${textarea.value.length} / 800`;
+        if (textarea.value.length >= 800) {
+          counter.classList.add('text-rose-600', 'font-bold');
+        } else {
+          counter.classList.remove('text-rose-600', 'font-bold');
+        }
+      };
+
+      textarea.addEventListener('input', updateCount);
+      updateCount();
+    }
+
+    // Color picker syncing
+    function setupColorPickerSync() {
+      const picker = document.getElementById('cfgAccentColor');
+      const hex = document.getElementById('cfgAccentHex');
+      picker.addEventListener('input', (e) => {
+        hex.textContent = e.target.value;
+      });
+    }
+
+    // Upload Listeners for Logo & Hero
+    function setupUploadListeners() {
+      // Logo File
+      document.getElementById('cfgLogoFile').addEventListener('change', async (e) => {
+        if (e.target.files && e.target.files[0]) {
+          try {
+            customLogoBase64 = await fileToBase64(e.target.files[0]);
+            document.getElementById('logoPreviewBox').innerHTML = `<img src="${customLogoBase64}" class="w-full h-full object-cover">`;
+            showToast("Custom logo uploaded");
+          } catch (err) {
+            showToast("Failed reading logo file", false);
+          }
+        }
+      });
+
+      // Hero File
+      document.getElementById('cfgHeroUpload').addEventListener('change', async (e) => {
+        if (e.target.files && e.target.files[0]) {
+          try {
+            customHeroBase64 = await fileToBase64(e.target.files[0]);
+            document.getElementById('heroPreviewImg').src = customHeroBase64;
+            showToast("Custom hero image uploaded");
+          } catch (err) {
+            showToast("Failed reading hero file", false);
+          }
+        }
+      });
+
+      // Add Testimonial Button
+      document.getElementById('btnAddReview').addEventListener('click', () => {
+        testimonialsList.push({
+          author: "New Client",
+          role: "Co-Founder, Startup",
+          quote: "Working with this team transformed our vision into tangible reality seamlessly.",
+          rating: 5
+        });
+        renderTestimonials();
+      });
+    }
+
+    // Collect all configuration values into a structured state object
+    function getStudioConfiguration() {
+      const drawerSide = document.querySelector('input[name="drawerSide"]:checked').value;
+      const heroUrl = customHeroBase64 || document.getElementById('heroPreviewImg').src;
+
+      return {
+        brand: {
+          siteName: document.getElementById('cfgSiteName').value.trim() || 'Aura Design Studio',
+          slogan: document.getElementById('cfgSlogan').value.trim() || 'Crafting Meaningful Digital Experiences',
+          subheading: document.getElementById('cfgSubheading').value.trim(),
+          logoBase64: customLogoBase64
+        },
+        theme: {
+          fontFamily: document.getElementById('cfgFontFamily').value,
+          mode: document.getElementById('cfgThemeMode').value,
+          accentColor: document.getElementById('cfgAccentColor').value
+        },
+        layout: {
+          drawerSide: drawerSide,
+          pages: {
+            home: true,
+            about: document.getElementById('pageAbout').checked,
+            contact: document.getElementById('pageContact').checked,
+            testimonials: document.getElementById('pageTestimonials').checked,
+            gallery: document.getElementById('pageGallery').checked,
+            terms: document.getElementById('pageTerms').checked,
+          }
+        },
+        media: {
+          heroUrl: heroUrl,
+          gallery: currentGallery
+        },
+        cms: {
+          home: {
+            body: document.getElementById('cfgHomeBody').value.trim(),
+            ctaText: document.getElementById('cfgHomeCtaText').value.trim(),
+            ctaTarget: document.getElementById('cfgHomeCtaTarget').value
+          },
+          about: {
+            headline: document.getElementById('cfgAboutHeadline').value.trim(),
+            story: document.getElementById('cfgAboutStory').value.trim(),
+            mission: document.getElementById('cfgAboutMission').value.trim()
+          },
+          contact: {
+            email: document.getElementById('cfgContactEmail').value.trim(),
+            phone: document.getElementById('cfgContactPhone').value.trim(),
+            address: document.getElementById('cfgContactAddress').value.trim()
+          },
+          testimonials: testimonialsList,
+          terms: document.getElementById('cfgTermsContent').value.trim()
+        },
+        social: {
+          x: document.getElementById('cfgSocialX').value.trim(),
+          fb: document.getElementById('cfgSocialFb').value.trim(),
+          insta: document.getElementById('cfgSocialInsta').value.trim(),
+          tiktok: document.getElementById('cfgSocialTiktok').value.trim()
+        }
+      };
+    }
+
+    // Code Compiler: Produces the standalone, self-contained, clean HTML5 single-file site
+    function compileGeneratedWebsite(config) {
+      const isDark = config.theme.mode === 'dark';
+      const bgColor = isDark ? '#0b0f19' : '#f8fafc';
+      const cardBg = isDark ? '#111827' : '#ffffff';
+      const textColor = isDark ? '#f3f4f6' : '#1e293b';
+      const subtextColor = isDark ? '#9ca3af' : '#64748b';
+      const borderColor = isDark ? '#1f2937' : '#e2e8f0';
+      const navBg = isDark ? 'rgba(11, 15, 25, 0.85)' : 'rgba(255, 255, 255, 0.88)';
+
+      // Serialized gallery items for embedded lightbox & carousel
+      const galleryJSON = JSON.stringify(config.media.gallery);
+
+      return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${config.brand.siteName}</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"><\/script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: ${config.theme.fontFamily};
+      background-color: ${bgColor};
+      color: ${textColor};
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    :root {
+      --accent: ${config.theme.accentColor};
+    }
+    .accent-bg { background-color: var(--accent); }
+    .accent-text { color: var(--accent); }
+    .accent-border { border-color: var(--accent); }
+
+    /* Custom Transitions */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .page-view.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Drawer Styles */
+    .drawer-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .slide-drawer {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .slide-drawer-right {
+      transform: translateX(100%);
+    }
+    .slide-drawer-right.open {
+      transform: translateX(0);
+    }
+    .slide-drawer-left {
+      transform: translateX(-100%);
+    }
+    .slide-drawer-left.open {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Floating Toast Box -->
+  <div id="siteToast" class="fixed bottom-6 right-6 z-50 px-4 py-3 rounded-xl shadow-2xl border text-sm flex items-center gap-2 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" style="background:${cardBg}; color:${textColor}; border-color:${borderColor};">
+    <i class="fa-solid fa-circle-check accent-text"></i>
+    <span id="siteToastText">Notification</span>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 backdrop-blur-md border-b" style="background:${navBg}; border-color:${borderColor};">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo and Site Name -->
+      <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 group">
+        ${config.brand.logoBase64 ? 
+          `<img src="${config.brand.logoBase64}" alt="Logo" class="w-10 h-10 rounded-xl object-cover shadow-sm">` :
+          `<div class="w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-sm" style="background:var(--accent);">
+             <i class="fa-solid fa-shapes text-lg"></i>
+           </div>`
+        }
+        <span class="font-bold text-lg sm:text-xl tracking-tight">${config.brand.siteName}</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium transition hover:opacity-80" data-page="home">Home</a>
+        ${config.layout.pages.about ? `<a href="#about" onclick="navigateTo('about'); return false;" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium transition hover:opacity-80" data-page="about">About</a>` : ''}
+        ${config.layout.pages.gallery ? `<a href="#gallery" onclick="navigateTo('gallery'); return false;" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium transition hover:opacity-80" data-page="gallery">Gallery</a>` : ''}
+        ${config.layout.pages.testimonials ? `<a href="#testimonials" onclick="navigateTo('testimonials'); return false;" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium transition hover:opacity-80" data-page="testimonials">Testimonials</a>` : ''}
+        ${config.layout.pages.contact ? `<a href="#contact" onclick="navigateTo('contact'); return false;" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium transition hover:opacity-80" data-page="contact">Contact</a>` : ''}
+        ${config.layout.pages.terms ? `<a href="#terms" onclick="navigateTo('terms'); return false;" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium transition hover:opacity-80" data-page="terms">Terms</a>` : ''}
+      </nav>
+
+      <!-- Right Action Triggers -->
+      <div class="flex items-center gap-2">
+        <button onclick="copySiteUrl()" title="Copy Site Link" class="p-2.5 rounded-xl border hover:opacity-80 transition" style="border-color:${borderColor};">
+          <i class="fa-solid fa-link text-sm"></i>
+        </button>
+        <button onclick="toggleDrawer()" class="p-2.5 rounded-xl border hover:opacity-80 transition" style="border-color:${borderColor};">
+          <i class="fa-solid fa-bars text-base"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide-out Drawer Backdrop -->
+  <div id="drawerBackdrop" onclick="toggleDrawer()" class="drawer-backdrop fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"></div>
+
+  <!-- Slide-out Drawer (Left or Right) -->
+  <div id="sideDrawer" class="slide-drawer ${config.layout.drawerSide === 'left' ? 'slide-drawer-left left-0' : 'slide-drawer-right right-0'} fixed top-0 bottom-0 w-80 max-w-[85vw] z-50 shadow-2xl p-6 flex flex-col justify-between" style="background:${cardBg}; border-color:${borderColor}; border-${config.layout.drawerSide === 'left' ? 'r' : 'l'}: 1px solid ${borderColor};">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b" style="border-color:${borderColor};">
+        <span class="font-bold text-base tracking-tight">${config.brand.siteName}</span>
+        <button onclick="toggleDrawer()" class="p-2 rounded-lg hover:opacity-75 transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-2 mt-6">
+        <a href="#home" onclick="navigateTo('home'); toggleDrawer(); return false;" class="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-slate-500/10 transition">
+          <i class="fa-solid fa-house w-6"></i> Home
+        </a>
+        ${config.layout.pages.about ? `<a href="#about" onclick="navigateTo('about'); toggleDrawer(); return false;" class="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-slate-500/10 transition"><i class="fa-solid fa-user-group w-6"></i> About Us</a>` : ''}
+        ${config.layout.pages.gallery ? `<a href="#gallery" onclick="navigateTo('gallery'); toggleDrawer(); return false;" class="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-slate-500/10 transition"><i class="fa-solid fa-images w-6"></i> Showcase Gallery</a>` : ''}
+        ${config.layout.pages.testimonials ? `<a href="#testimonials" onclick="navigateTo('testimonials'); toggleDrawer(); return false;" class="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-slate-500/10 transition"><i class="fa-solid fa-star w-6"></i> Reviews & Testimonials</a>` : ''}
+        ${config.layout.pages.contact ? `<a href="#contact" onclick="navigateTo('contact'); toggleDrawer(); return false;" class="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-slate-500/10 transition"><i class="fa-solid fa-envelope w-6"></i> Contact & Verification</a>` : ''}
+        ${config.layout.pages.terms ? `<a href="#terms" onclick="navigateTo('terms'); toggleDrawer(); return false;" class="px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-slate-500/10 transition"><i class="fa-solid fa-scale-balanced w-6"></i> Terms & Conditions</a>` : ''}
+      </nav>
+    </div>
+
+    <!-- Social Share Footer inside Drawer -->
+    <div class="pt-6 border-t" style="border-color:${borderColor};">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">Connect & Share</p>
+      <div class="flex items-center gap-2">
+        ${config.social.x ? `<a href="${config.social.x}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg border flex items-center justify-center hover:opacity-80 transition" style="border-color:${borderColor};"><i class="fa-brands fa-x-twitter text-sm"></i></a>` : ''}
+        ${config.social.fb ? `<a href="${config.social.fb}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg border flex items-center justify-center hover:opacity-80 transition" style="border-color:${borderColor};"><i class="fa-brands fa-facebook text-sm"></i></a>` : ''}
+        ${config.social.insta ? `<a href="${config.social.insta}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg border flex items-center justify-center hover:opacity-80 transition" style="border-color:${borderColor};"><i class="fa-brands fa-instagram text-sm"></i></a>` : ''}
+        ${config.social.tiktok ? `<a href="${config.social.tiktok}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg border flex items-center justify-center hover:opacity-80 transition" style="border-color:${borderColor};"><i class="fa-brands fa-tiktok text-sm"></i></a>` : ''}
+        <button onclick="copySiteUrl()" title="Copy Site Link" class="w-9 h-9 rounded-lg border flex items-center justify-center hover:opacity-80 transition" style="border-color:${borderColor};">
+          <i class="fa-solid fa-link text-xs"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main View Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+
+    <!-- PAGE: HOME -->
+    <section id="view-home" class="page-view active space-y-12">
+      <!-- Hero Banner -->
+      <div class="relative rounded-3xl overflow-hidden border shadow-xl min-h-[460px] flex items-center" style="border-color:${borderColor};">
+        <img src="${config.media.heroUrl}" alt="Hero Image" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/25"></div>
+        <div class="relative z-10 p-8 sm:p-14 max-w-3xl text-white space-y-6">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase bg-white/20 backdrop-blur-md">Official Portfolio</span>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">${config.brand.slogan}</h1>
+          ${config.brand.subheading ? `<p class="text-base sm:text-lg text-slate-200 leading-relaxed font-light">${config.brand.subheading}</p>` : ''}
+          <div class="pt-2">
+            <button onclick="navigateTo('${config.cms.home.ctaTarget}')" class="px-7 py-3.5 rounded-xl font-semibold text-white shadow-lg transition transform hover:-translate-y-0.5" style="background:var(--accent);">
+              ${config.cms.home.ctaText} <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Home Body Copy Feature Block -->
+      <div class="p-8 sm:p-12 rounded-3xl border shadow-sm space-y-6" style="background:${cardBg}; border-color:${borderColor};">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">About Our Philosophy</h2>
+          <p class="text-base sm:text-lg leading-relaxed opacity-85" style="color:${textColor};">
+            ${config.cms.home.body}
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Showcase Teaser Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border" style="background:${cardBg}; border-color:${borderColor};">
+          <div class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-white" style="background:var(--accent);">
+            <i class="fa-solid fa-bezier-curve text-lg"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Architectural Precision</h3>
+          <p class="text-sm opacity-70">Engineered with high standards of performance and clean aesthetic symmetry.</p>
+        </div>
+        <div class="p-6 rounded-2xl border" style="background:${cardBg}; border-color:${borderColor};">
+          <div class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-white" style="background:var(--accent);">
+            <i class="fa-solid fa-bolt text-lg"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Ultra-Responsive</h3>
+          <p class="text-sm opacity-70">Adaptive presentation tailored for smartphones, tablets, and high-DPI desktop screens.</p>
+        </div>
+        <div class="p-6 rounded-2xl border" style="background:${cardBg}; border-color:${borderColor};">
+          <div class="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-white" style="background:var(--accent);">
+            <i class="fa-solid fa-shield-halved text-lg"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Secure Verification</h3>
+          <p class="text-sm opacity-70">Protected client outreach with integrated human verification and communication toggles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: ABOUT -->
+    ${config.layout.pages.about ? `
+    <section id="view-about" class="page-view space-y-10">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider accent-text">Our Background</span>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mt-2 mb-4">${config.cms.about.headline}</h1>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-3xl border shadow-sm space-y-4" style="background:${cardBg}; border-color:${borderColor};">
+          <h2 class="text-xl font-bold">The Journey</h2>
+          <p class="text-sm leading-relaxed opacity-85">${config.cms.about.story}</p>
+        </div>
+        <div class="p-8 rounded-3xl border shadow-sm space-y-4" style="background:${cardBg}; border-color:${borderColor};">
+          <h2 class="text-xl font-bold">Our Mission & Values</h2>
+          <p class="text-sm leading-relaxed opacity-85">${config.cms.about.mission}</p>
+        </div>
+      </div>
+    </section>` : ''}
+
+    <!-- PAGE: GALLERY & SLIDESHOW -->
+    ${config.layout.pages.gallery ? `
+    <section id="view-gallery" class="page-view space-y-8">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider accent-text">Portfolio Exhibition</span>
+          <h1 class="text-3xl font-bold tracking-tight">Curated Showcase</h1>
+        </div>
+        <!-- Slideshow Controls -->
+        <div class="flex items-center gap-2">
+          <button onclick="prevSlide()" class="p-2.5 rounded-xl border hover:opacity-75 transition" style="border-color:${borderColor};">
+            <i class="fa-solid fa-chevron-left text-sm"></i>
+          </button>
+          <span id="slideIndicator" class="text-xs font-mono px-3 py-1 rounded-lg border" style="border-color:${borderColor};">1 / 8</span>
+          <button onclick="nextSlide()" class="p-2.5 rounded-xl border hover:opacity-75 transition" style="border-color:${borderColor};">
+            <i class="fa-solid fa-chevron-right text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Featured Slideshow Frame -->
+      <div class="relative w-full h-80 sm:h-[480px] rounded-3xl overflow-hidden border shadow-lg" style="border-color:${borderColor};">
+        <img id="activeSlideImage" src="${config.media.gallery[0].url}" alt="${config.media.gallery[0].label}" class="w-full h-full object-cover transition-all duration-500">
+        <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white flex items-center justify-between">
+          <h3 id="activeSlideCaption" class="text-base sm:text-xl font-bold">${config.media.gallery[0].label}</h3>
+          <span class="text-xs bg-white/20 backdrop-blur-md px-3 py-1 rounded-full">Interactive View</span>
+        </div>
+      </div>
+
+      <!-- 8-Photo Interactive Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        ${config.media.gallery.map((img, i) => `
+          <div onclick="selectSlide(${i})" class="group cursor-pointer rounded-2xl overflow-hidden border relative aspect-square transition transform hover:scale-[1.02]" style="border-color:${borderColor};">
+            <img src="${img.url}" alt="${img.label}" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-3 text-white">
+              <span class="text-xs font-semibold truncate">${img.label}</span>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </section>` : ''}
+
+    <!-- PAGE: TESTIMONIALS -->
+    ${config.layout.pages.testimonials ? `
+    <section id="view-testimonials" class="page-view space-y-8">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider accent-text">Feedback</span>
+        <h1 class="text-3xl font-bold tracking-tight">Client Testimonials</h1>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        ${config.cms.testimonials.map(item => `
+          <div class="p-6 rounded-2xl border flex flex-col justify-between space-y-4" style="background:${cardBg}; border-color:${borderColor};">
+            <div class="space-y-3">
+              <div class="flex text-amber-400 gap-1 text-xs">
+                ${'<i class="fa-solid fa-star"></i>'.repeat(item.rating || 5)}
+              </div>
+              <p class="text-sm italic opacity-85">"${item.quote}"</p>
+            </div>
+            <div class="pt-3 border-t" style="border-color:${borderColor};">
+              <h4 class="font-bold text-sm">${item.author}</h4>
+              <p class="text-xs opacity-60">${item.role}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </section>` : ''}
+
+    <!-- PAGE: CONTACT -->
+    ${config.layout.pages.contact ? `
+    <section id="view-contact" class="page-view space-y-8">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider accent-text">Inquiries</span>
+        <h1 class="text-3xl font-bold tracking-tight">Get in Touch</h1>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Contact Information Panel -->
+        <div class="p-6 sm:p-8 rounded-3xl border space-y-6" style="background:${cardBg}; border-color:${borderColor};">
+          <h2 class="text-xl font-bold">Contact Details</h2>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-envelope accent-text mt-1"></i>
+              <div>
+                <p class="text-xs font-semibold uppercase opacity-60">Email</p>
+                <a href="mailto:${config.cms.contact.email}" class="hover:underline">${config.cms.contact.email}</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-phone accent-text mt-1"></i>
+              <div>
+                <p class="text-xs font-semibold uppercase opacity-60">Telephone</p>
+                <p>${config.cms.contact.phone}</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-location-dot accent-text mt-1"></i>
+              <div>
+                <p class="text-xs font-semibold uppercase opacity-60">Studio Address</p>
+                <p>${config.cms.contact.address}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Working Contact Form with Math Verification -->
+        <div class="lg:col-span-2 p-6 sm:p-8 rounded-3xl border shadow-sm" style="background:${cardBg}; border-color:${borderColor};">
+          <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold uppercase mb-1.5 opacity-70">Your Name *</label>
+                <input type="text" id="formName" required class="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2" style="background:${cardBg}; border-color:${borderColor}; color:${textColor};">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold uppercase mb-1.5 opacity-70">Your Email *</label>
+                <input type="email" id="formEmail" required class="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2" style="background:${cardBg}; border-color:${borderColor}; color:${textColor};">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold uppercase mb-1.5 opacity-70">Phone Number (Optional)</label>
+              <input type="tel" id="formPhone" class="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2" style="background:${cardBg}; border-color:${borderColor}; color:${textColor};">
+            </div>
+
+            <!-- Radio: Call back vs Email response -->
+            <div>
+              <label class="block text-xs font-semibold uppercase mb-2 opacity-70">Preferred Response Channel *</label>
+              <div class="flex items-center gap-6 text-sm">
+                <label class="flex items-center cursor-pointer">
+                  <input type="radio" name="responseMethod" value="callback" checked class="mr-2">
+                  <span>Request a Call Back</span>
+                </label>
+                <label class="flex items-center cursor-pointer">
+                  <input type="radio" name="responseMethod" value="email" class="mr-2">
+                  <span>Email Response</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold uppercase mb-1.5 opacity-70">Message *</label>
+              <textarea id="formMessage" required rows="4" class="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2" style="background:${cardBg}; border-color:${borderColor}; color:${textColor};" placeholder="Briefly describe your project or inquiry..."></textarea>
+            </div>
+
+            <!-- Math Captcha Human Verification -->
+            <div class="p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3" style="border-color:${borderColor};">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved accent-text text-sm"></i>
+                <span class="text-xs font-semibold">Human Verification:</span>
+                <span id="mathCaptchaQuestion" class="text-sm font-mono font-bold px-2 py-0.5 rounded bg-slate-500/10">3 + 4 = ?</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <input type="number" id="mathCaptchaAnswer" required placeholder="Result" class="w-24 px-3 py-1.5 rounded-lg border text-sm focus:outline-none" style="background:${cardBg}; border-color:${borderColor}; color:${textColor};">
+              </div>
+            </div>
+
+            <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-xl font-semibold text-white shadow-md transition transform hover:-translate-y-0.5" style="background:var(--accent);">
+              Submit Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>` : ''}
+
+    <!-- PAGE: TERMS & CONDITIONS -->
+    ${config.layout.pages.terms ? `
+    <section id="view-terms" class="page-view space-y-6">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider accent-text">Legal</span>
+        <h1 class="text-3xl font-bold tracking-tight">Terms and Conditions</h1>
+      </div>
+
+      <div class="p-8 rounded-3xl border whitespace-pre-line text-sm leading-relaxed" style="background:${cardBg}; border-color:${borderColor};">
+        ${config.cms.terms}
+      </div>
+    </section>` : ''}
+
+  </main>
+
+  <!-- Website Footer -->
+  <footer class="border-t py-8 mt-12" style="background:${cardBg}; border-color:${borderColor};">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-75">
+      <p>© \${new Date().getFullYear()} ${config.brand.siteName}. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="hover:underline">Home</a>
+        ${config.layout.pages.terms ? `<a href="#terms" onclick="navigateTo('terms'); return false;" class="hover:underline">Terms of Service</a>` : ''}
+        ${config.layout.pages.contact ? `<a href="#contact" onclick="navigateTo('contact'); return false;" class="hover:underline">Contact</a>` : ''}
+      </div>
+    </div>
+  </footer>
+
+  <!-- Client-side Interactive Scripting -->
+  <script>
+    // Gallery dataset
+    const siteGallery = ${galleryJSON};
+    let currentSlideIdx = 0;
+
+    // Captcha State
+    let captchaNumA = 4;
+    let captchaNumB = 7;
+
+    window.onload = function() {
+      generateMathCaptcha();
+      // Handle initial hash routing
+      const hash = window.location.hash.replace('#', '') || 'home';
+      navigateTo(hash);
+    };
+
+    function showSiteToast(msg) {
+      const toast = document.getElementById('siteToast');
+      const text = document.getElementById('siteToastText');
+      text.innerText = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3000);
+    }
+
+    function copySiteUrl() {
+      const url = window.location.href;
+      const el = document.createElement('textarea');
+      el.value = url;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      showSiteToast('Page URL copied to clipboard!');
+    }
+
+    // View Routing
+    function navigateTo(pageId) {
+      const targetView = document.getElementById('view-' + pageId);
+      if (!targetView) {
+        pageId = 'home';
+      }
+
+      document.querySelectorAll('.page-view').forEach(view => {
+        view.classList.remove('active');
+      });
+
+      const activeView = document.getElementById('view-' + pageId);
+      if (activeView) {
+        activeView.classList.add('active');
+        window.location.hash = pageId;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Update Nav highlighting
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('accent-bg', 'text-white');
+        } else {
+          link.classList.remove('accent-bg', 'text-white');
+        }
+      });
+    }
+
+    // Slide Drawer Toggle
+    function toggleDrawer() {
+      const drawer = document.getElementById('sideDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+      const isOpen = drawer.classList.contains('open');
+
+      if (isOpen) {
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+      } else {
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+      }
+    }
+
+    // Gallery Slideshow functions
+    function updateSlideDisplay() {
+      if (!siteGallery || siteGallery.length === 0) return;
+      const item = siteGallery[currentSlideIdx];
+      const img = document.getElementById('activeSlideImage');
+      const caption = document.getElementById('activeSlideCaption');
+      const indicator = document.getElementById('slideIndicator');
+      
+      if (img) img.src = item.url;
+      if (caption) caption.innerText = item.label;
+      if (indicator) indicator.innerText = (currentSlideIdx + 1) + ' / ' + siteGallery.length;
+    }
+
+    function nextSlide() {
+      if (!siteGallery.length) return;
+      currentSlideIdx = (currentSlideIdx + 1) % siteGallery.length;
+      updateSlideDisplay();
+    }
+
+    function prevSlide() {
+      if (!siteGallery.length) return;
+      currentSlideIdx = (currentSlideIdx - 1 + siteGallery.length) % siteGallery.length;
+      updateSlideDisplay();
+    }
+
+    function selectSlide(idx) {
+      currentSlideIdx = idx;
+      updateSlideDisplay();
+      const frame = document.getElementById('activeSlideImage');
+      if (frame) {
+        frame.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Math Captcha generator
+    function generateMathCaptcha() {
+      const q = document.getElementById('mathCaptchaQuestion');
+      if (!q) return;
+      captchaNumA = Math.floor(Math.random() * 8) + 2;
+      captchaNumB = Math.floor(Math.random() * 7) + 1;
+      q.innerText = captchaNumA + ' + ' + captchaNumB + ' = ?';
+    }
+
+    // Contact Form submission logic
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const ansInput = document.getElementById('mathCaptchaAnswer');
+      const expected = captchaNumA + captchaNumB;
+
+      if (parseInt(ansInput.value, 10) !== expected) {
+        showSiteToast('Math verification incorrect. Please try again.');
+        generateMathCaptcha();
+        ansInput.value = '';
+        return;
+      }
+
+      const method = document.querySelector('input[name="responseMethod"]:checked').value;
+      const methodLabel = method === 'callback' ? 'phone call back' : 'direct email';
+      
+      showSiteToast('Inquiry sent! We will respond via ' + methodLabel + '.');
+      document.getElementById('contactForm').reset();
+      generateMathCaptcha();
+    }
+  <\/script>
+</body>
+</html>`;
+    }
+
+    // AI Specification Prompt Generator
+    function generateAiMarkdownPrompt(config) {
+      return `# WEBSITE SPECIFICATION & ARCHITECTURAL PROMPT
+
+You are an expert full-stack engineer and UI/UX designer. Please use the following detailed specification to design, critique, or build a matching customized web solution:
+
+## 1. BRAND IDENTITY
+- **Business/Site Name:** ${config.brand.siteName}
+- **Primary Center Slogan:** "${config.brand.slogan}"
+- **Subheading:** "${config.brand.subheading || 'N/A'}"
+- **Custom Logo Provided:** ${config.brand.logoBase64 ? 'Yes (Custom Asset configured)' : 'No (Default geometric glyph used)'}
+
+## 2. DESIGN SYSTEM & THEMING
+- **Color Mode:** ${config.theme.mode.toUpperCase()}
+- **Primary Accent Color:** ${config.theme.accentColor}
+- **Font Family Hierarchy:** ${config.theme.fontFamily}
+- **Navigation Drawer Alignment:** Slides out from the ${config.layout.drawerSide.toUpperCase()}
+
+## 3. ACTIVE ARCHITECTURE & PAGES
+${Object.entries(config.layout.pages)
+  .map(([page, active]) => `- **${page.toUpperCase()} Page:** ${active ? 'Enabled' : 'Disabled'}`)
+  .join('\n')}
+
+## 4. CONTENT MANAGEMENT SPECIFICATIONS
+### Home Page:
+- **Hero CTA:** "${config.cms.home.ctaText}" (Targets: #${config.cms.home.ctaTarget})
+- **Body Copy (${config.cms.home.body.length}/800 characters):**
+  > ${config.cms.home.body}
+
+### About Page:
+- **Headline:** "${config.cms.about.headline}"
+- **Narrative Story:** "${config.cms.about.story}"
+- **Core Mission Statement:** "${config.cms.about.mission}"
+
+### Contact Page & Lead Capture:
+- **Direct Email:** ${config.cms.contact.email}
+- **Phone:** ${config.cms.contact.phone}
+- **Physical Address:** ${config.cms.contact.address}
+- **Validation Engine:** Human verification math challenge required.
+- **Inquiry Preference Options:** Radio selector between "Request a call back" and "Email response".
+
+### Gallery & Media:
+- **Total Showcase Items:** 8 High-resolution photos configured with an interactive lightbox and slide carousel.
+- **Labels:** ${config.media.gallery.map(g => g.label).join(', ')}
+
+### Social Channels:
+- **X/Twitter:** ${config.social.x || 'None'}
+- **Facebook:** ${config.social.fb || 'None'}
+- **Instagram:** ${config.social.insta || 'None'}
+- **TikTok:** ${config.social.tiktok || 'None'}
+- **Instant URL Sharing:** Enabled via copy-to-clipboard API.
+
+### Terms & Conditions:
+- ${config.cms.terms.replace(/\n/g, ' ')}
+`;
+    }
+
+    // Attach Top Action Triggers
+    function setupActionHandlers() {
+      const modal = document.getElementById('previewModal');
+      const iframe = document.getElementById('previewIframe');
+      const promptModal = document.getElementById('aiPromptModal');
+
+      // 1. Open AI Prompt Modal
+      document.getElementById('btnAiPrompt').addEventListener('click', () => {
+        const config = getStudioConfiguration();
+        const prompt = generateAiMarkdownPrompt(config);
+        document.getElementById('aiPromptContent').value = prompt;
+        promptModal.classList.remove('hidden');
+        promptModal.classList.add('flex');
+      });
+
+      document.getElementById('btnCloseAiPrompt').addEventListener('click', () => {
+        promptModal.classList.add('hidden');
+        promptModal.classList.remove('flex');
+      });
+
+      document.getElementById('btnCopyPrompt').addEventListener('click', () => {
+        const textarea = document.getElementById('aiPromptContent');
+        textarea.select();
+        document.execCommand('copy');
+        showToast("Prompt copied to clipboard!");
+      });
+
+      // 2. Open Live Preview Modal
+      document.getElementById('btnLivePreview').addEventListener('click', () => {
+        const config = getStudioConfiguration();
+        const fullHtml = compileGeneratedWebsite(config);
+        
+        iframe.srcdoc = fullHtml;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+
+      document.getElementById('btnClosePreview').addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        iframe.srcdoc = '';
+      });
+
+      // Viewport simulation toggles
+      const btnDesktop = document.getElementById('deviceDesktop');
+      const btnTablet = document.getElementById('deviceTablet');
+      const btnMobile = document.getElementById('deviceMobile');
+
+      function resetDeviceButtons() {
+        [btnDesktop, btnTablet, btnMobile].forEach(btn => {
+          btn.classList.remove('bg-sky-600', 'text-white');
+          btn.classList.add('text-slate-400');
+        });
+      }
+
+      btnDesktop.addEventListener('click', () => {
+        resetDeviceButtons();
+        btnDesktop.classList.add('bg-sky-600', 'text-white');
+        btnDesktop.classList.remove('text-slate-400');
+        iframe.className = "preview-device-desktop bg-white border-0 transition-all duration-300";
+      });
+
+      btnTablet.addEventListener('click', () => {
+        resetDeviceButtons();
+        btnTablet.classList.add('bg-sky-600', 'text-white');
+        btnTablet.classList.remove('text-slate-400');
+        iframe.className = "preview-device-tablet bg-white border-0 transition-all duration-300";
+      });
+
+      btnMobile.addEventListener('click', () => {
+        resetDeviceButtons();
+        btnMobile.classList.add('bg-sky-600', 'text-white');
+        btnMobile.classList.remove('text-slate-400');
+        iframe.className = "preview-device-mobile bg-white border-0 transition-all duration-300";
+      });
+
+      // 3. Export / Download File Trigger
+      function triggerDownload() {
+        const config = getStudioConfiguration();
+        const htmlContent = compileGeneratedWebsite(config);
+        const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+        const downloadUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        
+        // Clean filename based on brand name
+        const cleanName = config.brand.siteName.toLowerCase().replace(/[^a-z0-9]/g, '-') || 'my-website';
+        a.href = downloadUrl;
+        a.download = `${cleanName}.html`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(downloadUrl);
+
+        showToast("Complete single-file HTML exported!");
+      }
+
+      document.getElementById('btnDownloadHtml').addEventListener('click', triggerDownload);
+      document.getElementById('btnModalDownload').addEventListener('click', triggerDownload);
+    }
+  </script>
+</body>
+</html>
